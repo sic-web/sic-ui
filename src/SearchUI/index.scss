@@ -1,0 +1,18 @@
+.sic-searchui {
+  font-size: 13px;
+  width: 320px;
+  .ant-btn-primary {
+    color: var(--textcolor);
+    background-color: #fff;
+    border: 1px solid #d9d9d9;
+    box-shadow: none;
+  }
+  .ant-btn-primary:hover {
+    color: var(--textcolor) !important;
+    background-color: #fff !important;
+    border: 1px solid var(--textcolor);
+  }
+  .ant-btn {
+    padding: 0 8px;
+  }
+}
