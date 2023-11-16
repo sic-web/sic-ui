@@ -2,7 +2,6 @@ import React from 'react';
 import "./index.scss";
 var DescribeUI = function DescribeUI(props) {
   var dataSource = props.dataSource;
-  // 使用 reduce 进行转换
   var newProps = dataSource === null || dataSource === void 0 ? void 0 : dataSource.reduce(function (result, item) {
     var _lastLine$;
     // 检查 line 是否存在于结果数组的最后一个子数组中
