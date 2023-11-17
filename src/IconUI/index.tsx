@@ -4,7 +4,7 @@ import { Export, ListTwo, Return, AddOne, SwitchButton, Audit, Clear, Download, 
 import { Delete, Setting, Excel, FilePdf, BackgroundColor, Home, ChartPieOne, BookmarkOne, DataArrival } from '@icon-park/react';
 import { TicketsTwo, Bank, ShieldAdd, Swipe, SettingTwo, DataFour, Currency, CheckOne, CloseOne, UTurnLeft } from '@icon-park/react';
 import { Caution, RotateOne, Edit, Check, Close, UserBusiness, ArrowRight, More, DeleteOne, Search, Help } from '@icon-park/react';
-import { Attention, FileAddition, CooperativeHandshake } from '@icon-park/react';
+import { Attention, FileAddition, CooperativeHandshake, FileSuccess } from '@icon-park/react';
 
 const IconUI = (props: { name: string; [key: string]: any }) => {
   const { name, style, ...otherProps } = props;
@@ -54,6 +54,7 @@ const IconUI = (props: { name: string; [key: string]: any }) => {
     { name: 'Attention', element: <Attention style={style} {...otherProps} /> }, //感叹号：感叹号
     { name: 'FileAddition', element: <FileAddition style={style} {...otherProps} /> }, //文件：文件
     { name: 'CooperativeHandshake', element: <CooperativeHandshake style={style} {...otherProps} /> }, //合作：合作
+    { name: 'FileSuccess', element: <FileSuccess style={style} {...otherProps} /> }, //合作：合作
   ];
   const [list, setList] = useState<{ name: string; element: React.ReactNode }[]>(IconList);
 
