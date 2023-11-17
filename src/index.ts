@@ -14,3 +14,4 @@ export { default as FormUI } from './FormUI';
 export { default as DescribeUI } from './DescribeUI';
 export { default as CellUI } from './CellUI';
 export { default as NotificationUI } from './NotificationUI';
+export { default as TableUI } from './TableUI';
