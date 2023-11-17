@@ -1,3 +1,4 @@
+import '@icon-park/react/styles/index.css';
 import './index.scss';
 export { default as BackUI } from './BackUI';
 export { default as IconUI } from './IconUI';
