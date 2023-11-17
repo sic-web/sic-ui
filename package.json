@@ -1,6 +1,6 @@
 {
   "name": "sic-ui",
-  "version": "0.1.18",
+  "version": "0.1.19",
   "description": "A react library developed with dumi",
   "license": "MIT",
   "module": "dist/index.js",
@@ -41,7 +41,8 @@
     "*.{ts,tsx}": [
       "eslint --fix",
       "prettier --parser=typescript --write"
-    ]
+    ],
+    "!docs-dist/**": []
   },
   "dependencies": {
     "@ant-design/icons": "^5.2.6",
