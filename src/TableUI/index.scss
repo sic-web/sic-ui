@@ -1,0 +1,45 @@
+.sic-tableui {
+  .ant-table-thead > tr > th {
+    padding: 0;
+    color: var(--textBlack);
+    font-size: 14px;
+    line-height: 42px;
+    text-align: center;
+    background-color: #f9f9f9;
+  }
+  .ant-table-tbody > tr > td {
+    box-sizing: border-box;
+    padding: 8px 0;
+    color: var(--textBlack);
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+    font-family: 'LingCaiTi';
+    text-align: center;
+  }
+  .ant-pagination {
+    color: var(--textBlack);
+    font-size: 14px;
+  }
+  .ant-table-pagination.ant-pagination {
+    display: flex;
+    justify-content: center;
+    margin: 12px auto;
+  }
+}
+.sic-tableui-mask {
+  height: 100%;
+  left: 0;
+  opacity: 0.3;
+  top: 0;
+  z-index: 1;
+  border-radius: 8px;
+  cursor: not-allowed;
+}
+.sic-tableui-operate {
+  display: flex;
+  justify-content: center;
+  color: var(--textBlack);
+  white-space: nowrap;
+  position: relative;
+}
