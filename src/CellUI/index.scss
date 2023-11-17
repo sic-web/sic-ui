@@ -1,0 +1,16 @@
+.sic-cellui {
+  width: 100%;
+  min-height: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &-text {
+    display: -webkit-box;
+    overflow: hidden;
+    word-break: break-word;
+    word-wrap: break-word;
+    -webkit-line-clamp: var(--cellLine);
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}

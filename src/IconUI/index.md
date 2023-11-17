@@ -94,6 +94,7 @@ const App: React.FC = () => (
     <IconUI name="Attention" theme="filled" size="28" fill="#1EAF69" strokeWidth={2} />
     <IconUI name="FileAddition" theme="filled" size="28" fill="#1EAF69" strokeWidth={2} />
     <IconUI name="CooperativeHandshake" theme="filled" size="28" fill="#1EAF69" strokeWidth={2} />
+    <IconUI name="FileSuccess" theme="filled" size="28" fill="#1EAF69" strokeWidth={2} />
   </Space>
 );
 export default App;

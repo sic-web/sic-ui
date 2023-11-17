@@ -12,3 +12,4 @@ export { default as ModalUI } from './ModalUI';
 export { default as LoadingUI } from './LoadingUI';
 export { default as FormUI } from './FormUI';
 export { default as DescribeUI } from './DescribeUI';
+export { default as CellUI } from './CellUI';
