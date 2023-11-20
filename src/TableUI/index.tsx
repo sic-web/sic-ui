@@ -5,6 +5,7 @@ import zhCN from 'antd/locale/zh_CN';
 import { tableuiNodata } from '../assets';
 import './index.scss';
 
+/** 表格组件 */
 const TableUI = (props: any) => {
   const {
     dataSource = [],
@@ -64,6 +65,7 @@ const OperateMore = (props: { content: React.ReactNode }) => {
   );
 };
 
+/** 表格组件-操作更多 */
 const Operate = (props: { child: any }) => {
   const { child } = props;
   const [children, setChildren] = useState<React.ReactNode[]>([]);
@@ -98,5 +100,19 @@ const Operate = (props: { child: any }) => {
     </div>
   );
 };
+
+/** 表格组件-按钮功能 */
+const Button = (props: any) => {
+  const { type = 'default', style, icon, children, ...otherProps } = props;
+
+  return (
+    <div className={`sic-tableui-button ${type && `sic-tableui-button-${type}`}`} style={style} {...otherProps}>
+      {children}
+      {icon && <span className="sic-tableui-button-icon">{icon}</span>}
+    </div>
+  );
+};
+
 TableUI.Operate = Operate;
+TableUI.Button = Button;
 export default TableUI;

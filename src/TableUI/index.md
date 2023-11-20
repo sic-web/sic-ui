@@ -17,6 +17,8 @@ group:
 
 ## 代码演示
 
+### 表格组件
+
 💎 表格组件-基本使用
 
 ```jsx
@@ -25,21 +27,9 @@ import { TableUI } from 'sic-ui';
 
 const App: React.FC = () => {
   const columns = [
-    {
-      title: '姓名',
-      dataIndex: 'name',
-      key: 'name',
-    },
-    {
-      title: '年龄',
-      dataIndex: 'age',
-      key: 'age',
-    },
-    {
-      title: '电话',
-      dataIndex: 'phone',
-      key: 'phone',
-    },
+    { title: '姓名', dataIndex: 'name', key: 'name' },
+    { title: '年龄', dataIndex: 'age', key: 'age' },
+    { title: '电话', dataIndex: 'phone', key: 'phone' },
   ];
   const dataSource = [
     { name: '刘备', age: 22, phone: 15692837652 },
@@ -62,6 +52,8 @@ const App: React.FC = () => {
 export default App;
 ```
 
+### 表格组件（内嵌操作）
+
 💎 表格组件-更多操作
 
 ```jsx
@@ -70,21 +62,9 @@ import { TableUI } from 'sic-ui';
 
 const App: React.FC = () => {
   const columns = [
-    {
-      title: '姓名',
-      dataIndex: 'name',
-      key: 'name',
-    },
-    {
-      title: '年龄',
-      dataIndex: 'age',
-      key: 'age',
-    },
-    {
-      title: '电话',
-      dataIndex: 'phone',
-      key: 'phone',
-    },
+    { title: '姓名', dataIndex: 'name', key: 'name' },
+    { title: '年龄', dataIndex: 'age', key: 'age' },
+    { title: '电话', dataIndex: 'phone', key: 'phone' },
     {
       title: '操作',
       dataIndex: 'operate',
@@ -106,11 +86,55 @@ const App: React.FC = () => {
     },
   ];
   const dataSource = [
+    { name: '刘备', age: 22, phone: 15692837652 },
+    { name: '关羽', age: 21, phone: 17697787678 },
+    { name: '张飞', age: 18, phone: 12392880611 },
+  ];
+  const current = 1;
+  const pageSize = 2;
+  const total = 3;
+  return (
+    <div>
+      <TableUI dataSource={dataSource} columns={columns} current={current} pageSize={pageSize} total={total} />
+    </div>
+  );
+};
+export default App;
+```
+
+💎 表格组件-功能按钮
+
+```jsx
+import { useState } from 'react';
+import { TableUI, IconUI } from 'sic-ui';
+import { Space } from 'antd';
+
+const App: React.FC = () => {
+  const columns = [
+    { title: '姓名', dataIndex: 'name', key: 'name' },
+    { title: '年龄', dataIndex: 'age', key: 'age' },
     {
-      name: '刘备',
-      age: 22,
-      phone: 15692837652,
+      title: '合同',
+      dataIndex: 'contract',
+      key: 'contract',
+      render: () => {
+        return (
+          <Space wrap>
+            <TableUI.Button type="default" icon={<IconUI name="Download" />}>
+              查看
+            </TableUI.Button>
+            <TableUI.Button type="danger" icon={<IconUI name="Upload" />}>
+              重新上传
+            </TableUI.Button>
+            <TableUI.Button type="disable">禁用</TableUI.Button>
+          </Space>
+        );
+      },
     },
+    { title: '电话', dataIndex: 'phone', key: 'phone' },
+  ];
+  const dataSource = [
+    { name: '刘备', age: 22, phone: 15692837652 },
     { name: '关羽', age: 21, phone: 17697787678 },
     { name: '张飞', age: 18, phone: 12392880611 },
   ];
