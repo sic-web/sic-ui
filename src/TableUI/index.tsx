@@ -113,6 +113,27 @@ const Button = (props: any) => {
   );
 };
 
+/** 表格组件-多行展示 */
+const MultiLine = (props: any) => {
+  const { list, filter, slot } = props;
+  if (!slot) {
+    return (
+      <div className="sic-tableui-multiLine">
+        {list?.map((item: any, index: number) => {
+          return (
+            <div key={index} className="sic-tableui-multiLine-item">
+              {item[filter]}
+            </div>
+          );
+        })}
+      </div>
+    );
+  } else {
+    return <div className="sic-tableui-multiLine">{slot(list)}</div>;
+  }
+};
+
 TableUI.Operate = Operate;
 TableUI.Button = Button;
+TableUI.MultiLine = MultiLine;
 export default TableUI;
