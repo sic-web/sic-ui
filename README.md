@@ -12,6 +12,7 @@ TODO
 ## Options
 
 TODO
+--no-verify
 
 ## Development
 
@@ -30,6 +31,8 @@ $ npm run build:watch
 
 # build docs
 $ npm run docs:build
+
+
 
 # check your project for potential problems
 $ npm run doctor
