@@ -7,7 +7,7 @@ group:
   order: 2
 ---
 
-# SearchUI-文本
+# SearchUI-搜索
 
 :::success{title=使用中}
 国信灵工后台管理系统-搜索组件
