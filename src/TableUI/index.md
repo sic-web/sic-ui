@@ -62,7 +62,7 @@ import { TableUI } from 'sic-ui';
 
 const App: React.FC = () => {
   const columns = [
-    { title: '姓名', dataIndex: 'name', key: 'name' },
+    { title: '姓名', dataIndex: 'name', key: 'name', width: 200 },
     { title: '年龄', dataIndex: 'age', key: 'age' },
     { title: '电话', dataIndex: 'phone', key: 'phone' },
     {
@@ -137,6 +137,83 @@ const App: React.FC = () => {
     { name: '刘备', age: 22, phone: 15692837652 },
     { name: '关羽', age: 21, phone: 17697787678 },
     { name: '张飞', age: 18, phone: 12392880611 },
+  ];
+  const current = 1;
+  const pageSize = 2;
+  const total = 3;
+  return (
+    <div>
+      <TableUI dataSource={dataSource} columns={columns} current={current} pageSize={pageSize} total={total} />
+    </div>
+  );
+};
+export default App;
+```
+
+💎 表格组件-多行拆分
+
+```jsx
+import { useState } from 'react';
+import { TableUI, IconUI } from 'sic-ui';
+import { Space } from 'antd';
+
+const App: React.FC = () => {
+  const columns = [
+    { title: '姓名', dataIndex: 'name', key: 'name' },
+    { title: '年龄', dataIndex: 'age', key: 'age' },
+    {
+      title: '任务名称',
+      dataIndex: 'taskName',
+      key: 'taskName',
+      render: (_: never, item: any) => {
+        return <TableUI.MultiLine list={item.feeRate} filter="taskName" />;
+      },
+    },
+    {
+      title: '费率',
+      dataIndex: 'feeRate',
+      key: 'feeRate',
+      render: (_: never, item: any) => {
+        const slot = (list) => (
+          <div>
+            {list?.map((item) => (
+              <div className="sic-tableui-multiLine-item">{item?.fee}</div>
+            ))}
+          </div>
+        );
+        return <TableUI.MultiLine list={item.feeRate} filter="fee" slot={slot} />;
+      },
+    },
+    { title: '电话', dataIndex: 'phone', key: 'phone' },
+  ];
+  const dataSource = [
+    {
+      name: '刘备',
+      age: 22,
+      phone: 15692837652,
+      feeRate: [
+        { fee: 5, taskName: '任务1' },
+        { fee: 6, taskName: '任务2' },
+      ],
+    },
+    {
+      name: '关羽',
+      age: 21,
+      phone: 17697787678,
+      feeRate: [
+        { fee: 5, taskName: '任务1' },
+        { fee: 6, taskName: '任务2' },
+      ],
+    },
+    {
+      name: '张飞',
+      age: 18,
+      phone: 12392880611,
+      feeRate: [
+        { fee: 5, taskName: '任务1' },
+        { fee: 6, taskName: '任务2' },
+      ],
+    },
   ];
   const current = 1;
   const pageSize = 2;
