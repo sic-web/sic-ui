@@ -80,7 +80,7 @@ const Operate = (props: { child: any }) => {
 
   return (
     <div className="sic-tableui-operate">
-      {children?.length === 0 && <div>-</div>}
+      {children?.length === 0 && <div style={{ color: 'var(--textcolor)' }}>-</div>}
       {children?.[0] || children}
       {children?.[1] && <span style={{ color: '#ccc', margin: '0 5px' }}>丨</span>}
       {children?.[1]}
