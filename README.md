@@ -12,7 +12,8 @@ TODO
 ## Options
 
 TODO
---no-verify
+git add .
+git commit -m "feat: 更新" --no-verify
 
 ## Development
 
