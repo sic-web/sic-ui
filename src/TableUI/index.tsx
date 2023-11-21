@@ -128,7 +128,12 @@ const MultiLine = (props: any) => {
   );
 };
 
+const DoubleArrow = () => {
+  return <div></div>;
+};
+
 TableUI.Operate = Operate;
 TableUI.Button = Button;
 TableUI.MultiLine = MultiLine;
+TableUI.DoubleArrow = DoubleArrow;
 export default TableUI;
