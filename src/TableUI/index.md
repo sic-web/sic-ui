@@ -176,8 +176,8 @@ const App: React.FC = () => {
       render: (_: never, item: any) => {
         const slot = (list) => (
           <div>
-            {list?.map((item) => (
-              <div className="sic-tableui-multiLine-item">{item?.fee}</div>
+            {list?.map((item, index) => (
+              <div className="sic-tableui-multiLine-item" key={index}>{`${item?.fee}%`}</div>
             ))}
           </div>
         );
