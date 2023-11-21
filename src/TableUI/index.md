@@ -166,7 +166,8 @@ const App: React.FC = () => {
       dataIndex: 'taskName',
       key: 'taskName',
       render: (_: never, item: any) => {
-        return <TableUI.MultiLine list={item.feeRate} filter="taskName" />;
+        const taskNameList = item?.feeRate?.map((i: any) => i.taskName);
+        return <TableUI.MultiLine>{taskNameList}</TableUI.MultiLine>;
       },
     },
     {
@@ -174,14 +175,8 @@ const App: React.FC = () => {
       dataIndex: 'feeRate',
       key: 'feeRate',
       render: (_: never, item: any) => {
-        const slot = (list) => (
-          <div>
-            {list?.map((item, index) => (
-              <div className="sic-tableui-multiLine-item" key={index}>{`${item?.fee}%`}</div>
-            ))}
-          </div>
-        );
-        return <TableUI.MultiLine list={item.feeRate} filter="fee" slot={slot} />;
+        const feeList = item?.feeRate?.map((i: any) => `${i.fee}%`);
+        return <TableUI.MultiLine>{feeList}</TableUI.MultiLine>;
       },
     },
     { title: '电话', dataIndex: 'phone', key: 'phone' },
