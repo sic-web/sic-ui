@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ConfigProvider, Table, Tooltip } from 'antd';
-import { IconUI } from 'sic-ui';
+import { IconUI, CellUI } from 'sic-ui';
 import zhCN from 'antd/locale/zh_CN';
 import { tableuiNodata } from '../assets';
 import './index.scss';
@@ -115,22 +115,17 @@ const Button = (props: any) => {
 
 /** 表格组件-多行展示 */
 const MultiLine = (props: any) => {
-  const { list, filter, slot } = props;
-  if (!slot) {
-    return (
-      <div className="sic-tableui-multiLine">
-        {list?.map((item: any, index: number) => {
-          return (
-            <div key={index} className="sic-tableui-multiLine-item">
-              {item[filter]}
-            </div>
-          );
-        })}
-      </div>
-    );
-  } else {
-    return <div className="sic-tableui-multiLine">{slot(list)}</div>;
-  }
+  const { children, ...otherProps } = props;
+  return (
+    <div className="sic-tableui-multiLine" {...otherProps}>
+      {children?.length > 0 &&
+        children.map((item: string | number, index: number) => (
+          <div key={index} className="sic-tableui-multiLine-item">
+            <CellUI line={1}>{item}</CellUI>
+          </div>
+        ))}
+    </div>
+  );
 };
 
 TableUI.Operate = Operate;
