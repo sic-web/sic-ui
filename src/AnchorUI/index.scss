@@ -1,3 +1,21 @@
 .sic-anchorui {
-  height: 200px;
+  height: auto;
+
+  &-item {
+    height: 44px;
+    line-height: 44px;
+    padding-left: 12px;
+    width: 125px;
+    cursor: pointer;
+    background-color: #f5f5f5;
+    color: #666;
+    &-select {
+      background-color: rgba(46, 100, 250, 0.1);
+      color: #2e64fa;
+    }
+  }
+  &-item-select {
+    background-color: rgba(46, 100, 250, 0.1);
+    color: #2e64fa;
+  }
 }
