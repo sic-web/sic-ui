@@ -1,17 +1,21 @@
-import React, { useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { AnchorUI, ButtonUI } from 'sic-ui';
 export default () => {
   const ref: any = useRef(null);
+
+  const [current, setCurrent] = useState('part-1');
   return (
     <div>
-      <ButtonUI>点击到主体资质</ButtonUI>
-      <ButtonUI>点击到客户来源</ButtonUI>
-      <ButtonUI>点击到项目信息</ButtonUI>
+      <ButtonUI onClick={() => setCurrent('part-1')}>点击到主体资质</ButtonUI>
+      <ButtonUI onClick={() => setCurrent('part-2')}>点击到客户来源</ButtonUI>
+      <ButtonUI onClick={() => setCurrent('part-3')}>点击到项目信息</ButtonUI>
       <br />
       <br />
       <div style={{ display: 'flex' }}>
         <AnchorUI
           getContainer={() => ref.current}
+          current={current}
+          defaultCurrent={'part-1'}
           items={[
             {
               key: 'part-1',
@@ -30,10 +34,10 @@ export default () => {
             },
           ]}
         />
-        <div style={{ flex: 1, overflow: 'scroll', height: 400 }} ref={ref}>
-          <div id="part-1" style={{ height: '200px', backgroundColor: 'rgba(255,0,0,0.2)' }} />
-          <div id="part-2" style={{ height: '200px', backgroundColor: 'rgba(0,255,0,0.2)' }} />
-          <div id="part-3" style={{ height: '200px', backgroundColor: 'rgba(0,0,255,0.2)' }} />
+        <div style={{ flex: 1, height: 400, overflow: 'hidden' }} ref={ref}>
+          <div id="part-1" style={{ height: '500px', backgroundColor: 'rgba(255,0,0,0.2)' }} />
+          <div id="part-2" style={{ height: '500px', backgroundColor: 'rgba(0,255,0,0.2)' }} />
+          <div id="part-3" style={{ height: '500px', backgroundColor: 'rgba(0,0,255,0.2)' }} />
         </div>
       </div>
     </div>
