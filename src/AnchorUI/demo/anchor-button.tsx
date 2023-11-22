@@ -34,7 +34,7 @@ export default () => {
             },
           ]}
         />
-        <div style={{ flex: 1, height: 400, overflow: 'hidden' }} ref={ref}>
+        <div style={{ flex: 1, height: '400px', overflow: 'hidden' }} ref={ref}>
           <div id="part-1" style={{ height: '500px', backgroundColor: 'rgba(255,0,0,0.2)' }} />
           <div id="part-2" style={{ height: '500px', backgroundColor: 'rgba(0,255,0,0.2)' }} />
           <div id="part-3" style={{ height: '500px', backgroundColor: 'rgba(0,0,255,0.2)' }} />
