@@ -1,24 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './index.scss';
 
 const AnchorUI = (props: any) => {
-  const { items, getContainer } = props;
-  const [current, setCurrent] = useState(0);
+  const { items, getContainer, current, defaultCurrent } = props;
+  const [select, setSelect] = useState(defaultCurrent);
 
-  const click = (index: number, id: string) => {
-    setCurrent(index + 1);
-    console.log('---', id);
-  };
+  useEffect(() => {
+    setSelect(current);
+  }, [current]);
+
+  useEffect(() => {
+    const container = getContainer();
+    const targetElement = container.querySelector(`#${select}`);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+    }
+  }, [select]);
 
   console.log('--getContainer', getContainer());
   return (
     <div className="sic-anchorui">
-      {items?.map((item: any, index: number) => {
+      {items?.map((item: any) => {
         return (
           <div
-            className={`sic-anchorui-item ${current === index ? 'sic-anchorui-item-select' : null}`}
-            key={item.id}
-            onClick={() => click(index, item.id)}
+            className={`sic-anchorui-item ${select === item.key ? 'sic-anchorui-item-select' : null}`}
+            key={item.key}
+            onClick={() => setSelect(item.key)}
           >
             {item.title}
           </div>
