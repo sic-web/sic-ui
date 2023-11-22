@@ -10,6 +10,7 @@ export { default as SwitchUI } from './SwitchUI';
 export { default as TextUI } from './TextUI';
 export { default as SearchUI } from './SearchUI';
 export { default as ModalUI } from './ModalUI';
+export { default as MultiLineUI } from './MultiLineUI';
 export { default as LoadingUI } from './LoadingUI';
 export { default as FormUI } from './FormUI';
 export { default as DescribeUI } from './DescribeUI';
