@@ -19,7 +19,11 @@ group:
 
 💎 基础使用
 
-<code src="./demo/user-anchor.tsx" ></code>
+<code src="./demo/use-anchor.tsx" ></code>
+
+💎 点击跳转
+
+<code src="./demo/anchor-button.tsx" ></code>
 
 ## API 使用文档
 
