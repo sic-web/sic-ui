@@ -3,7 +3,6 @@ import './index.scss';
 
 interface itemType {
   key: string;
-  href: string;
   title: string;
 }
 interface propsType {
@@ -75,7 +74,7 @@ const AnchorUI = (props: propsType) => {
     getItemHigh();
   }, []);
   useEffect(() => {
-    click(targetCurrentIndex);
+    if (!!targetCurrentIndex?.toString()) click(targetCurrentIndex);
   }, [targetCurrentIndex]);
   useEffect(() => {
     if (anchoruiRef?.current) {

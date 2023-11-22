@@ -10,22 +10,18 @@ export default () => {
         items={[
           {
             key: 'part-1',
-            href: '#part-1',
             title: '主体资质',
           },
           {
             key: 'part-2',
-            href: '#part-2',
             title: '客户来源',
           },
           {
             key: 'part-3',
-            href: '#part-3',
             title: '项目信息',
           },
           {
             key: 'part-4',
-            href: '#part-4',
             title: '风控信息',
           },
         ]}
