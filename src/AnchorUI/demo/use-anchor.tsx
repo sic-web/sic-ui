@@ -24,7 +24,7 @@ export default () => {
           },
         ]}
       />
-      <div style={{ flex: 1, overflow: 'scroll', height: 400 }} ref={ref}>
+      <div style={{ flex: 1, overflow: 'scroll', height: '400px' }} ref={ref}>
         <div id="part-1" style={{ height: '200px', backgroundColor: 'rgba(255,0,0,0.2)' }} />
         <div id="part-2" style={{ height: '200px', backgroundColor: 'rgba(0,255,0,0.2)' }} />
         <div id="part-3" style={{ height: '200px', backgroundColor: 'rgba(0,0,255,0.2)' }} />
