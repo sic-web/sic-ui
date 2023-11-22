@@ -1,17 +1,37 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { AnchorUI, ButtonUI } from 'sic-ui';
 export default () => {
   const ref: any = useRef(null);
+  const [targetCurrentIndex, setTargetCurrentIndex] = useState(0);
   return (
     <div>
-      <ButtonUI>点击到主体资质</ButtonUI>
-      <ButtonUI>点击到客户来源</ButtonUI>
-      <ButtonUI>点击到项目信息</ButtonUI>
+      <ButtonUI
+        onClick={() => {
+          setTargetCurrentIndex(0);
+        }}
+      >
+        点击到主体资质
+      </ButtonUI>
+      <ButtonUI
+        onClick={() => {
+          setTargetCurrentIndex(1);
+        }}
+      >
+        点击到客户来源
+      </ButtonUI>
+      <ButtonUI
+        onClick={() => {
+          setTargetCurrentIndex(2);
+        }}
+      >
+        点击到项目信息
+      </ButtonUI>
       <br />
       <br />
       <div style={{ display: 'flex' }}>
         <AnchorUI
-          getContainer={() => ref.current}
+          anchoruiRef={ref}
+          targetCurrentIndex={targetCurrentIndex}
           items={[
             {
               key: 'part-1',
