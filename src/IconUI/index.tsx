@@ -4,7 +4,8 @@ import { Export, ListTwo, Return, AddOne, SwitchButton, Audit, Clear, Download, 
 import { Delete, Setting, Excel, FilePdf, BackgroundColor, Home, ChartPieOne, BookmarkOne, DataArrival } from '@icon-park/react';
 import { TicketsTwo, Bank, ShieldAdd, Swipe, SettingTwo, DataFour, Currency, CheckOne, CloseOne, UTurnLeft } from '@icon-park/react';
 import { Caution, RotateOne, Edit, Check, Close, UserBusiness, ArrowRight, More, DeleteOne, Search, Help } from '@icon-park/react';
-import { Attention, FileAddition, CooperativeHandshake, FileSuccess } from '@icon-park/react';
+import { Attention, FileAddition, CooperativeHandshake, FileSuccess, Right, Peoples, UserToUserTransmission } from '@icon-park/react';
+import { PeoplePlus, Consume } from '@icon-park/react';
 
 const IconUI = (props: { name: string; [key: string]: any }) => {
   const { name, style, ...otherProps } = props;
@@ -55,6 +56,11 @@ const IconUI = (props: { name: string; [key: string]: any }) => {
     { name: 'FileAddition', element: <FileAddition style={style} {...otherProps} /> }, //文件：文件
     { name: 'CooperativeHandshake', element: <CooperativeHandshake style={style} {...otherProps} /> }, //合作：合作
     { name: 'FileSuccess', element: <FileSuccess style={style} {...otherProps} /> }, //合作：合作
+    { name: 'Right', element: <Right style={style} {...otherProps} /> }, // 右侧：箭头
+    { name: 'Peoples', element: <Peoples style={style} {...otherProps} /> }, // 菜单 客户管理
+    { name: 'UserToUserTransmission', element: <UserToUserTransmission style={style} {...otherProps} /> }, // 菜单 代理管理
+    { name: 'PeoplePlus', element: <PeoplePlus style={style} {...otherProps} /> }, // 菜单 新增客户
+    { name: 'Consume', element: <Consume style={style} {...otherProps} /> }, // 代理 提现
   ];
   const [list, setList] = useState<{ name: string; element: React.ReactNode }[]>(IconList);
 
