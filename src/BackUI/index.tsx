@@ -9,6 +9,7 @@ interface IProps {
   current?: string;
   className?: string;
   style?: { [key: string]: string | number };
+  otherProps: any;
 }
 
 const BackUI = (props: IProps) => {

@@ -102,6 +102,71 @@ const App: React.FC = () => {
 export default App;
 ```
 
+💎 表格组件-多行溢出
+
+```jsx
+import { useState } from 'react';
+import { TableUI, IconUI } from 'sic-ui';
+import { Space } from 'antd';
+
+const App: React.FC = () => {
+  const columns = [
+    {
+      title: 'id',
+      width: 80,
+      dataIndex: 'id',
+      key: 'id',
+    },
+    ,
+    {
+      title: '内容',
+      dataIndex: 'value',
+      key: 'value',
+      render: (value) => {
+        return <TableUI.HideMultipleLines>{value}</TableUI.HideMultipleLines>;
+      },
+    },
+  ];
+  const dataSource = [
+    {
+      id: 1,
+      value: [
+        '风急天高猿啸哀',
+        '驻青沙白鸟飞回',
+        '无边落木萧萧下',
+        '不尽长江滚滚来',
+        '万里悲秋常作客',
+        '百年多病独登台',
+        '艰难苦恨繁霜鬓',
+        '潦倒新停浊酒杯',
+      ],
+    },
+    {
+      id: 2,
+      value: [
+        '风急天高猿啸哀',
+        '驻青沙白鸟飞回',
+        '无边落木萧萧下',
+        '不尽长江滚滚来',
+        '万里悲秋常作客',
+        '百年多病独登台',
+        '艰难苦恨繁霜鬓',
+        '潦倒新停浊酒杯',
+      ],
+    },
+  ];
+  const current = 1;
+  const pageSize = 2;
+  const total = 2;
+  return (
+    <div>
+      <TableUI dataSource={dataSource} columns={columns} current={current} pageSize={pageSize} total={total} />
+    </div>
+  );
+};
+export default App;
+```
+
 💎 表格组件-功能按钮
 
 ```jsx
