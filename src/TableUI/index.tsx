@@ -4,7 +4,12 @@ import { IconUI, CellUI } from 'sic-ui';
 import zhCN from 'antd/locale/zh_CN';
 import { tableuiNodata } from '../assets';
 import './index.scss';
-
+interface propsType {
+  children: number[] | string[];
+  line?: number;
+  moreShowLine?: number;
+  className?: string;
+}
 /** 表格组件 */
 const TableUI = (props: any) => {
   const {
@@ -128,12 +133,44 @@ const MultiLine = (props: any) => {
   );
 };
 
-const DoubleArrow = () => {
-  return <div></div>;
+const HideMultipleLines = (props: propsType) => {
+  const { children, line = 2, moreShowLine, className } = props;
+  const moreIcon = () => {
+    return (
+      <Tooltip
+        placement="right"
+        title={
+          <div style={{ textAlign: 'center' }}>
+            {children?.length > line &&
+              children.map((item: number | string, index: number) => {
+                return ((moreShowLine && index < moreShowLine) || !moreShowLine) && <div key={index}>{item}</div>;
+              })}
+            {moreShowLine && children?.length > moreShowLine && <IconUI name="More" theme="filled" size="14" fill="#fff" />}
+          </div>
+        }
+        trigger="click"
+      >
+        {children?.length > line && (
+          <IconUI name="Right" theme="filled" size="14" fill="var(--textcolor)" className="hideMultipleLines-icon" />
+        )}
+      </Tooltip>
+    );
+  };
+  return (
+    <div className={`hideMultipleLines ${className}`}>
+      <div className="hideMultipleLines-content">
+        {children?.length > 0 &&
+          children.map((item, index) => {
+            return index < line && <div key={index}>{item}</div>;
+          })}
+      </div>
+      {moreIcon()}
+    </div>
+  );
 };
 
 TableUI.Operate = Operate;
 TableUI.Button = Button;
 TableUI.MultiLine = MultiLine;
-TableUI.DoubleArrow = DoubleArrow;
+TableUI.HideMultipleLines = HideMultipleLines;
 export default TableUI;

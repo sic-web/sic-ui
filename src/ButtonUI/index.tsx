@@ -8,6 +8,7 @@ interface PropsType {
   className?: string;
   style?: React.CSSProperties;
   children?: React.ReactNode;
+  otherProps?: any;
 }
 const ButtonUI = (props: PropsType) => {
   const { type = 'default', icon, className, style, children, ...otherProps } = props;
