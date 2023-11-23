@@ -2,8 +2,15 @@ import React from 'react';
 import { Button } from 'antd';
 import './index.scss';
 
-const ButtonUI = (props: any) => {
-  const { type = 'default', icon, style, children, ...otherProps } = props;
+interface PropsType {
+  type?: 'default' | 'link' | 'text' | 'primary' | 'dashed' | undefined;
+  icon?: React.ReactNode;
+  className?: string;
+  style?: React.CSSProperties;
+  children?: React.ReactNode;
+}
+const ButtonUI = (props: PropsType) => {
+  const { type = 'default', icon, className, style, children, ...otherProps } = props;
 
   const buttonStyle = (type: string, style: any) => {
     let changeStyle: any = {};
@@ -23,7 +30,7 @@ const ButtonUI = (props: any) => {
     }
   };
   return (
-    <Button className="sic-buttonui" type={type} style={buttonStyle(type, style)} {...otherProps}>
+    <Button className={`sic-buttonui ${className ?? ''}`} type={type} style={buttonStyle(type, style)} {...otherProps}>
       {children}
       {icon && <span style={{ marginLeft: 4 }}>{icon}</span>}
     </Button>

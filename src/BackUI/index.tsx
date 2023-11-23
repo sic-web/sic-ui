@@ -7,14 +7,15 @@ interface IProps {
   to?: any;
   before?: string;
   current?: string;
+  className?: string;
   style?: { [key: string]: string | number };
 }
 
 const BackUI = (props: IProps) => {
-  const { to = -1, before, current, ...otherProps } = props;
+  const { to = -1, before, current, className, ...otherProps } = props;
   const navigate = useNavigate();
   return (
-    <div className="sic-back" {...otherProps}>
+    <div className={`sic-back ${className ?? ''}`} {...otherProps}>
       <div onClick={() => navigate(to ?? -1)} style={{ marginRight: 30, cursor: 'pointer' }}>
         <IconUI name="Return" style={{ color: 'var(--textcolor)', marginRight: 3 }} />
         返回

@@ -5,7 +5,7 @@ import { Delete, Setting, Excel, FilePdf, BackgroundColor, Home, ChartPieOne, Bo
 import { TicketsTwo, Bank, ShieldAdd, Swipe, SettingTwo, DataFour, Currency, CheckOne, CloseOne, UTurnLeft } from '@icon-park/react';
 import { Caution, RotateOne, Edit, Check, Close, UserBusiness, ArrowRight, More, DeleteOne, Search, Help } from '@icon-park/react';
 import { Attention, FileAddition, CooperativeHandshake, FileSuccess, Right, Peoples, UserToUserTransmission } from '@icon-park/react';
-import { PeoplePlus, Consume } from '@icon-park/react';
+import { PeoplePlus, Consume, MapRoadTwo, EditTwo, AddPrint, Family, CopyOne, ExpensesOne, FullScreenOne } from '@icon-park/react';
 
 const IconUI = (props: { name: string; [key: string]: any }) => {
   const { name, style, ...otherProps } = props;
@@ -61,6 +61,13 @@ const IconUI = (props: { name: string; [key: string]: any }) => {
     { name: 'UserToUserTransmission', element: <UserToUserTransmission style={style} {...otherProps} /> }, // 菜单 代理管理
     { name: 'PeoplePlus', element: <PeoplePlus style={style} {...otherProps} /> }, // 菜单 新增客户
     { name: 'Consume', element: <Consume style={style} {...otherProps} /> }, // 代理 提现
+    { name: 'MapRoadTwo', element: <MapRoadTwo style={style} {...otherProps} /> }, //组织架构 区域
+    { name: 'EditTwo', element: <EditTwo style={style} {...otherProps} /> }, //组织架构 编辑
+    { name: 'AddPrint', element: <AddPrint style={style} {...otherProps} /> }, //发票管理 发票申请,
+    { name: 'Family', element: <Family style={style} {...otherProps} /> }, //发票管理 收件人,
+    { name: 'CopyOne', element: <CopyOne style={style} {...otherProps} /> }, //首页 复制,
+    { name: 'ExpensesOne', element: <ExpensesOne style={style} {...otherProps} /> }, //发放管理 支付,
+    { name: 'FullScreenOne', element: <FullScreenOne style={style} {...otherProps} /> }, //发票管理  查看
   ];
   const [list, setList] = useState<{ name: string; element: React.ReactNode }[]>(IconList);
 
