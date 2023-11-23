@@ -49,10 +49,12 @@ export default () => <ButtonUI icon={123}>按钮</ButtonUI>;
 
 <font size=1>
 
-|  属性   | 说明                   |  类型  | 默认值 | 是否必传 |
-| :-----: | ---------------------- | :----: | :----: | :------: |
-| before  | 当前页面的前一页       | String |   -    |    是    |
-| current | 当前页面               | String |   -    |    是    |
-|   to    | 从当前页面调到指定页面 | String |   -1   |    否    |
+|   属性    | 说明 |        类型         | 默认值  | 是否必传 |
+| :-------: | ---- | :-----------------: | :-----: | :------: |
+|   type    | 类型 |       String        | default |    否    |
+|   icon    | icon |   React.ReactNode   |    -    |    否    |
+| className | 类名 |       String        |    -    |    否    |
+|   style   | 样式 | React.CSSProperties |    -    |    否    |
+| children  | 内容 |   React.ReactNode   |    -    |    否    |
 
 </font>

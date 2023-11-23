@@ -1,9 +1,15 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { Tooltip } from 'antd';
 import './index.scss';
-const CellUI = (props: any) => {
+
+interface PropsType {
+  line?: number;
+  className?: string;
+  children?: React.ReactNode;
+}
+const CellUI = (props: PropsType) => {
   const textRef = useRef(null);
-  const { line = 2, children } = props;
+  const { line = 2, className, children } = props;
   const [showTooltip, setShowTooltip] = useState(false);
 
   useEffect(() => {
@@ -24,7 +30,7 @@ const CellUI = (props: any) => {
   const cellStyle: any = { '--cellLine': line };
 
   return (
-    <div className="sic-cellui">
+    <div className={`sic-cellui ${className ?? ''}`}>
       <Tooltip placement="right" title={showTooltip ? children : null}>
         <div ref={textRef} className="sic-cellui-text" style={cellStyle}>
           {children}

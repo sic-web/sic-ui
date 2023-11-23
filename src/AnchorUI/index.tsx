@@ -9,6 +9,7 @@ interface propsType {
   anchoruiRef: any;
   items: itemType[];
   targetCurrentIndex?: number;
+  className?: string;
 }
 interface newItemsType {
   id?: number;
@@ -17,7 +18,7 @@ interface newItemsType {
   offsetBottom: number;
 }
 const AnchorUI = (props: propsType) => {
-  const { items, anchoruiRef, targetCurrentIndex } = props;
+  const { items, anchoruiRef, targetCurrentIndex, className } = props;
   const prevScrollPosRef = useRef(0);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoScroll, setIsAutoScroll] = useState<boolean>(false);
@@ -92,7 +93,7 @@ const AnchorUI = (props: propsType) => {
     }
   }, [currentIndex, isAutoScroll]);
   return (
-    <div className="sic-anchorui">
+    <div className={`sic-anchorui ${className ?? ''}`}>
       {items?.map((item: any, index: number) => {
         return (
           <div

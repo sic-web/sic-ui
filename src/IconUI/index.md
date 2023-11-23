@@ -100,6 +100,13 @@ const App: React.FC = () => (
     <IconUI name="UserToUserTransmission" theme="filled" size="28" fill="#1EAF69" strokeWidth={2} />
     <IconUI name="PeoplePlus" theme="filled" size="28" fill="#1EAF69" strokeWidth={2} />
     <IconUI name="Consume" theme="filled" size="28" fill="#1EAF69" strokeWidth={2} />
+    <IconUI name="MapRoadTwo" theme="filled" size="28" fill="#1EAF69" strokeWidth={2} />
+    <IconUI name="EditTwo" theme="filled" size="28" fill="#1EAF69" strokeWidth={2} />
+    <IconUI name="AddPrint" theme="filled" size="28" fill="#1EAF69" strokeWidth={2} />
+    <IconUI name="Family" theme="filled" size="28" fill="#1EAF69" strokeWidth={2} />
+    <IconUI name="CopyOne" theme="filled" size="28" fill="#1EAF69" strokeWidth={2} />
+    <IconUI name="ExpensesOne" theme="filled" size="28" fill="#1EAF69" strokeWidth={2} />
+    <IconUI name="FullScreenOne" theme="filled" size="28" fill="#1EAF69" strokeWidth={2} />
   </Space>
 );
 export default App;
