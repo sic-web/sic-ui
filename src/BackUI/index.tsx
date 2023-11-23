@@ -9,10 +9,9 @@ interface IProps {
   current?: string;
   className?: string;
   style?: { [key: string]: string | number };
-  otherProps: any;
 }
 
-const BackUI = (props: IProps) => {
+const BackUI = (props: IProps & Record<string, any>) => {
   const { to = -1, before, current, className, ...otherProps } = props;
   const navigate = useNavigate();
   return (
