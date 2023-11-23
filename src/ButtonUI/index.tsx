@@ -3,7 +3,7 @@ import { Button } from 'antd';
 import './index.scss';
 
 interface PropsType {
-  type?: 'default' | 'link' | 'text' | 'primary' | 'dashed' | 'border' | undefined;
+  type?: any;
   icon?: React.ReactNode;
   className?: string;
   style?: React.CSSProperties;

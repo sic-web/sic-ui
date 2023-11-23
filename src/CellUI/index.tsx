@@ -6,10 +6,12 @@ interface PropsType {
   line?: number;
   className?: string;
   children?: React.ReactNode;
+  style?: React.CSSProperties;
+  onClick?: () => void;
 }
 const CellUI = (props: PropsType) => {
   const textRef = useRef(null);
-  const { line = 2, className, children } = props;
+  const { line = 2, className, children, style, onClick } = props;
   const [showTooltip, setShowTooltip] = useState(false);
 
   useEffect(() => {
@@ -30,7 +32,7 @@ const CellUI = (props: PropsType) => {
   const cellStyle: any = { '--cellLine': line };
 
   return (
-    <div className={`sic-cellui ${className ?? ''}`}>
+    <div className={`sic-cellui ${className ?? ''}`} style={style} onClick={onClick}>
       <Tooltip placement="right" title={showTooltip ? children : null}>
         <div ref={textRef} className="sic-cellui-text" style={cellStyle}>
           {children}
