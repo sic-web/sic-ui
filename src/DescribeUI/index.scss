@@ -10,13 +10,19 @@
   }
   &-elemnet {
     display: flex;
-    height: 32px;
-    line-height: 32px;
+    align-items: center;
+    min-height: 32px;
+    line-height: normal;
     flex: 1;
     &-title {
+      box-sizing: border-box;
+      padding: 6px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       background: #f9f9f9;
       min-width: 102px;
-      text-align: center;
+      height: 100%;
       border-right: 1px solid #f0f0f0;
       border-left: 1px solid #f0f0f0;
       color: #666;
