@@ -5,7 +5,7 @@ import { Delete, Setting, Excel, FilePdf, BackgroundColor, Home, ChartPieOne, Bo
 import { TicketsTwo, Bank, ShieldAdd, Swipe, SettingTwo, DataFour, Currency, CheckOne, CloseOne, UTurnLeft } from '@icon-park/react';
 import { Caution, RotateOne, Edit, Check, Close, UserBusiness, ArrowRight, More, DeleteOne, Search, Help } from '@icon-park/react';
 import { Attention, FileAddition, CooperativeHandshake, FileSuccess, Right, Peoples, UserToUserTransmission } from '@icon-park/react';
-import { PeoplePlus, Consume, MapRoadTwo, EditTwo, AddPrint, Family, CopyOne, ExpensesOne, FullScreenOne } from '@icon-park/react';
+import { PeoplePlus, Consume, MapRoadTwo, EditTwo, AddPrint, Family, CopyOne, ExpensesOne, FullScreenOne, Copy } from '@icon-park/react';
 
 const IconUI = (props: { name: string; [key: string]: any }) => {
   const { name, style, ...otherProps } = props;
@@ -68,6 +68,7 @@ const IconUI = (props: { name: string; [key: string]: any }) => {
     { name: 'CopyOne', element: <CopyOne style={style} {...otherProps} /> }, //首页 复制,
     { name: 'ExpensesOne', element: <ExpensesOne style={style} {...otherProps} /> }, //发放管理 支付,
     { name: 'FullScreenOne', element: <FullScreenOne style={style} {...otherProps} /> }, //发票管理  查看
+    { name: 'Copy', element: <Copy style={style} {...otherProps} /> }, //cellUI  复制
   ];
   const [list, setList] = useState<{ name: string; element: React.ReactNode }[]>(IconList);
 

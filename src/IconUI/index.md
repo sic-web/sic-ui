@@ -107,6 +107,7 @@ const App: React.FC = () => (
     <IconUI name="CopyOne" theme="filled" size="28" fill="#1EAF69" strokeWidth={2} />
     <IconUI name="ExpensesOne" theme="filled" size="28" fill="#1EAF69" strokeWidth={2} />
     <IconUI name="FullScreenOne" theme="filled" size="28" fill="#1EAF69" strokeWidth={2} />
+    <IconUI name="Copy" theme="filled" size="28" fill="#1EAF69" strokeWidth={2} />
   </Space>
 );
 export default App;
