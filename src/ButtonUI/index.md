@@ -46,7 +46,7 @@ import { ButtonUI } from 'sic-ui';
 
 const App: React.FC = () => (
   <Space>
-    <ButtonUI type="delete">默认按钮</ButtonUI>
+    <ButtonUI danger>默认按钮</ButtonUI>
     <ButtonUI type="primary" danger>
       主要按钮
     </ButtonUI>
