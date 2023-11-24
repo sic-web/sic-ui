@@ -18,7 +18,7 @@ interface PropsType {
     | 'leftBottom'
     | 'rightTop'
     | 'rightBottom';
-  isShowCopy: boolean;
+  isShowCopy?: boolean;
   className?: string;
   children?: React.ReactNode;
   style?: React.CSSProperties;
