@@ -22,8 +22,6 @@ const DescribeUI = (props: any) => {
         return (
           <div key={i} className="sic-describeui-line">
             {item?.map((obj: any, j: number) => {
-              console.log('obj', obj);
-
               return (
                 <div key={j} className="sic-describeui-elemnet" style={{ flex: obj?.flex }}>
                   <div className="sic-describeui-elemnet-title">{obj?.title}</div>
