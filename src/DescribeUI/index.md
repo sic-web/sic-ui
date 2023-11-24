@@ -47,7 +47,12 @@ const App: React.FC = () => {
     },
 
     {
-      title: '运营专员',
+      title: (
+        <div>
+          运营专员
+          <br /> 运营专员
+        </div>
+      ),
       line: 3,
       children: '赵威皓',
     },

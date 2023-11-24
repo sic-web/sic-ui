@@ -26,10 +26,42 @@ import { ButtonUI } from 'sic-ui';
 
 const App: React.FC = () => (
   <Space>
-    <ButtonUI>按钮</ButtonUI>
+    <ButtonUI>默认按钮</ButtonUI>
     <ButtonUI type="primary">主要按钮</ButtonUI>
-    <ButtonUI type="border">按钮</ButtonUI>
-    <ButtonUI type="danger">删除按钮</ButtonUI>
+    <ButtonUI type="border">次要按钮</ButtonUI>
+    <ButtonUI type="dashed">虚线按钮</ButtonUI>
+    <ButtonUI type="text">文本按钮</ButtonUI>
+    <ButtonUI type="link">链接按钮</ButtonUI>
+  </Space>
+);
+export default App;
+```
+
+💎 危险按钮
+
+```jsx
+import React from 'react';
+import { Space } from 'antd';
+import { ButtonUI } from 'sic-ui';
+
+const App: React.FC = () => (
+  <Space>
+    <ButtonUI type="delete">默认按钮</ButtonUI>
+    <ButtonUI type="primary" danger>
+      主要按钮
+    </ButtonUI>
+    <ButtonUI type="border" danger>
+      次要按钮
+    </ButtonUI>
+    <ButtonUI type="dashed" danger>
+      虚线按钮
+    </ButtonUI>
+    <ButtonUI type="text" danger>
+      文本按钮
+    </ButtonUI>
+    <ButtonUI type="link" danger>
+      链接按钮
+    </ButtonUI>
   </Space>
 );
 export default App;
