@@ -8,9 +8,19 @@
     cursor: pointer;
     background-color: #f5f5f5;
     color: #666;
+
     &-select {
       background-color: rgba(46, 100, 250, 0.1);
       color: #2e64fa;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    &-icon {
+      display: inline-block;
+      width: 2px;
+      height: 12px;
+      background-color: #2e64fa;
     }
   }
 }

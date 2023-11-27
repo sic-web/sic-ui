@@ -2,33 +2,38 @@ import React, { useRef, useState } from 'react';
 import { AnchorUI, ButtonUI } from 'sic-ui';
 export default () => {
   const ref: any = useRef(null);
-  const [targetCurrentIndex, setTargetCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAutoScroll, setIsAutoScroll] = useState<boolean>(false);
   return (
     <div>
       <ButtonUI
         onClick={() => {
-          setTargetCurrentIndex(0);
+          setIsAutoScroll(true);
+          setCurrentIndex(0);
         }}
       >
         点击到主体资质
       </ButtonUI>
       <ButtonUI
         onClick={() => {
-          setTargetCurrentIndex(1);
+          setIsAutoScroll(true);
+          setCurrentIndex(1);
         }}
       >
         点击到客户来源
       </ButtonUI>
       <ButtonUI
         onClick={() => {
-          setTargetCurrentIndex(2);
+          setIsAutoScroll(true);
+          setCurrentIndex(2);
         }}
       >
         点击到项目信息
       </ButtonUI>
       <ButtonUI
         onClick={() => {
-          setTargetCurrentIndex(3);
+          setIsAutoScroll(true);
+          setCurrentIndex(3);
         }}
       >
         点击到风控信息
@@ -38,7 +43,10 @@ export default () => {
       <div style={{ display: 'flex' }}>
         <AnchorUI
           anchoruiRef={ref}
-          targetCurrentIndex={targetCurrentIndex}
+          currentIndex={currentIndex}
+          setCurrentIndex={setCurrentIndex}
+          isAutoScroll={isAutoScroll}
+          setIsAutoScroll={setIsAutoScroll}
           items={[
             {
               key: 'part-1',

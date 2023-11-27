@@ -1,12 +1,17 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { AnchorUI } from 'sic-ui';
 export default () => {
   const ref: any = useRef(null);
-
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAutoScroll, setIsAutoScroll] = useState<boolean>(false);
   return (
     <div style={{ display: 'flex' }}>
       <AnchorUI
         anchoruiRef={ref}
+        currentIndex={currentIndex}
+        setCurrentIndex={setCurrentIndex}
+        isAutoScroll={isAutoScroll}
+        setIsAutoScroll={setIsAutoScroll}
         items={[
           {
             key: 'part-1',
