@@ -8,7 +8,10 @@ interface itemType {
 interface propsType {
   anchoruiRef: any;
   items: itemType[];
-  targetCurrentIndex?: number;
+  currentIndex: number;
+  setCurrentIndex: (value: number) => void;
+  isAutoScroll: boolean;
+  setIsAutoScroll: (value: boolean) => void;
   className?: string;
 }
 interface newItemsType {
@@ -18,10 +21,8 @@ interface newItemsType {
   offsetBottom: number;
 }
 const AnchorUI = (props: propsType) => {
-  const { items, anchoruiRef, targetCurrentIndex, className } = props;
+  const { items, anchoruiRef, className, currentIndex, setCurrentIndex, isAutoScroll, setIsAutoScroll } = props;
   const prevScrollPosRef = useRef(0);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAutoScroll, setIsAutoScroll] = useState<boolean>(false);
   const [newItems, setNewItems] = useState<newItemsType[]>([]);
   const handleScroll = () => {
     //当前滚动距离
@@ -35,8 +36,8 @@ const AnchorUI = (props: propsType) => {
     }
   };
   const click = (index: number) => {
-    setCurrentIndex(index);
     setIsAutoScroll(true);
+    setCurrentIndex(index);
   };
   //获取每个标签 距离顶部的距离  本身的高度
   const getItemHigh = () => {
@@ -74,9 +75,7 @@ const AnchorUI = (props: propsType) => {
   useEffect(() => {
     getItemHigh();
   }, []);
-  useEffect(() => {
-    if (!!targetCurrentIndex?.toString()) click(targetCurrentIndex);
-  }, [targetCurrentIndex]);
+
   useEffect(() => {
     if (anchoruiRef?.current) {
       anchoruiRef.current.addEventListener('scroll', handleScroll);
@@ -102,6 +101,7 @@ const AnchorUI = (props: propsType) => {
             onClick={() => click(index)}
           >
             {item.title}
+            {currentIndex === index && <div className="sic-anchorui-item-icon"></div>}
           </div>
         );
       })}
