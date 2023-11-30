@@ -74,7 +74,7 @@ const AnchorUI = (props: propsType) => {
   };
   useEffect(() => {
     getItemHigh();
-  }, []);
+  }, [currentIndex]);
 
   useEffect(() => {
     if (anchoruiRef?.current) {

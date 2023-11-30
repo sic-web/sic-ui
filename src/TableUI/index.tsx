@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ConfigProvider, Table, Tooltip } from 'antd';
-import { IconUI, CellUI } from 'sic-ui';
+import { IconUI, CellUI, ButtonUI } from 'sic-ui';
 import zhCN from 'antd/locale/zh_CN';
 import { tableuiNodata } from '../assets';
 import './index.scss';
@@ -151,7 +151,9 @@ const HideMultipleLines = (props: propsType) => {
         trigger="click"
       >
         {children?.length > line && (
-          <IconUI name="Right" theme="filled" size="14" fill="var(--textcolor)" className="hideMultipleLines-icon" />
+          <ButtonUI className="hideMultipleLines-content-button" type="primary" icon={<IconUI name="Right" />}>
+            更多
+          </ButtonUI>
         )}
       </Tooltip>
     );
