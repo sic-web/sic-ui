@@ -17,3 +17,4 @@ export { default as CellUI } from './CellUI';
 export { default as NotificationUI } from './NotificationUI';
 export { default as TableUI } from './TableUI';
 export { default as AnchorUI } from './AnchorUI';
+export { default as InputUI } from './InputUI';
