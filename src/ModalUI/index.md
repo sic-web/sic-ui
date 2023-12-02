@@ -37,7 +37,7 @@ const App: React.FC = () => {
         setIsOpen={setIsOpen}
         icon={<IconUI name="SwitchButton" theme="outline" size="14" />}
         title={'确认开启'}
-        type="primary"
+        type="danger"
         confirm={confirm}
       >
         您确定要{'开启'}此企业吗？

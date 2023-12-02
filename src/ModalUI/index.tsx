@@ -6,7 +6,7 @@ const styleIcon = (type?: string) => {
   if (type === 'primary') {
     return { backgroundColor: 'var(--textcolor2)' };
   } else if (type === 'danger') {
-    return { backgroundColor: 'var(--red)' };
+    return { color: 'var(--red)', backgroundColor: 'rgba(255, 120, 117, 0.1)' };
   } else {
     return { backgroundColor: 'var(--textcolor2)' };
   }
