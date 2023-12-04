@@ -4,11 +4,11 @@ import './index.scss';
 
 const styleIcon = (type?: string) => {
   if (type === 'primary') {
-    return { backgroundColor: 'rgba(46, 100, 250, 0.10)' }; // 蓝色
+    return { backgroundColor: 'var(--textcolor2)' };
   } else if (type === 'danger') {
-    return { backgroundColor: 'rgba(255, 120, 117, 0.1)' }; // 红色
+    return { color: 'var(--red)', backgroundColor: 'rgba(255, 120, 117, 0.1)' };
   } else {
-    return { backgroundColor: 'rgba(46, 100, 250, 0.10)' }; // 蓝色
+    return { backgroundColor: 'var(--textcolor2)' };
   }
 };
 

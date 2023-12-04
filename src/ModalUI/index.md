@@ -35,7 +35,7 @@ const App: React.FC = () => {
       <ModalUI
         isOpen={isOpen}
         setIsOpen={setIsOpen}
-        icon={<IconUI name="SwitchButton" theme="outline" size="14" fill="#ee3f3f" strokeWidth={2} />}
+        icon={<IconUI name="SwitchButton" theme="outline" size="14" />}
         title={'确认开启'}
         type="danger"
         confirm={confirm}
