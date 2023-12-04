@@ -15,9 +15,11 @@ const styleIcon = (type?: string) => {
 const titleRender = (title: string, icon: React.ReactNode, type?: string) => (
   <div className="sic-modalui-title">
     <div>{title}</div>
-    <div className="sic-modalui-title-icon" style={styleIcon(type)}>
-      {icon}
-    </div>
+    {icon && (
+      <div className="sic-modalui-title-icon" style={styleIcon(type)}>
+        {icon}
+      </div>
+    )}
   </div>
 );
 
