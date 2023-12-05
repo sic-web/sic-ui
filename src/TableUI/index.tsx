@@ -108,10 +108,10 @@ const Operate = (props: { child: any }) => {
 
 /** 表格组件-按钮功能 */
 const Button = (props: any) => {
-  const { type = 'default', style, icon, children, ...otherProps } = props;
+  const { type, style, icon, children, ...otherProps } = props;
 
   return (
-    <div className={`sic-tableui-button ${type && `sic-tableui-button-${type}`}`} style={style} {...otherProps}>
+    <div className={`sic-tableui-button ${!!type && `sic-tableui-button-${type}`}`} style={style} {...otherProps}>
       {children}
       {icon && <span className="sic-tableui-button-icon">{icon}</span>}
     </div>
