@@ -50,15 +50,14 @@ const CellUI = (props: PropsType) => {
     e.stopPropagation();
     try {
       navigator.clipboard.writeText(children);
-      message.success('文本已复制到剪贴板');
+      message.info('文本已复制到剪贴板');
     } catch (err) {
-      message.success('复制失败');
+      message.error('复制失败');
     }
   };
   const tooltipContent = (children: React.ReactNode) => {
     return (
       <div className="sic-cellui-tooltipContent">
-        {children}
         {isShowCopy && (
           <span
             className="sic-cellui-tooltipContent-icon"
@@ -69,6 +68,7 @@ const CellUI = (props: PropsType) => {
             <IconUI name="Copy" theme="outline" size="14" fill="var(--textcolor)" />
           </span>
         )}
+        {children}
       </div>
     );
   };

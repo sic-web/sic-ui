@@ -19,3 +19,4 @@ export { default as TableUI } from './TableUI';
 export { default as AnchorUI } from './AnchorUI';
 export { default as InputUI } from './InputUI';
 export { default as UploadUI } from './UploadUI';
+export { default as ImageUI } from './ImageUI';
