@@ -46,7 +46,6 @@ ImageUI 引用 Ant Design 组件库，在使用过程中不做如何侵入性的
 |      width       | 宽度                   |       number        |   -    |    否    |
 |      height      | 长度                   |       number        |   -    |    否    |
 |     preview      | 是否可预览             |       Boolean       |  true  |    否    |
-|   placeholder    | 图片占位               |       Boolean       |  true  |    否    |
 |     maskType     | 蒙层类型               |       Number        |   1    |    否    |
 |    className     | 类名                   |       String        |   -    |    否    |
 |      style       | 样式                   | React.CSSProperties |   -    |    否    |
