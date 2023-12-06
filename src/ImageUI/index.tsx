@@ -15,7 +15,6 @@ interface ImageUIProps {
   width?: number;
   height?: number;
   preview?: boolean;
-  placeholder?: boolean;
   maskType?: number;
   className?: string;
   style?: React.CSSProperties;
@@ -23,7 +22,7 @@ interface ImageUIProps {
 }
 
 const ImageUI = (props: ImageUIProps) => {
-  const { src, width, height, preview = true, placeholder = true, maskType = 1, className, style, clickOtherButton, ...otherProps } = props;
+  const { src, width, height, preview = true, maskType = 1, className, style, clickOtherButton, ...otherProps } = props;
   const onDownload = () => {
     fetch(src)
       .then((response) => response.blob())
@@ -114,7 +113,7 @@ const ImageUI = (props: ImageUIProps) => {
   };
   return (
     <div className={`sicImageUI ${className ?? ''}`} style={style}>
-      <Image src={src} width={width} height={height} preview={toolbar()} placeholder={placeholder} {...otherProps} />
+      <Image src={src} width={width} height={height} preview={toolbar()} {...otherProps} />
     </div>
   );
 };
