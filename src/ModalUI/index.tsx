@@ -39,7 +39,7 @@ const ModalUI = (props: any) => {
       closeIcon={false}
       onCancel={() => setIsOpen(false)}
       title={titleRender(title, icon, type)}
-      footer={footer ? footer : undefined}
+      footer={footer}
       {...otherProps}
     >
       {children}
