@@ -12,22 +12,28 @@ const styleIcon = (type?: string) => {
   }
 };
 
-const titleRender = (title: string, icon: React.ReactNode, type?: string) => (
-  <div className="sic-modalui-title">
-    <div>{title}</div>
-    {icon && (
-      <div className="sic-modalui-title-icon" style={styleIcon(type)}>
-        {icon}
-      </div>
-    )}
-  </div>
-);
+const titleRender = (title: string, icon: React.ReactNode, type?: string) => {
+  return (
+    <>
+      {(title || icon) && (
+        <div className="sic-modalui-title">
+          {title && <div>{title}</div>}
+          {icon && (
+            <div className="sic-modalui-title-icon" style={styleIcon(type)}>
+              {icon}
+            </div>
+          )}
+        </div>
+      )}
+    </>
+  );
+};
 
 const ModalUI = (props: any) => {
-  const { isOpen, setIsOpen, confirm, title, icon, footer, type, children, ...otherProps } = props;
+  const { isOpen, setIsOpen, confirm, title, icon, footer, type, children, className, ...otherProps } = props;
   return (
     <Modal
-      className="sic-modalui"
+      className={`sic-modalui ${className ?? ''}`}
       open={isOpen}
       onOk={confirm}
       closeIcon={false}
