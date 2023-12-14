@@ -23,13 +23,23 @@ group:
 import { SelectUI } from 'sic-ui';
 
 export default () => (
-  <SelectUI
-    placeholder="请选择"
-    options={[
-      { value: 1, label: '开启' },
-      { value: 2, label: '关闭' },
-    ]}
-  />
+  <>
+    <SelectUI
+      placeholder="请选择"
+      options={[
+        { value: 1, label: '开启' },
+        { value: 2, label: '关闭' },
+      ]}
+    />
+    <SelectUI
+      placeholder="请选择"
+      copy={true}
+      options={[
+        { value: 1, label: '开启' },
+        { value: 2, label: '关闭' },
+      ]}
+    />
+  </>
 );
 ```
 
