@@ -1,5 +1,6 @@
-import React from 'react';
-import { Select } from 'antd';
+import React, { useState } from 'react';
+import { Select, message } from 'antd';
+import { IconUI, TextUI } from 'sic-ui';
 import './index.scss';
 
 /**
@@ -22,8 +23,11 @@ const SelectUI = (props: any) => {
     fieldNames,
     onChange,
     style,
+    value,
+    copy = false,
     ...otherProps
   } = props;
+  const [selecValue, setSelecValue] = useState<string>();
 
   const defaultFilterOption = (input: string, option: any) => {
     const label = fieldNames?.label ? option?.[fieldNames?.label].toString() : option?.label.toString();
@@ -35,20 +39,47 @@ const SelectUI = (props: any) => {
     return labelA.localeCompare(labelB);
   };
 
+  const clickCopy = () => {
+    const select = options?.filter((item: any) => item?.value === selecValue);
+    // e.stopPropagation();
+    const text = `${select?.[0]?.label}`;
+    try {
+      navigator.clipboard.writeText(text);
+      message.info('文本已复制到剪贴板');
+    } catch (err) {
+      message.success('复制失败');
+    }
+  };
+
+  const changeSelect = (value: any) => {
+    if (onChange) {
+      onChange(value);
+    }
+    setSelecValue(value);
+  };
+
   return (
-    <Select
-      className="sic-select"
-      style={style}
-      options={options}
-      showSearch={showSearch}
-      allowClear={allowClear}
-      optionFilterProp="label"
-      filterOption={filterOption ?? defaultFilterOption}
-      filterSort={filterSort ?? defaultFilterSort}
-      fieldNames={fieldNames}
-      onChange={onChange}
-      {...otherProps}
-    ></Select>
+    <>
+      <Select
+        className="sic-select"
+        value={value}
+        style={style}
+        options={options}
+        showSearch={showSearch}
+        allowClear={allowClear}
+        optionFilterProp="label"
+        filterOption={filterOption ?? defaultFilterOption}
+        filterSort={filterSort ?? defaultFilterSort}
+        fieldNames={fieldNames}
+        onChange={changeSelect}
+        {...otherProps}
+      ></Select>
+      {copy && (
+        <TextUI className="sic-select-copy" onClick={() => clickCopy()}>
+          <IconUI name="CopyOne" />
+        </TextUI>
+      )}
+    </>
   );
 };
 export default SelectUI;
