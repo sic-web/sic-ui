@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Select, message } from 'antd';
 import { IconUI, TextUI } from 'sic-ui';
 import './index.scss';
@@ -27,7 +27,11 @@ const SelectUI = (props: any) => {
     copy = false,
     ...otherProps
   } = props;
-  const [selecValue, setSelecValue] = useState<string>();
+  const [selecValue, setSelecValue] = useState<string>(value);
+
+  useEffect(() => {
+    setSelecValue(value);
+  }, [value]);
 
   const defaultFilterOption = (input: string, option: any) => {
     const label = fieldNames?.label ? option?.[fieldNames?.label].toString() : option?.label.toString();
@@ -41,8 +45,7 @@ const SelectUI = (props: any) => {
 
   const clickCopy = () => {
     const select = options?.filter((item: any) => item?.value === selecValue);
-    // e.stopPropagation();
-    const text = `${select?.[0]?.label}`;
+    const text = `${select?.[0]?.label ?? ''}`;
     try {
       navigator.clipboard.writeText(text);
       message.info('文本已复制到剪贴板');
@@ -57,11 +60,10 @@ const SelectUI = (props: any) => {
     }
     setSelecValue(value);
   };
-
   return (
-    <>
+    <div className="sic-select">
       <Select
-        className="sic-select"
+        className="sic-selectui"
         value={value}
         style={style}
         options={options}
@@ -79,7 +81,7 @@ const SelectUI = (props: any) => {
           <IconUI name="CopyOne" />
         </TextUI>
       )}
-    </>
+    </div>
   );
 };
 export default SelectUI;
