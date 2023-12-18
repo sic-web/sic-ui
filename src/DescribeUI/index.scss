@@ -1,17 +1,17 @@
 .sic-describeui {
   font-size: 14px;
-  border-top: 1px solid #f0f0f0;
-
+  border-top: 1px solid #d9d9d9;
+  color: #333;
   &-line {
     display: flex;
-    border: 1px solid #f0f0f0;
+    border: 1px solid #d9d9d9;
     border-top: none;
     border-left: none;
   }
   &-elemnet {
     display: flex;
     align-items: center;
-    min-height: 32px;
+    min-height: 36px;
     line-height: normal;
     flex: 1;
     &-title {
@@ -20,12 +20,11 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #f9f9f9;
+      background: var(--textcolor2);
       min-width: 130px;
       height: 100%;
-      border-right: 1px solid #f0f0f0;
-      border-left: 1px solid #f0f0f0;
-      color: #666;
+      border-right: 1px solid #d9d9d9;
+      border-left: 1px solid #d9d9d9;
     }
     &-children {
       padding-left: 10px;
