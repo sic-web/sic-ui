@@ -18,7 +18,7 @@ const SearchUI = (props: any) => {
       clearTimeout(timer);
       timer = setTimeout(() => {
         onChange(e.target.value.trim());
-      }, 1000);
+      }, 500);
     }
   };
 
