@@ -63,7 +63,7 @@ const SelectUI = (props: any) => {
   return (
     <div className="sic-select">
       <Select
-        className="sic-selectui"
+        className="sic-select-selectui"
         value={value}
         style={style}
         options={options}
