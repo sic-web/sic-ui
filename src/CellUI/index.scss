@@ -17,6 +17,8 @@
   }
 }
 .sic-cellui-tooltipContent {
+  overflow: auto;
+  max-height: 300px;
   &-icon {
     line-height: 22px;
     margin-right: 8px;
