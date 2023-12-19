@@ -1,13 +1,15 @@
 .sic-select {
   display: flex;
+  align-items: center;
+  width: 100%;
   &-selectui {
-    width: 200px;
+    flex: 1;
     font-family: 'LingCaiTiBold';
   }
   &-copy {
-    margin-left: 4px;
     display: inline-block;
-    line-height: 30px;
     width: 20px;
+    line-height: 30px;
+    margin-left: 4px;
   }
 }
