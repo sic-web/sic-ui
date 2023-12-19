@@ -41,10 +41,13 @@ const App: React.FC = () => {
   const total = 3;
   return (
     <div>
+      正常展示
       <TableUI dataSource={dataSource} columns={columns} current={current} pageSize={pageSize} total={total} />
       <br />
+      蒙层展示
       <TableUI dataSource={dataSource} columns={columns} current={current} pageSize={pageSize} total={total} mask={true} />
       <br />
+      空状态展示
       <TableUI dataSource={[]} columns={columns} current={0} pageSize={0} total={0} />
     </div>
   );
