@@ -23,26 +23,44 @@ group:
 
 ```jsx
 import { useState } from 'react';
-import { TableUI } from 'sic-ui';
+import { Tiga } from 'sic-ui';
 
 const App: React.FC = () => {
-  const columns = [
-    { title: '姓名', dataIndex: 'name', key: 'name' },
-    { title: '年龄', dataIndex: 'age', key: 'age' },
-    { title: '电话', dataIndex: 'phone', key: 'phone' },
+  const columns1 = [
+    { key: 'name', name: '姓名' },
+    { key: 'age', name: '年龄' },
+    { key: 'phone', name: '电话' },
+  ];
+  const columns2 = [
+    { key: 'name', name: '姓名', sort: 1 },
+    { key: 'age', name: '年龄', sort: 4 },
+    { key: 'phone', name: '电话', sort: 3 },
+  ];
+  const columns3 = [
+    { key: 'name', name: '姓名', sort: 1 },
+    { key: 'age', name: '年龄', sort: 4 },
+    { key: 'phone', name: '电话', sort: 3, selected: false },
+    { key: 'fighting', name: '战力', sort: 2 },
   ];
   const dataSource = [
-    { name: '刘备', age: 22, phone: 15692837652 },
-    { name: '关羽', age: 21, phone: 17697787678 },
-    { name: '张飞', age: 18, phone: 12392880611 },
+    { name: '刘备', age: 22, phone: 15692837652, fighting: 6 },
+    { name: '关羽', age: 21, phone: 17697787678, fighting: 9 },
+    { name: '张飞', age: 18, phone: 12392880611, fighting: 7 },
+    { name: '赵云', age: 19, phone: 12392880611, fighting: 8 },
   ];
   const current = 1;
-  const pageSize = 2;
-  const total = 3;
+  const pageSize = 10;
+  const total = 4;
+  const tableParams = { dataSource: dataSource, pageSize: pageSize, current, total };
+
   return (
     <div>
-      正常展示
-      <TableUI dataSource={dataSource} columns={columns} current={current} pageSize={pageSize} total={total} />
+      基础模式
+      <Tiga rowKey="name" tableHeader={columns1} {...tableParams} />
+      带有排序
+      <Tiga rowKey="name" tableHeader={columns2} {...tableParams} />
+      带有禁用
+      <Tiga rowKey="name" tableHeader={columns3} {...tableParams} />
     </div>
   );
 };
@@ -57,35 +75,28 @@ export default App;
 
 <font size=1>
 
-| 属性       | 说明       |  类型   | 默认值 | 是否必传 |
-| :--------- | :--------- | :-----: | :----: | :------: |
-| dataSource | 数据内容   |  Array  |   []   |    是    |
-| columns    | 每一列的值 |  Array  |   []   |    是    |
-| current    | 当前的页数 | Number  |   -    |    是    |
-| pageSize   | 当前的页码 | Number  |   -    |    是    |
-| total      | 当前的总数 | Number  |   -    |    是    |
-| mask       | 蒙版       | Boolean | false  |    否    |
+| 属性           | 说明                 |  类型   | 默认值 | 是否必传 |
+| :------------- | :------------------- | :-----: | :----: | :------: |
+| dataSource     | 数据内容             |  Array  |   []   |    是    |
+| initialColumns | 可以变形的表格列数据 |  Array  |   []   |    是    |
+| morphColumns   | 可以变形的表格列数据 |  Array  |   []   |    是    |
+| rowKey         | 每一行的标识         | String  |   -    |    是    |
+| mask           | 蒙层                 | Boolean | false  |    否    |
 
 </font>
 
-### TableUI.Operate
+### tableHeader
 
-注：需要根节点
-
-<font size=1>
-
-| 属性  | 说明 |   类型    |    默认值    | 是否必传 |
-| :---- | :--- | :-------: | :----------: | :------: |
-| child | 内容 | ReactNode | <div>-</div> |    是    |
-
-</font>
-
-### TableUI.Button
+注：传入表头的属性，交给 Tiga 做处理
 
 <font size=1>
 
-| 属性 | 说明 |              类型              | 默认值  | 是否必传 |
-| :--- | :--- | :----------------------------: | :-----: | :------: |
-| type | 类型 | String<default/danger/disable> | default |    是    |
+| 属性     | 说明                   |  类型   | 默认值 | 是否必传 |
+| :------- | :--------------------- | :-----: | :----: | :------: |
+| key      | 每一列的标识           | String  |   -    |    是    |
+| name     | 表头，不传则不展示     | String  |   -    |    是    |
+| selected | 配合当前的页面是否展示 | Boolean |  true  |    否    |
+| sort     | 排序字段               | Number  |   -    |    否    |
+| render   | 渲染特殊的列           |   Fun   | CellUI |    否    |
 
 </font>
