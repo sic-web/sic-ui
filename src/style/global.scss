@@ -22,7 +22,7 @@ body {
   --bg_color: #feb71d;
   --lightenColor: ;
   height: 100vh;
-  overflow: hidden;
+  overflow: auto;
   font-family: 'LingCaiTi';
   /* 在全局样式中定义滚动条样式 */
   ::-webkit-scrollbar {
