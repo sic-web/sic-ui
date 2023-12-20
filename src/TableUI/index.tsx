@@ -98,6 +98,12 @@ const Operate = (props: { child: any }) => {
               {children?.[2]}
               {children?.[3]}
               {children?.[4]}
+              {children?.[5]}
+              {children?.[6]}
+              {children?.[7]}
+              {children?.[8]}
+              {children?.[9]}
+              {children?.[10]}
             </div>
           }
         />
