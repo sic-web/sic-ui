@@ -22,10 +22,11 @@ group:
 💎 表格组件-快捷用法
 
 ```jsx
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Tiga } from 'sic-ui';
 
 const App: React.FC = () => {
+  const [data, setData] = useState();
   const columns1 = [
     { key: 'name', name: '姓名' },
     { key: 'age', name: '年龄' },
@@ -51,7 +52,12 @@ const App: React.FC = () => {
   const current = 1;
   const pageSize = 10;
   const total = 4;
-  const tableParams = { dataSource: dataSource, pageSize: pageSize, current, total };
+  const tableParams = { dataSource: data, pageSize: pageSize, current, total };
+  useEffect(() => {
+    setTimeout(() => {
+      setData(dataSource);
+    }, 2000);
+  }, []);
 
   return (
     <div>
@@ -75,13 +81,15 @@ export default App;
 
 <font size=1>
 
-| 属性           | 说明                 |  类型   | 默认值 | 是否必传 |
-| :------------- | :------------------- | :-----: | :----: | :------: |
-| dataSource     | 数据内容             |  Array  |   []   |    是    |
-| initialColumns | 可以变形的表格列数据 |  Array  |   []   |    是    |
-| morphColumns   | 可以变形的表格列数据 |  Array  |   []   |    是    |
-| rowKey         | 每一行的标识         | String  |   -    |    是    |
-| mask           | 蒙层                 | Boolean | false  |    否    |
+| 属性           | 说明                                   |  类型   | 默认值 | 是否必传 |
+| :------------- | :------------------------------------- | :-----: | :----: | :------: |
+| dataSource     | 数据内容                               |  Array  |   []   |    是    |
+| morphColumns   | 可以变形的表格列数据(推荐)             |  Array  |   []   |    是    |
+| initialColumns | 可以变形的表格列数据(弃用)：不够语义化 |  Array  |   []   |    是    |
+| morphColumns   | 可以变形的表格列数据                   |  Array  |   []   |    是    |
+| rowKey         | 每一行的标识                           | String  |   -    |    是    |
+| mask           | 蒙层                                   | Boolean | false  |    否    |
+| tableData      | 表格数据，高度集成当前项目（推荐）     | Object  |   {}   |    否    |
 
 </font>
 
