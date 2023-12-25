@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { TableUI, LoadingUI, CellUI } from 'sic-ui';
 import './index.scss';
 /** 当前表头类型 */
@@ -70,13 +70,9 @@ const Tiga = (props: any) => {
     t_total = tableData?.total;
   }
   // 新的列数据
-  const [columns, setColumns] = useState<any>();
+  const changeColumns = morphColumns?.length > 0 ? morphColumns : initialColumns;
+  const columns = filterTableHeader(changeColumns, tableHeader);
 
-  useEffect(() => {
-    const changeColumns = morphColumns?.length > 0 ? morphColumns : initialColumns;
-    const list = filterTableHeader(changeColumns, tableHeader);
-    setColumns(list);
-  }, [tableHeader]);
   return (
     <LoadingUI spinning={t_dataSource && columns ? false : true}>
       <TableUI columns={columns} dataSource={t_dataSource} pageSize={t_pageSize} current={t_current} total={t_total} {...otherProps} />
