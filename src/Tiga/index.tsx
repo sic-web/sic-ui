@@ -89,7 +89,7 @@ const Tiga = (props: any) => {
   if (oem?.loading) {
     return Tiga;
   } else {
-    return <LoadingUI isShowLoading={!dataSource || !columns}>{Tiga}</LoadingUI>;
+    return <LoadingUI isShowLoading={!t_dataSource || !columns}>{Tiga}</LoadingUI>;
   }
 };
 export default Tiga;
