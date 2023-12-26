@@ -29,7 +29,7 @@ const App: React.FC = () => {
   const confirm = () => setIsOpen(false);
   return (
     <div>
-      <LoadingUI spaning={true} />
+      <LoadingUI isShowLoading={true} />
     </div>
   );
 };
