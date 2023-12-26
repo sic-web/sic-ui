@@ -90,6 +90,7 @@ export default App;
 | rowKey         | 每一行的标识                           | String  |   -    |    是    |
 | mask           | 蒙层                                   | Boolean | false  |    否    |
 | tableData      | 表格数据，高度集成当前项目（推荐）     | Object  |   {}   |    否    |
+| oem            | oem 相关的配置项                       | Object  |   {}   |    否    |
 
 </font>
 

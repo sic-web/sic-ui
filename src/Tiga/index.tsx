@@ -52,7 +52,18 @@ const filterTableHeader = (columns: Columns[], tableHeader: TableHeaderItem[]) =
 
 const Tiga = (props: any) => {
   // tag morphColumns 用这个参数代替initialColumns传入所改变的列
-  const { dataSource, initialColumns = [], morphColumns = [], tableHeader, tableData, pageSize, total, current, ...otherProps } = props;
+  const {
+    dataSource,
+    initialColumns = [],
+    morphColumns = [],
+    tableHeader,
+    tableData,
+    pageSize,
+    total,
+    current,
+    oem,
+    ...otherProps
+  } = props;
   let t_dataSource = dataSource;
   let t_pageSize = pageSize;
   let t_current = current;
@@ -72,11 +83,13 @@ const Tiga = (props: any) => {
   // 新的列数据
   const changeColumns = morphColumns?.length > 0 ? morphColumns : initialColumns;
   const columns = filterTableHeader(changeColumns, tableHeader);
-
-  return (
-    <LoadingUI spinning={t_dataSource && columns ? false : true}>
-      <TableUI columns={columns} dataSource={t_dataSource} pageSize={t_pageSize} current={t_current} total={t_total} {...otherProps} />
-    </LoadingUI>
+  const Tiga = (
+    <TableUI columns={columns} dataSource={t_dataSource} pageSize={t_pageSize} current={t_current} total={t_total} {...otherProps} />
   );
+  if (oem?.loading) {
+    return <>{Tiga}</>;
+  } else {
+    return <LoadingUI spinning={t_dataSource && columns ? false : true}>{Tiga}</LoadingUI>;
+  }
 };
 export default Tiga;
