@@ -87,9 +87,9 @@ const Tiga = (props: any) => {
     <TableUI columns={columns} dataSource={t_dataSource} pageSize={t_pageSize} current={t_current} total={t_total} {...otherProps} />
   );
   if (oem?.loading) {
-    return <>{Tiga}</>;
+    return Tiga;
   } else {
-    return <LoadingUI spinning={t_dataSource && columns ? false : true}>{Tiga}</LoadingUI>;
+    return <LoadingUI isShowLoading={!dataSource || !columns}>{Tiga}</LoadingUI>;
   }
 };
 export default Tiga;
