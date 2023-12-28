@@ -23,7 +23,7 @@ group:
 
 ```jsx
 import { useState, useEffect } from 'react';
-import { Tiga } from 'sic-ui';
+import { Tiga, LoadingUI } from 'sic-ui';
 
 const App: React.FC = () => {
   const [data, setData] = useState();
@@ -58,11 +58,12 @@ const App: React.FC = () => {
       setData(dataSource);
     }, 2000);
   }, []);
-
   return (
     <div>
       基础模式
-      <Tiga rowKey="name" tableHeader={columns1} {...tableParams} />
+      <LoadingUI isShowLoading={!data}>
+        <Tiga rowKey="name" tableHeader={columns1} {...tableParams} />
+      </LoadingUI>
       带有排序
       <Tiga rowKey="name" tableHeader={columns2} {...tableParams} />
       带有禁用
