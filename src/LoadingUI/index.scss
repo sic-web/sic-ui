@@ -1,33 +1,24 @@
 .sic-loadingui {
   width: 100%;
   height: 100%;
-  position: relative;
-  &-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &-animation {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: relative;
+    animation: rotate 1s linear infinite;
+  }
+  &-animation::before {
+    content: '';
+    box-sizing: border-box;
     position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #fff;
-    z-index: 99999;
-    &-animation {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      animation: rotate 1s linear infinite;
-    }
-    &-animation::before {
-      content: '';
-      box-sizing: border-box;
-      position: absolute;
-      inset: 0px;
-      border-radius: 50%;
-      border: 6px solid var(--textcolor);
-      animation: prixClipFix 5s linear infinite;
-    }
+    inset: 0px;
+    border-radius: 50%;
+    border: 6px solid var(--textcolor);
+    animation: prixClipFix 5s linear infinite;
   }
 }
 

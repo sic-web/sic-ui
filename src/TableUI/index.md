@@ -188,7 +188,7 @@ const App: React.FC = () => {
       render: () => {
         return (
           <Space wrap>
-            <TableUI.Button type="default" icon={<IconUI name="Download" />}>
+            <TableUI.Button className="12" type="default" icon={<IconUI name="Download" />}>
               查看
             </TableUI.Button>
             <TableUI.Button type="danger" icon={<IconUI name="Upload" />}>

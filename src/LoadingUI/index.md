@@ -27,11 +27,7 @@ import { Space } from 'antd';
 const App: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const confirm = () => setIsOpen(false);
-  return (
-    <div>
-      <LoadingUI isShowLoading={true} />
-    </div>
-  );
+  return <LoadingUI isShowLoading={true} />;
 };
 export default App;
 ```
