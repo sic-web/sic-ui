@@ -69,9 +69,14 @@ const Tiga = (props: any) => {
     // 表格总数
     t_total = tableData?.total;
   }
-  // 新的列数据
-  const changeColumns = morphColumns?.length > 0 ? morphColumns : initialColumns;
-  const columns = filterTableHeader(changeColumns, tableHeader);
+
+  let columns: any = null;
+
+  const flag = tableHeader?.every((item: { name?: string }) => 'name' in item);
+  if (flag) {
+    columns = filterTableHeader(morphColumns?.length > 0 ? morphColumns : initialColumns, tableHeader);
+  }
+
   return <TableUI columns={columns} dataSource={t_dataSource} pageSize={t_pageSize} current={t_current} total={t_total} {...otherProps} />;
 };
 export default Tiga;
