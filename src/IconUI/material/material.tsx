@@ -6,37 +6,10 @@ interface IProps {
   height?: string | number;
 }
 
-const SwitchOff = (props: IProps) => {
-  const { color, width = '14', height = '14' } = props;
-  return (
-    <div>
-      <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 -3 14 14">
-        <path
-          fill={color ?? 'currentColor'}
-          d="M4.66667 4.08333C3.05584 4.08333 1.75 5.38917 1.75 7C1.75 8.61081 3.05584 9.91666 4.66667 9.91666H9.33333C10.9441 9.91666 12.25 8.61081 12.25 7C12.25 5.38917 10.9441 4.08333 9.33333 4.08333H4.66667ZM4.66667 2.91666H9.33333C11.5885 2.91666 13.4167 4.74484 13.4167 7C13.4167 9.25516 11.5885 11.0833 9.33333 11.0833H4.66667C2.4115 11.0833 0.583332 9.25516 0.583332 7C0.583332 4.74484 2.4115 2.91666 4.66667 2.91666ZM4.66667 8.75C3.70017 8.75 2.91667 7.96652 2.91667 7C2.91667 6.03347 3.70017 5.25 4.66667 5.25C5.63316 5.25 6.41667 6.03347 6.41667 7C6.41667 7.96652 5.63316 8.75 4.66667 8.75Z"
-        />
-      </svg>
-    </div>
-  );
-};
-
-const SwitchOn = (props: IProps) => {
-  const { color, width = '14', height = '14' } = props;
-  return (
-    <div>
-      <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 -3 14 14">
-        <path
-          d="M9.33333 4.08334C10.9442 4.08334 12.25 5.38918 12.25 7C12.25 8.61082 10.9442 9.91667 9.33333 9.91667H4.66667C3.05585 9.91667 1.75 8.61082 1.75 7C1.75 5.38918 3.05585 4.08334 4.66667 4.08334H9.33333ZM9.33333 2.91667H4.66667C2.4115 2.91667 0.583333 4.74484 0.583333 7C0.583333 9.25517 2.4115 11.0833 4.66667 11.0833H9.33333C11.5885 11.0833 13.4167 9.25517 13.4167 7C13.4167 4.74484 11.5885 2.91667 9.33333 2.91667ZM9.33333 8.75C10.2998 8.75 11.0833 7.96653 11.0833 7C11.0833 6.03348 10.2998 5.25001 9.33333 5.25001C8.36684 5.25001 7.58333 6.03348 7.58333 7C7.58333 7.96653 8.36684 8.75 9.33333 8.75Z"
-          fill={color ?? 'currentColor'}
-        />
-      </svg>
-    </div>
-  );
-};
-const Minsheng = (props: IProps) => {
+export const Minsheng = (props: IProps) => {
   const { color, width = '17', height = '16' } = props;
   return (
-    <svg width={width} height={height} viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width={width ?? '17'} height={height ?? '16'} viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g id="Frame" clipPath="url(#clip0_298_2911)">
         <path
           id="Vector"
@@ -57,7 +30,36 @@ const Minsheng = (props: IProps) => {
     </svg>
   );
 };
-const Pingan = (props: IProps) => {
+
+export const SwitchOff = (props: IProps) => {
+  const { color, width = '14', height = '14' } = props;
+  return (
+    <div>
+      <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 -3 14 14">
+        <path
+          fill={color ?? 'currentColor'}
+          d="M4.66667 4.08333C3.05584 4.08333 1.75 5.38917 1.75 7C1.75 8.61081 3.05584 9.91666 4.66667 9.91666H9.33333C10.9441 9.91666 12.25 8.61081 12.25 7C12.25 5.38917 10.9441 4.08333 9.33333 4.08333H4.66667ZM4.66667 2.91666H9.33333C11.5885 2.91666 13.4167 4.74484 13.4167 7C13.4167 9.25516 11.5885 11.0833 9.33333 11.0833H4.66667C2.4115 11.0833 0.583332 9.25516 0.583332 7C0.583332 4.74484 2.4115 2.91666 4.66667 2.91666ZM4.66667 8.75C3.70017 8.75 2.91667 7.96652 2.91667 7C2.91667 6.03347 3.70017 5.25 4.66667 5.25C5.63316 5.25 6.41667 6.03347 6.41667 7C6.41667 7.96652 5.63316 8.75 4.66667 8.75Z"
+        />
+      </svg>
+    </div>
+  );
+};
+
+export const SwitchOn = (props: IProps) => {
+  const { color, width = '14', height = '14' } = props;
+  return (
+    <div>
+      <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 -3 14 14">
+        <path
+          d="M9.33333 4.08334C10.9442 4.08334 12.25 5.38918 12.25 7C12.25 8.61082 10.9442 9.91667 9.33333 9.91667H4.66667C3.05585 9.91667 1.75 8.61082 1.75 7C1.75 5.38918 3.05585 4.08334 4.66667 4.08334H9.33333ZM9.33333 2.91667H4.66667C2.4115 2.91667 0.583333 4.74484 0.583333 7C0.583333 9.25517 2.4115 11.0833 4.66667 11.0833H9.33333C11.5885 11.0833 13.4167 9.25517 13.4167 7C13.4167 4.74484 11.5885 2.91667 9.33333 2.91667ZM9.33333 8.75C10.2998 8.75 11.0833 7.96653 11.0833 7C11.0833 6.03348 10.2998 5.25001 9.33333 5.25001C8.36684 5.25001 7.58333 6.03348 7.58333 7C7.58333 7.96653 8.36684 8.75 9.33333 8.75Z"
+          fill={color ?? 'currentColor'}
+        />
+      </svg>
+    </div>
+  );
+};
+
+export const Pingan = (props: IProps) => {
   const { color, width = '17', height = '16' } = props;
   return (
     <svg width={width} height={height} viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -76,7 +78,7 @@ const Pingan = (props: IProps) => {
     </svg>
   );
 };
-const Warning = (props: IProps) => {
+export const Warning = (props: IProps) => {
   const { width = '24', height = '24' } = props;
   return (
     <svg width={width} height={height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -97,7 +99,7 @@ const Warning = (props: IProps) => {
     </svg>
   );
 };
-const Iconwx = (props: IProps) => {
+export const Iconwx = (props: IProps) => {
   const { width = '21', height = '20' } = props;
   return (
     <svg width={width} height={height} viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -116,7 +118,7 @@ const Iconwx = (props: IProps) => {
     </svg>
   );
 };
-const Iconzfb = (props: IProps) => {
+export const Iconzfb = (props: IProps) => {
   const { width = '17', height = '16' } = props;
   return (
     <svg width={width} height={height} viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -128,7 +130,7 @@ const Iconzfb = (props: IProps) => {
     </svg>
   );
 };
-const Zhaoshang = (props: IProps) => {
+export const Zhaoshang = (props: IProps) => {
   const { width = '17', height = '16' } = props;
   return (
     <svg width={width} height={height} viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -147,8 +149,7 @@ const Zhaoshang = (props: IProps) => {
     </svg>
   );
 };
-
-const Pdf = (props: IProps) => {
+export const Pdf = (props: IProps) => {
   const { width = '17', height = '16' } = props;
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 24 24" fill="none">
@@ -185,19 +186,4 @@ const Pdf = (props: IProps) => {
       </defs>
     </svg>
   );
-};
-
-/** 自定义icon物料库 */
-export const customIcon = (otherProps: any) => {
-  return [
-    { name: 'Minsheng', element: Minsheng(otherProps) }, // 民生银行
-    { name: 'Pingan', element: Pingan(otherProps) }, // 平安银行
-    { name: 'Iconwx', element: Iconwx(otherProps) }, // 微信
-    { name: 'Iconzfb', element: Iconzfb(otherProps) }, // 支付宝
-    { name: 'Zhaoshang', element: Zhaoshang(otherProps) }, // 招商银行
-    { name: 'SwitchOff', element: SwitchOff(otherProps) }, // 开关-关闭
-    { name: 'SwitchOn', element: SwitchOn(otherProps) }, // 开关-开启
-    { name: 'Warning', element: Warning(otherProps) }, // 警告
-    { name: 'Pdf', element: Pdf(otherProps) }, // Pdf
-  ];
 };

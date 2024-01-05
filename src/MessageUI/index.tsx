@@ -7,19 +7,19 @@ message.config({
   prefixCls: 'sic-message',
 });
 const MessageUI = {
-  success: (content: any, duration: any, onClose: any) => {
+  success: (content: any, duration?: any, onClose?: any) => {
     message.success(content, duration, onClose);
   },
-  error: (content: any, duration: any, onClose: any) => {
+  error: (content: any, duration?: any, onClose?: any) => {
     message.error(content, duration, onClose);
   },
-  info: (content: any, duration: any, onClose: any) => {
+  info: (content: any, duration?: any, onClose?: any) => {
     message.info(content, duration, onClose);
   },
-  warning: (content: any, duration: any, onClose: any) => {
+  warning: (content: any, duration?: any, onClose?: any) => {
     message.warning(content, duration, onClose);
   },
-  loading: (content: any, duration: any, onClose: any) => {
+  loading: (content: any, duration?: any, onClose?: any) => {
     message.loading(content, duration, onClose);
   },
 };
