@@ -1,4 +1,6 @@
 import React from 'react';
+import { MenuFoldOutlined, MenuUnfoldOutlined, DownOutlined, MenuOutlined, SwapOutlined, LogoutOutlined } from '@ant-design/icons';
+import { HomeOutlined, SolutionOutlined, CopyOutlined, FormOutlined, AccountBookOutlined, SettingOutlined } from '@ant-design/icons';
 import { SwitchOff, Minsheng, Pingan, Iconwx, Iconzfb, Zhaoshang, SwitchOn, Warning, Pdf } from './material';
 import { Export, ListTwo, Return, AddOne, SwitchButton, Audit, Clear, Download, Female, Male, PreviewOpen, Upload } from '@icon-park/react';
 import { Delete, Setting, Excel, FilePdf, BackgroundColor, Home, ChartPieOne, BookmarkOne, DataArrival } from '@icon-park/react';
@@ -8,6 +10,7 @@ import { Attention, FileAddition, CooperativeHandshake, FileSuccess, Right, Peop
 import { PeoplePlus, Consume, MapRoadTwo, EditTwo, AddPrint, Family, CopyOne, ExpensesOne, FullScreenOne, Copy } from '@icon-park/react';
 /** Icon 集合 */
 export const iconRally = [
+  // 自研icon
   { name: 'Minsheng', element: (props: any) => Minsheng(props) },
   { name: 'Pingan', element: (props: any) => Pingan(props) },
   { name: 'Iconwx', element: (props: any) => Iconwx(props) },
@@ -17,6 +20,19 @@ export const iconRally = [
   { name: 'SwitchOn', element: (props: any) => SwitchOn(props) },
   { name: 'Warning', element: (props: any) => Warning(props) },
   { name: 'Pdf', element: (props: any) => Pdf(props) },
+  // antd
+  { name: 'HomeOutlined', element: (props: any) => <HomeOutlined {...props} /> },
+  { name: 'LogoutOutlined', element: (props: any) => <LogoutOutlined {...props} /> },
+  { name: 'SwapOutlined', element: (props: any) => <SwapOutlined {...props} /> },
+  { name: 'MenuUnfoldOutlined', element: (props: any) => <MenuUnfoldOutlined {...props} /> },
+  { name: 'DownOutlined', element: (props: any) => <DownOutlined {...props} /> },
+  { name: 'MenuOutlined', element: (props: any) => <MenuOutlined {...props} /> },
+  { name: 'SolutionOutlined', element: (props: any) => <SolutionOutlined {...props} /> },
+  { name: 'CopyOutlined', element: (props: any) => <CopyOutlined {...props} /> },
+  { name: 'FormOutlined', element: (props: any) => <FormOutlined {...props} /> },
+  { name: 'AccountBookOutlined', element: (props: any) => <AccountBookOutlined {...props} /> },
+  { name: 'SettingOutlined', element: (props: any) => <SettingOutlined {...props} /> },
+  // icon-park
   { name: 'ListTwo', element: (props: any) => <ListTwo {...props} /> },
   { name: 'Export', element: (props: any) => <Export {...props} /> },
   { name: 'Return', element: (props: any) => <Return {...props} /> },
@@ -76,4 +92,5 @@ export const iconRally = [
   { name: 'ExpensesOne', element: (props: any) => <ExpensesOne {...props} /> },
   { name: 'FullScreenOne', element: (props: any) => <FullScreenOne {...props} /> },
   { name: 'Copy', element: (props: any) => <Copy {...props} /> },
+  { name: 'MenuFoldOutlined', element: (props: any) => <MenuFoldOutlined {...props} /> },
 ];
