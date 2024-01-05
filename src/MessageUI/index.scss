@@ -1,0 +1,34 @@
+.sic-message {
+  top: 5% !important;
+  &-notice {
+    &-content {
+      padding: 0 !important;
+      font-size: 18px;
+      font-family: 'LingCaiTi' !important;
+      span:nth-child(2) {
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .anticon {
+        font-size: 18px !important;
+        vertical-align: middle !important;
+      }
+      .anticon-check-circle,
+      .anticon-close-circle {
+        color: #fff !important;
+      }
+      .sic-message-custom-content {
+        padding: 20px 20px !important;
+        border-radius: 8px !important;
+      }
+      .sic-message-success {
+        color: #fff;
+        background-color: #38b865 !important;
+      }
+      .sic-message-error {
+        color: #fff;
+        background-color: #ff7875 !important;
+      }
+    }
+  }
+}
