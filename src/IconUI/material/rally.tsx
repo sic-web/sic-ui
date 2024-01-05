@@ -1,6 +1,7 @@
 import React from 'react';
 import { MenuFoldOutlined, MenuUnfoldOutlined, DownOutlined, MenuOutlined, SwapOutlined, LogoutOutlined } from '@ant-design/icons';
 import { HomeOutlined, SolutionOutlined, CopyOutlined, FormOutlined, AccountBookOutlined, SettingOutlined } from '@ant-design/icons';
+import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import { SwitchOff, Minsheng, Pingan, Iconwx, Iconzfb, Zhaoshang, SwitchOn, Warning, Pdf } from './material';
 import { Export, ListTwo, Return, AddOne, SwitchButton, Audit, Clear, Download, Female, Male, PreviewOpen, Upload } from '@icon-park/react';
 import { Delete, Setting, Excel, FilePdf, BackgroundColor, Home, ChartPieOne, BookmarkOne, DataArrival } from '@icon-park/react';
@@ -8,6 +9,7 @@ import { TicketsTwo, Bank, ShieldAdd, Swipe, SettingTwo, DataFour, Currency, Che
 import { Caution, RotateOne, Edit, Check, Close, UserBusiness, ArrowRight, More, DeleteOne, Search, Help } from '@icon-park/react';
 import { Attention, FileAddition, CooperativeHandshake, FileSuccess, Right, Peoples, UserToUserTransmission } from '@icon-park/react';
 import { PeoplePlus, Consume, MapRoadTwo, EditTwo, AddPrint, Family, CopyOne, ExpensesOne, FullScreenOne, Copy } from '@icon-park/react';
+import { City, Alarm, Deposit, TicketOne, Protect } from '@icon-park/react';
 /** Icon 集合 */
 export const iconRally = [
   // 自研icon
@@ -32,6 +34,8 @@ export const iconRally = [
   { name: 'FormOutlined', element: (props: any) => <FormOutlined {...props} /> },
   { name: 'AccountBookOutlined', element: (props: any) => <AccountBookOutlined {...props} /> },
   { name: 'SettingOutlined', element: (props: any) => <SettingOutlined {...props} /> },
+  { name: 'EyeInvisibleOutlined', element: (props: any) => <EyeInvisibleOutlined {...props} /> },
+  { name: 'EyeTwoTone', element: (props: any) => <EyeTwoTone {...props} /> },
   // icon-park
   { name: 'ListTwo', element: (props: any) => <ListTwo {...props} /> },
   { name: 'Export', element: (props: any) => <Export {...props} /> },
@@ -93,4 +97,9 @@ export const iconRally = [
   { name: 'FullScreenOne', element: (props: any) => <FullScreenOne {...props} /> },
   { name: 'Copy', element: (props: any) => <Copy {...props} /> },
   { name: 'MenuFoldOutlined', element: (props: any) => <MenuFoldOutlined {...props} /> },
+  { name: 'City', element: (props: any) => <City {...props} /> },
+  { name: 'Alarm', element: (props: any) => <Alarm {...props} /> },
+  { name: 'Deposit', element: (props: any) => <Deposit {...props} /> },
+  { name: 'TicketOne', element: (props: any) => <TicketOne {...props} /> },
+  { name: 'Protect', element: (props: any) => <Protect {...props} /> },
 ];
