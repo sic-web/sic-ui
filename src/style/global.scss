@@ -19,8 +19,6 @@ img {
 body {
   --textBlack: #333;
   --red: #ff7875;
-  --bg_color: #feb71d;
-  --lightenColor: ;
   height: 100vh;
   overflow: auto;
   font-family: 'LingCaiTi';
@@ -49,8 +47,8 @@ body {
 }
 
 :root {
-  --textcolor: rgb(248, 173, 14);
-  --textcolor2: #feefcf;
+  --textcolor: #feb71d;
+  --textcolor2: #fff1d2;
   color: #333;
   font-family: 'LingCaiTi';
   font-weight: 400;
