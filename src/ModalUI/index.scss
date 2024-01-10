@@ -1,13 +1,14 @@
 .sic-modalui {
+  color: var(--textBlack);
+  font-size: 14px;
   &-title {
-    color: #333;
     font-family: 'LingCaiTiBold';
     line-height: 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #f5f5f5;
     padding: 0 20px;
+    border-bottom: 1px solid #f5f5f5;
     &-icon {
       color: var(--textcolor);
       height: 24px;
@@ -16,7 +17,6 @@
       align-items: center;
       justify-content: center;
       border-radius: 50%;
-      padding-top: 2px;
     }
   }
   .ant-modal-header {
@@ -26,8 +26,6 @@
     padding: 0;
   }
   .ant-modal-body {
-    color: #666;
-    font-size: 14px;
     font-family: 'LingCaiTi';
     padding: 12px 20px;
   }
