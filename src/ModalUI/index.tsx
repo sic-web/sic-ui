@@ -30,16 +30,16 @@ const titleRender = (title: string, icon: React.ReactNode, type?: string) => {
 };
 
 const ModalUI = (props: any) => {
-  const { isOpen, setIsOpen, confirm, title, icon, footer, type, children, className, ...otherProps } = props;
+  const { className, isOpen, setIsOpen, title, icon, type, footer, confirm, children, ...otherProps } = props;
   return (
     <Modal
       className={`sic-modalui ${className ?? ''}`}
       open={isOpen}
-      onOk={confirm}
       closeIcon={false}
-      onCancel={() => setIsOpen(false)}
       title={titleRender(title, icon, type)}
       footer={footer}
+      onCancel={() => setIsOpen(undefined)}
+      onOk={confirm}
       {...otherProps}
     >
       {children}
