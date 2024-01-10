@@ -32,14 +32,7 @@ const App: React.FC = () => {
       <ButtonUI type="primary" onClick={() => setIsOpen(true)}>
         弹窗
       </ButtonUI>
-      <ModalUI
-        isOpen={isOpen}
-        setIsOpen={setIsOpen}
-        icon={<IconUI name="SwitchButton" theme="outline" size="14" />}
-        title={'确认开启'}
-        type="danger"
-        confirm={confirm}
-      >
+      <ModalUI isOpen={isOpen} setIsOpen={setIsOpen} icon={<IconUI name="SwitchButton" />} title={'确认开启'} confirm={confirm}>
         您确定要{'开启'}此企业吗？
       </ModalUI>
     </div>
