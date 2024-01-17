@@ -1,0 +1,12 @@
+.sic-dateui {
+  .ant-picker-input > input:placeholder-shown {
+    text-align: center;
+  }
+  .ant-picker-input > input {
+    text-align: center;
+  }
+  .ant-picker-input input::placeholder {
+    color: #999 !important;
+    font-family: 'LingCaiTi' !important;
+  }
+}
