@@ -20,9 +20,10 @@ group:
 ```jsx
 import React, { useState } from 'react';
 import { DateUI } from 'sic-ui';
+import dayjs from 'dayjs';
 
 const App: React.FC = () => {
-  const [value, setValue] = useState(['2022-11-11', '2022-12-12']);
+  const [value, setValue] = useState();
   const change = (e) => {
     setValue(e);
   };
