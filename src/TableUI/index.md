@@ -98,7 +98,7 @@ const App: React.FC = () => {
   const total = 3;
   return (
     <div>
-      <TableUI dataSource={dataSource} columns={columns} current={current} pageSize={pageSize} total={total} />
+      <TableUI rowKey="age" dataSource={dataSource} columns={columns} current={current} pageSize={pageSize} total={total} />
     </div>
   );
 };

@@ -13,6 +13,8 @@ interface propsType {
 /** 表格组件 */
 const TableUI = (props: any) => {
   const {
+    rowKey,
+    name,
     dataSource = [],
     columns = [],
     mask = false,
@@ -23,10 +25,18 @@ const TableUI = (props: any) => {
 
     ...otherProps
   } = props;
-
+  const [selectedRowKey, setSelectedRowKey] = useState<number | string | null>();
+  const handleRowClick = (record: any) => {
+    if (record[rowKey] === selectedRowKey) {
+      setSelectedRowKey(null);
+    } else {
+      setSelectedRowKey((name ? name : null) + record[rowKey]);
+    }
+  };
   return (
     <ConfigProvider locale={zhCN}>
       <Table
+        rowKey={rowKey}
         className={`${mask ? 'sic-tableui-mask' : ''} sic-tableui`}
         dataSource={dataSource}
         scroll={{ x: '100%' }}
@@ -50,6 +60,12 @@ const TableUI = (props: any) => {
             </div>
           ),
         }}
+        onRow={(record) => ({
+          onClick: () => {
+            handleRowClick(record);
+          },
+        })}
+        rowClassName={(record) => (selectedRowKey === (name ? name : null) + record[rowKey] ? 'sic-tableui-active' : '')}
         {...otherProps}
       />
     </ConfigProvider>
