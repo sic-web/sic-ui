@@ -3,10 +3,13 @@
     padding: 0;
     color: var(--textBlack);
     font-size: 14px;
-    line-height: 43px;
-    text-align: center;
     font-weight: 500;
     font-family: 'LingCaiTiBold';
+    line-height: 43px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     background-color: #f9f9f9;
   }
   .ant-table-tbody > tr > td {
@@ -28,6 +31,20 @@
     justify-content: center;
     margin: 12px auto;
   }
+  .sic-tableui-active {
+    .ant-table-cell-fix-left {
+      background-color: var(--textcolor2);
+    }
+    .ant-table-cell {
+      background-color: var(--textcolor2);
+    }
+    .ant-table-cell-fix-right {
+      background-color: var(--textcolor2);
+    }
+  }
+  .ant-table-tbody .ant-table-row > .ant-table-cell-row-hover {
+    background-color: var(--textcolor2);
+  }
 }
 .sic-tableui-mask {
   height: 100%;
@@ -38,6 +55,7 @@
   border-radius: 8px;
   cursor: not-allowed;
 }
+
 .sic-tableui-operate {
   display: flex;
   justify-content: center;
