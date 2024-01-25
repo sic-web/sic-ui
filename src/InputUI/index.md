@@ -19,7 +19,18 @@ import { InputUI } from 'sic-ui';
 import { Space } from 'antd';
 
 const App: React.FC = () => {
-  return <InputUI />;
+  const [inputRangeValue, setInputRangeValue] = useState();
+
+  const changeInputRange = (e) => setInputRangeValue(e);
+  return (
+    <div>
+      <InputUI />
+      <br />
+      <br />
+      <InputUI.Range onChange={changeInputRange} />
+      {JSON.stringify(inputRangeValue)}
+    </div>
+  );
 };
 export default App;
 ```

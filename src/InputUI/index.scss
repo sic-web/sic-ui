@@ -1,0 +1,18 @@
+.sic-inputui-range {
+  width: 100%;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  display: flex;
+
+  .to {
+    color: #d9d9d9;
+    height: 30px;
+    line-height: 30px;
+  }
+  .ant-form-item {
+    margin-bottom: 0;
+  }
+  .ant-input-number-input {
+    text-align: center;
+  }
+}
