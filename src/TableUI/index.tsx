@@ -22,7 +22,6 @@ const TableUI = (props: any) => {
     pageSize = 0,
     total = 0,
     pageSizeOptions = ['20', '30', '50', '100'],
-
     ...otherProps
   } = props;
   const [selectedRowKey, setSelectedRowKey] = useState<number | string | null>();
