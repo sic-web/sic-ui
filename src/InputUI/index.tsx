@@ -1,47 +1,49 @@
 import React, { useState } from 'react';
-import { Button, Form, Input, message, Space } from 'antd';
-const InputUI = () => {
-  const [form] = Form.useForm();
-  const [state, setState] = useState();
+import { Input, InputNumber } from 'antd';
+import './index.scss';
 
-  const onFinish = (value) => {
-    message.success('Submit success!');
-    setState(value);
+const InputUI = (props: any) => {
+  const { ...otherProps } = props;
+  return <Input {...otherProps} />;
+};
+
+const Range = (props: any) => {
+  const { value, onChange, min, max, style } = props;
+  const [input1, setInput1] = useState<number>();
+  const [input2, setInput2] = useState<number>();
+
+  const triggerChange = (changedValue: { input1?: number; input2?: number }) => {
+    onChange?.({ input1, input2, ...value, ...changedValue });
   };
 
-  const onFinishFailed = () => {
-    message.error('Submit failed!');
+  const onInput1 = (e?: number) => {
+    setInput1(e);
+    triggerChange({ input1: e });
   };
-
-  // 空格校验
-  const validateNumberFormat = (_rule: any, value: string, callback: (error?: string) => void) => {
-    if (value && /\s/.test(value)) {
-      callback('检测到有空格');
-    } else {
-      callback();
-    }
+  const onInput2 = (e?: number) => {
+    setInput2(e);
+    triggerChange({ input2: e });
   };
   return (
-    <Form form={form} layout="vertical" onFinish={onFinish} onFinishFailed={onFinishFailed} autoComplete="off">
-      <Form.Item
-        name="phone"
-        label="手机号"
-        rules={[
-          { required: true, message: '请输入手机号' },
-          { validator: validateNumberFormat, warningOnly: true },
-        ]}
-      >
-        <Input placeholder="手机号" />
-      </Form.Item>
-      <Form.Item>
-        <Space>
-          <Button type="primary" htmlType="submit">
-            提交
-          </Button>
-        </Space>
-      </Form.Item>
-      {state?.phone}
-    </Form>
+    <div className="sic-inputui-range" style={style}>
+      <InputNumber
+        placeholder={min}
+        value={value?.input1 ?? input1}
+        bordered={false}
+        onChange={onInput1}
+        style={{ width: '50%', textAlign: 'center' }}
+      />
+      <div className="to">-</div>
+      <InputNumber
+        placeholder={max}
+        value={value?.input2 ?? input2}
+        bordered={false}
+        onChange={onInput2}
+        style={{ width: '50%', textAlign: 'center' }}
+      />
+    </div>
   );
 };
+
+InputUI.Range = Range;
 export default InputUI;
