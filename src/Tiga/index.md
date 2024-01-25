@@ -87,7 +87,6 @@ export default App;
 | dataSource     | 数据内容                               |  Array  |   []   |    是    |
 | morphColumns   | 可以变形的表格列数据(推荐)             |  Array  |   []   |    是    |
 | initialColumns | 可以变形的表格列数据(弃用)：不够语义化 |  Array  |   []   |    是    |
-| morphColumns   | 可以变形的表格列数据                   |  Array  |   []   |    是    |
 | rowKey         | 每一行的标识                           | String  |   -    |    是    |
 | mask           | 蒙层                                   | Boolean | false  |    否    |
 | tableData      | 表格数据，高度集成当前项目（推荐）     | Object  |   {}   |    否    |
