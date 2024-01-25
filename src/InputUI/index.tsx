@@ -26,21 +26,9 @@ const Range = (props: any) => {
   };
   return (
     <div className="sic-inputui-range" style={style}>
-      <InputNumber
-        placeholder={min}
-        value={value?.input1 ?? input1}
-        bordered={false}
-        onChange={onInput1}
-        style={{ width: '50%', textAlign: 'center' }}
-      />
-      <div className="to">-</div>
-      <InputNumber
-        placeholder={max}
-        value={value?.input2 ?? input2}
-        bordered={false}
-        onChange={onInput2}
-        style={{ width: '50%', textAlign: 'center' }}
-      />
+      <InputNumber className="range-input1" placeholder={min} value={value?.input1 ?? input1} onChange={onInput1} />
+      <span className="range-to"> - </span>
+      <InputNumber className="range-input2" placeholder={max} value={value?.input2 ?? input2} onChange={onInput2} />
     </div>
   );
 };
