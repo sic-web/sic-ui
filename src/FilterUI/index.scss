@@ -1,6 +1,4 @@
 .sicFilterUI {
-  position: relative;
-
   &-content {
     box-sizing: border-box;
     width: 100%;
@@ -30,21 +28,8 @@
       flex-wrap: wrap;
     }
     &-moreForm {
-      box-sizing: border-box;
-      padding: 12px 12px 0 12px;
       width: 100%;
-      max-width: 1084px;
-      height: auto;
-      position: absolute;
-      left: -12px;
-      bottom: 0;
-      transform: translateY(100%);
-      z-index: 3;
-      border-radius: 8px;
-      background-color: #fff;
-      box-shadow: -2px 4px 20px 0px rgba(51, 51, 51, 0.1);
       display: flex;
-      justify-content: start;
       flex-wrap: wrap;
     }
     &-operate {
