@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Table, Checkbox } from 'antd';
 import { MenuOutlined } from '@ant-design/icons';
 import type { DragEndEvent } from '@dnd-kit/core';
@@ -9,10 +9,14 @@ import { CSS } from '@dnd-kit/utilities';
 import { IconUI, ButtonUI } from 'sic-ui';
 import './index.scss';
 
-/** 当前表头类型 */
 export const Setting = (props: any) => {
   const { openModifyHeader, setOpenModifyHeader, tableHeader, getTableheader, scrollHeight } = props;
-  const [dataSource, setDataSource] = useState<any>(tableHeader);
+
+  const [dataSource, setDataSource] = useState<any>();
+
+  useEffect(() => {
+    setDataSource(tableHeader);
+  }, [tableHeader]);
 
   const Row = ({ children, ...props }: any) => {
     const { attributes, listeners, setNodeRef, setActivatorNodeRef, transform, transition, isDragging } = useSortable({
@@ -75,14 +79,17 @@ export const Setting = (props: any) => {
         );
       },
     },
-    { title: '表名', dataIndex: 'name' },
+    {
+      title: '表名',
+      dataIndex: 'name',
+    },
   ];
   // 移动表头
   const onDragEnd = (event: DragEndEvent) => {
     const { active, over } = event;
     if (active.id !== over?.id) {
       const arr = [active?.id, over?.id];
-      const isMove = tableHeader?.filter((item: any) => item.disable)?.map((item: any) => arr.includes(item.key));
+      const isMove = tableHeader?.filter((item: any) => item.disable).map((item: any) => arr.includes(item.key));
 
       if (!isMove?.includes(true)) {
         const sort = (previous: [key: any]) => {
@@ -97,7 +104,7 @@ export const Setting = (props: any) => {
   // 获取新的表格头部
   const handleGetSortedData = () => {
     // eslint-disable-next-line array-callback-return
-    dataSource?.map((item: any, i: number) => {
+    dataSource?.map((item: { sort: number }, i: number) => {
       item.sort = i + 1;
     });
     getTableheader(dataSource);
@@ -106,10 +113,16 @@ export const Setting = (props: any) => {
 
   return (
     <div className="sic-tableui-setting" onClick={(e) => e.stopPropagation()}>
-      <div className="sic-tableui-setting-icon" onClick={() => setOpenModifyHeader(!openModifyHeader)}>
+      <div
+        className="sic-tableui-setting-icon"
+        onClick={(e) => {
+          e.stopPropagation();
+          setOpenModifyHeader(!openModifyHeader);
+        }}
+      >
         <IconUI name="Setting" theme="outline" size="16" fill={'var(--textcolor)'} />
       </div>
-      {openModifyHeader && (
+      {openModifyHeader && dataSource?.length > 0 && (
         <div className="sic-tableui-setting-modify">
           <div className="modify-title">表头名称</div>
           <DndContext modifiers={[restrictToVerticalAxis]} onDragEnd={onDragEnd}>
