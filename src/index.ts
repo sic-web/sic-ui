@@ -24,3 +24,4 @@ export { default as ImageUI } from './ImageUI';
 export { default as Tiga } from './Tiga';
 export { default as MessageUI } from './MessageUI';
 export { default as DateUI } from './DateUI';
+export { default as FilterUI } from './FilterUI';
