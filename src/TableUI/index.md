@@ -290,6 +290,9 @@ const App: React.FC = () => {
 export default App;
 ```
 
+💎 表格组件-表头控制
+<code src="./demo/setting.tsx" ></code>
+
 ## API 使用文档
 
 🔥TableUI 引用 Ant Design 组件库，在使用过程中不做如何侵入性的更改
