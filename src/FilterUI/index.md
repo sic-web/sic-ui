@@ -35,7 +35,9 @@ const App: React.FC = () => {
     // 批量的值
     multipleChoice: [],
     // 搜索条件
-    filterParams: {},
+    filterParams: {
+      Status: 1,
+    },
     // 表格设置状态
     tableSetStatus: false,
     // 更多筛选的状态
