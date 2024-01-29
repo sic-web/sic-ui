@@ -11,6 +11,7 @@ interface IProps {
   onValuesChange?: any;
   clickReset?: any;
   container: HTMLDivElement | null;
+  showFilterText?: boolean;
 }
 
 interface FilterOption {
@@ -27,7 +28,17 @@ interface FilterOption {
 }
 
 const FilterUI = (props: IProps) => {
-  const { form, filterOptions, filterParams, moreFilters = false, setMoreFilters, onValuesChange, clickReset, container } = props;
+  const {
+    form,
+    filterOptions,
+    filterParams,
+    moreFilters = false,
+    setMoreFilters,
+    onValuesChange,
+    clickReset,
+    container,
+    showFilterText = true,
+  } = props;
   //默认展示的表单
   const [visibleOptions, setVisibleOptions] = useState<FilterOption[]>([]);
   //更多筛选的表单
@@ -112,6 +123,9 @@ const FilterUI = (props: IProps) => {
     sliceOptions();
   }, [filterOptions]);
   useEffect(() => {
+    form.setFieldsValue({
+      ...filterParams,
+    });
     getFilterName();
   }, [filterParams, filterOptions]);
 
@@ -204,7 +218,7 @@ const FilterUI = (props: IProps) => {
           )}
         </div>
       </div>
-      {filterName.length > 0 && (
+      {filterName.length > 0 && showFilterText && (
         <Affix offsetTop={0} target={() => container}>
           <div className="sicFilterUI-filter">
             <div className="sicFilterUI-filter-title">已筛条件：</div>
