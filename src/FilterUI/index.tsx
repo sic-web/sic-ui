@@ -123,9 +123,6 @@ const FilterUI = (props: IProps) => {
     sliceOptions();
   }, [filterOptions]);
   useEffect(() => {
-    form.setFieldsValue({
-      ...filterParams,
-    });
     getFilterName();
   }, [filterParams, filterOptions]);
 
