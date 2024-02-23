@@ -1,5 +1,6 @@
 import React from 'react';
 import { TableUI, CellUI } from 'sic-ui';
+import { expandTwo } from '../utils';
 import './index.scss';
 /** 当前表头类型 */
 export interface TableHeaderItem {
@@ -39,7 +40,12 @@ const filterTableHeader = (columns: Columns[], tableHeader: TableHeaderItem[]) =
       obj = { ...a, ...obj };
       columns?.forEach((b: any) => {
         if (a?.key === b?.key) {
-          obj.render = b?.render;
+          if (b.type === 'amount') {
+            if (b.transform === 'expandTwo') {
+              obj.render = (i: string | number) => <CellUI>{expandTwo(i)}</CellUI>;
+            }
+          }
+
           obj = { ...obj, ...b };
         }
       });
