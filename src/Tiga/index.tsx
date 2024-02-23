@@ -1,6 +1,6 @@
 import React from 'react';
 import { TableUI, CellUI, TagUI } from 'sic-ui';
-import { expandTwo } from '../utils';
+import { expandTwo, reduceTwo } from '../utils';
 import './index.scss';
 /** 当前表头类型 */
 export interface TableHeaderItem {
@@ -48,8 +48,17 @@ const filterTableHeader = (columns: Columns[], tableHeader: TableHeaderItem[]) =
                 return <CellUI>{expandTwo(item[realKey])}</CellUI>;
               };
             }
-            // TagUI
-          } else if (b.type === 'tagui') {
+          }
+          // 百分比
+          else if (b.type === 'percent') {
+            if (b.transform === 'reduceTwo') {
+              obj.render = (_: never, item: any) => {
+                return <CellUI>{item[realKey] ? `${reduceTwo(item[realKey])}%` : null}</CellUI>;
+              };
+            }
+          }
+          // TagUI
+          else if (b.type === 'tagui') {
             obj.render = (_: never, item: any) => {
               const current = b.transform.rally?.filter((obj: any) => obj.value === item[realKey])?.[0];
               return <TagUI type={current.taguiType}>{current.label}</TagUI>;
