@@ -1,5 +1,5 @@
 import React from 'react';
-import { TableUI, CellUI } from 'sic-ui';
+import { TableUI, CellUI, TagUI } from 'sic-ui';
 import { expandTwo } from '../utils';
 import './index.scss';
 /** 当前表头类型 */
@@ -40,10 +40,20 @@ const filterTableHeader = (columns: Columns[], tableHeader: TableHeaderItem[]) =
       obj = { ...a, ...obj };
       columns?.forEach((b: any) => {
         if (a?.key === b?.key) {
+          const realKey = b?.realKey ? b?.realKey : b.key;
+          // 金额
           if (b.type === 'amount') {
             if (b.transform === 'expandTwo') {
-              obj.render = (i: string | number) => <CellUI>{expandTwo(i)}</CellUI>;
+              obj.render = (_: never, item: any) => {
+                return <CellUI>{expandTwo(item[realKey])}</CellUI>;
+              };
             }
+            // TagUI
+          } else if (b.type === 'tagui') {
+            obj.render = (_: never, item: any) => {
+              const current = b.transform.rally?.filter((obj: any) => obj.value === item[realKey])?.[0];
+              return <TagUI type={current.taguiType}>{current.label}</TagUI>;
+            };
           }
 
           obj = { ...obj, ...b };
