@@ -67,6 +67,27 @@ const App: React.FC = () => (
 export default App;
 ```
 
+💎 表单中按钮置灰
+
+```jsx
+import React from 'react';
+import { Form, Space } from 'antd';
+import { ButtonUI } from 'sic-ui';
+
+const App: React.FC = () => (
+  <Form disabled={true}>
+    <Space>
+      <ButtonUI danger>默认按钮</ButtonUI>
+      <ButtonUI type="primary">主要按钮</ButtonUI>
+      <ButtonUI type="border" danger>
+        删除按钮
+      </ButtonUI>
+    </Space>
+  </Form>
+);
+export default App;
+```
+
 💎 使用 Icon
 
 ```jsx
