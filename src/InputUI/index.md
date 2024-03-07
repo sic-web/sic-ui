@@ -24,7 +24,7 @@ const App: React.FC = () => {
   const changeInputRange = (e) => setInputRangeValue(e);
   return (
     <div>
-      <InputUI />
+      <InputUI onChange={(e) => console.log(e)} onchangeTime={500} />
       <br />
       <br />
       <InputUI.Range onChange={changeInputRange} />
