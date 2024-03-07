@@ -1,10 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Input, InputNumber } from 'antd';
 import './index.scss';
+let timer: any;
 
 const InputUI = (props: any) => {
-  const { ...otherProps } = props;
-  return <Input {...otherProps} />;
+  const { value, onChange, onchangeTime, ...otherProps } = props;
+  const [reactValue, setReactValue] = useState<string>();
+  useEffect(() => {
+    setReactValue(value);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [value]);
+  const valueChange = (e: any) => {
+    setReactValue(e?.target?.value);
+
+    if (onchangeTime) {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        onChange?.(e?.target?.value);
+      }, onchangeTime);
+    } else {
+      onChange?.(e?.target?.value);
+    }
+  };
+  return <Input value={reactValue} onChange={(e) => valueChange(e)} {...otherProps} />;
 };
 
 const Range = (props: any) => {

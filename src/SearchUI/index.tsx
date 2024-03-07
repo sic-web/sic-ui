@@ -10,6 +10,9 @@ const SearchUI = (props: any) => {
   const [reactValue, setReactValue] = useState<string>();
   useEffect(() => {
     setReactValue(value);
+    return () => {
+      clearTimeout(timer);
+    };
   }, [value]);
 
   const valueChange = (e: any) => {
@@ -29,7 +32,6 @@ const SearchUI = (props: any) => {
       onChange={(e: any) => valueChange(e)}
       allowClear
       onSearch={(e) => onChange(e.trim())}
-      // onBlur={(e) => e?.target?.value && onChange(e.target.value.trim())}
       placeholder={placeholder}
       enterButton={
         <div style={{ display: 'flex', alignItems: 'center' }}>
