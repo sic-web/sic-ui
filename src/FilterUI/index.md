@@ -62,12 +62,12 @@ const App: React.FC = () => {
     });
   };
   const filterOptions = [
-    { type: 'search', label: '企业名称', key: 'companyName' },
-    { type: 'datePicker', label: '发放日期', key: 'transTime' },
-    { type: 'select', label: '状态', key: 'Status', options: projectStatusOptions },
-    { type: 'search', label: '企业名称', key: 'companyName' },
-    { type: 'datePicker', label: '发放日期', key: 'transTime' },
-    { type: 'select', label: '状态', key: 'Status', options: projectStatusOptions },
+    { type: 'search', label: '企业名称', key: 'companyName1' },
+    { type: 'datePicker', label: '发放日期', key: 'transTime1' },
+    { type: 'select', label: '状态', key: 'Status1', options: projectStatusOptions },
+    { type: 'search', label: '企业名称', key: 'companyName2' },
+    { type: 'datePicker', label: '发放日期', key: 'transTime2' },
+    { type: 'select', label: '状态', key: 'Status2', options: projectStatusOptions, isNotDelete: true, renderProps: {} },
     { type: 'search', label: '企业名称', key: 'companyName' },
     { type: 'datePicker', label: '发放日期', key: 'transTime' },
     { type: 'select', label: '状态', key: 'Status', options: projectStatusOptions },

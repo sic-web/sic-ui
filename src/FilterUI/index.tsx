@@ -23,6 +23,7 @@ interface FilterOption {
   endKey?: string;
   value?: any;
   render?: () => React.ReactNode;
+  renderProps?: any;
   renderValue?: string;
   isNotDelete?: boolean;
 }
@@ -139,19 +140,19 @@ const FilterUI = (props: IProps) => {
         case 'search':
           return (
             <Form.Item key={option.key} name={option.key}>
-              <SearchUI placeholder={option.label} {...option} />
+              <SearchUI placeholder={option.label} {...option?.renderProps} />
             </Form.Item>
           );
         case 'select':
           return (
             <Form.Item key={option.key} name={option.key} label={option.label}>
-              <SelectUI options={option.options || []} placeholder={`请选择${option.label}`} {...option} />
+              <SelectUI options={option.options || []} placeholder={`请选择${option.label}`} {...option?.renderProps} />
             </Form.Item>
           );
         case 'datePicker':
           return (
             <Form.Item key={option.key} name={option.key} label={option.label}>
-              <DateUI {...option} />
+              <DateUI {...option?.renderProps} />
             </Form.Item>
           );
         case 'cascader':
@@ -163,7 +164,7 @@ const FilterUI = (props: IProps) => {
                 changeOnSelect
                 expandTrigger="hover"
                 displayRender={(e: any) => e[e.length - 1]}
-                {...option}
+                {...option?.renderProps}
               />
             </Form.Item>
           );
