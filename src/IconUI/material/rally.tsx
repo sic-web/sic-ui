@@ -2,7 +2,7 @@ import React from 'react';
 import { MenuFoldOutlined, MenuUnfoldOutlined, DownOutlined, MenuOutlined, SwapOutlined, LogoutOutlined } from '@ant-design/icons';
 import { HomeOutlined, SolutionOutlined, CopyOutlined, FormOutlined, AccountBookOutlined, SettingOutlined } from '@ant-design/icons';
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
-import { SwitchOff, Minsheng, Pingan, Iconwx, Iconzfb, Zhaoshang, SwitchOn, Warning, Pdf } from './material';
+import { SwitchOff, Minsheng, Pingan, Iconwx, Iconzfb, Zhaoshang, SwitchOn, Warning, Pdf, Point } from './material';
 import { Export, ListTwo, Return, AddOne, SwitchButton, Audit, Clear, Download, Female, Male, PreviewOpen, Upload } from '@icon-park/react';
 import { Delete, Setting, Excel, FilePdf, BackgroundColor, Home, ChartPieOne, BookmarkOne, DataArrival } from '@icon-park/react';
 import { TicketsTwo, Bank, ShieldAdd, Swipe, SettingTwo, DataFour, Currency, CheckOne, CloseOne, UTurnLeft } from '@icon-park/react';
@@ -22,6 +22,7 @@ export const iconRally = [
   { name: 'SwitchOn', element: (props: any) => SwitchOn(props) },
   { name: 'Warning', element: (props: any) => Warning(props) },
   { name: 'Pdf', element: (props: any) => Pdf(props) },
+  { name: 'Point', element: (props: any) => Point(props) },
   // antd
   { name: 'HomeOutlined', element: (props: any) => <HomeOutlined {...props} /> },
   { name: 'LogoutOutlined', element: (props: any) => <LogoutOutlined {...props} /> },
