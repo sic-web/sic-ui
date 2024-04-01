@@ -33,7 +33,7 @@ const App: React.FC = () => {
     MessageUI.error('失败');
   };
   const showMessageInfo = () => {
-    MessageUI.info('失败');
+    MessageUI.info('默认');
   };
 
   const showMessageWarning = () => {
