@@ -21,19 +21,23 @@ group:
 
 ```jsx
 import React, { useState } from 'react';
-import { MessageUI, ButtonUI } from 'sic-ui';
+import { MessageUI, ButtonUI, IconUI } from 'sic-ui';
 import { Space, message } from 'antd';
+import { ExclamationCircleFilled } from '@ant-design/icons';
 
 const App: React.FC = () => {
   const showMessageSuccess = () => {
     MessageUI.success('成功');
-    // message.success('成功');
   };
   const showMessageError = () => {
     MessageUI.error('失败');
   };
   const showMessageInfo = () => {
-    MessageUI.info('默认');
+    MessageUI.info({
+      content: '默认',
+      icon: <ExclamationCircleFilled style={{ color: '#fff' }} />,
+    });
+    // MessageUI.info('默认');
   };
 
   const showMessageWarning = () => {

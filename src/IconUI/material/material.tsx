@@ -204,3 +204,23 @@ export const Point = (props: IProps) => {
     </svg>
   );
 };
+
+export const Remind = (props: IProps) => {
+  const { width = '14', height = '14' } = props;
+  return (
+    <svg width={width} height={height} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M8 14.6666C9.84093 14.6666 11.5076 13.9204 12.714 12.714C13.9205 11.5075 14.6667 9.84085 14.6667 7.99992C14.6667 6.15899 13.9205 4.49232 12.714 3.28587C11.5076 2.07945 9.84093 1.33325 8 1.33325C6.15907 1.33325 4.4924 2.07945 3.28595 3.28587C2.07953 4.49232 1.33333 6.15899 1.33333 7.99992C1.33333 9.84085 2.07953 11.5075 3.28595 12.714C4.4924 13.9204 6.15907 14.6666 8 14.6666Z"
+        fill="white"
+      />
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M8 12.3334C8.46023 12.3334 8.83333 11.9603 8.83333 11.5001C8.83333 11.0398 8.46023 10.6667 8 10.6667C7.53977 10.6667 7.16667 11.0398 7.16667 11.5001C7.16667 11.9603 7.53977 12.3334 8 12.3334Z"
+        fill="#2E64FA"
+      />
+      <path d="M8 4V9.33333Z" fill="#2E64FA" />
+      <path d="M8 4V9.33333" stroke="#2E64FA" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+};
