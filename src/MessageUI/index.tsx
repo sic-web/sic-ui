@@ -1,10 +1,10 @@
 import React from 'react';
 import { message } from 'antd';
-import { ExclamationCircleFilled } from '@ant-design/icons';
+import { Info } from '@icon-park/react';
 import './index.scss';
 
 message.config({
-  duration: 3,
+  duration: 100,
   maxCount: 3,
   rtl: false,
   prefixCls: 'sic-message',
@@ -18,7 +18,11 @@ const MessageUI = {
   },
   info: (props: any) => {
     let content = '';
-    const icon = <ExclamationCircleFilled style={{ color: '#fff' }} />;
+    const icon = (
+      <span style={{ marginRight: 8 }}>
+        <Info theme="multi-color" size="20" fill={['#fff', '#fff', '#2e64fa', '#fff']} />
+      </span>
+    );
     if (typeof props === 'string') {
       content = props;
     } else {
