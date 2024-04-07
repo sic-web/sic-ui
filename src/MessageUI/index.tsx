@@ -4,7 +4,7 @@ import { Info } from '@icon-park/react';
 import './index.scss';
 
 message.config({
-  duration: 100,
+  duration: 3,
   maxCount: 3,
   rtl: false,
   prefixCls: 'sic-message',
