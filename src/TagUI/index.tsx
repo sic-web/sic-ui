@@ -14,7 +14,7 @@ const themeList = [
 ];
 
 const TagUI = (props: any) => {
-  const { type, children, icon, width, ...otherProps } = props;
+  const { className, type, children, icon, width, ...otherProps } = props;
   const [theme, setTheme] = useState<any>();
 
   useEffect(() => {
@@ -23,12 +23,16 @@ const TagUI = (props: any) => {
   }, [type]);
 
   return (
-    <div style={{ color: theme?.color, backgroundColor: theme?.bgcolor, width: width ?? 'auto' }} {...otherProps} className="sic-tagui">
+    <div
+      className={`sic-tagui ${className ?? ''}`}
+      style={{ color: theme?.color, backgroundColor: theme?.bgcolor, width: width ?? 'auto' }}
+      {...otherProps}
+    >
       {children}
       {icon && (
-        <span className="sic-tagui-icon" style={{ color: theme?.color }}>
+        <div className="sic-tagui-icon" style={{ color: theme?.color }}>
           {icon}
-        </span>
+        </div>
       )}
     </div>
   );

@@ -1,18 +1,19 @@
 .sic-tagui {
+  box-sizing: border-box;
+  padding: 0 8px;
   width: auto;
   height: 28px;
-  font-size: 13px;
-  line-height: 28px;
-  text-align: center;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   white-space: nowrap;
-  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
   border-radius: 4px;
-  display: inline-block;
-  padding: 0 8px;
+
   &-icon {
     margin-left: 2px;
     font-size: 14px;
-    line-height: 28px;
-    vertical-align: middle;
   }
 }
