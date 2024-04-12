@@ -130,7 +130,7 @@ const DateUI = (props: any) => {
               className="sic-dateui-select"
               variant="filled"
               value={selectValue}
-              placeholder="预设时间"
+              placeholder="快捷选择"
               options={options}
               onChange={changeSelect}
             />

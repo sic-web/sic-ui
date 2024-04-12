@@ -17,21 +17,17 @@
       justify-content: right;
     }
     .ant-form-item-control {
-      width: 330px;
+      width: 334px;
 
-      .sic-dateui {
-        &-select {
-          width: 90px;
-          background-color: #f0f0f0;
-          border-radius: 6px;
-        }
+      .sic-dateui-select {
+        width: 90px;
       }
     }
     .sic-searchui {
-      width: 400px;
+      width: 404px;
     }
     &-form {
-      width: 1230px;
+      width: 1242px;
       display: flex;
       flex-wrap: wrap;
     }
