@@ -1,4 +1,10 @@
 .sic-dateui {
+  display: inline-flex;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  .ant-picker {
+    width: calc(100% - 100px);
+  }
   .ant-picker-input > input:placeholder-shown {
     text-align: center;
   }
@@ -8,5 +14,10 @@
   .ant-picker-input input::placeholder {
     color: #999 !important;
     font-family: 'LingCaiTi' !important;
+  }
+  &-select {
+    width: 100px;
+    background-color: #f0f0f0;
+    border-radius: 6px;
   }
 }
