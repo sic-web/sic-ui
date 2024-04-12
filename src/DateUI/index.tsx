@@ -8,7 +8,7 @@ import './index.scss';
 
 dayjs.extend(quarterOfYear);
 const DateUI = (props: any) => {
-  const { className, value, onChange, format = 'YYYY-MM-DD', rangePicker = true, ...otherProps } = props;
+  const { className, value, onChange, format = 'YYYY-MM-DD', rangePicker = true, isShowSelect = false, ...otherProps } = props;
   //日期选择框值
   const [realValue, setRealValue] = useState<any>();
   //下拉框值
@@ -127,14 +127,16 @@ const DateUI = (props: any) => {
       {rangePicker ? (
         <div className={`sic-dateui ${className ?? ''}`}>
           <DatePicker.RangePicker separator={'至'} variant="borderless" value={realValue} onChange={changeDate} {...otherProps} />
-          <Select
-            className="sic-dateui-select"
-            variant="filled"
-            value={selectValue}
-            placeholder="预设时间"
-            options={options}
-            onChange={changeSelect}
-          />
+          {isShowSelect && (
+            <Select
+              className="sic-dateui-select"
+              variant="filled"
+              value={selectValue}
+              placeholder="预设时间"
+              options={options}
+              onChange={changeSelect}
+            />
+          )}
         </div>
       ) : (
         <DatePicker className={`sic-dateui ${className ?? ''}`} value={realValue} onChange={changeDate} {...otherProps} />
