@@ -7,8 +7,8 @@
     background-color: #fff;
     border-radius: 8px;
     .ant-form-item {
-      margin-bottom: 10px;
-      margin-right: 10px;
+      margin-bottom: 12px;
+      margin-right: 33px;
     }
     .ant-form-item-label > label {
       color: #666;
@@ -17,17 +17,13 @@
       justify-content: right;
     }
     .ant-form-item-control {
-      width: 334px;
-
-      .sic-dateui-select {
-        width: 90px;
-      }
+      width: 250px;
     }
-    .sic-searchui {
-      width: 404px;
+    .searchUI {
+      width: 320px;
     }
     &-form {
-      width: 1242px;
+      width: 1060px;
       display: flex;
       flex-wrap: wrap;
     }
