@@ -13,6 +13,7 @@ const DateUI = (props: any) => {
   const [realValue, setRealValue] = useState<any>();
   //下拉框值
   const [selectValue, setSelectValue] = useState<any>();
+
   useEffect(() => {
     if (rangePicker) {
       if (value && value?.[0] && value?.[1]) {
@@ -20,6 +21,7 @@ const DateUI = (props: any) => {
         setRealValue(newValue);
       } else {
         setRealValue(undefined);
+        setSelectValue(undefined);
       }
     } else {
       if (value) {
@@ -38,7 +40,7 @@ const DateUI = (props: any) => {
     } else {
       newTime = e.format(format);
     }
-    setSelectValue(null);
+    setSelectValue(undefined);
     setRealValue(e);
     onChange(newTime);
   };
