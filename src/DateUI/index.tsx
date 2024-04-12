@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { DatePicker, ConfigProvider, Select } from 'antd';
 import dayjs from 'dayjs';
-const quarterOfYear = require('dayjs/plugin/quarterOfYear');
+import quarterOfYear from 'dayjs/plugin/quarterOfYear';
 import zhCN from 'antd/locale/zh_CN';
 import 'dayjs/locale/zh-cn';
 import './index.scss';
@@ -52,10 +52,10 @@ const DateUI = (props: any) => {
     { value: 5, label: '上月' },
     { value: 6, label: '本月' },
     { value: 7, label: '近一季度' },
-    { value: 8, label: '上季度' },
+    { value: 8, label: '上一季度' },
     { value: 9, label: '本季度' },
     { value: 10, label: '近一年度' },
-    { value: 11, label: '上年度' },
+    { value: 11, label: '上一年度' },
     { value: 12, label: '本年度' },
   ];
 
@@ -92,15 +92,11 @@ const DateUI = (props: any) => {
         endDate = dayjs().endOf('day');
         break;
       case 8: // 上季度
-        /* @ts-ignore */
-        startDate = dayjs().subtract(6, 'month').startOf('quarter');
-        /* @ts-ignore */
-        endDate = dayjs().subtract(6, 'month').endOf('quarter');
+        startDate = dayjs().subtract(1, 'quarter').startOf('quarter');
+        endDate = dayjs().subtract(1, 'quarter').endOf('quarter');
         break;
       case 9: // 本季度
-        /* @ts-ignore */
         startDate = dayjs().startOf('quarter');
-        /* @ts-ignore */
         endDate = dayjs().endOf('quarter');
         break;
       case 10: // 近一年
