@@ -38,7 +38,7 @@ const DateUI = (props: any) => {
     } else {
       newTime = e.format(format);
     }
-    setSelectValue();
+    setSelectValue(null);
     setRealValue(e);
     onChange(newTime);
   };
