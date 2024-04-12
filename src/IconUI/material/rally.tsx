@@ -1,6 +1,14 @@
 import React from 'react';
 import { MenuFoldOutlined, MenuUnfoldOutlined, DownOutlined, MenuOutlined, SwapOutlined, LogoutOutlined } from '@ant-design/icons';
-import { HomeOutlined, SolutionOutlined, CopyOutlined, FormOutlined, AccountBookOutlined, SettingOutlined } from '@ant-design/icons';
+import {
+  HomeOutlined,
+  SolutionOutlined,
+  CopyOutlined,
+  FormOutlined,
+  AccountBookOutlined,
+  SettingOutlined,
+  AlipayCircleOutlined,
+} from '@ant-design/icons';
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import { SwitchOff, Minsheng, Pingan, Iconwx, Iconzfb, Zhaoshang, SwitchOn, Warning, Pdf, Point, Remind } from './material';
 import { Export, ListTwo, Return, AddOne, SwitchButton, Audit, Clear, Download, Female, Male, PreviewOpen, Upload } from '@icon-park/react';
@@ -40,6 +48,8 @@ export const iconRally = [
   { name: 'SettingOutlined', element: (props: any) => <SettingOutlined {...props} /> },
   { name: 'EyeInvisibleOutlined', element: (props: any) => <EyeInvisibleOutlined {...props} /> },
   { name: 'EyeTwoTone', element: (props: any) => <EyeTwoTone {...props} /> },
+  { name: 'AlipayCircleOutlined', element: (props: any) => <AlipayCircleOutlined {...props} /> },
+
   // icon-park
   { name: 'ListTwo', element: (props: any) => <ListTwo {...props} /> },
   { name: 'Export', element: (props: any) => <Export {...props} /> },
