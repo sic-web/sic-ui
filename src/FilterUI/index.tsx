@@ -152,7 +152,7 @@ const FilterUI = (props: IProps) => {
         case 'datePicker':
           return (
             <Form.Item key={option.key} name={option.key} label={option.label}>
-              <DateUI {...option?.renderProps} />
+              <DateUI isShowSelect={true} {...option?.renderProps} />
             </Form.Item>
           );
         case 'cascader':

@@ -3,7 +3,7 @@
   border: 1px solid #d9d9d9;
   border-radius: 6px;
   .ant-picker {
-    width: calc(100% - 100px);
+    flex: 1;
   }
   .ant-picker-input > input:placeholder-shown {
     text-align: center;
@@ -16,8 +16,11 @@
     font-family: 'LingCaiTi' !important;
   }
   &-select {
-    width: 100px;
+    width: 90px;
     background-color: #f0f0f0;
     border-radius: 6px;
+  }
+  .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+    padding: 0 6px;
   }
 }
