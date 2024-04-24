@@ -24,3 +24,4 @@ export { default as Tiga } from './Tiga';
 export { default as MessageUI } from './MessageUI';
 export { default as DateUI } from './DateUI';
 export { default as FilterUI } from './FilterUI';
+export { default as PasswordStrongUI } from './PasswordStrongUI';
