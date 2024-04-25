@@ -3,6 +3,7 @@ import './index.scss';
 
 interface IProps {
   value: string;
+  style?: any;
 }
 
 const PassStrong = [
@@ -41,9 +42,9 @@ const StrongCheck = (value: string) => {
 };
 
 const PasswordStrongUI = (props: IProps) => {
-  const { value } = props;
+  const { value, style } = props;
   return (
-    <div className="sic-passwordStrongui">
+    <div className="sic-passwordStrongui" style={style}>
       <div className="line1">密码强度：{StrongCheck(value)}</div>
       <div>密码强度8～32位，包含数字、大/小写字母、特殊字符。</div>
     </div>
