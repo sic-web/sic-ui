@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { DatePicker, ConfigProvider } from 'antd';
+import quarterOfYear from 'dayjs/plugin/quarterOfYear';
 import dayjs from 'dayjs';
 import zhCN from 'antd/locale/zh_CN';
 import 'dayjs/locale/zh-cn';
 import './index.scss';
+dayjs.extend(quarterOfYear);
 dayjs.locale('zh-cn');
 
 const DefaultPresets = [
@@ -13,7 +15,7 @@ const DefaultPresets = [
   { label: '上月', value: [dayjs().subtract(1, 'month').startOf('month'), dayjs().subtract(1, 'month').endOf('month')] },
   { label: '本月', value: [dayjs().startOf('month'), dayjs().endOf('month')] },
   { label: '近一月', value: [dayjs().subtract(1, 'month'), dayjs()] },
-  { label: '上季度', value: [dayjs().startOf('quarter').subtract(1, 'quarter'), dayjs().endOf('quarter').subtract(1, 'quarter')] },
+  { label: '上季度', value: [dayjs().subtract(1, 'quarter').startOf('quarter'), dayjs().subtract(1, 'quarter').endOf('quarter')] },
   { label: '本季度', value: [dayjs().startOf('quarter'), dayjs().endOf('quarter')] },
   { label: '近一季度', value: [dayjs().subtract(1, 'quarter'), dayjs()] },
   { label: '上年度', value: [dayjs().startOf('year').subtract(1, 'year'), dayjs().endOf('year').subtract(1, 'year')] },
@@ -25,7 +27,7 @@ const DateUI = (props: any) => {
   const { className, value, onChange, format = 'YYYY-MM-DD', showRange = false, presets = DefaultPresets, ...otherProps } = props;
   // 真实数据
   const [realValue, setRealValue] = useState();
-
+  console.log('--value', value);
   useEffect(() => {
     if (showRange) {
       if (value && value?.[0] && value?.[1]) {

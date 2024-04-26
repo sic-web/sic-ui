@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Form, Affix, Space, Cascader } from 'antd';
 import { ButtonUI, SearchUI, SelectUI, IconUI, DateUI } from 'sic-ui';
-import dayjs from 'dayjs';
-import quarterOfYear from 'dayjs/plugin/quarterOfYear';
-import 'dayjs/locale/zh-cn';
 import './index.scss';
-dayjs.locale('zh-cn');
-dayjs.extend(quarterOfYear);
+
 interface IProps {
   form: any;
   filterOptions: FilterOption[];
