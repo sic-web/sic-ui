@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import './index.scss';
 
 interface itemType {
@@ -14,31 +14,12 @@ interface propsType {
   setIsAutoScroll: (value: boolean) => void;
   className?: string;
 }
-interface newItemsType {
-  id?: number;
-  name?: string;
-  offsetTop: number;
-  offsetBottom: number;
-}
+
 const AnchorUI = (props: propsType) => {
   const { items, anchoruiRef, className, currentIndex, setCurrentIndex, isAutoScroll, setIsAutoScroll } = props;
   const prevScrollPosRef = useRef(0);
-  const [newItems, setNewItems] = useState<newItemsType[]>([]);
-  const handleScroll = () => {
-    //当前滚动距离
-    const currentPosition = anchoruiRef.current.scrollTop;
-    prevScrollPosRef.current = currentPosition;
-    const id = newItems.findIndex((item) => {
-      return item.offsetBottom > currentPosition && currentPosition >= item.offsetTop;
-    });
-    if (!isAutoScroll) {
-      setCurrentIndex(id);
-    }
-  };
-  const click = (index: number) => {
-    setIsAutoScroll(true);
-    setCurrentIndex(index);
-  };
+  const newItemsRef = useRef<any>([]);
+
   //获取每个标签 距离顶部的距离  本身的高度
   const getItemHigh = () => {
     const defaultElement: any = document.getElementById(items[0]?.key);
@@ -56,14 +37,33 @@ const AnchorUI = (props: propsType) => {
           };
         }
       });
-    setNewItems(newList as newItemsType[]);
+    newItemsRef.current = newList;
   };
+
+  //当前滚动距离应该聚焦到哪个导航上   isAutoScroll防止触发点击导航
+  const handleScroll = () => {
+    const currentPosition = anchoruiRef.current.scrollTop;
+    prevScrollPosRef.current = currentPosition;
+    const id = newItemsRef.current.findIndex((item: any) => {
+      return item.offsetBottom > currentPosition && currentPosition >= item.offsetTop;
+    });
+    if (!isAutoScroll) {
+      setCurrentIndex(id);
+    }
+  };
+
+  //点击导航
+  const click = (index: number) => {
+    setIsAutoScroll(true);
+    setCurrentIndex(index);
+  };
+
   //点击后滚动到对应标签
   const autoscrollFn = () => {
-    if (newItems?.length > 0 && anchoruiRef?.current) {
+    if (newItemsRef.current?.length > 0 && anchoruiRef?.current) {
       anchoruiRef.current.removeEventListener('scroll', handleScroll);
       anchoruiRef.current.scrollTo({
-        top: newItems[currentIndex]?.offsetTop,
+        top: newItemsRef.current[currentIndex]?.offsetTop,
         behavior: 'smooth',
       });
       //不加定时器 先点击1  再点击4  会依次点亮 2 3
@@ -85,7 +85,7 @@ const AnchorUI = (props: propsType) => {
         anchoruiRef.current.removeEventListener('scroll', handleScroll);
       }
     };
-  }, [newItems, isAutoScroll]);
+  }, [isAutoScroll]);
   useEffect(() => {
     if (isAutoScroll) {
       autoscrollFn();
