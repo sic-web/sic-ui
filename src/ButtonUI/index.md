@@ -91,9 +91,17 @@ export default App;
 💎 使用 Icon
 
 ```jsx
+import { Space } from 'antd';
 import { ButtonUI } from 'sic-ui';
 
-export default () => <ButtonUI icon={123}>按钮</ButtonUI>;
+export default () => (
+  <Space>
+    <ButtonUI icon={123}>按钮</ButtonUI>
+    <ButtonUI icon={123} iconPosition="start">
+      按钮
+    </ButtonUI>
+  </Space>
+);
 ```
 
 ## API 使用文档
