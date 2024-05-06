@@ -27,7 +27,6 @@ const DateUI = (props: any) => {
   const { className, value, onChange, format = 'YYYY-MM-DD', showRange = false, presets = DefaultPresets, ...otherProps } = props;
   // 真实数据
   const [realValue, setRealValue] = useState();
-  console.log('--value', value);
   useEffect(() => {
     if (showRange) {
       if (value && value?.[0] && value?.[1]) {

@@ -3,16 +3,15 @@ import { Button, ButtonProps } from 'antd';
 import './index.scss';
 interface ButtonUIProps extends Omit<ButtonProps, 'type'> {
   type?: any;
-  icon?: React.ReactNode;
   children?: React.ReactNode;
+  iconPosition?: 'start' | 'end';
 }
 
 const ButtonUI = (props: ButtonUIProps) => {
-  const { type, icon, children, ...otherProps } = props;
+  const { type, children, iconPosition = 'end', ...otherProps } = props;
   return (
-    <Button className="sic-buttonui" type={type} {...otherProps}>
+    <Button className="sic-buttonui" type={type} iconPosition={iconPosition} {...otherProps}>
       {children}
-      {icon && <span className="sic-buttonui-icon">{icon}</span>}
     </Button>
   );
 };
