@@ -3,30 +3,30 @@
   line-height: normal;
   font-weight: 500;
   border-radius: 4px;
-  box-shadow: none;
-  &-icon {
-    margin-left: 4px;
+  .ant-btn-icon-end {
+    margin-inline-start: 4px;
   }
 }
-
-.ant-btn-border {
+.ant-btn:not(.ant-btn-icon-only) > .ant-btn-icon:not(:last-child) {
+  margin-inline-end: 4px;
+}
+.sic-buttonui.ant-btn-border {
   color: var(--textcolor);
   border-color: var(--textcolor);
 }
-.ant-btn-default.ant-btn-dangerous {
+.sic-buttonui.ant-btn-default.ant-btn-dangerous {
   color: var(--textBlack);
   border-color: #d9d9d9;
 }
 
-.ant-btn-border.ant-btn-dangerous {
+.sic-buttonui.ant-btn-border.ant-btn-dangerous {
   color: var(--red);
   border-color: var(--red);
 }
 
-.ant-btn-border:disabled {
+.sic-buttonui.ant-btn-border:disabled {
   cursor: not-allowed;
   border-color: #d9d9d9;
   color: rgba(0, 0, 0, 0.25);
   background: rgba(0, 0, 0, 0.04);
-  box-shadow: none;
 }
