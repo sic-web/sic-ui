@@ -17,7 +17,7 @@ import { TicketsTwo, Bank, ShieldAdd, Swipe, SettingTwo, DataFour, Currency, Che
 import { Caution, RotateOne, Edit, Check, Close, UserBusiness, ArrowRight, More, DeleteOne, Search, Help } from '@icon-park/react';
 import { Attention, FileAddition, CooperativeHandshake, FileSuccess, Right, Peoples, UserToUserTransmission } from '@icon-park/react';
 import { PeoplePlus, Consume, MapRoadTwo, EditTwo, AddPrint, Family, CopyOne, ExpensesOne, FullScreenOne, Copy } from '@icon-park/react';
-import { City, Alarm, Deposit, TicketOne, Protect, Alipay, User, Lock } from '@icon-park/react';
+import { City, Alarm, Deposit, TicketOne, Protect, Alipay, User, Lock, FolderOpen } from '@icon-park/react';
 
 /** Icon 集合 */
 export const iconRally = [
@@ -119,4 +119,5 @@ export const iconRally = [
   { name: 'Alipay', element: (props: any) => <Alipay {...props} /> },
   { name: 'User', element: (props: any) => <User {...props} /> },
   { name: 'Lock', element: (props: any) => <Lock {...props} /> },
+  { name: 'FolderOpen', element: (props: any) => <FolderOpen {...props} /> },
 ];
