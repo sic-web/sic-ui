@@ -9,8 +9,10 @@ group:
 
 # NotificationUI 消息提醒组件
 
-:::success{title=使用中}
+:::error{title=废弃}
 国信灵工后台管理系统-消息提醒组件
+<br />
+原因：右上角看不清
 :::
 
 ## 场景故事
