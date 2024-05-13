@@ -89,7 +89,7 @@ const FilterUI = (props: IProps) => {
           value: filterParams[item.key],
         });
       }
-      if (item?.type === 'select' && item?.key && filterParams[item.key]) {
+      if (item?.type === 'select' && item?.key && (filterParams[item.key] || filterParams[item.key] === 0)) {
         filterNames.push({
           ...item,
           value: item?.options?.find((i) => i.value === filterParams[item.key ?? ''])?.label,
