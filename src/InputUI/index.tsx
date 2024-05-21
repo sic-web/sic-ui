@@ -28,7 +28,7 @@ const InputUI = (props: any) => {
 };
 
 const Range = (props: any) => {
-  const { value, onChange, min, max, style } = props;
+  const { value, onChange, min, max, placeholder = ['请输入', '请输入'], style } = props;
   const [input1, setInput1] = useState<number>();
   const [input2, setInput2] = useState<number>();
 
@@ -46,9 +46,23 @@ const Range = (props: any) => {
   };
   return (
     <div className="sic-inputui-range" style={style}>
-      <InputNumber className="range-input1" placeholder={min} value={value?.input1 ?? input1} onChange={onInput1} />
+      <InputNumber
+        className="range-input1"
+        placeholder={placeholder[0]}
+        min={min}
+        max={max}
+        value={value?.input1 ?? input1}
+        onChange={onInput1}
+      />
       <span className="range-to"> - </span>
-      <InputNumber className="range-input2" placeholder={max} value={value?.input2 ?? input2} onChange={onInput2} />
+      <InputNumber
+        className="range-input2"
+        placeholder={placeholder[1]}
+        min={min}
+        max={max}
+        value={value?.input2 ?? input2}
+        onChange={onInput2}
+      />
     </div>
   );
 };
