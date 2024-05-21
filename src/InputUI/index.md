@@ -27,7 +27,7 @@ const App: React.FC = () => {
       <InputUI onChange={(e) => console.log(e)} onchangeTime={500} />
       <br />
       <br />
-      <InputUI.Range onChange={changeInputRange} />
+      <InputUI.Range onChange={changeInputRange} min={0} max={100} />
       {JSON.stringify(inputRangeValue)}
     </div>
   );
