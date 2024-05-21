@@ -1,0 +1,68 @@
+.sic-broadcastui {
+  border: 1px solid #ff7875;
+  border-radius: 4px;
+  background: rgba(255, 120, 117, 0.1);
+  height: 32px;
+  line-height: 32px;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  &-left {
+    display: flex;
+    .sic-broadcastui-icon {
+      padding-top: 2px;
+      margin-left: 6px;
+    }
+    .sic-broadcastui-text {
+      margin-left: 6px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      animation: scroll 5s linear;
+    }
+  }
+
+  &-more {
+    margin-right: 6px;
+    color: #ff7875;
+    text-decoration-line: underline;
+    cursor: pointer;
+  }
+  @keyframes scroll {
+    0% {
+      transform: translateY(80%);
+      opacity: 0;
+    }
+    20% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    80% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-80%);
+      opacity: 0;
+    }
+  }
+}
+
+.ant-tooltip .ant-tooltip-content .ant-tooltip-inner {
+  .sic-broadcastui-button {
+    display: flex;
+    justify-content: center;
+    .text {
+      margin-top: 10px;
+      width: 80px;
+      text-align: center;
+      height: 28px;
+      line-height: 28px;
+      background-color: #fff;
+      color: #333;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  }
+}
