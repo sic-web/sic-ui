@@ -33,11 +33,10 @@ export default () => <BroadcastUI width={500} promptList={promptList} />;
 
 <font size=1>
 
-|   属性    | 说明                   |  类型  | 默认值 | 是否必传 |
-| :-------: | ---------------------- | :----: | :----: | :------: |
-|  before   | 当前页面的前一页       | String |   -    |    是    |
-|  current  | 当前页面               | String |   -    |    是    |
-|    to     | 从当前页面调到指定页面 | String |   -1   |    否    |
-| className | 类名                   | String |   -    |    否    |
+|    属性    | 说明     |   类型   | 默认值 | 是否必传 |
+| :--------: | -------- | :------: | :----: | :------: |
+| promptList | 提示消息 | String[] |   -    |    是    |
+|   width    | 宽度     |  Number  |   -    |    是    |
+|   style    | 样式     |   Any    |   -    |    否    |
 
 </font>

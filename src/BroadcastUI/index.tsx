@@ -6,32 +6,33 @@ import './index.scss';
 interface IProps {
   width: number;
   promptList: string[];
+  style?: any;
 }
 
 const BroadcastUI = (props: IProps) => {
-  const { width, promptList } = props;
-  const [isOpen, setIsOpen] = useState(true);
+  const { width, promptList, style } = props;
+  const promptListLength = promptList?.length;
+  const [isOpen, setIsOpen] = useState(false);
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrent((prevCurrent) => (prevCurrent + 1) % promptList.length);
+      setCurrent((prevCurrent) => (prevCurrent + 1) % promptListLength);
     }, 5000);
-
     return () => clearInterval(interval);
-  }, [promptList.length]);
+  }, [promptListLength]);
 
   return (
-    <div className="sic-broadcastui" style={{ width: width }}>
+    <div className="sic-broadcastui" style={{ width: width, ...style }}>
       <div className="sic-broadcastui-left">
         <div className="sic-broadcastui-icon">
           <IconUI name="Help" theme="filled" fill="#FF7875" size="18" />
         </div>
-        <div className="sic-broadcastui-text" key={current} style={{ width: promptList?.length > 1 ? width - 90 : width - 30 }}>
+        <div className="sic-broadcastui-text" key={current} style={{ width: promptListLength > 1 ? width - 90 : width - 30 }}>
           {promptList[current]}
         </div>
       </div>
-      {promptList?.length > 1 && (
+      {promptListLength > 1 && (
         <Tooltip
           title={
             <div>
