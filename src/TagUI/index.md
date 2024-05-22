@@ -75,9 +75,10 @@ export default App;
 
 <font size=1>
 
-| 属性 | 说明                      |   类型    | 默认值 | 是否必传 |
-| :--: | ------------------------- | :-------: | :----: | :------: |
-| type | 当前 TagUI 所属类型       |  Number   |   -    |    否    |
-| icon | 当前 TagUI 所 携带的 Icon | ReactNode |   -    |    否    |
+| 属性  | 说明                      |   类型    | 默认值 | 是否必传 |
+| :---: | ------------------------- | :-------: | :----: | :------: |
+| type  | 当前 TagUI 所属类型       |  Number   |   -    |    否    |
+| icon  | 当前 TagUI 所 携带的 Icon | ReactNode |   -    |    否    |
+| style | 样式                      |    Any    |   -    |    否    |
 
 </font>
