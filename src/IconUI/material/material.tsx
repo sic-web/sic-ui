@@ -224,3 +224,26 @@ export const Remind = (props: IProps) => {
     </svg>
   );
 };
+
+export const SelectFalse = (props: IProps) => {
+  const { width = '16', height = '17' } = props;
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 16 17" fill="none">
+      <path
+        d="M2.66667 2.5H13.3333C13.7015 2.5 14 2.79848 14 3.16667V13.8333C14 14.2015 13.7015 14.5 13.3333 14.5H2.66667C2.29848 14.5 2 14.2015 2 13.8333V3.16667C2 2.79848 2.29848 2.5 2.66667 2.5ZM3.33333 3.83333V13.1667H12.6667V3.83333H3.33333Z"
+        fill="#979797"
+      />
+    </svg>
+  );
+};
+export const SelectTrue = (props: IProps) => {
+  const { width = '16', height = '17', color = '#FF7875' } = props;
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 16 17" fill="none">
+      <path
+        d="M2.66667 2.5H13.3333C13.7015 2.5 14 2.79848 14 3.16667V13.8333C14 14.2015 13.7015 14.5 13.3333 14.5H2.66667C2.29848 14.5 2 14.2015 2 13.8333V3.16667C2 2.79848 2.29848 2.5 2.66667 2.5ZM7.33507 11.1667L12.0491 6.45262L11.1063 5.50981L7.33507 9.28107L5.44947 7.3954L4.50666 8.33827L7.33507 11.1667Z"
+        fill={color}
+      />
+    </svg>
+  );
+};

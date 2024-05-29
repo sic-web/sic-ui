@@ -10,7 +10,21 @@ import {
   AlipayCircleOutlined,
 } from '@ant-design/icons';
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
-import { SwitchOff, Minsheng, Pingan, Iconwx, Iconzfb, Zhaoshang, SwitchOn, Warning, Pdf, Point, Remind } from './material';
+import {
+  SwitchOff,
+  Minsheng,
+  Pingan,
+  Iconwx,
+  Iconzfb,
+  Zhaoshang,
+  SwitchOn,
+  Warning,
+  Pdf,
+  Point,
+  Remind,
+  SelectFalse,
+  SelectTrue,
+} from './material';
 import { Export, ListTwo, Return, AddOne, SwitchButton, Audit, Clear, Download, Female, Male, PreviewOpen, Upload } from '@icon-park/react';
 import { Delete, Setting, Excel, FilePdf, BackgroundColor, Home, ChartPieOne, BookmarkOne, DataArrival } from '@icon-park/react';
 import { TicketsTwo, Bank, ShieldAdd, Swipe, SettingTwo, DataFour, Currency, CheckOne, CloseOne, UTurnLeft } from '@icon-park/react';
@@ -18,7 +32,7 @@ import { Caution, RotateOne, Edit, Check, Close, UserBusiness, ArrowRight, More,
 import { Attention, FileAddition, CooperativeHandshake, FileSuccess, Right, Peoples, UserToUserTransmission } from '@icon-park/react';
 import { PeoplePlus, Consume, MapRoadTwo, EditTwo, AddPrint, Family, CopyOne, ExpensesOne, FullScreenOne, Copy } from '@icon-park/react';
 import { City, Alarm, Deposit, TicketOne, Protect, Alipay, User, Lock, FolderOpen, DoubleDown, DoubleUp, Press } from '@icon-park/react';
-import { RobotOne } from '@icon-park/react';
+import { RobotOne, Power, History, Communication, Newlybuild } from '@icon-park/react';
 
 /** Icon 集合 */
 export const iconRally = [
@@ -34,6 +48,8 @@ export const iconRally = [
   { name: 'Pdf', element: (props: any) => Pdf(props) },
   { name: 'Point', element: (props: any) => Point(props) },
   { name: 'Remind', element: (props: any) => Remind(props) },
+  { name: 'SelectFalse', element: (props: any) => SelectFalse(props) },
+  { name: 'SelectTrue', element: (props: any) => SelectTrue(props) },
 
   // antd
   { name: 'HomeOutlined', element: (props: any) => <HomeOutlined {...props} /> },
@@ -50,6 +66,7 @@ export const iconRally = [
   { name: 'EyeInvisibleOutlined', element: (props: any) => <EyeInvisibleOutlined {...props} /> },
   { name: 'EyeTwoTone', element: (props: any) => <EyeTwoTone {...props} /> },
   { name: 'AlipayCircleOutlined', element: (props: any) => <AlipayCircleOutlined {...props} /> },
+  { name: 'MenuFoldOutlined', element: (props: any) => <MenuFoldOutlined {...props} /> },
 
   // icon-park
   { name: 'ListTwo', element: (props: any) => <ListTwo {...props} /> },
@@ -111,7 +128,7 @@ export const iconRally = [
   { name: 'ExpensesOne', element: (props: any) => <ExpensesOne {...props} /> },
   { name: 'FullScreenOne', element: (props: any) => <FullScreenOne {...props} /> },
   { name: 'Copy', element: (props: any) => <Copy {...props} /> },
-  { name: 'MenuFoldOutlined', element: (props: any) => <MenuFoldOutlined {...props} /> },
+
   { name: 'City', element: (props: any) => <City {...props} /> },
   { name: 'Alarm', element: (props: any) => <Alarm {...props} /> },
   { name: 'Deposit', element: (props: any) => <Deposit {...props} /> },
@@ -125,4 +142,8 @@ export const iconRally = [
   { name: 'DoubleUp', element: (props: any) => <DoubleUp {...props} /> },
   { name: 'Press', element: (props: any) => <Press {...props} /> },
   { name: 'RobotOne', element: (props: any) => <RobotOne {...props} /> },
+  { name: 'Power', element: (props: any) => <Power {...props} /> },
+  { name: 'History', element: (props: any) => <History {...props} /> },
+  { name: 'Communication', element: (props: any) => <Communication {...props} /> },
+  { name: 'Newlybuild', element: (props: any) => <Newlybuild {...props} /> },
 ];
