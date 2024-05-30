@@ -7,10 +7,11 @@ interface IProps {
   width: number;
   promptList: string[];
   style?: any;
+  textAlign?: string;
 }
 
 const BroadcastUI = (props: IProps) => {
-  const { width, promptList, style } = props;
+  const { width, promptList, style, textAlign = 'left' } = props;
   const promptListLength = promptList?.length;
   const [isOpen, setIsOpen] = useState(false);
   const [current, setCurrent] = useState(0);
@@ -28,7 +29,11 @@ const BroadcastUI = (props: IProps) => {
         <div className="sic-broadcastui-icon">
           <IconUI name="Help" theme="filled" fill="#FF7875" size="18" />
         </div>
-        <div className="sic-broadcastui-text" key={current} style={{ width: promptListLength > 1 ? width - 90 : width - 30 }}>
+        <div
+          className="sic-broadcastui-text"
+          key={current}
+          style={{ width: textAlign === 'center' ? 'auto' : promptListLength > 1 ? width - 90 : width - 30 }}
+        >
           {promptList[current]}
         </div>
       </div>
