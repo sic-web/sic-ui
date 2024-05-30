@@ -10,6 +10,8 @@
   overflow: hidden;
   &-left {
     display: flex;
+    justify-content: center;
+    width: 100%;
     .sic-broadcastui-icon {
       padding-top: 2px;
       margin-left: 6px;
