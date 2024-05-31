@@ -32,7 +32,7 @@ const BroadcastUI = (props: IProps) => {
         <div
           className="sic-broadcastui-text"
           key={current}
-          style={{ width: textAlign === 'center' ? 'auto' : promptListLength > 1 ? width - 90 : width - 30 }}
+          style={{ width: textAlign === 'center' ? 'auto' : promptListLength > 1 ? width - 90 : width }}
         >
           {promptList[current]}
         </div>
