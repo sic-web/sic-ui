@@ -3,12 +3,14 @@
   line-height: normal;
   font-weight: 500;
   border-radius: 4px;
+  gap: 4px;
   .ant-btn-icon-end {
-    margin-inline-start: 4px;
+    margin-inline-start: 0;
   }
 }
+
 .ant-btn:not(.ant-btn-icon-only) > .ant-btn-icon:not(:last-child) {
-  margin-inline-end: 4px;
+  margin-inline-start: 0;
 }
 .sic-buttonui.ant-btn-border {
   color: var(--textcolor);
