@@ -92,12 +92,12 @@ export default App;
 
 ```jsx
 import { Space } from 'antd';
-import { ButtonUI } from 'sic-ui';
+import { ButtonUI, IconUI } from 'sic-ui';
 
 export default () => (
   <Space>
-    <ButtonUI icon={123}>按钮</ButtonUI>
-    <ButtonUI icon={123} iconPosition="start">
+    <ButtonUI icon={<IconUI name="Export" />}>按钮</ButtonUI>
+    <ButtonUI icon={<IconUI name="Export" />} iconPosition="start">
       按钮
     </ButtonUI>
   </Space>
