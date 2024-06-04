@@ -33,17 +33,17 @@
   }
   .sic-tableui-active {
     .ant-table-cell-fix-left {
-      background-color: var(--textcolor2);
+      background-color: var(--themeColor2);
     }
     .ant-table-cell {
-      background-color: var(--textcolor2);
+      background-color: var(--themeColor2);
     }
     .ant-table-cell-fix-right {
-      background-color: var(--textcolor2);
+      background-color: var(--themeColor2);
     }
   }
   .ant-table-tbody .ant-table-row > .ant-table-cell-row-hover {
-    background-color: var(--textcolor2);
+    background-color: var(--themeColor2);
   }
 }
 .sic-tableui-mask {

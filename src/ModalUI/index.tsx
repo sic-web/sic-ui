@@ -4,7 +4,7 @@ import './index.scss';
 
 const styleIcon = (type?: string) => {
   if (type === 'primary') {
-    return { color: 'var(--textcolor)', backgroundColor: 'var(--textcolor2)' };
+    return { color: 'var(--themeColor)', backgroundColor: 'var(--themeColor2)' };
   } else if (type === 'danger') {
     return { color: 'var(--red)', backgroundColor: 'rgba(255, 120, 117, 0.1)' };
   } else {

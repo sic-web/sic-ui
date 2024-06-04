@@ -10,8 +10,8 @@
     color: #666;
 
     &-select {
-      background-color: var(--textcolor2);
-      color: var(--textcolor);
+      background-color: var(--themeColor2);
+      color: var(--themeColor);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -20,7 +20,7 @@
       display: inline-block;
       width: 2px;
       height: 12px;
-      background-color: var(--textcolor);
+      background-color: var(--themeColor);
     }
   }
 }
