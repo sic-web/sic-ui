@@ -17,7 +17,7 @@ const BackUI = (props: IProps & Record<string, any>) => {
   return (
     <div className={`sic-back ${className ?? ''}`} {...otherProps}>
       <div className="sic-back-left" onClick={() => navigate(to ?? -1)}>
-        <IconUI name="Return" style={{ color: 'var(--textcolor)', marginRight: 3 }} />
+        <IconUI name="Return" style={{ color: 'var(--themeColor)', marginRight: 3 }} />
         返回
       </div>
       <div className="sic-back-right">

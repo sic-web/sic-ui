@@ -65,7 +65,7 @@ const CellUI = (props: PropsType) => {
               clickCopy(e, children);
             }}
           >
-            <IconUI name="Copy" theme="outline" size="14" fill="var(--textcolor)" />
+            <IconUI name="Copy" theme="outline" size="14" fill="var(--themeColor)" />
           </span>
         )}
         {children}

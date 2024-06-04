@@ -4,17 +4,11 @@
   font-weight: 500;
   border-radius: 4px;
   gap: 4px;
-  .ant-btn-icon-end {
-    margin-inline-start: 0;
-  }
 }
 
-.ant-btn:not(.ant-btn-icon-only) > .ant-btn-icon:not(:last-child) {
-  margin-inline-start: 0;
-}
 .sic-buttonui.ant-btn-border {
-  color: var(--textcolor);
-  border-color: var(--textcolor);
+  color: var(--themeColor);
+  border-color: var(--themeColor);
 }
 .sic-buttonui.ant-btn-default.ant-btn-dangerous {
   color: var(--textBlack);

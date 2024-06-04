@@ -230,7 +230,7 @@ const FilterUI = (props: IProps) => {
                       {item?.value}
 
                       {!item?.isNotDelete && (
-                        <IconUI name="CloseOne" theme="filled" size="14" fill="var(--textcolor)" style={{ marginLeft: 4 }} />
+                        <IconUI name="CloseOne" theme="filled" size="14" fill="var(--themeColor)" style={{ marginLeft: 4 }} />
                       )}
                     </div>
                   );

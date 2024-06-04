@@ -120,7 +120,7 @@ export const Setting = (props: any) => {
           setOpenModifyHeader(!openModifyHeader);
         }}
       >
-        <IconUI name="Setting" theme="outline" size="16" fill={'var(--textcolor)'} />
+        <IconUI name="Setting" theme="outline" size="16" fill={'var(--themeColor)'} />
       </div>
       {openModifyHeader && dataSource?.length > 0 && (
         <div className="sic-tableui-setting-modify">

@@ -6,7 +6,7 @@ import './index.scss';
 const OperateMore = (props: { content: React.ReactNode }) => {
   const tip = (text: React.ReactNode) => (
     <div>
-      <span style={{ color: 'var(--textcolor)' }}>{text || ''}</span>
+      <span style={{ color: 'var(--themeColor)' }}>{text || ''}</span>
     </div>
   );
 
@@ -33,7 +33,7 @@ export const Operate = (props: { child: any }) => {
 
   return (
     <div className="sic-tableui-operate">
-      {children?.length === 0 && <div style={{ color: 'var(--textcolor)' }}>-</div>}
+      {children?.length === 0 && <div style={{ color: 'var(--themeColor)' }}>-</div>}
       {children?.[0] || children}
       {children?.[1] && <span style={{ color: '#ccc', margin: '0 5px' }}>丨</span>}
       {children?.[1]}

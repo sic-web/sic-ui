@@ -49,13 +49,13 @@ body {
 }
 
 :root {
-  --textcolor: #feb71d;
-  --textcolor2: #fff1d2;
+  --themeColor: #feb71d;
+  --themeColor2: #fff1d2;
   color: #333;
   font-family: 'LingCaiTi';
   font-weight: 400;
   a {
-    color: var(--textcolor);
+    color: var(--themeColor);
   }
 }
 

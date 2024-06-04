@@ -5,7 +5,7 @@ const TextUI = (props: any) => {
     let changeStyle: any = { cursor: 'pointer' };
     switch (type) {
       case 'default':
-        changeStyle.color = 'var(--textcolor)';
+        changeStyle.color = 'var(--themeColor)';
         return { ...changeStyle, ...style };
       case 'danger':
         changeStyle.color = 'var(--red)';
