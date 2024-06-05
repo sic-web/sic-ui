@@ -32,7 +32,7 @@ import { Caution, RotateOne, Edit, Check, Close, UserBusiness, ArrowRight, More,
 import { Attention, FileAddition, CooperativeHandshake, FileSuccess, Right, Peoples, UserToUserTransmission } from '@icon-park/react';
 import { PeoplePlus, Consume, MapRoadTwo, EditTwo, AddPrint, Family, CopyOne, ExpensesOne, FullScreenOne, Copy } from '@icon-park/react';
 import { City, Alarm, Deposit, TicketOne, Protect, Alipay, User, Lock, FolderOpen, DoubleDown, DoubleUp, Press } from '@icon-park/react';
-import { RobotOne, Power, History, Communication, Newlybuild } from '@icon-park/react';
+import { RobotOne, Power, History, Communication, Newlybuild, Left } from '@icon-park/react';
 
 /** Icon 集合 */
 export const iconRally = [
@@ -146,4 +146,5 @@ export const iconRally = [
   { name: 'History', element: (props: any) => <History {...props} /> },
   { name: 'Communication', element: (props: any) => <Communication {...props} /> },
   { name: 'Newlybuild', element: (props: any) => <Newlybuild {...props} /> },
+  { name: 'Left', element: (props: any) => <Left {...props} /> },
 ];
