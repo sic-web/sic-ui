@@ -18,17 +18,18 @@ const DescribeUI = (props: any) => {
 
   return (
     <div className="sic-describeui">
-      {newProps?.map((item: any, i: number) => {
+      {newProps?.map((item: any, index: number) => {
         return (
-          <div key={i} className="sic-describeui-line">
-            {item?.map((obj: any, j: number) => {
-              return (
-                <div key={j} className="sic-describeui-elemnet" style={{ flex: obj?.flex }}>
-                  <div className="sic-describeui-elemnet-title">{obj?.title}</div>
-                  <div className="sic-describeui-elemnet-children">{obj?.children}</div>
-                </div>
-              );
-            })}
+          <div className="sic-describeui-line" key={index}>
+            {item?.map(
+              (i: any, idx: number) =>
+                (!i?.noDataHide || i?.children) && (
+                  <div className="sic-describeui-elemnet" style={{ flex: i?.flex }} key={idx}>
+                    <div className="sic-describeui-elemnet-title">{i?.title}</div>
+                    <div className="sic-describeui-elemnet-children">{i?.children}</div>
+                  </div>
+                ),
+            )}
           </div>
         );
       })}

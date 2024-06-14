@@ -29,6 +29,7 @@ const App: React.FC = () => {
       title: '代理类型',
       line: 1,
       children: '直客',
+      noDataHide: true,
     },
     {
       title: '代理名称',
@@ -107,7 +108,8 @@ const App: React.FC = () => {
     {
       title: '标题3',
       line: 4,
-      children: <div>444</div>,
+      children: '',
+      noDataHide: true,
     },
     {
       title: '标题3',
@@ -136,11 +138,12 @@ export default App;
 
 <font size=1>
 
-|   属性   | 说明 |   类型    | 默认值 | 是否必传 |
-| :------: | ---- | :-------: | :----: | :------: |
-|   line   | 行数 |  Number   |   -    |    是    |
-|  title   | 标题 |  String   |   -    |    是    |
-| children | 内容 | ReactNode |   -    |    是    |
-|   flex   | 宽度 |  Number   |   1    |    否    |
+|    属性    | 说明                   |   类型    | 默认值 | 是否必传 |
+| :--------: | ---------------------- | :-------: | :----: | :------: |
+|    line    | 行数                   |  Number   |   -    |    是    |
+|   title    | 标题                   |  String   |   -    |    是    |
+|  children  | 内容                   | ReactNode |   -    |    是    |
+| noDataHide | 没有值时是否隐藏当前项 |  Boolean  |   -    |    否    |
+|    flex    | 宽度                   |  Number   |   1    |    否    |
 
 </font>
