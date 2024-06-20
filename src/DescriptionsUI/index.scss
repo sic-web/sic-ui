@@ -1,0 +1,88 @@
+.sic-descriptionsUI {
+  &-table {
+    box-sizing: border-box;
+    border-top: 1px solid #d9d9d9;
+    border-left: 1px solid #d9d9d9;
+    .tableItem {
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      border-right: 1px solid #d9d9d9;
+      border-bottom: 1px solid #d9d9d9;
+      &-label,
+      &-control {
+        box-sizing: border-box;
+        padding: 8px;
+        height: 100%;
+        min-height: 36px;
+        display: flex;
+        align-items: center;
+      }
+      &-label {
+        background: var(--themeColor1);
+        border-right: 1px solid #d9d9d9;
+        justify-content: center;
+      }
+      &-control {
+        flex: 1;
+        font-weight: 500;
+      }
+    }
+  }
+  &-text {
+    .textItem {
+      box-sizing: border-box;
+      margin-bottom: 12px;
+
+      &-label {
+        color: #666;
+      }
+      &-control {
+        flex: 1;
+        font-weight: 500;
+      }
+    }
+  }
+
+  &-text.horizontal {
+    .textItem {
+      display: flex;
+    }
+  }
+
+  &-text.vertical {
+    .textItem-label {
+      margin-bottom: 4;
+    }
+  }
+  &-hide {
+    .sic-descriptionsUI-table {
+      .tableItem {
+        &-label,
+        &-control {
+          overflow: hidden;
+
+          &-content {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+    }
+
+    .sic-descriptionsUI-text {
+      .textItem {
+        &-label,
+        &-control {
+          overflow: hidden;
+          &-content {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+    }
+  }
+}
