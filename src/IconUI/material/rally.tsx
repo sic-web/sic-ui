@@ -24,6 +24,9 @@ import {
   Remind,
   SelectFalse,
   SelectTrue,
+  UploadPdf,
+  UploadImage,
+  UploadExcel,
 } from './material';
 import { Export, ListTwo, Return, AddOne, SwitchButton, Audit, Clear, Download, Female, Male, PreviewOpen, Upload } from '@icon-park/react';
 import { Delete, Setting, Excel, FilePdf, BackgroundColor, Home, ChartPieOne, BookmarkOne, DataArrival } from '@icon-park/react';
@@ -49,6 +52,9 @@ export const iconRally = [
   { name: 'Remind', element: (props: any) => Remind(props) },
   { name: 'SelectFalse', element: (props: any) => SelectFalse(props) },
   { name: 'SelectTrue', element: (props: any) => SelectTrue(props) },
+  { name: 'UploadPdf', element: (props: any) => <UploadPdf {...props} /> },
+  { name: 'UploadImage', element: (props: any) => <UploadImage {...props} /> },
+  { name: 'UploadExcel', element: (props: any) => <UploadExcel {...props} /> },
 
   // antd
   { name: 'HomeOutlined', element: (props: any) => <HomeOutlined {...props} /> },
