@@ -247,3 +247,114 @@ export const SelectTrue = (props: IProps) => {
     </svg>
   );
 };
+export const UploadPdf = (props: IProps) => {
+  const { width = '20', height = '20' } = props;
+  return (
+    <svg width={width} height={height} viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M3 11C3 8.79086 4.79086 7 7 7H15.75H29.0041C29.9687 7 30.9009 7.3486 31.6288 7.98158L35.1212 11.0184C35.8491 11.6514 36.7813 12 37.7459 12H50C52.2091 12 54 13.7909 54 16V52C54 54.2091 52.2091 56 50 56H7C4.79086 56 3 54.2091 3 52V11Z"
+        fill="#2E64FA"
+      />
+      <path
+        d="M12.201 21.9564C12.6725 20.2118 14.2552 19 16.0624 19H60.7754C63.4091 19 65.324 21.5012 64.6369 24.0436L56.799 53.0436C56.3275 54.7882 54.7448 56 52.9376 56H8.2246C5.5909 56 3.67599 53.4988 4.36314 50.9564L12.201 21.9564Z"
+        fill="url(#paint0_linear_2865_1777)"
+      />
+      <path
+        d="M12.201 21.9564C12.6725 20.2118 14.2552 19 16.0624 19H60.7754C63.4091 19 65.324 21.5012 64.6369 24.0436L56.799 53.0436C56.3275 54.7882 54.7448 56 52.9376 56H8.2246C5.5909 56 3.67599 53.4988 4.36314 50.9564L12.201 21.9564Z"
+        fill="url(#paint1_linear_2865_1777)"
+      />
+      <mask id="mask0_2865_1777" style={{ maskType: 'alpha' }} maskUnits="userSpaceOnUse" x="3" y="19" width="53" height="37">
+        <rect x="3" y="19" width="53" height="37" rx="4" fill="url(#paint2_linear_2865_1777)" />
+      </mask>
+      <g mask="url(#mask0_2865_1777)">
+        <path d="M29 37H18" stroke="white" strokeWidth="3" strokeLinecap="round" />
+        <path d="M24 43H16" stroke="white" strokeWidth="3" strokeLinecap="round" />
+        <circle cx="47.5" cy="45.5" r="13.5" fill="#A6BDE5" />
+      </g>
+      <circle cx="50.5" cy="45.5" r="13.5" fill="#FFBB3F" />
+      <path d="M47 44L51 40L55 44" stroke="white" strokeWidth="3" strokeLinecap="round" />
+      <path d="M51 42V52.5" stroke="white" strokeWidth="3" strokeLinecap="round" />
+      <defs>
+        <linearGradient id="paint0_linear_2865_1777" x1="53.9417" y1="19" x2="11.9832" y2="46.7173" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#E2FEDD" />
+          <stop offset="1" stopColor="#C8F69A" />
+        </linearGradient>
+        <linearGradient id="paint1_linear_2865_1777" x1="63.5534" y1="19" x2="19.2379" y2="53.7977" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#CFE4FF" />
+          <stop offset="1" stopColor="#A0C1FF" />
+        </linearGradient>
+        <linearGradient id="paint2_linear_2865_1777" x1="53.9418" y1="19" x2="11.9832" y2="46.7173" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#CFE4FF" />
+          <stop offset="1" stopColor="#A0C1FF" />
+        </linearGradient>
+      </defs>
+    </svg>
+  );
+};
+export const UploadImage = (props: IProps) => {
+  const { width = '20', height = '20' } = props;
+  return (
+    <svg width={width} height={height} viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="3" y="9" width="41" height="47" rx="4" fill="#2E64FA" />
+      <rect x="3" y="19" width="53" height="37" rx="4" fill="url(#paint0_linear_2831_2138)" />
+      <mask id="mask0_2831_2138" style={{ maskType: 'alpha' }} maskUnits="userSpaceOnUse" x="3" y="19" width="53" height="37">
+        <rect x="3" y="19" width="53" height="37" rx="4" fill="url(#paint1_linear_2831_2138)" />
+      </mask>
+      <g mask="url(#mask0_2831_2138)">
+        <path d="M2 39L9.35294 42L14.2549 39L27 45" stroke="white" strokeWidth="3" strokeLinecap="round" />
+        <circle cx="49.5" cy="46.5" r="14.5" fill="#A6BDE5" />
+      </g>
+      <circle cx="51.5" cy="46.5" r="13.5" fill="#FFBB3F" />
+      <path d="M48 44L52 40L56 44" stroke="white" strokeWidth="3" strokeLinecap="round" />
+      <path d="M52 42V52.5" stroke="white" strokeWidth="3" strokeLinecap="round" />
+      <defs>
+        <linearGradient id="paint0_linear_2831_2138" x1="53.9418" y1="19" x2="11.9832" y2="46.7173" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#CFE4FF" />
+          <stop offset="1" stopColor="#A0C1FF" />
+        </linearGradient>
+        <linearGradient id="paint1_linear_2831_2138" x1="53.9418" y1="19" x2="11.9832" y2="46.7173" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#CFE4FF" />
+          <stop offset="1" stopColor="#A0C1FF" />
+        </linearGradient>
+      </defs>
+    </svg>
+  );
+};
+export const UploadExcel = (props: IProps) => {
+  const { width = '20', height = '20' } = props;
+  return (
+    <svg width={width} height={height} viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M3 11C3 8.79086 4.79086 7 7 7H15.75H29.0041C29.9687 7 30.9009 7.3486 31.6288 7.98158L35.1212 11.0184C35.8491 11.6514 36.7813 12 37.7459 12H50C52.2091 12 54 13.7909 54 16V52C54 54.2091 52.2091 56 50 56H7C4.79086 56 3 54.2091 3 52V11Z"
+        fill="#1EAF69"
+      />
+      <path
+        d="M12.201 21.9564C12.6725 20.2118 14.2552 19 16.0624 19H60.7754C63.4091 19 65.324 21.5012 64.6369 24.0436L56.799 53.0436C56.3275 54.7882 54.7448 56 52.9376 56H8.2246C5.5909 56 3.67599 53.4988 4.36314 50.9564L12.201 21.9564Z"
+        fill="url(#paint0_linear_2850_2797)"
+      />
+      <mask id="mask0_2850_2797" style={{ maskType: 'alpha' }} maskUnits="userSpaceOnUse" x="3" y="19" width="53" height="37">
+        <rect x="3" y="19" width="53" height="37" rx="4" fill="url(#paint1_linear_2850_2797)" />
+      </mask>
+      <g mask="url(#mask0_2850_2797)">
+        <path d="M18 36L18 48" stroke="white" strokeWidth="3" strokeLinecap="round" />
+        <path d="M26 36H18" stroke="white" strokeWidth="3" strokeLinecap="round" />
+        <path d="M26 42H18" stroke="white" strokeWidth="3" strokeLinecap="round" />
+        <path d="M26 48H18" stroke="white" strokeWidth="3" strokeLinecap="round" />
+        <circle cx="47.5" cy="45.5" r="13.5" fill="#A6E777" />
+      </g>
+      <circle cx="50.5" cy="45.5" r="13.5" fill="#1EAF69" />
+      <path d="M48 44L52 40L56 44" stroke="white" strokeWidth="3" strokeLinecap="round" />
+      <path d="M52 42V52.5" stroke="white" strokeWidth="3" strokeLinecap="round" />
+      <defs>
+        <linearGradient id="paint0_linear_2850_2797" x1="53.9417" y1="19" x2="11.9832" y2="46.7173" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#E2FEDD" />
+          <stop offset="1" stopColor="#C8F69A" />
+        </linearGradient>
+        <linearGradient id="paint1_linear_2850_2797" x1="53.9418" y1="19" x2="11.9832" y2="46.7173" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#CFE4FF" />
+          <stop offset="1" stopColor="#A0C1FF" />
+        </linearGradient>
+      </defs>
+    </svg>
+  );
+};
