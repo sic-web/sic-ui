@@ -5,7 +5,7 @@ import './index.scss';
 interface IProps {
   items: ItemType[];
   isSingleLine?: boolean;
-  labelWidth?: number;
+  labelWidth?: number | string;
   type?: 'table' | 'text';
   layout?: 'horizontal' | 'vertical';
 }
