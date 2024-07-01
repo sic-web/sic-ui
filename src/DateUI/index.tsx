@@ -50,7 +50,7 @@ const DateUI = (props: any) => {
     if (showRange) {
       newTime = e?.map((date: any) => date.format(format));
     } else {
-      newTime = e.format(format);
+      newTime = e?.format(format);
     }
 
     setRealValue(e);
