@@ -35,7 +35,7 @@ import { Caution, RotateOne, Edit, Check, Close, UserBusiness, ArrowRight, More,
 import { Attention, FileAddition, CooperativeHandshake, FileSuccess, Right, Peoples, UserToUserTransmission } from '@icon-park/react';
 import { PeoplePlus, Consume, MapRoadTwo, EditTwo, AddPrint, Family, CopyOne, ExpensesOne, FullScreenOne, Copy } from '@icon-park/react';
 import { City, Alarm, Deposit, TicketOne, Protect, Alipay, User, Lock, FolderOpen, DoubleDown, DoubleUp, Press } from '@icon-park/react';
-import { RobotOne, Power, History, Communication, Newlybuild, Left, Editor, ApiApp } from '@icon-park/react';
+import { RobotOne, Power, History, Communication, Newlybuild, Left, Editor, ApiApp, NewspaperFolding, Copyright } from '@icon-park/react';
 /** Icon 集合 */
 export const iconRally = [
   // 自研icon
@@ -154,4 +154,6 @@ export const iconRally = [
   { name: 'Left', element: (props: any) => <Left {...props} /> },
   { name: 'Editor', element: (props: any) => <Editor {...props} /> },
   { name: 'ApiApp', element: (props: any) => <ApiApp {...props} /> },
+  { name: 'NewspaperFolding', element: (props: any) => <NewspaperFolding {...props} /> },
+  { name: 'Copyright', element: (props: any) => <Copyright {...props} /> },
 ];
