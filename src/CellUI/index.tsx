@@ -59,7 +59,12 @@ const CellUI = (props: PropsType) => {
     return (
       <div className="sic-cellui-tooltipContent">
         {isShowCopy && (
-          <IconUI className="sic-cellui-tooltipContent-icon" name="Copy" fill="var(--themeColor)" onClick={(e) => clickCopy(e, children)} />
+          <IconUI
+            className="sic-cellui-tooltipContent-icon"
+            name="Copy"
+            fill="var(--themeColor)"
+            onClick={(e: any) => clickCopy(e, children)}
+          />
         )}
         {children}
       </div>
