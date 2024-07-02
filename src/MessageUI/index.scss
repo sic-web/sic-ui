@@ -1,37 +1,48 @@
 .sic-message {
-  top: 5% !important;
-  &-notice {
-    &-content {
-      padding: 0 !important;
-      font-size: 18px;
-      font-family: 'LingCaiTi' !important;
-      span {
-        display: inline-block;
-        vertical-align: middle;
+  top: 5%;
+  .sic-message-notice-wrapper {
+    .sic-message-notice-content {
+      padding: 0;
+
+      .sic-message-success,
+      .sic-message-error,
+      .sic-message-info,
+      .sic-message-warning,
+      .sic-message-loading {
+        > .anticon {
+          color: #fff;
+          font-size: 18px;
+        }
       }
-      .anticon {
-        font-size: 18px !important;
-        vertical-align: middle !important;
+      .sic-message-custom-content {
+        color: #fff;
+        font-size: 18px;
+        line-height: 22px;
+        font-family: 'LingCaiTi';
       }
       .anticon-check-circle,
       .anticon-close-circle {
-        color: #fff !important;
+        color: #fff;
       }
       .sic-message-custom-content {
-        padding: 20px 20px !important;
-        border-radius: 8px !important;
+        box-sizing: border-box;
+        padding: 20px 20px;
+        border-radius: 8px;
       }
       .sic-message-success {
-        color: #fff;
-        background-color: #38b865 !important;
+        background-color: #38b865;
       }
       .sic-message-error {
-        color: #fff;
-        background-color: #ff7875 !important;
+        background-color: #ff7875;
       }
       .sic-message-info {
-        color: #fff;
-        background-color: #2e64fa !important;
+        background-color: #2e64fa;
+      }
+      .sic-message-warning {
+        background-color: #faad14;
+      }
+      .sic-message-loading {
+        background-color: #2e64fa;
       }
     }
   }
