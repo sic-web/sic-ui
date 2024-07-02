@@ -1,28 +1,37 @@
-//全局样式
+@import './themeColor.scss';
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scrollbar-width: auto;
-  scrollbar-color: auto;
 }
-
 li {
   list-style: none;
 }
-
+a {
+  color: var(--themeColor);
+}
 img {
   vertical-align: middle;
   border: none;
   user-select: none;
   -webkit-user-drag: none;
 }
-
+svg {
+  display: block;
+}
+:root {
+  --themeColor: #2e64fa;
+  --themeColor2: #d5e0fe;
+  color: #333;
+  font-family: 'LingCaiTi';
+  font-weight: 400;
+}
 body {
   --textBlack: #333;
   --red: #ff7875;
+  width: 100vw;
   height: 100vh;
-  overflow: auto;
+  overflow: hidden;
   font-family: 'LingCaiTi';
   /* 在全局样式中定义滚动条样式 */
   ::-webkit-scrollbar {
@@ -45,26 +54,6 @@ body {
   /* 鼠标悬停时的滑块样式 */
   ::-webkit-scrollbar-thumb:hover {
     background-color: #999;
-  }
-}
-
-:root {
-  --themeColor: #2e64fa;
-  --themeColor1: #eaf0ff;
-  --themeColor2: #d5e0fe;
-  --themeColor3: #c0d1fe;
-  --themeColor4: #abc1fd;
-  --themeColor5: #97b2fd;
-  --themeColor6: #82a2fc;
-  --themeColor7: #6d93fc;
-  --themeColor8: #5883fb;
-  --themeColor9: #4374fb;
-  --themeColor10: #2e64fa;
-  color: #333;
-  font-family: 'LingCaiTi';
-  font-weight: 400;
-  a {
-    color: var(--themeColor);
   }
 }
 

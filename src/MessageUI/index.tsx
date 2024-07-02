@@ -1,6 +1,4 @@
-import React from 'react';
 import { message } from 'antd';
-import { Info } from '@icon-park/react';
 import './index.scss';
 
 message.config({
@@ -16,20 +14,8 @@ const MessageUI = {
   error: (content: any, duration?: any, onClose?: any) => {
     message.error(content, duration, onClose);
   },
-  info: (props: any) => {
-    let content = '';
-    const icon = (
-      <span style={{ marginRight: 8 }}>
-        <Info theme="multi-color" size="20" fill={['#fff', '#fff', '#2e64fa', '#fff']} />
-      </span>
-    );
-    if (typeof props === 'string') {
-      content = props;
-    } else {
-      content = props?.content;
-    }
-    const obj = { ...props, content, icon };
-    message.info(obj);
+  info: (content: any, duration?: any, onClose?: any) => {
+    message.info(content, duration, onClose);
   },
   warning: (content: any, duration?: any, onClose?: any) => {
     message.warning(content, duration, onClose);

@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { Tooltip, message } from 'antd';
-import { IconUI } from 'sic-ui';
+import { Tooltip } from 'antd';
+import { IconUI, MessageUI } from 'sic-ui';
 import './index.scss';
 
 interface PropsType {
@@ -50,23 +50,16 @@ const CellUI = (props: PropsType) => {
     e.stopPropagation();
     try {
       navigator.clipboard.writeText(children);
-      message.info('文本已复制到剪贴板');
+      MessageUI.info('文本已复制到剪贴板');
     } catch (err) {
-      message.error('复制失败');
+      MessageUI.error('复制失败');
     }
   };
   const tooltipContent = (children: React.ReactNode) => {
     return (
       <div className="sic-cellui-tooltipContent">
         {isShowCopy && (
-          <span
-            className="sic-cellui-tooltipContent-icon"
-            onClick={(e) => {
-              clickCopy(e, children);
-            }}
-          >
-            <IconUI name="Copy" theme="outline" size="14" fill="var(--themeColor)" />
-          </span>
+          <IconUI className="sic-cellui-tooltipContent-icon" name="Copy" fill="var(--themeColor)" onClick={(e) => clickCopy(e, children)} />
         )}
         {children}
       </div>
