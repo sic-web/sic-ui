@@ -3,6 +3,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scrollbar-width: auto;
+  scrollbar-color: auto;
 }
 li {
   list-style: none;
@@ -29,9 +31,8 @@ svg {
 body {
   --textBlack: #333;
   --red: #ff7875;
-  width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  overflow: auto;
   font-family: 'LingCaiTi';
   /* 在全局样式中定义滚动条样式 */
   ::-webkit-scrollbar {
