@@ -1,31 +1,17 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Modal } from 'antd';
 import './index.scss';
 
-const styleIcon = (type?: string) => {
-  if (type === 'primary') {
-    return { color: 'var(--themeColor)', backgroundColor: 'var(--themeColor2)' };
-  } else if (type === 'danger') {
-    return { color: 'var(--red)', backgroundColor: 'rgba(255, 120, 117, 0.1)' };
-  } else {
-    return { color: 'var(--textBlack)', backgroundColor: '#d9d9d9' };
-  }
-};
-
-const titleRender = (title: string, icon: React.ReactNode, type?: string) => {
+const RenderTitle = (title: string, icon: React.ReactNode, type?: string) => {
   return (
-    <>
+    <Fragment>
       {(title || icon) && (
         <div className="sic-modalui-title">
           {title && <div>{title}</div>}
-          {icon && (
-            <div className="sic-modalui-title-icon" style={styleIcon(type)}>
-              {icon}
-            </div>
-          )}
+          {icon && <div className={`sic-modalui-title-icon ${type ?? ''}`}>{icon}</div>}
         </div>
       )}
-    </>
+    </Fragment>
   );
 };
 
@@ -33,10 +19,10 @@ const ModalUI = (props: any) => {
   const { className, isOpen, setIsOpen, title, icon, type, footer, confirm, children, ...otherProps } = props;
   return (
     <Modal
-      className={`sic-modalui ${className ?? ''}`}
+      className={`sic-modalui ${className ?? ''} ${type ?? ''}`}
       open={isOpen}
       closeIcon={false}
-      title={titleRender(title, icon, type)}
+      title={RenderTitle(title, icon, type)}
       footer={footer}
       onCancel={() => setIsOpen(undefined)}
       onOk={confirm}
