@@ -3,7 +3,7 @@ import { MenuFoldOutlined, MenuUnfoldOutlined, DownOutlined, MenuOutlined, SwapO
 import { HomeOutlined, SolutionOutlined, CopyOutlined, FormOutlined, AccountBookOutlined, SettingOutlined } from '@ant-design/icons';
 import { EyeInvisibleOutlined, EyeTwoTone, AlipayCircleOutlined } from '@ant-design/icons';
 import { SwitchOff, Minsheng, Pingan, Iconwx, Iconzfb, Zhaoshang, SwitchOn, Warning, Pdf, Point, Remind, SelectFalse } from './material';
-import { SelectTrue } from './material';
+import { SelectTrue, UploadPdf, UploadImage, UploadExcel } from './material';
 import { Export, ListTwo, Return, AddOne, SwitchButton, Audit, Clear, Download, Female, Male, PreviewOpen, Upload } from '@icon-park/react';
 import { Delete, Setting, Excel, FilePdf, BackgroundColor, Home, ChartPieOne, BookmarkOne, DataArrival } from '@icon-park/react';
 import { TicketsTwo, Bank, ShieldAdd, Swipe, SettingTwo, DataFour, Currency, CheckOne, CloseOne, UTurnLeft } from '@icon-park/react';
@@ -12,7 +12,7 @@ import { Attention, FileAddition, CooperativeHandshake, FileSuccess, Right, Peop
 import { PeoplePlus, Consume, MapRoadTwo, EditTwo, AddPrint, Family, CopyOne, ExpensesOne, FullScreenOne, Copy } from '@icon-park/react';
 import { City, Alarm, Deposit, TicketOne, Protect, Alipay, User, Lock, FolderOpen, DoubleDown, DoubleUp, Press } from '@icon-park/react';
 import { RobotOne, Power, History, Communication, Newlybuild, Left, Editor, ApiApp, Workbench, Booth, Order } from '@icon-park/react';
-import { FileStaff, Send, Local, Handbag, EveryUser, Passport } from '@icon-park/react';
+import { FileStaff, Send, Local, Handbag, EveryUser, Passport, NewspaperFolding, Copyright } from '@icon-park/react';
 /** Icon 集合 */
 export const iconRally = [
   // 自研icon
@@ -29,7 +29,9 @@ export const iconRally = [
   { name: 'Remind', element: (props: any) => Remind(props) },
   { name: 'SelectFalse', element: (props: any) => SelectFalse(props) },
   { name: 'SelectTrue', element: (props: any) => SelectTrue(props) },
-
+  { name: 'UploadPdf', element: (props: any) => <UploadPdf {...props} /> },
+  { name: 'UploadImage', element: (props: any) => <UploadImage {...props} /> },
+  { name: 'UploadExcel', element: (props: any) => <UploadExcel {...props} /> },
   // antd
   { name: 'HomeOutlined', element: (props: any) => <HomeOutlined {...props} /> },
   { name: 'LogoutOutlined', element: (props: any) => <LogoutOutlined {...props} /> },
@@ -46,7 +48,6 @@ export const iconRally = [
   { name: 'EyeTwoTone', element: (props: any) => <EyeTwoTone {...props} /> },
   { name: 'AlipayCircleOutlined', element: (props: any) => <AlipayCircleOutlined {...props} /> },
   { name: 'MenuFoldOutlined', element: (props: any) => <MenuFoldOutlined {...props} /> },
-
   // icon-park
   { name: 'ListTwo', element: (props: any) => <ListTwo {...props} /> },
   { name: 'Export', element: (props: any) => <Export {...props} /> },
@@ -107,7 +108,6 @@ export const iconRally = [
   { name: 'ExpensesOne', element: (props: any) => <ExpensesOne {...props} /> },
   { name: 'FullScreenOne', element: (props: any) => <FullScreenOne {...props} /> },
   { name: 'Copy', element: (props: any) => <Copy {...props} /> },
-
   { name: 'City', element: (props: any) => <City {...props} /> },
   { name: 'Alarm', element: (props: any) => <Alarm {...props} /> },
   { name: 'Deposit', element: (props: any) => <Deposit {...props} /> },
@@ -137,4 +137,6 @@ export const iconRally = [
   { name: 'Handbag', element: (props: any) => <Handbag {...props} /> },
   { name: 'EveryUser', element: (props: any) => <EveryUser {...props} /> },
   { name: 'Passport', element: (props: any) => <Passport {...props} /> },
+  { name: 'NewspaperFolding', element: (props: any) => <NewspaperFolding {...props} /> },
+  { name: 'Copyright', element: (props: any) => <Copyright {...props} /> },
 ];
