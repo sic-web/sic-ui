@@ -1,33 +1,9 @@
 import React from 'react';
 import { MenuFoldOutlined, MenuUnfoldOutlined, DownOutlined, MenuOutlined, SwapOutlined, LogoutOutlined } from '@ant-design/icons';
-import {
-  HomeOutlined,
-  SolutionOutlined,
-  CopyOutlined,
-  FormOutlined,
-  AccountBookOutlined,
-  SettingOutlined,
-  AlipayCircleOutlined,
-} from '@ant-design/icons';
-import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
-import {
-  SwitchOff,
-  Minsheng,
-  Pingan,
-  Iconwx,
-  Iconzfb,
-  Zhaoshang,
-  SwitchOn,
-  Warning,
-  Pdf,
-  Point,
-  Remind,
-  SelectFalse,
-  SelectTrue,
-  UploadPdf,
-  UploadImage,
-  UploadExcel,
-} from './material';
+import { HomeOutlined, SolutionOutlined, CopyOutlined, FormOutlined, AccountBookOutlined, SettingOutlined } from '@ant-design/icons';
+import { EyeInvisibleOutlined, EyeTwoTone, AlipayCircleOutlined } from '@ant-design/icons';
+import { SwitchOff, Minsheng, Pingan, Iconwx, Iconzfb, Zhaoshang, SwitchOn, Warning, Pdf, Point, Remind, SelectFalse } from './material';
+import { SelectTrue } from './material';
 import { Export, ListTwo, Return, AddOne, SwitchButton, Audit, Clear, Download, Female, Male, PreviewOpen, Upload } from '@icon-park/react';
 import { Delete, Setting, Excel, FilePdf, BackgroundColor, Home, ChartPieOne, BookmarkOne, DataArrival } from '@icon-park/react';
 import { TicketsTwo, Bank, ShieldAdd, Swipe, SettingTwo, DataFour, Currency, CheckOne, CloseOne, UTurnLeft } from '@icon-park/react';
@@ -35,7 +11,8 @@ import { Caution, RotateOne, Edit, Check, Close, UserBusiness, ArrowRight, More,
 import { Attention, FileAddition, CooperativeHandshake, FileSuccess, Right, Peoples, UserToUserTransmission } from '@icon-park/react';
 import { PeoplePlus, Consume, MapRoadTwo, EditTwo, AddPrint, Family, CopyOne, ExpensesOne, FullScreenOne, Copy } from '@icon-park/react';
 import { City, Alarm, Deposit, TicketOne, Protect, Alipay, User, Lock, FolderOpen, DoubleDown, DoubleUp, Press } from '@icon-park/react';
-import { RobotOne, Power, History, Communication, Newlybuild, Left, Editor, ApiApp, NewspaperFolding, Copyright } from '@icon-park/react';
+import { RobotOne, Power, History, Communication, Newlybuild, Left, Editor, ApiApp, Workbench, Booth, Order } from '@icon-park/react';
+import { FileStaff, Send, Local, Handbag, EveryUser, Passport } from '@icon-park/react';
 /** Icon 集合 */
 export const iconRally = [
   // 自研icon
@@ -52,9 +29,6 @@ export const iconRally = [
   { name: 'Remind', element: (props: any) => Remind(props) },
   { name: 'SelectFalse', element: (props: any) => SelectFalse(props) },
   { name: 'SelectTrue', element: (props: any) => SelectTrue(props) },
-  { name: 'UploadPdf', element: (props: any) => <UploadPdf {...props} /> },
-  { name: 'UploadImage', element: (props: any) => <UploadImage {...props} /> },
-  { name: 'UploadExcel', element: (props: any) => <UploadExcel {...props} /> },
 
   // antd
   { name: 'HomeOutlined', element: (props: any) => <HomeOutlined {...props} /> },
@@ -154,6 +128,13 @@ export const iconRally = [
   { name: 'Left', element: (props: any) => <Left {...props} /> },
   { name: 'Editor', element: (props: any) => <Editor {...props} /> },
   { name: 'ApiApp', element: (props: any) => <ApiApp {...props} /> },
-  { name: 'NewspaperFolding', element: (props: any) => <NewspaperFolding {...props} /> },
-  { name: 'Copyright', element: (props: any) => <Copyright {...props} /> },
+  { name: 'Workbench', element: (props: any) => <Workbench {...props} /> },
+  { name: 'Booth', element: (props: any) => <Booth {...props} /> },
+  { name: 'Order', element: (props: any) => <Order {...props} /> },
+  { name: 'FileStaff', element: (props: any) => <FileStaff {...props} /> },
+  { name: 'Send', element: (props: any) => <Send {...props} /> },
+  { name: 'Local', element: (props: any) => <Local {...props} /> },
+  { name: 'Handbag', element: (props: any) => <Handbag {...props} /> },
+  { name: 'EveryUser', element: (props: any) => <EveryUser {...props} /> },
+  { name: 'Passport', element: (props: any) => <Passport {...props} /> },
 ];
