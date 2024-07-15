@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
+import { Form } from 'antd';
 import './index.scss';
 
-const Title = (props: any) => {
+const FormUI_Title = (props: any) => {
   const { left } = props;
   return (
     <div className="sicFormUI-title">
@@ -13,7 +14,7 @@ const Title = (props: any) => {
     </div>
   );
 };
-const ProTitle = (props: any) => {
+const FormUI_ProTitle = (props: any) => {
   const { required = true, line = true, title, children, border = true } = props;
   return (
     <div className={`sicFormUI-protitle ${border ? 'border' : ''}`}>
@@ -27,5 +28,18 @@ const ProTitle = (props: any) => {
   );
 };
 
-const FormUI = { Title, ProTitle };
+const FormUI: any = forwardRef((props: any, ref) => {
+  return (
+    <Form ref={ref} {...props}>
+      {props?.children}
+    </Form>
+  );
+});
+
+/** 继承关系，继续完善 */
+FormUI.useForm = Form.useForm;
+FormUI.Item = Form.Item;
+FormUI.Title = FormUI_Title;
+FormUI.ProTitle = FormUI_ProTitle;
+
 export default FormUI;
