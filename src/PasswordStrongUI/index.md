@@ -19,7 +19,7 @@ group:
 
 💎 消息提醒组件
 
-```jsx
+```tsx
 import React from 'react';
 import { PasswordStrongUI } from 'sic-ui';
 

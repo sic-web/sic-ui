@@ -19,7 +19,7 @@ group:
 
 💎 基础使用
 
-```jsx
+```tsx
 import React from 'react';
 import { TagUI } from 'sic-ui';
 import { Space } from 'antd';
@@ -41,7 +41,7 @@ export default App;
 
 💎 使用 icon
 
-```jsx
+```tsx
 import React from 'react';
 import { TagUI, IconUI } from 'sic-ui';
 import { DataFour, Currency, CheckOne, CloseOne, UTurnLeft, RotateOne } from '@icon-park/react';

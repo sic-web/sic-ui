@@ -19,7 +19,7 @@ group:
 
 💎 表单组件-标题使用（新）
 
-```jsx
+```tsx
 import React, { useState } from 'react';
 import { FormUI } from 'sic-ui';
 

@@ -17,7 +17,7 @@ group:
 
 💎 单行效果
 
-```jsx
+```tsx
 import React from 'react';
 import { Space } from 'antd';
 import { CellUI } from 'sic-ui';
@@ -39,7 +39,7 @@ export default App;
 
 💎 多行效果
 
-```jsx
+```tsx
 import React from 'react';
 import { Space } from 'antd';
 import { CellUI } from 'sic-ui';

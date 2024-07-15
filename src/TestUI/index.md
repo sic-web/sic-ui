@@ -21,7 +21,7 @@ group:
 
 💎 基础使用
 
-```jsx
+```tsx
 import { TestUI } from 'sic-ui';
 
 export default () => <TestUI>测试代码</TestUI>;

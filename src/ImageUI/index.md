@@ -19,7 +19,7 @@ group:
 
 💎 基础使用
 
-```jsx
+```tsx
 import React from 'react';
 import { Space } from 'antd';
 import { ImageUI } from 'sic-ui';

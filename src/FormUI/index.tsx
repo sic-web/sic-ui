@@ -1,17 +1,31 @@
 import React from 'react';
 import './index.scss';
-const ProTitle = (props: any) => {
-  const { required = true, line = true, children = '标题' } = props;
+
+const Title = (props: any) => {
+  const { left } = props;
   return (
-    <div className="sic-from-protitle">
-      <div className="sic-from-protitle-value">
-        {required && <div className="sic-from-protitle-value-icon">*</div>}
-        {children}
+    <div className="sicFormUI-title">
+      <div className="sicFormUI-title-header">
+        <div className="sicFormUI-title-header-text">{left}</div>
+        <div className="sicFormUI-title-header-button"></div>
       </div>
-      {line && <div className="sic-from-protitle-line"></div>}
+      <div className="sicFormUI-title-content">{props?.children}</div>
+    </div>
+  );
+};
+const ProTitle = (props: any) => {
+  const { required = true, line = true, title, children, border = true } = props;
+  return (
+    <div className={`sicFormUI-protitle ${border ? 'border' : ''}`}>
+      <div className="sicFormUI-protitle-header">
+        {required && <div className="sicFormUI-protitle-header-icon">*</div>}
+        <div className="sicFormUI-protitle-header-title">{title}</div>
+        {line && <div className="sicFormUI-protitle-header-line"></div>}
+      </div>
+      <div className="sicFormUI-protitle-content">{children}</div>
     </div>
   );
 };
 
-const FormUI = { ProTitle };
+const FormUI = { Title, ProTitle };
 export default FormUI;
