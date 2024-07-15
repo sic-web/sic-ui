@@ -19,7 +19,7 @@ group:
 
 💎 基础使用
 
-```jsx
+```tsx
 import { BroadcastUI } from 'sic-ui';
 const promptList = ['总实发金额：在发放时间范围内，实际下发数据的总和。'];
 const promptList1 = [

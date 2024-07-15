@@ -19,7 +19,7 @@ group:
 
 💎 基础使用
 
-```jsx
+```tsx
 import React, { useState } from 'react';
 import { DescriptionsUI } from 'sic-ui';
 

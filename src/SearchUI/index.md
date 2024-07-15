@@ -19,7 +19,7 @@ group:
 
 💎 From 表单内部使用
 
-```jsx
+```tsx
 import { useState } from 'react';
 import { Form } from 'antd';
 import { SearchUI } from 'sic-ui';

@@ -17,7 +17,7 @@ group:
 
 💎 基础功能
 
-```jsx
+```tsx
 import React, { useState } from 'react';
 import { DateUI } from 'sic-ui';
 import dayjs from 'dayjs';

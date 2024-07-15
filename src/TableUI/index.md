@@ -21,7 +21,7 @@ group:
 
 💎 表格组件-基本使用
 
-```jsx
+```tsx
 import { useState } from 'react';
 import { TableUI } from 'sic-ui';
 
@@ -59,7 +59,7 @@ export default App;
 
 💎 表格组件-更多操作
 
-```jsx
+```tsx
 import { useState } from 'react';
 import { TableUI } from 'sic-ui';
 
@@ -107,7 +107,7 @@ export default App;
 
 💎 表格组件-多行溢出
 
-```jsx
+```tsx
 import { useState } from 'react';
 import { TableUI, IconUI } from 'sic-ui';
 import { Space } from 'antd';
@@ -172,7 +172,7 @@ export default App;
 
 💎 表格组件-功能按钮
 
-```jsx
+```tsx
 import { useState } from 'react';
 import { TableUI, IconUI } from 'sic-ui';
 import { Space } from 'antd';
@@ -220,7 +220,7 @@ export default App;
 
 💎 表格组件-多行拆分
 
-```jsx
+```tsx
 import { useState } from 'react';
 import { TableUI, IconUI } from 'sic-ui';
 import { Space } from 'antd';

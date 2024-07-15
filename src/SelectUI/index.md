@@ -19,7 +19,7 @@ group:
 
 💎 基础使用
 
-```jsx
+```tsx
 import { SelectUI } from 'sic-ui';
 
 export default () => (

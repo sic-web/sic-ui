@@ -21,7 +21,7 @@ group:
 
 💎 消息提醒组件
 
-```jsx
+```tsx
 import React, { useState } from 'react';
 import { Space } from 'antd';
 import { NotificationUI, ButtonUI } from 'sic-ui';

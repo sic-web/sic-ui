@@ -19,7 +19,7 @@ group:
 
 💎 基础使用
 
-```jsx
+```tsx
 import { useState } from 'react';
 import { Space } from 'antd';
 import { SwitchUI } from 'sic-ui';
@@ -44,7 +44,7 @@ export default App;
 
 💎 From 表单内部使用
 
-```jsx
+```tsx
 import { useState } from 'react';
 import { Form } from 'antd';
 import { SwitchUI } from 'sic-ui';

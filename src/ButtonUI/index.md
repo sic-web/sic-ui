@@ -19,7 +19,7 @@ group:
 
 💎 基础使用
 
-```jsx
+```tsx
 import React from 'react';
 import { Space } from 'antd';
 import { ButtonUI } from 'sic-ui';
@@ -39,7 +39,7 @@ export default App;
 
 💎 危险按钮
 
-```jsx
+```tsx
 import React from 'react';
 import { Space } from 'antd';
 import { ButtonUI } from 'sic-ui';
@@ -69,7 +69,7 @@ export default App;
 
 💎 表单中按钮置灰
 
-```jsx
+```tsx
 import React from 'react';
 import { Form, Space } from 'antd';
 import { ButtonUI } from 'sic-ui';
@@ -90,7 +90,7 @@ export default App;
 
 💎 使用 Icon
 
-```jsx
+```tsx
 import { Space } from 'antd';
 import { ButtonUI, IconUI } from 'sic-ui';
 

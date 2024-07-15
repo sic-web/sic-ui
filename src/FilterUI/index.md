@@ -19,7 +19,7 @@ group:
 
 💎 基础使用
 
-```jsx
+```tsx
 import React, { useState, useEffect } from 'react';
 import { Form, message } from 'antd';
 import { FilterUI } from 'sic-ui';

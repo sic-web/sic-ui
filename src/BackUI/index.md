@@ -19,7 +19,7 @@ group:
 
 💎 基础使用
 
-```jsx
+```tsx
 import { BackUI } from 'sic-ui';
 
 export default () => <BackUI before={'前一页 '} current={'当前页'} />;
@@ -27,7 +27,7 @@ export default () => <BackUI before={'前一页 '} current={'当前页'} />;
 
 💎 跳到指定页面
 
-```jsx
+```tsx
 import { BackUI } from 'sic-ui';
 
 export default () => <BackUI to={'/components/icon-ui'} before={'前一页 '} current={'当前页'} />;

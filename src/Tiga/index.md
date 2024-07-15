@@ -21,7 +21,7 @@ group:
 
 💎 表格组件-快捷用法
 
-```jsx
+```tsx
 import { useState, useEffect } from 'react';
 import { Tiga, LoadingUI } from 'sic-ui';
 

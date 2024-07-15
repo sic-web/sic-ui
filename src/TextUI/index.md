@@ -20,7 +20,7 @@ group:
 💎 基础使用
 内容样式会做继承，悬停出现小手样式
 
-```jsx
+```tsx
 import { useState } from 'react';
 import { Space } from 'antd';
 import { TextUI } from 'sic-ui';
