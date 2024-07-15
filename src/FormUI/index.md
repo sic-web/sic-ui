@@ -28,7 +28,7 @@ const App: React.FC = () => {
     <div>
       <FormUI.ProTitle />
       <br />
-      <FormUI.ProTitle>表单标题</FormUI.ProTitle>
+      <FormUI.ProTitle title="表单标题">123123</FormUI.ProTitle>
       <br />
       <FormUI.ProTitle required={false} />
       <br />
