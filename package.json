@@ -1,6 +1,6 @@
 {
   "name": "sic-ui",
-  "version": "0.3.51",
+  "version": "0.3.52",
   "description": "A react library developed with dumi",
   "license": "MIT",
   "module": "dist/index.js",
@@ -52,7 +52,7 @@
     "@dnd-kit/sortable": "^8.0.0",
     "@dnd-kit/utilities": "^3.2.2",
     "@icon-park/react": "^1.4.2",
-    "antd": "^5.19.1",
+    "antd": "^5.19.2",
     "crypto-js": "^4.2.0",
     "dayjs": "^1.11.11",
     "number-precision": "^1.6.0",
