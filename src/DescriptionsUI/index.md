@@ -7,7 +7,7 @@ group:
   order: 2
 ---
 
-# DescriptionsUI 描述组件（新）
+# DescriptionsUI 描述组件
 
 :::success{title=使用中}
 国信灵工后台管理系统-描述组件
