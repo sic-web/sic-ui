@@ -12,7 +12,7 @@ import { Attention, FileAddition, CooperativeHandshake, FileSuccess, Right, Peop
 import { PeoplePlus, Consume, MapRoadTwo, EditTwo, AddPrint, Family, CopyOne, ExpensesOne, FullScreenOne, Copy } from '@icon-park/react';
 import { City, Alarm, Deposit, TicketOne, Protect, Alipay, User, Lock, FolderOpen, DoubleDown, DoubleUp, Press } from '@icon-park/react';
 import { RobotOne, Power, History, Communication, Newlybuild, Left, Editor, ApiApp, Workbench, Booth, Order } from '@icon-park/react';
-import { FileStaff, Send, Local, Handbag, EveryUser, Passport, NewspaperFolding, Copyright } from '@icon-park/react';
+import { FileStaff, Send, Local, Handbag, EveryUser, Passport, NewspaperFolding, Copyright, WritingFluently } from '@icon-park/react';
 /** Icon 集合 */
 export const iconRally = [
   // 自研icon
@@ -139,4 +139,5 @@ export const iconRally = [
   { name: 'Passport', element: (props: any) => <Passport {...props} /> },
   { name: 'NewspaperFolding', element: (props: any) => <NewspaperFolding {...props} /> },
   { name: 'Copyright', element: (props: any) => <Copyright {...props} /> },
+  { name: 'WritingFluently', element: (props: any) => <WritingFluently {...props} /> },
 ];
