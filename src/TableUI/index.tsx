@@ -6,7 +6,6 @@ import { HideMultipleLines as TableUI_HideMultipleLines } from './material/HideM
 import { MultiLine as TableUI_MultiLine } from './material/MultiLine';
 import { Setting as TableUI_Setting } from './material/Setting';
 import zhCN from 'antd/locale/zh_CN';
-import { tableuiNodata } from '../assets';
 import './index.scss';
 
 /** 表格组件 */
@@ -53,7 +52,7 @@ const TableUI = (props: any) => {
         locale={{
           emptyText: (
             <div>
-              <img src={tableuiNodata} width={220} />
+              <img src="https://file.siciei.com/web_assets/nodata.png" width={220} />
               <div style={{ color: '#333', fontFamily: 'LingCaiTiBold' }}>暂无内容</div>
             </div>
           ),
