@@ -13,6 +13,7 @@ import { PeoplePlus, Consume, MapRoadTwo, EditTwo, AddPrint, Family, CopyOne, Ex
 import { City, Alarm, Deposit, TicketOne, Protect, Alipay, User, Lock, FolderOpen, DoubleDown, DoubleUp, Press } from '@icon-park/react';
 import { RobotOne, Power, History, Communication, Newlybuild, Left, Editor, ApiApp, Workbench, Booth, Order } from '@icon-park/react';
 import { FileStaff, Send, Local, Handbag, EveryUser, Passport, NewspaperFolding, Copyright, WritingFluently } from '@icon-park/react';
+import { Platte, ArrowUp, Logout, PreviewCloseOne, Down, CheckCorrect, Square } from '@icon-park/react';
 /** Icon 集合 */
 export const iconRally = [
   // 自研icon
@@ -140,4 +141,11 @@ export const iconRally = [
   { name: 'NewspaperFolding', element: (props: any) => <NewspaperFolding {...props} /> },
   { name: 'Copyright', element: (props: any) => <Copyright {...props} /> },
   { name: 'WritingFluently', element: (props: any) => <WritingFluently {...props} /> },
+  { name: 'Platte', element: (props: any) => <Platte {...props} /> },
+  { name: 'ArrowUp', element: (props: any) => <ArrowUp {...props} /> },
+  { name: 'Logout', element: (props: any) => <Logout {...props} /> },
+  { name: 'PreviewCloseOne', element: (props: any) => <PreviewCloseOne {...props} /> },
+  { name: 'Down', element: (props: any) => <Down {...props} /> },
+  { name: 'CheckCorrect', element: (props: any) => <CheckCorrect {...props} /> },
+  { name: 'Square', element: (props: any) => <Square {...props} /> },
 ];
