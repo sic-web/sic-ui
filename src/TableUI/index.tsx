@@ -6,7 +6,7 @@ import { HideMultipleLines as TableUI_HideMultipleLines } from './material/HideM
 import { MultiLine as TableUI_MultiLine } from './material/MultiLine';
 import { Setting as TableUI_Setting } from './material/Setting';
 import zhCN from 'antd/locale/zh_CN';
-import { tableuiNodata } from '../assets';
+import { tablenodata } from '../assets';
 import './index.scss';
 
 /** 表格组件 */
@@ -31,6 +31,7 @@ const TableUI = (props: any) => {
       setSelectedRowKey((name ? name : null) + record[rowKey]);
     }
   };
+  console.log('1');
   return (
     <ConfigProvider locale={zhCN}>
       <Table
@@ -53,7 +54,8 @@ const TableUI = (props: any) => {
         locale={{
           emptyText: (
             <div>
-              <img src={tableuiNodata} width={220} />
+              {/* <img src={tableuiNodata} width={220} /> */}
+              <div style={{ display: 'flex', justifyContent: 'center' }} dangerouslySetInnerHTML={{ __html: tablenodata() }}></div>
               <div style={{ color: '#333', fontFamily: 'LingCaiTiBold' }}>暂无内容</div>
             </div>
           ),

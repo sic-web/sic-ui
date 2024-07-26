@@ -1,3 +1,4 @@
 import osLoading from './osLoading.gif';
 import tableuiNodata from './tableuiNodata.png';
-export { osLoading, tableuiNodata };
+import tablenodata from './tablenodata';
+export { osLoading, tableuiNodata, tablenodata };
