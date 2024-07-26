@@ -31,7 +31,6 @@ const TableUI = (props: any) => {
       setSelectedRowKey((name ? name : null) + record[rowKey]);
     }
   };
-  console.log('1');
   return (
     <ConfigProvider locale={zhCN}>
       <Table
@@ -56,6 +55,7 @@ const TableUI = (props: any) => {
             <div>
               {/* <img src={tableuiNodata} width={220} /> */}
               <div style={{ display: 'flex', justifyContent: 'center' }} dangerouslySetInnerHTML={{ __html: tablenodata() }}></div>
+              {/* <img src="https://file.siciei.com/web_assets/nodata.png" width={220} /> */}
               <div style={{ color: '#333', fontFamily: 'LingCaiTiBold' }}>暂无内容</div>
             </div>
           ),
