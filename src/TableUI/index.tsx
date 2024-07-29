@@ -31,6 +31,7 @@ const TableUI = (props: any) => {
       setSelectedRowKey((name ? name : null) + record[rowKey]);
     }
   };
+
   return (
     <ConfigProvider locale={zhCN}>
       <Table
