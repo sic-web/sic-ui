@@ -1,0 +1,11 @@
+.sicEmptyUI {
+  box-sizing: border-box;
+  padding: 20px;
+  &-image {
+    width: fit-content;
+    margin: 0 auto;
+  }
+  &-text {
+    text-align: center;
+  }
+}

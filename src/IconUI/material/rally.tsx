@@ -1,10 +1,7 @@
 import React from 'react';
-import { MenuFoldOutlined, MenuUnfoldOutlined, DownOutlined, MenuOutlined, SwapOutlined, LogoutOutlined } from '@ant-design/icons';
-import { HomeOutlined, SolutionOutlined, CopyOutlined, FormOutlined, AccountBookOutlined, SettingOutlined } from '@ant-design/icons';
-import { EyeInvisibleOutlined, EyeTwoTone, AlipayCircleOutlined } from '@ant-design/icons';
-import { SwitchOff, Minsheng, Pingan, Iconwx, Iconzfb, Zhaoshang, SwitchOn, Warning, Pdf, Point, Remind, SelectFalse } from './material';
-import { SelectTrue, UploadPdf, UploadImage, UploadExcel } from './material';
-import { Export, ListTwo, Return, AddOne, SwitchButton, Audit, Clear, Download, Female, Male, PreviewOpen, Upload } from '@icon-park/react';
+import { Minsheng, Pingan, Iconwx, Iconzfb, Zhaoshang, Point } from './material';
+import { UploadPdf, UploadImage, UploadExcel } from './material';
+import { Export, Return, AddOne, Audit, Clear, Download, Female, Male, PreviewOpen, PreviewCloseOne, Upload } from '@icon-park/react';
 import { Delete, Setting, Excel, FilePdf, BackgroundColor, Home, ChartPieOne, BookmarkOne, DataArrival } from '@icon-park/react';
 import { TicketsTwo, Bank, ShieldAdd, Swipe, SettingTwo, DataFour, Currency, CheckOne, CloseOne, UTurnLeft } from '@icon-park/react';
 import { Caution, RotateOne, Edit, Check, Close, UserBusiness, ArrowRight, More, DeleteOne, Search, Help } from '@icon-park/react';
@@ -13,7 +10,8 @@ import { PeoplePlus, Consume, MapRoadTwo, EditTwo, AddPrint, Family, CopyOne, Ex
 import { City, Alarm, Deposit, TicketOne, Protect, Alipay, User, Lock, FolderOpen, DoubleDown, DoubleUp, Press } from '@icon-park/react';
 import { RobotOne, Power, History, Communication, Newlybuild, Left, Editor, ApiApp, Workbench, Booth, Order } from '@icon-park/react';
 import { FileStaff, Send, Local, Handbag, EveryUser, Passport, NewspaperFolding, Copyright, WritingFluently } from '@icon-park/react';
-import { Platte, ArrowUp, Logout, PreviewCloseOne, Down, CheckCorrect, Square } from '@icon-park/react';
+import { Platte, ArrowUp, Logout, Down, CheckCorrect, Square, Switch, MenuFoldOne, MenuUnfoldOne } from '@icon-park/react';
+import { HamburgerButton, ListTwo, SwitchButton } from '@icon-park/react';
 /** Icon 集合 */
 export const iconRally = [
   // 自研icon
@@ -22,45 +20,21 @@ export const iconRally = [
   { name: 'Iconwx', element: (props: any) => Iconwx(props) },
   { name: 'Iconzfb', element: (props: any) => Iconzfb(props) },
   { name: 'Zhaoshang', element: (props: any) => Zhaoshang(props) },
-  { name: 'SwitchOff', element: (props: any) => SwitchOff(props) },
-  { name: 'SwitchOn', element: (props: any) => SwitchOn(props) },
-  { name: 'Warning', element: (props: any) => Warning(props) },
-  { name: 'Pdf', element: (props: any) => Pdf(props) },
   { name: 'Point', element: (props: any) => Point(props) },
-  { name: 'Remind', element: (props: any) => Remind(props) },
-  { name: 'SelectFalse', element: (props: any) => SelectFalse(props) },
-  { name: 'SelectTrue', element: (props: any) => SelectTrue(props) },
   { name: 'UploadPdf', element: (props: any) => <UploadPdf {...props} /> },
   { name: 'UploadImage', element: (props: any) => <UploadImage {...props} /> },
   { name: 'UploadExcel', element: (props: any) => <UploadExcel {...props} /> },
-  // antd
-  { name: 'HomeOutlined', element: (props: any) => <HomeOutlined {...props} /> },
-  { name: 'LogoutOutlined', element: (props: any) => <LogoutOutlined {...props} /> },
-  { name: 'SwapOutlined', element: (props: any) => <SwapOutlined {...props} /> },
-  { name: 'MenuUnfoldOutlined', element: (props: any) => <MenuUnfoldOutlined {...props} /> },
-  { name: 'DownOutlined', element: (props: any) => <DownOutlined {...props} /> },
-  { name: 'MenuOutlined', element: (props: any) => <MenuOutlined {...props} /> },
-  { name: 'SolutionOutlined', element: (props: any) => <SolutionOutlined {...props} /> },
-  { name: 'CopyOutlined', element: (props: any) => <CopyOutlined {...props} /> },
-  { name: 'FormOutlined', element: (props: any) => <FormOutlined {...props} /> },
-  { name: 'AccountBookOutlined', element: (props: any) => <AccountBookOutlined {...props} /> },
-  { name: 'SettingOutlined', element: (props: any) => <SettingOutlined {...props} /> },
-  { name: 'EyeInvisibleOutlined', element: (props: any) => <EyeInvisibleOutlined {...props} /> },
-  { name: 'EyeTwoTone', element: (props: any) => <EyeTwoTone {...props} /> },
-  { name: 'AlipayCircleOutlined', element: (props: any) => <AlipayCircleOutlined {...props} /> },
-  { name: 'MenuFoldOutlined', element: (props: any) => <MenuFoldOutlined {...props} /> },
   // icon-park
-  { name: 'ListTwo', element: (props: any) => <ListTwo {...props} /> },
   { name: 'Export', element: (props: any) => <Export {...props} /> },
   { name: 'Return', element: (props: any) => <Return {...props} /> },
   { name: 'AddOne', element: (props: any) => <AddOne {...props} /> },
-  { name: 'SwitchButton', element: (props: any) => <SwitchButton {...props} /> },
   { name: 'Audit', element: (props: any) => <Audit {...props} /> },
   { name: 'Clear', element: (props: any) => <Clear {...props} /> },
   { name: 'Download', element: (props: any) => <Download {...props} /> },
   { name: 'Female', element: (props: any) => <Female {...props} /> },
   { name: 'Male', element: (props: any) => <Male {...props} /> },
   { name: 'PreviewOpen', element: (props: any) => <PreviewOpen {...props} /> },
+  { name: 'PreviewCloseOne', element: (props: any) => <PreviewCloseOne {...props} /> },
   { name: 'Upload', element: (props: any) => <Upload {...props} /> },
   { name: 'Delete', element: (props: any) => <Delete {...props} /> },
   { name: 'Setting', element: (props: any) => <Setting {...props} /> },
@@ -144,8 +118,13 @@ export const iconRally = [
   { name: 'Platte', element: (props: any) => <Platte {...props} /> },
   { name: 'ArrowUp', element: (props: any) => <ArrowUp {...props} /> },
   { name: 'Logout', element: (props: any) => <Logout {...props} /> },
-  { name: 'PreviewCloseOne', element: (props: any) => <PreviewCloseOne {...props} /> },
   { name: 'Down', element: (props: any) => <Down {...props} /> },
   { name: 'CheckCorrect', element: (props: any) => <CheckCorrect {...props} /> },
   { name: 'Square', element: (props: any) => <Square {...props} /> },
+  { name: 'Switch', element: (props: any) => <Switch {...props} /> },
+  { name: 'MenuFoldOne', element: (props: any) => <MenuFoldOne {...props} /> },
+  { name: 'MenuUnfoldOne', element: (props: any) => <MenuUnfoldOne {...props} /> },
+  { name: 'HamburgerButton', element: (props: any) => <HamburgerButton {...props} /> },
+  { name: 'ListTwo', element: (props: any) => <ListTwo {...props} /> },
+  { name: 'SwitchButton', element: (props: any) => <SwitchButton {...props} /> },
 ];
