@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ConfigProvider, Table } from 'antd';
 import { Button as TableUI_Button } from './material/Button';
 import { Operate as TableUI_Operate } from './material/Operate';
@@ -6,8 +6,22 @@ import { HideMultipleLines as TableUI_HideMultipleLines } from './material/HideM
 import { MultiLine as TableUI_MultiLine } from './material/MultiLine';
 import { Setting as TableUI_Setting } from './material/Setting';
 import zhCN from 'antd/locale/zh_CN';
-import { tablenodata } from '../assets';
 import './index.scss';
+
+const fetchData = async () => {
+  const url = 'https://gx-sic-prod.oss-cn-shanghai.aliyuncs.com/web_assets/svg/nodata.txt';
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    const result = await response.text();
+
+    return result;
+  } catch (error) {
+    console.log('--error', error);
+  }
+};
 
 /** 表格组件 */
 const TableUI = (props: any) => {
@@ -31,6 +45,17 @@ const TableUI = (props: any) => {
       setSelectedRowKey((name ? name : null) + record[rowKey]);
     }
   };
+  // 暂无数据的image的svg格式
+  const [stringSVG, setStringSVG] = useState('');
+
+  useEffect(() => {
+    const getNodataSvg = async () => {
+      const res = await fetchData();
+      setStringSVG(`${res}`);
+    };
+    getNodataSvg();
+  }, []);
+
   return (
     <ConfigProvider locale={zhCN}>
       <Table
@@ -54,7 +79,7 @@ const TableUI = (props: any) => {
           emptyText: (
             <div>
               {/* <img src={tableuiNodata} width={220} /> */}
-              <div style={{ display: 'flex', justifyContent: 'center' }} dangerouslySetInnerHTML={{ __html: tablenodata() }}></div>
+              <div style={{ display: 'flex', justifyContent: 'center' }} dangerouslySetInnerHTML={{ __html: stringSVG }}></div>
               {/* <img src="https://file.siciei.com/web_assets/nodata.png" width={220} /> */}
               <div style={{ color: '#333', fontFamily: 'LingCaiTiBold' }}>暂无内容</div>
             </div>
