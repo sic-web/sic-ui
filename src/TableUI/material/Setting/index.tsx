@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Table, Checkbox } from 'antd';
-import { MenuOutlined } from '@ant-design/icons';
+import { IconUI, ButtonUI } from 'sic-ui';
 import type { DragEndEvent } from '@dnd-kit/core';
 import { DndContext } from '@dnd-kit/core';
 import { restrictToVerticalAxis } from '@dnd-kit/modifiers';
 import { arrayMove, SortableContext, useSortable, verticalListSortingStrategy } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
-import { IconUI, ButtonUI } from 'sic-ui';
 import './index.scss';
 
 export const Setting = (props: any) => {
@@ -36,7 +35,15 @@ export const Setting = (props: any) => {
         {React.Children?.map(children, (child) => {
           if ((child as React.ReactElement).key === 'sort') {
             return React.cloneElement(child as React.ReactElement, {
-              children: <MenuOutlined ref={setActivatorNodeRef} style={{ touchAction: 'none', cursor: 'move' }} {...listeners} />,
+              children: (
+                <IconUI
+                  name="HamburgerButton"
+                  ref={setActivatorNodeRef}
+                  size={16}
+                  style={{ touchAction: 'none', cursor: 'move' }}
+                  {...listeners}
+                />
+              ),
             });
           }
           return child;
