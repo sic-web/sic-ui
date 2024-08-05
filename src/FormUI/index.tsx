@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React from 'react';
 import { Form } from 'antd';
 import './index.scss';
 
@@ -27,18 +27,8 @@ const FormUI_ProTitle = (props: any) => {
     </div>
   );
 };
-
-const FormUI: any = forwardRef((props: any, ref) => {
-  return (
-    <Form ref={ref} {...props}>
-      {props?.children}
-    </Form>
-  );
-});
-
 /** 继承关系，继续完善 */
-FormUI.useForm = Form.useForm;
-FormUI.Item = Form.Item;
+const FormUI: any = Form;
 FormUI.Title = FormUI_Title;
 FormUI.ProTitle = FormUI_ProTitle;
 
