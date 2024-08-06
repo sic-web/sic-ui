@@ -1,6 +1,7 @@
 import '@icon-park/react/styles/index.css';
 import './style/global.scss';
 import './index.scss';
+export * from 'antd';
 export { default as BackUI } from './BackUI';
 export { default as IconUI } from './IconUI';
 export { default as TagUI } from './TagUI';
