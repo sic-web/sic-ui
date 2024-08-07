@@ -1,6 +1,6 @@
 import React from 'react';
-import { TableUI, CellUI, TagUI } from 'sic-ui';
-import { expandTwo, reduceTwo } from '../utils';
+import { TableUI, CellUI } from 'sic-ui';
+import { num_expand_100 } from 'sic-util';
 import './index.scss';
 /** 当前表头类型 */
 export interface TableHeaderItem {
@@ -15,6 +15,8 @@ export interface TableHeaderItem {
   width?: number;
   fixed?: string;
   render?: unknown;
+  type?: string;
+  transform?: any;
 }
 
 /** 渲染表格的Columns */
@@ -29,7 +31,7 @@ export interface Columns {
   [key: string | number]: any;
 }
 
-const filterTableHeader = (columns: Columns[], tableHeader: TableHeaderItem[]) => {
+const filterTableHeader = (tableHeader: TableHeaderItem[], columns: Columns[]) => {
   const newCol: Columns[] = [];
   tableHeader?.forEach((a) => {
     if (a?.selected !== false) {
@@ -38,33 +40,14 @@ const filterTableHeader = (columns: Columns[], tableHeader: TableHeaderItem[]) =
       obj.dataIndex = a?.key;
       obj.render = (i: string | number) => <CellUI>{i}</CellUI>;
       obj = { ...a, ...obj };
+      if (a.type === 'amount') {
+        const realKey = a?.transform?.realKey ?? a.key;
+        if (a.transform?.rule === 'num_expand_100') {
+          obj.render = (_: never, item: any) => <CellUI>{num_expand_100(item[realKey])}</CellUI>;
+        }
+      }
       columns?.forEach((b: any) => {
         if (a?.key === b?.key) {
-          const realKey = b?.realKey ? b?.realKey : b.key;
-          // 金额
-          if (b.type === 'amount') {
-            if (b.transform === 'expandTwo') {
-              obj.render = (_: never, item: any) => {
-                return <CellUI>{expandTwo(item[realKey])}</CellUI>;
-              };
-            }
-          }
-          // 百分比
-          else if (b.type === 'percent') {
-            if (b.transform === 'reduceTwo') {
-              obj.render = (_: never, item: any) => {
-                return <CellUI>{item[realKey] ? `${reduceTwo(item[realKey])}%` : null}</CellUI>;
-              };
-            }
-          }
-          // TagUI
-          else if (b.type === 'tagui') {
-            obj.render = (_: never, item: any) => {
-              const current = b.transform.rally?.filter((obj: any) => obj.value === item[realKey])?.[0];
-              return <TagUI type={current.taguiType}>{current.label}</TagUI>;
-            };
-          }
-
           obj = { ...obj, ...b };
         }
       });
@@ -99,7 +82,8 @@ const Tiga = (props: any) => {
 
   const flag = tableHeader?.every((item: { name?: string }) => 'name' in item);
   if (flag) {
-    columns = filterTableHeader(morphColumns?.length > 0 ? morphColumns : initialColumns, tableHeader);
+    const tableColumns = morphColumns?.length > 0 ? morphColumns : initialColumns;
+    columns = filterTableHeader(tableHeader, tableColumns);
   }
 
   return <TableUI columns={columns} dataSource={t_dataSource} pageSize={t_pageSize} current={t_current} total={t_total} {...otherProps} />;
