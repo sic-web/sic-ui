@@ -10,11 +10,7 @@ git commit -m "feat: 更新" --no-verify
 
 ## Usage
 
-TODO
-
 ## Options
-
-TODO
 
 ## Development
 
