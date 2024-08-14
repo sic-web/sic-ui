@@ -29,3 +29,4 @@ export { default as PasswordStrongUI } from './PasswordStrongUI';
 export { default as BroadcastUI } from './BroadcastUI';
 export { default as VesselUI } from './VesselUI';
 export { default as EmptyUI } from './EmptyUI';
+export { default as AmountCellUI } from './AmountCellUI';
