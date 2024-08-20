@@ -38,10 +38,11 @@ export default () => (
 
 <font size=1>
 
-|   属性    | 说明 |        类型         | 默认值 | 是否必传 |
-| :-------: | ---- | :-----------------: | :----: | :------: |
-| children  | 金额 |       Number        |   -    |    是    |
-| className | 类名 |       String        |   -    |    否    |
-|   style   | 样式 | React.CSSProperties |   -    |    否    |
+|    属性     | 说明   |        类型         | 默认值 | 是否必传 |
+| :---------: | ------ | :-----------------: | :----: | :------: |
+|  children   | 金额   |       Number        |   -    |    是    |
+| isNumExpand | 分转元 |       boolean       |   是   |    否    |
+|  className  | 类名   |       String        |   -    |    否    |
+|    style    | 样式   | React.CSSProperties |   -    |    否    |
 
 </font>
