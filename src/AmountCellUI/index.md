@@ -28,6 +28,7 @@ export default () => (
     <AmountCellUI>10000</AmountCellUI>
     <AmountCellUI>1000000</AmountCellUI>
     <AmountCellUI>10000000000</AmountCellUI>
+    <AmountCellUI isNumExpand={false}>10000000000</AmountCellUI>
   </Space>
 );
 ```

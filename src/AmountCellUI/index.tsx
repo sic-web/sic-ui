@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Tooltip } from 'antd';
 import { num_expand } from 'sic-util';
 interface PropsType {
@@ -10,7 +10,12 @@ interface PropsType {
 //自动转换金额组件 默认分转元  默认超过万元展示万单位金额
 export default function AmountCellUI(props: PropsType) {
   const { className, style, children, isNumExpand = true } = props;
-  //
+  const [value, setValue] = useState<string | number>(0);
+  useEffect(() => {
+    const newValue = Number(children ?? 0);
+    setValue(isNumExpand ? num_expand(newValue) : newValue);
+  }, [children]);
+
   const formatAmount = (amount: number | string) => {
     const num = Number(amount);
     if (Math.abs(num) >= 100000000) {
@@ -23,9 +28,9 @@ export default function AmountCellUI(props: PropsType) {
   };
   return (
     <div className={`sicAmountCellUI ${className ?? ''}`} style={style}>
-      {children || children === 0 ? (
-        <Tooltip placement="right" title={Math.abs(Number(num_expand(children))) >= 10000 ? num_expand(children) : null}>
-          {formatAmount(isNumExpand ? num_expand(children) : children)}
+      {value || value === 0 ? (
+        <Tooltip placement="right" title={value}>
+          {formatAmount(value)}
         </Tooltip>
       ) : null}
     </div>
