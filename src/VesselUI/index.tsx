@@ -25,6 +25,8 @@ const VesselUI = (props: any) => {
   const initial: any = sessionStorageValue ? JSON.parse(sessionStorageValue) : initialFilterParams;
   //当前容器组件ref
   const [container, setContainer] = useState<HTMLDivElement | null>(null);
+  //页面状态  loading 为请求中
+  const [pageStatus, setPageStatus] = useState<string>('loading');
   //当前组件的配置项
   const [vessel, setVessel] = useState<Vessel>({
     limit: limit,
@@ -44,10 +46,12 @@ const VesselUI = (props: any) => {
 
   // 获取表格数据
   const getTableData = async () => {
+    setPageStatus('loading');
     sessionStorage.setItem(pageName, JSON.stringify({ ...vessel?.filterParams }));
     const { code, body, msg } = await (listType
       ? getTableDataFn(listType ?? '', vessel?.filterParams ?? {})
       : getTableDataFn(vessel?.filterParams ?? {}));
+    setPageStatus('');
     if (code === '0') {
       setTableData(body);
     } else {
@@ -132,7 +136,14 @@ const VesselUI = (props: any) => {
         )}
         <div className="publicVessel-content-vessel">
           {RenderChildren && (
-            <RenderChildren vessel={vessel} setVessel={setVessel} tableData={tableData} getTableData={getTableData} {...otherProps} />
+            <RenderChildren
+              vessel={vessel}
+              setVessel={setVessel}
+              tableData={tableData}
+              getTableData={getTableData}
+              pageStatus={pageStatus}
+              {...otherProps}
+            />
           )}
         </div>
       </div>
