@@ -11,6 +11,9 @@ const themeList = [
   { type: 5, name: '黄色', color: '#FFC22C', bgcolor: 'rgba(255, 194, 44, 0.10)' },
   { type: 6, name: '红色', color: '#ff7875', bgcolor: 'rgba(255, 120, 117, 0.10)' },
   { type: 7, name: '深红', color: '#9E031A', bgcolor: 'rgba(158, 3, 26, 0.10)' },
+  { type: 8, name: '淡青', color: '#13C2C2', bgcolor: 'rgba(19, 194, 194, 0.1)' },
+  { type: 9, name: '粉红', color: '#F759AB', bgcolor: ' rgba(247, 89, 171, 0.1)' },
+  { type: 10, name: '橄榄色', color: '#5B8C00', bgcolor: ' rgba(91, 140, 0, 0.10)' },
 ];
 
 const TagUI = (props: any) => {

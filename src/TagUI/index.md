@@ -34,6 +34,9 @@ const App: React.FC = () => (
     <TagUI type={5}>黄色</TagUI>
     <TagUI type={6}>红色</TagUI>
     <TagUI type={7}>深红</TagUI>
+    <TagUI type={8}>淡青</TagUI>
+    <TagUI type={9}>粉红</TagUI>
+    <TagUI type={10}>橄榄色</TagUI>
   </Space>
 );
 export default App;
