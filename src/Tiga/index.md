@@ -74,6 +74,41 @@ const App: React.FC = () => {
 export default App;
 ```
 
+💎 表格组件-快捷类型
+
+```tsx
+import { useState, useEffect } from 'react';
+import { Tiga, LoadingUI } from 'sic-ui';
+
+const App: React.FC = () => {
+  const columns1 = [
+    { key: 'name', name: '姓名' },
+    { key: 'age', name: '年龄' },
+    { key: 'phone', name: '电话' },
+    { key: 'money', name: '金额', type: 'amount', transform: { rule: 'num_expand_100' } },
+  ];
+
+  const dataSource = [
+    { name: '刘备', age: 22, phone: 15692837652, money: 200 },
+    { name: '关羽', age: 21, phone: 17697787678, money: 200 },
+    { name: '张飞', age: 18, phone: 12392880611, money: 200 },
+    { name: '赵云', age: 19, phone: 12392880611, money: 200 },
+  ];
+  const current = 1;
+  const pageSize = 10;
+  const total = 4;
+  const tableParams = { dataSource: dataSource, pageSize: pageSize, current, total };
+
+  return (
+    <div>
+      金额模式
+      <Tiga rowKey="name" tableHeader={columns1} {...tableParams} />
+    </div>
+  );
+};
+export default App;
+```
+
 ## API 使用文档
 
 🔥TableUI 引用 Ant Design 组件库，在使用过程中不做如何侵入性的更改
