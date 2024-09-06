@@ -21,93 +21,11 @@ group:
 
 💎 表格组件-快捷用法
 
-```tsx
-import { useState, useEffect } from 'react';
-import { Tiga, LoadingUI } from 'sic-ui';
-
-const App: React.FC = () => {
-  const [data, setData] = useState();
-  const columns1 = [
-    { key: 'name', name: '姓名' },
-    { key: 'age', name: '年龄' },
-    { key: 'phone', name: '电话' },
-  ];
-  const columns2 = [
-    { key: 'name', name: '姓名', sort: 1 },
-    { key: 'age', name: '年龄', sort: 4 },
-    { key: 'phone', name: '电话', sort: 3 },
-  ];
-  const columns3 = [
-    { key: 'name', name: '姓名', sort: 1 },
-    { key: 'age', name: '年龄', sort: 4 },
-    { key: 'phone', name: '电话', sort: 3, selected: false },
-    { key: 'fighting', name: '战力', sort: 2 },
-  ];
-  const dataSource = [
-    { name: '刘备', age: 22, phone: 15692837652, fighting: 6 },
-    { name: '关羽', age: 21, phone: 17697787678, fighting: 9 },
-    { name: '张飞', age: 18, phone: 12392880611, fighting: 7 },
-    { name: '赵云', age: 19, phone: 12392880611, fighting: 8 },
-  ];
-  const current = 1;
-  const pageSize = 10;
-  const total = 4;
-  const tableParams = { dataSource: data, pageSize: pageSize, current, total };
-  useEffect(() => {
-    setTimeout(() => {
-      setData(dataSource);
-    }, 2000);
-  }, []);
-  return (
-    <div>
-      基础模式
-      <LoadingUI isShowLoading={!data}>
-        <Tiga rowKey="name" tableHeader={columns1} {...tableParams} />
-      </LoadingUI>
-      带有排序
-      <Tiga rowKey="name" tableHeader={columns2} {...tableParams} />
-      带有禁用
-      <Tiga rowKey="name" tableHeader={columns3} {...tableParams} />
-    </div>
-  );
-};
-export default App;
-```
+<code src="./demo/demoQuick.tsx" ></code>
 
 💎 表格组件-快捷类型
 
-```tsx
-import { useState, useEffect } from 'react';
-import { Tiga, LoadingUI } from 'sic-ui';
-
-const App: React.FC = () => {
-  const columns1 = [
-    { key: 'name', name: '姓名' },
-    { key: 'age', name: '年龄' },
-    { key: 'phone', name: '电话' },
-    { key: 'money', name: '金额', type: 'amount', transform: { rule: 'num_expand_100' } },
-  ];
-
-  const dataSource = [
-    { name: '刘备', age: 22, phone: 15692837652, money: 200 },
-    { name: '关羽', age: 21, phone: 17697787678, money: 200 },
-    { name: '张飞', age: 18, phone: 12392880611, money: 200 },
-    { name: '赵云', age: 19, phone: 12392880611, money: 200 },
-  ];
-  const current = 1;
-  const pageSize = 10;
-  const total = 4;
-  const tableParams = { dataSource: dataSource, pageSize: pageSize, current, total };
-
-  return (
-    <div>
-      金额模式
-      <Tiga rowKey="name" tableHeader={columns1} {...tableParams} />
-    </div>
-  );
-};
-export default App;
-```
+<code src="./demo/demoQuickType.tsx" ></code>
 
 ## API 使用文档
 
