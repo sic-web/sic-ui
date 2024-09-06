@@ -56,8 +56,9 @@ const quickType = (tableHeader: TableHeaderItem[], columns: Columns[]) => {
         }
       }
       if (a.type === 'tagui') {
+        const realKey = a?.transform?.realKey ?? a.key;
         obj.render = (_: never, item: any) => {
-          const current = a.transform?.ruleList?.filter((obj: any) => obj?.value === item?.type)?.[0];
+          const current = a.transform?.ruleList?.filter((obj: any) => obj?.value === item[realKey])?.[0];
           return <TagUI type={current.type}>{current?.label}</TagUI>;
         };
       }
