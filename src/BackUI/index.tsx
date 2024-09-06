@@ -8,11 +8,12 @@ interface IProps {
   before?: string;
   current?: string;
   className?: string;
+  children?: React.ReactNode;
   style?: { [key: string]: string | number };
 }
 
 const BackUI = (props: IProps & Record<string, any>) => {
-  const { to = -1, before, current, className, ...otherProps } = props;
+  const { to = -1, before, current, className, children, ...otherProps } = props;
   const navigate = useNavigate();
   return (
     <div className={`sic-back ${className ?? ''}`} {...otherProps}>
@@ -20,10 +21,12 @@ const BackUI = (props: IProps & Record<string, any>) => {
         <IconUI name="Return" style={{ color: 'var(--themeColor)', marginRight: 3 }} />
         返回
       </div>
-      <div className="sic-back-right">
-        <span>{before}/</span>
-        {current}
-      </div>
+      {(!!before || !!current) && (
+        <div className="sic-back-right">
+          <span>{before}</span>/{current}
+        </div>
+      )}
+      <div className="sic-back-content">{children}</div>
     </div>
   );
 };
