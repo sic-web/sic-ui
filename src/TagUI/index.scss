@@ -1,7 +1,7 @@
 .sic-tagTitleui {
   min-height: 28px;
   font-size: 14px;
-  display: flex;
+  display: inline-flex;
   &-title {
     box-sizing: border-box;
     padding: 4px;
@@ -21,7 +21,7 @@
   padding: 0 8px;
   height: 28px;
   font-size: 14px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   white-space: nowrap;
