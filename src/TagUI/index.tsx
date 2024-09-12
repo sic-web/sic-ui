@@ -17,7 +17,7 @@ const themeList = [
 ];
 
 const TagUI = (props: any) => {
-  const { className, type, children, icon, width, style, ...otherProps } = props;
+  const { className, title, type, children, icon, width, style, ...otherProps } = props;
   const [theme, setTheme] = useState<any>();
 
   useEffect(() => {
@@ -26,18 +26,32 @@ const TagUI = (props: any) => {
   }, [type]);
 
   return (
-    <div
-      className={`sic-tagui ${className ?? ''}`}
-      style={{ color: theme?.color, backgroundColor: theme?.bgcolor, width: width ?? 'auto', ...style }}
-      {...otherProps}
-    >
-      {children}
-      {icon && (
-        <div className="sic-tagui-icon" style={{ color: theme?.color }}>
-          {icon}
+    // 根据title字段判断两种样式
+    <>
+      {!!title ? (
+        <div className={`sic-tagTitleui ${className ?? ''}`}>
+          <div className="sic-tagTitleui-title" style={{ backgroundColor: theme?.color }}>
+            {title}
+          </div>
+          <div className="sic-tagTitleui-content" style={{ backgroundColor: theme?.bgcolor }}>
+            {children}
+          </div>
+        </div>
+      ) : (
+        <div
+          className={`sic-tagui ${className ?? ''}`}
+          style={{ width: width ?? 'auto', color: theme?.color, backgroundColor: theme?.bgcolor, ...style }}
+          {...otherProps}
+        >
+          {children}
+          {icon && (
+            <div className="sic-tagui-icon" style={{ color: theme?.color }}>
+              {icon}
+            </div>
+          )}
         </div>
       )}
-    </div>
+    </>
   );
 };
 

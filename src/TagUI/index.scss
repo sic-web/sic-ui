@@ -1,10 +1,27 @@
+.sic-tagTitleui {
+  min-height: 28px;
+  font-size: 14px;
+  display: flex;
+  &-title {
+    box-sizing: border-box;
+    padding: 4px;
+    color: #fff;
+    border-radius: 4px 0 0 4px;
+  }
+
+  &-content {
+    box-sizing: border-box;
+    padding: 4px;
+    border-radius: 0 4px 4px 0;
+  }
+}
+
 .sic-tagui {
   box-sizing: border-box;
   padding: 0 8px;
-  width: auto;
   height: 28px;
   font-size: 14px;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   white-space: nowrap;
