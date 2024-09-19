@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ConfigProvider, Table } from 'antd';
-import { EmptyUI } from 'sic-ui';
+import { EmptyUI, ButtonUI, IconUI } from 'sic-ui';
 import { Button as TableUI_Button } from './material/Button';
 import { Operate as TableUI_Operate } from './material/Operate';
 import { HideMultipleLines as TableUI_HideMultipleLines } from './material/HideMultipleLines';
@@ -21,6 +21,10 @@ const TableUI = (props: any) => {
     pageSize = 0,
     total = 0,
     pageSizeOptions = ['20', '30', '50', '100'],
+    simplePagination = false,
+    lastPage,
+    nextPage,
+    clickSimplePagination,
     ...otherProps
   } = props;
   const [selectedRowKey, setSelectedRowKey] = useState<number | string | null>();
@@ -33,36 +37,52 @@ const TableUI = (props: any) => {
   };
 
   return (
-    <ConfigProvider locale={zhCN}>
-      <Table
-        rowKey={rowKey}
-        className={`${mask ? 'sic-tableui-mask' : ''} sic-tableui`}
-        dataSource={dataSource}
-        scroll={{ x: '100%' }}
-        columns={columns}
-        bordered
-        pagination={{
-          showSizeChanger: true,
-          showQuickJumper: true,
-          current: current,
-          pageSize: pageSize,
-          total: total,
-          showTotal: () => `共 ${total} 条`,
-          defaultPageSize: pageSizeOptions[0],
-          pageSizeOptions: pageSizeOptions,
-        }}
-        locale={{
-          emptyText: <EmptyUI />,
-        }}
-        onRow={(record) => ({
-          onClick: () => {
-            handleRowClick(record);
-          },
-        })}
-        rowClassName={(record) => (selectedRowKey === (name ? name : null) + record[rowKey] ? 'sic-tableui-active' : '')}
-        {...otherProps}
-      />
-    </ConfigProvider>
+    <div className={`${mask ? 'sic-tableui-mask' : ''} sic-tableui`}>
+      <ConfigProvider locale={zhCN}>
+        <Table
+          rowKey={rowKey}
+          columns={columns}
+          dataSource={dataSource}
+          scroll={{ x: '100%' }}
+          bordered
+          pagination={
+            simplePagination
+              ? false
+              : {
+                  showSizeChanger: true,
+                  showQuickJumper: true,
+                  current: current,
+                  pageSize: pageSize,
+                  total: total,
+                  showTotal: () => `共 ${total} 条`,
+                  defaultPageSize: pageSizeOptions[0],
+                  pageSizeOptions: pageSizeOptions,
+                }
+          }
+          locale={{
+            emptyText: <EmptyUI />,
+          }}
+          onRow={(record) => ({
+            onClick: () => {
+              handleRowClick(record);
+            },
+          })}
+          rowClassName={(record) => (selectedRowKey === (name ? name : null) + record[rowKey] ? 'sic-tableui-active' : '')}
+          {...otherProps}
+        />
+        {simplePagination && (
+          <div className="sic-tableui-simplePagination">
+            {!!total && <div>共 {total} 条</div>}
+            <ButtonUI icon={<IconUI name="Left" />} iconPosition="start" disabled={!lastPage} onClick={() => clickSimplePagination('last')}>
+              上一页
+            </ButtonUI>
+            <ButtonUI icon={<IconUI name="Right" />} disabled={!nextPage} onClick={() => clickSimplePagination('next')}>
+              下一页
+            </ButtonUI>
+          </div>
+        )}
+      </ConfigProvider>
+    </div>
   );
 };
 
