@@ -55,3 +55,13 @@
   border-radius: 8px;
   cursor: not-allowed;
 }
+
+.sic-tableui-simplePagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 12px auto;
+  .sic-buttonui {
+    margin-left: 20px;
+  }
+}
