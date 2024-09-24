@@ -94,7 +94,7 @@ const VesselUI = (props: any) => {
   };
   //筛选组件点击重置时
   const clickReset = () => {
-    setVessel({ ...vessel, filterParams: initialFilterParams });
+    setVessel({ ...vessel, filterParams: { ...initialFilterParams } });
   };
   return (
     <div
