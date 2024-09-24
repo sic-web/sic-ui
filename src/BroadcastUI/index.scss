@@ -1,5 +1,5 @@
 .sic-broadcastui {
-  border: 1px solid #ff7875;
+  border: 1px solid var(--red);
   border-radius: 4px;
   background: rgba(255, 120, 117, 0.1);
   height: 32px;
@@ -28,7 +28,7 @@
   &-more {
     width: 60px;
     margin-right: 6px;
-    color: #ff7875;
+    color: var(--red);
     text-decoration-line: underline;
     cursor: pointer;
   }

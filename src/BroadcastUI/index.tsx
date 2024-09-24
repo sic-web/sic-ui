@@ -27,7 +27,7 @@ const BroadcastUI = (props: IProps) => {
     <div className="sic-broadcastui" style={{ width: width, ...style }}>
       <div className="sic-broadcastui-left">
         <div className="sic-broadcastui-icon">
-          <IconUI name="Help" theme="filled" fill="#FF7875" size="18" />
+          <IconUI name="Help" theme="filled" fill="var(--red)" size="18" />
         </div>
         <div
           className="sic-broadcastui-text"
