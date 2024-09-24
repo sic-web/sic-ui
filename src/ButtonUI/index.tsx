@@ -11,7 +11,12 @@ interface ButtonUIProps extends Omit<ButtonProps, 'type'> {
 const ButtonUI = (props: ButtonUIProps) => {
   const { className, type, children, iconPosition = 'end', ...otherProps } = props;
   return (
-    <Button className={`sic-buttonui ${className ?? ''}`} type={type} iconPosition={iconPosition} {...otherProps}>
+    <Button
+      className={`sic-buttonui ${className ?? ''} ${type === 'border' ? 'ant-btn-border' : ''}`}
+      type={type}
+      iconPosition={iconPosition}
+      {...otherProps}
+    >
       {children}
     </Button>
   );
