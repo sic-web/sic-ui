@@ -44,11 +44,7 @@ const TagUI = (props: any) => {
           {...otherProps}
         >
           {children}
-          {icon && (
-            <div className="sic-tagui-icon" style={{ color: theme?.color }}>
-              {icon}
-            </div>
-          )}
+          {icon}
         </div>
       )}
     </>
