@@ -52,9 +52,7 @@ import { Space } from 'antd';
 
 const App: React.FC = () => (
   <Space wrap>
-    <TagUI type={1} icon={<IconUI name DataFour />}>
-      绿色
-    </TagUI>
+    <TagUI type={1}>绿色</TagUI>
     <TagUI type={2} icon={<Currency />}>
       紫色
     </TagUI>

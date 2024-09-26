@@ -1,7 +1,8 @@
 .sic-tagTitleui {
-  min-height: 28px;
-  font-size: 14px;
   display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+  font-family: 'LingCaiTi';
   &-title {
     box-sizing: border-box;
     padding: 4px;
@@ -18,19 +19,14 @@
 
 .sic-tagui {
   box-sizing: border-box;
-  padding: 0 8px;
-  height: 28px;
-  font-size: 14px;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-family: 'LingCaiTi';
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
   border-radius: 4px;
-
-  &-icon {
+  .i-icon {
     margin-left: 2px;
-    font-size: 14px;
   }
 }
