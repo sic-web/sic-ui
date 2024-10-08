@@ -1,59 +1,42 @@
-import React, { useState, useEffect } from 'react';
-import { Tooltip } from 'antd';
-import { IconUI } from 'sic-ui';
+import React from 'react';
+import { Popover } from 'antd';
+import { IconUI, TextUI } from 'sic-ui';
 import './index.scss';
 
-const OperateMore = (props: { content: React.ReactNode }) => {
-  const tip = (text: React.ReactNode) => (
-    <div>
-      <span style={{ color: 'var(--themeColor)' }}>{text || ''}</span>
-    </div>
-  );
+export const Operate = (props: any) => {
+  const { child, maxCount = 2 } = props;
+  // 渲染默认展示的标签
+  const renderItem = (childrenArray: any) => {
+    return childrenArray.slice(0, maxCount).map((item: any, index: number) => (
+      <div className="sicTableuiOperate-item" key={index}>
+        {item}
+        {index < maxCount - 1 && index < childrenArray?.length - 1 && <div className="sicTableuiOperate-item-divider">|</div>}
+      </div>
+    ));
+  };
+  // 渲染默认隐藏的标签
+  const renderPopoverContent = (childrenArray: any) => {
+    return childrenArray.slice(maxCount).map((item: any, index: number) => <div key={index}>{item}</div>);
+  };
+  const renderChildren = () => {
+    const childrenArray = React.Children.toArray(child().props.children);
+    return (
+      <>
+        {renderItem(childrenArray)}
+        {childrenArray?.length > maxCount && (
+          <Popover
+            overlayClassName="sicTableuiOperate-popover"
+            trigger="click"
+            placement="bottom"
+            content={renderPopoverContent(childrenArray)}
+          >
+            <IconUI className="sicTableuiOperate-more" name="More" />
+          </Popover>
+        )}
+        {childrenArray?.length === 0 && <TextUI> - </TextUI>}
+      </>
+    );
+  };
 
-  return (
-    <Tooltip placement="bottom" title={tip(props.content)} color={'#fff'} key={'#fff'} trigger="click">
-      <IconUI name="More" size="18" theme="filled" style={{ color: '#7E7E7E', padding: '0 10px', cursor: 'pointer' }} />
-    </Tooltip>
-  );
-};
-/** 表格组件-操作更多 */
-export const Operate = (props: { child: any }) => {
-  const { child } = props;
-  const [children, setChildren] = useState<React.ReactNode[]>([]);
-  useEffect(() => {
-    if (child()?.props?.children?.length) {
-      const children = child()?.props?.children.filter((item: boolean) => {
-        return item !== false;
-      });
-      setChildren(children);
-    } else {
-      if (child()?.props?.children) setChildren([child().props?.children]);
-    }
-  }, [child]);
-
-  return (
-    <div className="sic-tableui-operate">
-      {children?.length === 0 && <div style={{ color: 'var(--themeColor)' }}>-</div>}
-      {children?.[0] || children}
-      {children?.[1] && <span style={{ color: '#ccc', margin: '0 5px' }}>丨</span>}
-      {children?.[1]}
-      {children?.[2] && (
-        <OperateMore
-          content={
-            <div>
-              {children?.[2]}
-              {children?.[3]}
-              {children?.[4]}
-              {children?.[5]}
-              {children?.[6]}
-              {children?.[7]}
-              {children?.[8]}
-              {children?.[9]}
-              {children?.[10]}
-            </div>
-          }
-        />
-      )}
-    </div>
-  );
+  return <div className="sicTableuiOperate">{renderChildren()}</div>;
 };
