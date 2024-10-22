@@ -2,8 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scrollbar-width: auto;
-  scrollbar-color: auto;
 }
 li {
   list-style: none;
@@ -20,11 +18,11 @@ img {
 svg {
   display: block;
 }
+
 body {
-  height: 100vh;
-  overflow: auto;
   --textBlack: #333;
   --red: #ff4d4f;
+  --fontFamily: 'LingCaiTi';
   --themeColor: #2e64fa;
   --themeColor0: #ffffff;
   --themeColor0_5: #f5f7ff;
