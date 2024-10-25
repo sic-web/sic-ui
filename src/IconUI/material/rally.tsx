@@ -11,7 +11,7 @@ import { City, Alarm, Deposit, TicketOne, Protect, Alipay, User, Lock, FolderOpe
 import { RobotOne, Power, History, Communication, Newlybuild, Left, Editor, ApiApp, Workbench, Booth, Order } from '@icon-park/react';
 import { FileStaff, Send, Local, Handbag, EveryUser, Passport, NewspaperFolding, Copyright, WritingFluently } from '@icon-park/react';
 import { Platte, ArrowUp, Logout, Down, CheckCorrect, Square, Switch, MenuFoldOne, MenuUnfoldOne } from '@icon-park/react';
-import { HamburgerButton, ListTwo, SwitchButton, Clue } from '@icon-park/react';
+import { HamburgerButton, ListTwo, SwitchButton, Clue, Comment } from '@icon-park/react';
 /** Icon 集合 */
 export const iconRally = [
   // 自研icon
@@ -128,4 +128,5 @@ export const iconRally = [
   { name: 'ListTwo', element: (props: any) => <ListTwo {...props} /> },
   { name: 'SwitchButton', element: (props: any) => <SwitchButton {...props} /> },
   { name: 'Clue', element: (props: any) => <Clue {...props} /> },
+  { name: 'Comment', element: (props: any) => <Comment {...props} /> },
 ];
