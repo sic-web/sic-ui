@@ -20,9 +20,17 @@ group:
 💎 基础使用
 
 ```tsx
-import { EmptyUI } from 'sic-ui';
+import { Space, EmptyUI, ImageUI } from 'sic-ui';
 
-export default () => <EmptyUI />;
+export default () => (
+  <Space>
+    <EmptyUI />
+    <EmptyUI
+      image={<ImageUI src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png" width={177} height={144} />}
+    />
+    <EmptyUI text="暂无数据" />
+  </Space>
+);
 ```
 
 ## API 使用文档
