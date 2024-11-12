@@ -25,6 +25,7 @@ const TableUI = (props: any) => {
     lastPage,
     nextPage,
     clickSimplePagination,
+    emptyText = <EmptyUI />,
     ...otherProps
   } = props;
   const [selectedRowKey, setSelectedRowKey] = useState<number | string | null>();
@@ -60,7 +61,7 @@ const TableUI = (props: any) => {
                 }
           }
           locale={{
-            emptyText: <EmptyUI />,
+            emptyText: emptyText,
           }}
           onRow={(record) => ({
             onClick: () => {
