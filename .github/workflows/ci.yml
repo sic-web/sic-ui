@@ -32,3 +32,4 @@ jobs:
           branch: build
           folder: dist
           token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs-dist # 修改为你实际的构建输出目录
