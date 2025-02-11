@@ -1,35 +1,29 @@
-name: sic-ui
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - main
-
-permissions:
-  contents: write
+      - main # 或者你的默认分支名称
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v1
-
-      - name: Use Node.js
-        uses: actions/setup-node@v1
+        uses: actions/checkout@v3
         with:
-          node-version: 20.17.0
+          fetch-depth: 0 # 确保完整历史记录
 
-      - name: Build Project
-        run: |
-          npm install
-          npm run build
+      - name: Install dependencies
+        run: npm install
 
-      - name: Deploy to Github
-        uses: JamesIves/github-pages-deploy-action@4.0.0
+      - name: Build site
+        # 如果是 react 模板使用 npm run docs:build，否则 npm run build
+        run: npm run docs:build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          branch: build
-          folder: dist
-          token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs-dist # 修改为你实际的构建输出目录
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs-dist # 根据你的输出目录
