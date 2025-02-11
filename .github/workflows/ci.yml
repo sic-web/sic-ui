@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: peaceiris/actions-gh-pages@v3
+        uses: JamesIves/github-pages-deploy-action@4.0.0
         with:
           fetch-depth: 0 # 确保完整历史记录
 
@@ -23,7 +23,7 @@ jobs:
         run: npm run docs:build
 
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+        uses: JamesIves/github-pages-deploy-action@4.0.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs-dist # 根据你的输出目录
