@@ -5,14 +5,13 @@
 
 A react library developed with dumi
 
-git add .
-git commit -m "feat: 更新" --no-verify
-
-https://sicweb.gitlab.io/sic-ui/
-
 ## Usage
 
+TODO
+
 ## Options
+
+TODO
 
 ## Development
 
@@ -32,7 +31,8 @@ $ npm run build:watch
 # build docs
 $ npm run docs:build
 
-
+# Locally preview the production build.
+$ npm run docs:preview
 
 # check your project for potential problems
 $ npm run doctor

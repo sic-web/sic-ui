@@ -17,4 +17,4 @@ features:
     description: Put ! description here
 ---
 
-sic-ui11
+sic-ui
