@@ -10,10 +10,7 @@
       "@@/*": [".dumi/tmp/*"],
       "sic-ui": ["src"],
       "sic-ui/*": ["src/*", "*"]
-    },
-    "outDir": "dist", // 输出目录
-    "declarationDir": "dist/types", // (可选) 声明文件输出目录
-    "emitDeclarationOnly": true // (可选) 仅生成声明文件，不编译 JS 文件
+    }
   },
   "include": [".dumirc.ts", "src/**/*", "src", "images.d.ts"]
 }
