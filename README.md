@@ -4,11 +4,8 @@
 
 <h1>sic ui</h1>
 
-
 [![NPM version](https://img.shields.io/npm/v/sic-ui.svg?style=flat)](https://npmjs.org/package/sic-ui)
 [![NPM downloads](http://img.shields.io/npm/dm/sic-ui.svg?style=flat)](https://npmjs.org/package/sic-ui)
-
-A react library developed with dumi
 
 ## Usage
 
