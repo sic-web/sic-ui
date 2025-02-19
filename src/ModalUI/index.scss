@@ -1,6 +1,6 @@
 .sicModalui {
   .ant-modal-content {
-    padding: 0 20px;
+    padding: 12px 20px;
     border-radius: 0;
     .ant-modal-close {
       width: 20px;
@@ -11,8 +11,7 @@
       margin-bottom: 12px;
     }
     .ant-modal-footer {
-      padding: 12px 0;
-      margin-top: 0;
+      margin-top: 12px;
     }
   }
   &-header {
@@ -21,7 +20,7 @@
     justify-content: space-between;
     line-height: 20px;
     font-family: 'LingCaiTiBold';
-    padding: 12px 0;
+    padding-bottom: 12px;
     border-bottom: 1px solid #e3e3e3;
     &-icon {
       height: 20px;
