@@ -1,4 +1,4 @@
-import { message, MessageArgsProps } from 'antd';
+import { message } from 'antd';
 import './index.scss';
 
 message.config({
@@ -8,20 +8,20 @@ message.config({
   prefixCls: 'sic-message',
 });
 const MessageUI = {
-  success: (config: MessageArgsProps) => {
-    message.success(config);
+  success: (content: any, duration?: any, onClose?: any) => {
+    message.success(content, duration, onClose);
   },
-  error: (config: MessageArgsProps) => {
-    message.error(config);
+  error: (content: any, duration?: any, onClose?: any) => {
+    message.error(content, duration, onClose);
   },
-  info: (config: MessageArgsProps) => {
-    message.info(config);
+  info: (content: any, duration?: any, onClose?: any) => {
+    message.info(content, duration, onClose);
   },
-  warning: (config: MessageArgsProps) => {
-    message.warning(config);
+  warning: (content: any, duration?: any, onClose?: any) => {
+    message.warning(content, duration, onClose);
   },
-  loading: (config: MessageArgsProps) => {
-    message.loading(config);
+  loading: (content: any, duration?: any, onClose?: any) => {
+    message.loading(content, duration, onClose);
   },
   destroy: (key: string | undefined) => {
     message.destroy(key);
