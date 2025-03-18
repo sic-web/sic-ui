@@ -1,5 +1,5 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
+import React, { useMemo } from 'react';
+import { getOptionConfig } from 'sic-util';
 import './index.scss';
 
 // 配置色枚举
@@ -17,13 +17,12 @@ const themeList = [
 ];
 
 const TagUI = (props: any) => {
-  const { className, title, type, children, icon, width, style, ...otherProps } = props;
-  const [theme, setTheme] = useState<any>();
+  const { className, title, type, options, key, children, icon, width, style, ...otherProps } = props;
 
-  useEffect(() => {
-    const theme = themeList.filter((item) => item?.type === Number(type))[0];
-    setTheme(theme);
-  }, [type]);
+  const theme = useMemo(() => {
+    const newType = !!options && options?.length > 0 ? getOptionConfig(key, options)?.type : type;
+    return themeList.find((item) => item.type === Number(newType));
+  }, [type, options, key]);
 
   return (
     // 根据title字段判断两种样式
@@ -34,7 +33,7 @@ const TagUI = (props: any) => {
             {title}
           </div>
           <div className="sic-tagTitleui-content" style={{ backgroundColor: theme?.bgcolor }}>
-            {children}
+            {!!options && options?.length > 0 ? getOptionConfig(key, options) : children}
           </div>
         </div>
       ) : (
@@ -43,7 +42,7 @@ const TagUI = (props: any) => {
           style={{ width: width ?? 'auto', color: theme?.color, backgroundColor: theme?.bgcolor, ...style }}
           {...otherProps}
         >
-          {children}
+          {!!options && options?.length > 0 ? getOptionConfig(key, options)?.name : children}
           {icon}
         </div>
       )}
