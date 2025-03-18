@@ -8,20 +8,20 @@ message.config({
   prefixCls: 'sic-message',
 });
 const MessageUI = {
-  success: (content: any, duration?: any, onClose?: any) => {
-    message.success(content, duration, onClose);
+  success: (config: any) => {
+    message.success(config);
   },
-  error: (content: any, duration?: any, onClose?: any) => {
-    message.error(content, duration, onClose);
+  error: (config: any) => {
+    message.error(config);
   },
-  info: (content: any, duration?: any, onClose?: any) => {
-    message.info(content, duration, onClose);
+  info: (config: any) => {
+    message.info(config);
   },
-  warning: (content: any, duration?: any, onClose?: any) => {
-    message.warning(content, duration, onClose);
+  warning: (config: any) => {
+    message.warning(config);
   },
-  loading: (content: any, duration?: any, onClose?: any) => {
-    message.loading(content, duration, onClose);
+  loading: (config: any) => {
+    message.loading(config);
   },
   destroy: (key: string | undefined) => {
     message.destroy(key);
