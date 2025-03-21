@@ -7,7 +7,7 @@
   }
   .ant-picker-input input::placeholder {
     color: #999 !important;
-    font-family: 'LingCaiTi' !important;
+    font-family: var(--fontFamily) !important;
   }
 }
 .ant-picker-presets ul li {
