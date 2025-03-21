@@ -2,7 +2,7 @@
   display: inline-flex;
   font-size: 12px;
   line-height: 16px;
-  font-family: 'LingCaiTi';
+  font-family: var(--fontFamily);
   &-title {
     box-sizing: border-box;
     padding: 4px;
@@ -22,7 +22,7 @@
   padding: 4px 8px;
   font-size: 12px;
   line-height: 16px;
-  font-family: 'LingCaiTi';
+  font-family: var(--fontFamily);
   display: inline-flex;
   align-items: center;
   justify-content: center;

@@ -28,7 +28,6 @@ const App: React.FC = () => (
   <Space>
     <ButtonUI>默认按钮</ButtonUI>
     <ButtonUI type="primary">主要按钮</ButtonUI>
-    <ButtonUI type="border">次要按钮</ButtonUI>
     <ButtonUI type="dashed">虚线按钮</ButtonUI>
     <ButtonUI type="text">文本按钮</ButtonUI>
     <ButtonUI type="link">链接按钮</ButtonUI>
@@ -49,9 +48,6 @@ const App: React.FC = () => (
     <ButtonUI danger>默认按钮</ButtonUI>
     <ButtonUI type="primary" danger>
       主要按钮
-    </ButtonUI>
-    <ButtonUI type="border" danger>
-      次要按钮
     </ButtonUI>
     <ButtonUI type="dashed" danger>
       虚线按钮
@@ -79,9 +75,7 @@ const App: React.FC = () => (
     <Space>
       <ButtonUI danger>默认按钮</ButtonUI>
       <ButtonUI type="primary">主要按钮</ButtonUI>
-      <ButtonUI type="border" danger>
-        删除按钮
-      </ButtonUI>
+      <ButtonUI danger>删除按钮</ButtonUI>
     </Space>
   </Form>
 );

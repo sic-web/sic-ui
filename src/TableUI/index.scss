@@ -3,8 +3,8 @@
     padding: 0;
     color: var(--textBlack);
     font-size: 14px;
-    font-weight: 500;
-    font-family: 'LingCaiTiBold';
+    font-family: var(--fontFamily);
+    font-weight: bold;
     line-height: 43px;
     text-align: center;
     white-space: nowrap;
@@ -17,9 +17,8 @@
     padding: 0;
     color: var(--textBlack);
     font-size: 13px;
-    font-weight: 400;
     line-height: 18px;
-    font-family: 'LingCaiTi';
+    font-family: var(--fontFamily);
     text-align: center;
   }
   .ant-pagination {

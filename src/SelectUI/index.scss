@@ -4,7 +4,8 @@
   width: 100%;
   &-selectui {
     flex: 1;
-    font-family: 'LingCaiTiBold';
+    font-family: var(--fontFamily);
+    font-weight: bold;
   }
   &-copy {
     display: inline-block;

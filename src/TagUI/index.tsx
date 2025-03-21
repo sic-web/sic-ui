@@ -42,7 +42,7 @@ const TagUI = (props: any) => {
           style={{ width: width ?? 'auto', color: theme?.color, backgroundColor: theme?.bgcolor, ...style }}
           {...otherProps}
         >
-          {!!options && options?.length > 0 ? getOptionConfig(key, options)?.name : children}
+          {!!options && options?.length > 0 ? getOptionConfig(key, options)?.label : children}
           {icon}
         </div>
       )}
