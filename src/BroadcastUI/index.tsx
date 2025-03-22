@@ -1,67 +1,57 @@
-import React, { useState, useEffect } from 'react';
+import { Carousel, Popover } from 'antd';
+import React, { useRef } from 'react';
 import { IconUI } from 'sic-ui';
-import { Tooltip } from 'antd';
 import './index.scss';
 
 interface IProps {
-  width: number;
-  promptList: string[];
-  style?: any;
-  textAlign?: string;
+  /** 广播消息列表 */
+  items?: Array<string | number>;
+  /** 组件宽度 */
+  width?: number;
+  /** 文字对齐方式 */
+  textAlign?: 'left' | 'center' | 'right';
 }
 
 const BroadcastUI = (props: IProps) => {
-  const { width, promptList, style, textAlign = 'left' } = props;
-  const promptListLength = promptList?.length;
-  const [isOpen, setIsOpen] = useState(false);
-  const [current, setCurrent] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((prevCurrent) => (prevCurrent + 1) % promptListLength);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [promptListLength]);
+  const ref = useRef(null);
+  const { items = [], width, textAlign = 'left' } = props;
 
   return (
-    <div className="sic-broadcastui" style={{ width: width, ...style }}>
-      <div className="sic-broadcastui-left">
-        <div className="sic-broadcastui-icon">
-          <IconUI name="Help" theme="filled" fill="var(--red)" size="18" />
-        </div>
-        <div
-          className="sic-broadcastui-text"
-          key={current}
-          style={{ width: textAlign === 'center' ? 'auto' : promptListLength > 1 ? width - 90 : width }}
-        >
-          {promptList[current]}
-        </div>
-      </div>
-      {promptListLength > 1 && (
-        <Tooltip
-          title={
-            <div>
-              {promptList?.map((item, index) => {
-                return <div key={index}>{item}</div>;
-              })}
-              <div className="sic-broadcastui-button">
-                <div className="text" onClick={() => setIsOpen(false)}>
-                  我知道了
+    <div className="sicBroadcastui" style={{ width: width }}>
+      <IconUI name="Help" theme="filled" fill="var(--red)" size="18" />
+      {items?.length > 0 && (
+        <div className="sicBroadcastui-content">
+          <Carousel autoplay={items?.length > 1} dots={false} dotPosition="left" autoplaySpeed={5000} adaptiveHeight>
+            {items.map((item: string | number, index: number) => (
+              <div className="sicBroadcastui-content-item" key={index}>
+                <div className="sicBroadcastui-content-item-text" style={{ textAlign: textAlign }}>
+                  {item}
                 </div>
               </div>
-            </div>
-          }
-          placement="bottomRight"
-          overlayStyle={{ maxWidth: width }}
-          open={isOpen}
-        >
-          <div className="sic-broadcastui-more" onClick={() => setIsOpen(!isOpen)}>
-            点击查看
-          </div>
-        </Tooltip>
+            ))}
+          </Carousel>
+        </div>
       )}
+
+      <Popover
+        color="rgba(0, 0, 0, 0.85)"
+        placement="bottomRight"
+        getPopupContainer={() => ref.current || document.body}
+        content={
+          <div className="sicBroadcastui-popover" style={{ width: width ? width - 20 : 'auto' }}>
+            {items?.map((item: string | number, index: number) => (
+              <div className="sicBroadcastui-popover-item" key={index}>
+                {item}
+              </div>
+            ))}
+          </div>
+        }
+      >
+        <div className="sicBroadcastui-more" ref={ref}>
+          查看
+        </div>
+      </Popover>
     </div>
   );
 };
-
 export default BroadcastUI;

@@ -1,5 +1,5 @@
-import React, { useRef, useState, useEffect } from 'react';
 import { Tooltip } from 'antd';
+import React, { useEffect, useRef, useState } from 'react';
 import { IconUI, MessageUI } from 'sic-ui';
 import './index.scss';
 
