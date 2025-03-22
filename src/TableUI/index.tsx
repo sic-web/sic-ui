@@ -1,19 +1,18 @@
-import React, { useState } from 'react';
 import { ConfigProvider, Table } from 'antd';
-import { EmptyUI, ButtonUI, IconUI } from 'sic-ui';
+import zhCN from 'antd/locale/zh_CN';
+import React from 'react';
+import { ButtonUI, EmptyUI, IconUI } from 'sic-ui';
+import './index.scss';
 import { Button as TableUI_Button } from './material/Button';
-import { Operate as TableUI_Operate } from './material/Operate';
 import { HideMultipleLines as TableUI_HideMultipleLines } from './material/HideMultipleLines';
 import { MultiLine as TableUI_MultiLine } from './material/MultiLine';
+import { Operate as TableUI_Operate } from './material/Operate';
 import { Setting as TableUI_Setting } from './material/Setting';
-import zhCN from 'antd/locale/zh_CN';
-import './index.scss';
 
 /** 表格组件 */
 const TableUI = (props: any) => {
   const {
     rowKey,
-    name,
     dataSource = [],
     columns = [],
     mask = false,
@@ -28,14 +27,6 @@ const TableUI = (props: any) => {
     emptyText = <EmptyUI />,
     ...otherProps
   } = props;
-  const [selectedRowKey, setSelectedRowKey] = useState<number | string | null>();
-  const handleRowClick = (record: any) => {
-    if (record[rowKey] === selectedRowKey) {
-      setSelectedRowKey(null);
-    } else {
-      setSelectedRowKey((name ? name : null) + record[rowKey]);
-    }
-  };
 
   return (
     <div className={`${mask ? 'sic-tableui-mask' : ''} sic-tableui`}>
@@ -50,6 +41,7 @@ const TableUI = (props: any) => {
             simplePagination
               ? false
               : {
+                  position: ['bottomCenter'],
                   showSizeChanger: true,
                   showQuickJumper: true,
                   current: current,
@@ -63,12 +55,17 @@ const TableUI = (props: any) => {
           locale={{
             emptyText: emptyText,
           }}
-          onRow={(record) => ({
-            onClick: () => {
-              handleRowClick(record);
+          onRow={() => ({
+            onClick: (e) => {
+              const target = e.currentTarget;
+              // 移除其他行的选中样式
+              target.parentElement?.querySelectorAll('tr').forEach((row: any) => {
+                row.classList.remove('sic-tableui-row-selected');
+              });
+              // 添加当前行的选中样式
+              target.classList.add('sic-tableui-row-selected');
             },
           })}
-          rowClassName={(record) => (selectedRowKey === (name ? name : null) + record[rowKey] ? 'sic-tableui-active' : '')}
           {...otherProps}
         />
         {simplePagination && (

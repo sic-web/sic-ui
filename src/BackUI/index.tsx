@@ -16,17 +16,17 @@ const BackUI = (props: IProps & Record<string, any>) => {
   const { to = -1, before, current, className, children, ...otherProps } = props;
   const navigate = useNavigate();
   return (
-    <div className={`sic-back ${className ?? ''}`} {...otherProps}>
-      <div className="sic-back-left" onClick={() => navigate(to ?? -1)}>
-        <IconUI name="Return" style={{ color: 'var(--themeColor)', marginRight: 3 }} />
-        返回
+    <div className={`sic-backui ${className ?? ''}`} {...otherProps}>
+      <div className="sic-backui-button" onClick={() => navigate(to ?? -1)}>
+        <IconUI name="Return" />
+        <div>返回</div>
       </div>
-      {(!!before || !!current) && (
-        <div className="sic-back-right">
-          <span>{before}</span>/{current}
-        </div>
-      )}
-      <div className="sic-back-content">{children}</div>
+      <div className="sic-backui-text">
+        <div className="sic-backui-text-before">{before}</div>
+        <div>/</div>
+        <div>{current}</div>
+      </div>
+      <div className="sic-backui-content">{children}</div>
     </div>
   );
 };

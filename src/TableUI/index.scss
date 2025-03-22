@@ -1,66 +1,40 @@
 .sic-tableui {
   .ant-table-thead > tr > th {
-    padding: 0;
-    color: var(--textBlack);
-    font-size: 14px;
-    font-family: var(--fontFamily);
-    font-weight: bold;
-    line-height: 43px;
-    text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    background-color: #f9f9f9;
-  }
-  .ant-table-tbody > tr > td {
     box-sizing: border-box;
-    padding: 0;
-    color: var(--textBlack);
-    font-size: 13px;
-    line-height: 18px;
-    font-family: var(--fontFamily);
+    padding: 12px 0;
     text-align: center;
   }
-  .ant-pagination {
-    color: var(--textBlack);
-    font-size: 14px;
+  .ant-table-tbody {
+    > tr > td {
+      padding: 0;
+      font-size: 13px;
+      text-align: center;
+    }
+    tr.sic-tableui-row-selected td {
+      background-color: var(--themeColor2);
+    }
+    .ant-table-row > .ant-table-cell-row-hover {
+      background-color: var(--themeColor2);
+    }
   }
   .ant-table-pagination.ant-pagination {
-    display: flex;
-    justify-content: center;
     margin: 12px auto;
   }
-  .sic-tableui-active {
-    .ant-table-cell-fix-left {
-      background-color: var(--themeColor2);
-    }
-    .ant-table-cell {
-      background-color: var(--themeColor2);
-    }
-    .ant-table-cell-fix-right {
-      background-color: var(--themeColor2);
-    }
-  }
-  .ant-table-tbody .ant-table-row > .ant-table-cell-row-hover {
-    background-color: var(--themeColor2);
-  }
-}
-.sic-tableui-mask {
-  height: 100%;
-  left: 0;
-  opacity: 0.3;
-  top: 0;
-  z-index: 1;
-  border-radius: 8px;
-  cursor: not-allowed;
-}
 
-.sic-tableui-simplePagination {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 12px auto;
-  .sic-buttonui {
-    margin-left: 20px;
+  &-mask {
+    height: 100%;
+    left: 0;
+    opacity: 0.3;
+    top: 0;
+    z-index: 1;
+    border-radius: 8px;
+    cursor: not-allowed;
+  }
+  &-simplePagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 12px auto;
   }
 }

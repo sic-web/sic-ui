@@ -1,71 +1,43 @@
-.sic-broadcastui {
+.sicBroadcastui {
+  box-sizing: border-box;
+  padding: 0 12px;
+  height: 32px;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
   border: 1px solid var(--red);
   border-radius: 4px;
   background: rgba(255, 120, 117, 0.1);
-  height: 32px;
-  line-height: 32px;
-  font-size: 12px;
-  display: flex;
-  justify-content: space-between;
-  overflow: hidden;
-  &-left {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    .sic-broadcastui-icon {
-      padding-top: 2px;
-      margin-left: 6px;
-    }
-    .sic-broadcastui-text {
-      margin-left: 6px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      animation: scroll 5s linear;
+  &-content {
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+    &-item {
+      &-text {
+        height: 30px;
+        line-height: 30px;
+        font-size: 12px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     }
   }
-
   &-more {
-    width: 60px;
-    margin-right: 6px;
     color: var(--red);
-    text-decoration-line: underline;
     cursor: pointer;
-  }
-  @keyframes scroll {
-    0% {
-      transform: translateY(80%);
-      opacity: 0;
-    }
-    20% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-    80% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-    100% {
-      transform: translateY(-80%);
-      opacity: 0;
-    }
-  }
-}
-
-.ant-tooltip .ant-tooltip-content .ant-tooltip-inner {
-  .sic-broadcastui-button {
-    display: flex;
-    justify-content: center;
-    .text {
-      margin-top: 10px;
-      width: 80px;
-      text-align: center;
-      height: 28px;
-      line-height: 28px;
-      background-color: #fff;
-      color: #333;
-      border-radius: 4px;
-      cursor: pointer;
+    .ant-popover-inner {
+      padding: 0;
+      .sicBroadcastui-popover {
+        box-sizing: border-box;
+        padding: 12px;
+        color: #fff;
+        font-size: 12px;
+      }
     }
   }
 }
