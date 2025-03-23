@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { Form, Affix, Space, Cascader } from 'antd';
-import { ButtonUI, SearchUI, SelectUI, IconUI, DateUI } from 'sic-ui';
+import { Affix, Cascader, Form, Space } from 'antd';
+import React, { useEffect, useState } from 'react';
+import { ButtonUI, DateUI, IconUI, SearchUI, SelectUI } from 'sic-ui';
 import './index.scss';
 
 interface IProps {
@@ -226,7 +226,7 @@ const FilterUI = (props: IProps) => {
                 {filterName.map((item) => {
                   return (
                     <div className="sicFilterUI-filter-content-item" key={item?.key} onClick={() => clickFilterName(item)}>
-                      {item?.label + '：'}
+                      {!!item?.label && item?.label + '：'}
                       {item?.value}
 
                       {!item?.isNotDelete && (
