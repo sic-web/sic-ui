@@ -17,12 +17,12 @@ const themeList = [
 ];
 
 const TagUI = (props: any) => {
-  const { className, title, type, options, key, children, icon, width, style, ...otherProps } = props;
+  const { className, title, type, options, dataIndex, children, icon, width, style, ...otherProps } = props;
 
   const theme = useMemo(() => {
-    const newType = !!options && options?.length > 0 ? getOptionConfig(key, options)?.type : type;
+    const newType = !!options && options?.length > 0 ? getOptionConfig(dataIndex, options)?.type : type;
     return themeList.find((item) => item.type === Number(newType));
-  }, [type, options, key]);
+  }, [type, options, dataIndex]);
 
   return (
     // 根据title字段判断两种样式
@@ -33,7 +33,7 @@ const TagUI = (props: any) => {
             {title}
           </div>
           <div className="sic-tagTitleui-content" style={{ backgroundColor: theme?.bgcolor }}>
-            {!!options && options?.length > 0 ? getOptionConfig(key, options) : children}
+            {!!options && options?.length > 0 ? getOptionConfig(dataIndex, options) : children}
           </div>
         </div>
       ) : (
@@ -42,7 +42,7 @@ const TagUI = (props: any) => {
           style={{ width: width ?? 'auto', color: theme?.color, backgroundColor: theme?.bgcolor, ...style }}
           {...otherProps}
         >
-          {!!options && options?.length > 0 ? getOptionConfig(key, options)?.label : children}
+          {!!options && options?.length > 0 ? getOptionConfig(dataIndex, options)?.label : children}
           {icon}
         </div>
       )}

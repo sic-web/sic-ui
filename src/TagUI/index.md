@@ -65,6 +65,13 @@ const App: React.FC = () => (
     <TagUI type={5} icon={<RotateOne />}>
       黄色
     </TagUI>
+    <TagUI
+      dataIndex={2}
+      options={[
+        { value: 1, label: '待签约' },
+        { value: 2, label: '已签约' },
+      ]}
+    ></TagUI>
   </Space>
 );
 export default App;

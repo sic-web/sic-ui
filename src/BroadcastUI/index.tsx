@@ -32,25 +32,26 @@ const BroadcastUI = (props: IProps) => {
           </Carousel>
         </div>
       )}
-
-      <Popover
-        color="rgba(0, 0, 0, 0.85)"
-        placement="bottomRight"
-        getPopupContainer={() => ref.current || document.body}
-        content={
-          <div className="sicBroadcastui-popover" style={{ width: width ? width - 20 : 'auto' }}>
-            {items?.map((item: string | number, index: number) => (
-              <div className="sicBroadcastui-popover-item" key={index}>
-                {item}
-              </div>
-            ))}
+      {items?.length > 1 && (
+        <Popover
+          color="rgba(0, 0, 0, 0.85)"
+          placement="bottomRight"
+          getPopupContainer={() => ref.current || document.body}
+          content={
+            <div className="sicBroadcastui-popover" style={{ width: width ? width - 20 : 'auto' }}>
+              {items?.map((item: string | number, index: number) => (
+                <div className="sicBroadcastui-popover-item" key={index}>
+                  {item}
+                </div>
+              ))}
+            </div>
+          }
+        >
+          <div className="sicBroadcastui-more" ref={ref}>
+            查看
           </div>
-        }
-      >
-        <div className="sicBroadcastui-more" ref={ref}>
-          查看
-        </div>
-      </Popover>
+        </Popover>
+      )}
     </div>
   );
 };
