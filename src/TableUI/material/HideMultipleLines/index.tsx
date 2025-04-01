@@ -1,6 +1,6 @@
-import React from 'react';
 import { Tooltip } from 'antd';
-import { IconUI, ButtonUI } from 'sic-ui';
+import React from 'react';
+import { ButtonUI, IconUI } from 'sic-ui';
 import './index.scss';
 
 /** 表格组件-多行隐藏 */
@@ -22,7 +22,7 @@ export const HideMultipleLines = (props: any) => {
         trigger="click"
       >
         {children?.length > line && (
-          <ButtonUI className="sic-tableui-hideMultipleLines-content-button" type="primary" icon={<IconUI name="Right" />}>
+          <ButtonUI type="primary" size="small" icon={<IconUI name="Right" />}>
             更多
           </ButtonUI>
         )}
