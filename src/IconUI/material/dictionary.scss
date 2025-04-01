@@ -1,27 +1,58 @@
+.dictionary-container {
+  width: 100%;
+}
+
 .dictionary {
   display: flex;
   flex-wrap: wrap;
+  margin: 0 -10px; /* 负边距，解决边缘对齐问题 */
+
   &-item {
     height: 100px;
     width: 80px;
     display: flex;
     flex-direction: column;
     border: 1px solid #e3e3e3;
+    border-radius: 4px;
     font-size: 12px;
-    margin-bottom: 10px;
     cursor: pointer;
+    transition: all 0.3s;
+    margin: 0 10px 20px;
+
+    &:hover {
+      border-color: var(--themeColor);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+    }
+
     &-icon {
-      height: 80px;
+      height: 70px;
       display: flex;
       align-items: center;
       justify-content: center;
     }
+
     &-name {
       height: 30px;
       line-height: 30px;
       text-align: center;
       border-top: 1px solid #e3e3e3;
       overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      padding: 0 4px;
+      background-color: #f5f5f5;
     }
   }
+}
+
+.dictionary-empty {
+  text-align: center;
+  padding: 20px;
+  color: #999;
+  font-size: 14px;
+}
+
+.dictionary-search {
+  margin-bottom: 20px;
 }
