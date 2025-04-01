@@ -1,5 +1,3 @@
-import '@/style/variable.scss';
-import '@icon-park/react/styles/index.css';
 export * from 'antd';
 export { default as AmountCellUI } from './AmountCellUI';
 export { default as AnchorUI } from './AnchorUI';
