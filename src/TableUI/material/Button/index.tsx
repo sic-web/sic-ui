@@ -7,7 +7,7 @@ export const Button = (props: any) => {
   return (
     <div className={`sic-tableui-button ${!!type && `sic-tableui-button-${type}`} ${className ?? ''}`} style={style} {...otherProps}>
       {children}
-      {icon && <span className="sic-tableui-button-icon">{icon}</span>}
+      {icon}
     </div>
   );
 };

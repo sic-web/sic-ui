@@ -1,19 +1,18 @@
 .sic-tableui-button {
-  display: inline-block;
-  height: 28px;
-  font-size: 12px;
-  line-height: 28px;
-  font-weight: bold;
   box-sizing: border-box;
   padding: 0 8px;
-  border-radius: 4px;
-  border: 1px solid #e3e3e3;
+  height: 28px;
+  font-size: 12px;
+  line-height: 1;
+  font-weight: bold;
   white-space: nowrap;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border: 1px solid #e3e3e3;
   cursor: pointer;
-  .sic-tableui-button-icon {
-    margin-left: 4px;
-    display: inline-block;
-  }
 }
 .sic-tableui-button:hover {
   border-color: var(--themeColor);
