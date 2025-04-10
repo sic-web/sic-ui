@@ -15,9 +15,21 @@ const themeList = [
   { type: 9, name: '粉红', color: '#F759AB', bgcolor: ' rgba(247, 89, 171, 0.1)' },
   { type: 10, name: '橄榄色', color: '#5B8C00', bgcolor: ' rgba(91, 140, 0, 0.10)' },
 ];
+interface IProps {
+  className?: string;
+  title?: string;
+  type?: string | number;
+  size?: 'default' | 'large';
+  options?: any[];
+  dataIndex?: string;
+  children?: React.ReactNode;
+  icon?: React.ReactNode;
+  width?: string | number;
+  style?: React.CSSProperties;
+}
 
-const TagUI = (props: any) => {
-  const { className, title, type, options, dataIndex, children, icon, width, style, ...otherProps } = props;
+const TagUI = (props: IProps) => {
+  const { className, title, type, size = 'default', options, dataIndex, children, icon, width, style, ...otherProps } = props;
 
   const theme = useMemo(() => {
     const newType = !!options && options?.length > 0 ? getOptionConfig(dataIndex, options)?.type : type;
@@ -34,11 +46,12 @@ const TagUI = (props: any) => {
           </div>
           <div className="sic-tagTitleui-content" style={{ backgroundColor: theme?.bgcolor }}>
             {!!options && options?.length > 0 ? getOptionConfig(dataIndex, options) : children}
+            {icon}
           </div>
         </div>
       ) : (
         <div
-          className={`sic-tagui ${className ?? ''}`}
+          className={`sic-tagui ${size === 'large' ? 'sic-tagui-large' : ''} ${className ?? ''}`}
           style={{ width: width ?? 'auto', color: theme?.color, backgroundColor: theme?.bgcolor, ...style }}
           {...otherProps}
         >
