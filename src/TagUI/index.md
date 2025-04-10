@@ -37,6 +37,9 @@ const App: React.FC = () => (
     <TagUI type={8}>淡青</TagUI>
     <TagUI type={9}>粉红</TagUI>
     <TagUI type={10}>橄榄色</TagUI>
+    <TagUI type={1} size="large">
+      总金额
+    </TagUI>
   </Space>
 );
 export default App;
@@ -72,6 +75,9 @@ const App: React.FC = () => (
         { value: 2, label: '已签约' },
       ]}
     ></TagUI>
+    <TagUI type={1} size="large" icon={<RotateOne />}>
+      总金额
+    </TagUI>
   </Space>
 );
 export default App;
@@ -83,6 +89,7 @@ export default App;
 import React from 'react';
 import { TagUI } from 'sic-ui';
 import { Space } from 'antd';
+import { DataFour, Currency, CheckOne, CloseOne, UTurnLeft, RotateOne } from '@icon-park/react';
 
 const App: React.FC = () => (
   <Space wrap>
@@ -107,13 +114,13 @@ const App: React.FC = () => (
     <TagUI type={7} title="审核状态">
       深红
     </TagUI>
-    <TagUI type={8} title="审核状态">
+    <TagUI type={8} title="审核状态" icon={<RotateOne />}>
       淡青
     </TagUI>
-    <TagUI type={9} title="审核状态">
+    <TagUI type={9} title="审核状态" icon={<RotateOne />}>
       粉红
     </TagUI>
-    <TagUI type={10} title="审核状态">
+    <TagUI type={10} title="审核状态" icon={<RotateOne />}>
       橄榄色 橄榄色 橄榄色 橄榄色 橄榄色 橄榄色 橄榄色 橄榄色 橄榄色 橄榄色
     </TagUI>
   </Space>

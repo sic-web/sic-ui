@@ -1,18 +1,21 @@
 .sic-tagTitleui {
   display: inline-flex;
   font-size: 12px;
-  line-height: 16px;
-  font-weight: bold;
+  line-height: 14px;
   &-title {
     box-sizing: border-box;
-    padding: 4px;
+    padding: 4px 8px;
     color: #fff;
     border-radius: 4px 0 0 4px;
   }
 
   &-content {
     box-sizing: border-box;
-    padding: 4px;
+    padding: 4px 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
     border-radius: 0 4px 4px 0;
   }
 }
@@ -21,13 +24,18 @@
   box-sizing: border-box;
   padding: 4px 8px;
   font-size: 12px;
-  line-height: 16px;
-  font-weight: bold;
+  line-height: 14px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 2px;
   border-radius: 4px;
-  .i-icon {
-    margin-left: 2px;
-  }
+}
+.sic-tagui-large {
+  box-sizing: border-box;
+  padding: 6px 12px;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: bold;
+  gap: 4px;
 }
