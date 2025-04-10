@@ -1,11 +1,11 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
 import { Form } from 'antd';
+import React, { useEffect, useState } from 'react';
 import { FilterUI, MessageUI } from 'sic-ui';
 import { Vessel } from '../types/common';
 
 const VesselUI = (props: any) => {
   const {
+    className,
     limit,
     initialTableData,
     initialFilterParams,
@@ -98,7 +98,7 @@ const VesselUI = (props: any) => {
   };
   return (
     <div
-      className="publicVessel"
+      className={`publicVessel ${className ?? ''}`}
       ref={setContainer}
       onClick={() => vessel?.tableSetStatus && setVessel({ ...vessel, tableSetStatus: false })}
     >
