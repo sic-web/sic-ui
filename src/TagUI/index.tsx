@@ -21,7 +21,7 @@ interface IProps {
   type?: string | number;
   size?: 'default' | 'large';
   options?: any[];
-  dataIndex?: string;
+  dataIndex?: string | number;
   children?: React.ReactNode;
   icon?: React.ReactNode;
   width?: string | number;
@@ -36,31 +36,30 @@ const TagUI = (props: IProps) => {
     return themeList.find((item) => item.type === Number(newType));
   }, [type, options, dataIndex]);
 
-  return (
-    // 根据title字段判断两种样式
-    <>
-      {!!title ? (
-        <div className={`sic-tagTitleui ${className ?? ''}`}>
-          <div className="sic-tagTitleui-title" style={{ backgroundColor: theme?.color }}>
-            {title}
-          </div>
-          <div className="sic-tagTitleui-content" style={{ backgroundColor: theme?.bgcolor }}>
-            {!!options && options?.length > 0 ? getOptionConfig(dataIndex, options) : children}
-            {icon}
-          </div>
+  if (!!title) {
+    return (
+      <div className={`sic-tagTitleui ${className ?? ''}`}>
+        <div className="sic-tagTitleui-title" style={{ backgroundColor: theme?.color }}>
+          {title}
         </div>
-      ) : (
-        <div
-          className={`sic-tagui ${size === 'large' ? 'sic-tagui-large' : ''} ${className ?? ''}`}
-          style={{ width: width ?? 'auto', color: theme?.color, backgroundColor: theme?.bgcolor, ...style }}
-          {...otherProps}
-        >
-          {!!options && options?.length > 0 ? getOptionConfig(dataIndex, options)?.label : children}
+        <div className="sic-tagTitleui-content" style={{ backgroundColor: theme?.bgcolor }}>
+          {!!options && options?.length > 0 ? getOptionConfig(dataIndex, options) : children}
           {icon}
         </div>
-      )}
-    </>
-  );
+      </div>
+    );
+  } else {
+    return (
+      <div
+        className={`sic-tagui ${size === 'large' ? 'sic-tagui-large' : ''} ${className ?? ''}`}
+        style={{ width: width ?? 'auto', color: theme?.color, backgroundColor: theme?.bgcolor, ...style }}
+        {...otherProps}
+      >
+        {!!options && options?.length > 0 ? getOptionConfig(dataIndex, options)?.label : children}
+        {icon}
+      </div>
+    );
+  }
 };
 
 export default TagUI;
