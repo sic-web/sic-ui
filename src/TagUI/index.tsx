@@ -26,6 +26,7 @@ interface IProps {
   icon?: React.ReactNode;
   width?: string | number;
   style?: React.CSSProperties;
+  onClick?: (params?: any) => void;
 }
 
 const TagUI = (props: IProps) => {
