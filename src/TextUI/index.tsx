@@ -1,9 +1,8 @@
 import React from 'react';
 import './index.scss';
 
-interface TextUIProps {
+interface TextUIProps extends React.HTMLAttributes<HTMLDivElement> {
   type?: 'default' | 'danger';
-  children?: React.ReactNode;
 }
 
 const TextUI = (props: TextUIProps) => {
