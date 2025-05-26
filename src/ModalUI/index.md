@@ -3,7 +3,7 @@ nav:
   title: 组件
   path: /components
 group:
-  title: 业务组件
+  title: 基础组件
   order: 2
 ---
 
@@ -42,8 +42,6 @@ export default App;
 ```
 
 ## API 使用文档
-
-🔥TableUI 引用 Ant Design 组件库，在使用过程中不做如何侵入性的更改
 
 <font size=1>
 

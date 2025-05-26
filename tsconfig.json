@@ -12,5 +12,5 @@
       "sic-ui/*": ["src/*", "*"]
     }
   },
-  "include": [".dumirc.ts", "src/**/*", "src", "images.d.ts"]
+  "include": [".dumirc.ts", "src/**/*", "src", "index.d.ts"]
 }

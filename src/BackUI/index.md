@@ -35,8 +35,6 @@ export default () => <BackUI to={'/components/icon-ui'} before={'前一页 '} cu
 
 ## API 使用文档
 
-🔥TableUI 引用 Ant Design 组件库，在使用过程中不做如何侵入性的更改
-
 <font size=1>
 
 |   属性    | 说明                   |  类型  | 默认值 | 是否必传 |

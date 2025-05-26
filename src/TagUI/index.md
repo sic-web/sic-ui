@@ -27,6 +27,7 @@ import { Space } from 'antd';
 const App: React.FC = () => (
   <Space wrap>
     <TagUI>灰色</TagUI>
+    <TagUI type="primary">主题色</TagUI>
     <TagUI type={1}>绿色</TagUI>
     <TagUI type={2}>紫色</TagUI>
     <TagUI type={3}>蓝色</TagUI>
@@ -93,6 +94,9 @@ import { DataFour, Currency, CheckOne, CloseOne, UTurnLeft, RotateOne } from '@i
 
 const App: React.FC = () => (
   <Space wrap>
+    <TagUI type="primary" title="审核状态">
+      主题色
+    </TagUI>
     <TagUI type={1} title="审核状态">
       绿色
     </TagUI>

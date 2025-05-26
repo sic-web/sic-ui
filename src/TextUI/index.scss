@@ -1,0 +1,9 @@
+.textUI {
+  cursor: pointer;
+}
+.textUI.default {
+  color: var(--themeColor);
+}
+.textUI.danger {
+  color: var(--red);
+}
