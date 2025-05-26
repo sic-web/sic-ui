@@ -78,6 +78,7 @@ import {
   PeoplePlus,
   Peoples,
   Platte,
+  Play,
   Power,
   Press,
   PreviewCloseOne,
@@ -265,6 +266,7 @@ export const iconRally: IconItem[] = [
   createIconData('ViewList', ViewList),
   createIconData('Workbench', Workbench),
   createIconData('WritingFluently', WritingFluently),
+  createIconData('Play', Play),
 ];
 
 // 创建图标映射表，用于快速查找 (只计算一次)

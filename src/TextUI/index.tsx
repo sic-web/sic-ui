@@ -1,20 +1,17 @@
 import React from 'react';
-const TextUI = (props: any) => {
-  const { type = 'default', style, ...otherProps } = props;
-  const textStyle = (type: string, style: any) => {
-    let changeStyle: any = { cursor: 'pointer' };
-    switch (type) {
-      case 'default':
-        changeStyle.color = 'var(--themeColor)';
-        return { ...changeStyle, ...style };
-      case 'danger':
-        changeStyle.color = 'var(--red)';
-        return { ...changeStyle, ...style };
-    }
-  };
+import './index.scss';
+
+interface TextUIProps {
+  type?: 'default' | 'danger';
+  children?: React.ReactNode;
+}
+
+const TextUI = (props: TextUIProps) => {
+  const { type = 'default', children, ...otherProps } = props;
+
   return (
-    <div style={textStyle(type, style)} {...otherProps}>
-      {props?.children}
+    <div className={`textUI ${type ?? ''}`} {...otherProps}>
+      {children}
     </div>
   );
 };
