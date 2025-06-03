@@ -1,6 +1,5 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
-import { Input } from 'antd';
+import { Flex, Input } from 'antd';
+import React, { useEffect, useState } from 'react';
 import { IconUI } from 'sic-ui';
 import './index.scss';
 // 搜索框
@@ -34,10 +33,10 @@ const SearchUI = (props: any) => {
       onSearch={(e) => onChange(e.trim())}
       placeholder={placeholder}
       enterButton={
-        <div style={{ display: 'flex', alignItems: 'center' }}>
+        <Flex align="center" gap={4}>
           <IconUI name="Search" />
-          <div style={{ marginLeft: 4 }}>搜索</div>
-        </div>
+          <div>搜索</div>
+        </Flex>
       }
     />
   );

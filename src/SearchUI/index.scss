@@ -1,18 +1,20 @@
 .sic-searchui {
   font-size: 13px;
   width: 320px;
-  .ant-btn-primary {
-    color: var(--themeColor);
-    background-color: #fff;
-    border: 1px solid #d9d9d9;
-    box-shadow: none;
-  }
-  .ant-btn-primary:hover {
-    color: var(--themeColor) !important;
-    background-color: #fff !important;
-    border: 1px solid var(--themeColor);
-  }
-  .ant-btn {
+  .ant-input-search-button {
     padding: 0 8px;
+  }
+  .ant-input-group-addon {
+    .ant-btn-variant-solid {
+      color: var(--themeColor);
+      background-color: #fff;
+      border: 1px solid #d9d9d9;
+      box-shadow: none;
+    }
+    .ant-btn-variant-solid:hover {
+      color: var(--themeColor);
+      background-color: #fff;
+      border: 1px solid var(--themeColor);
+    }
   }
 }
