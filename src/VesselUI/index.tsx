@@ -1,7 +1,7 @@
 import { Form } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { FilterUI, MessageUI } from 'sic-ui';
-import { Vessel } from '../types/common';
+import { Vessel } from './type';
 
 const VesselUI = (props: any) => {
   const {

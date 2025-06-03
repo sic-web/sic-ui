@@ -28,5 +28,6 @@ export { default as TagUI } from './TagUI';
 export { default as TestUI } from './TestUI';
 export { default as TextUI } from './TextUI';
 export { default as Tiga } from './Tiga';
+export { default as UploadUI } from './UploadUI';
 export { default as VesselUI } from './VesselUI';
 export { default as VideoPreviewUI } from './VideoPreviewUI';
