@@ -61,6 +61,7 @@ const UploadUI = (props: UploadUIProps) => {
     getOssDataAPI,
     ...otherProps
   } = props;
+
   // 文件列表
   const [fileList, setFileList] = useState<fileListType[]>([]);
   // 预览窗口
@@ -92,47 +93,49 @@ const UploadUI = (props: UploadUIProps) => {
   // 自定义上传
   const customRequest = async (options: any) => {
     try {
+      // 1. 先判断 getOssDataAPI 是否存在且为函数
+      if (typeof getOssDataAPI !== 'function') {
+        MessageUI.error('获取ossDataAPI未配置！');
+        if (options?.onError) options.onError('获取ossDataAPI未配置！', options?.file);
+        return; // 提前返回，不继续执行
+      }
       // 生成md5
       const md5Hash = await file_calculate_md5(options?.file);
       const fileName = getCheckFileName(options?.file.name);
-      if (getOssDataAPI) {
-        // 获取OSS配置
-        const ossData = await getOssDataAPI(scene, fileName, md5Hash);
-        if (ossData?.code === '0') {
-          const formData = new FormData();
-          formData.append('key', ossData?.body?.dir);
-          formData.append('OSSAccessKeyId', ossData?.body?.accessId);
-          formData.append('policy', ossData?.body?.policy);
-          formData.append('Signature', ossData?.body?.signature);
-          formData.append('callback', ossData?.body?.callBack);
-          formData.append('expire', ossData?.body?.expire);
-          formData.append('accessId', ossData?.body?.accessId);
-          formData.append('dir', ossData?.body?.dir);
-          formData.append('file', options?.file);
-          const res = await fetch(ossData?.body?.host, { method: 'POST', body: formData });
-          if (res?.ok) {
-            const data = await res.json();
-            if (data?.code === '0') {
-              if (options?.onSuccess) options.onSuccess(data?.body, options?.file);
-              const newFileList = [...fileList, { ...data?.body, name: fileName }].slice(-maxCount);
-              setFileList(newFileList);
-              if (onChange) onChange(newFileList);
-            } else {
-              if (options?.onError) options.onError(data?.msg, options?.file);
-              MessageUI.error(data?.msg);
-            }
+      // 获取OSS配置
+      const ossData = await getOssDataAPI(scene, fileName, md5Hash);
+      if (ossData?.code === '0') {
+        const formData = new FormData();
+        formData.append('key', ossData?.body?.dir);
+        formData.append('OSSAccessKeyId', ossData?.body?.accessId);
+        formData.append('policy', ossData?.body?.policy);
+        formData.append('Signature', ossData?.body?.signature);
+        formData.append('callback', ossData?.body?.callBack);
+        formData.append('expire', ossData?.body?.expire);
+        formData.append('accessId', ossData?.body?.accessId);
+        formData.append('dir', ossData?.body?.dir);
+        formData.append('file', options?.file);
+        const res = await fetch(ossData?.body?.host, { method: 'POST', body: formData });
+        if (res?.ok) {
+          const data = await res.json();
+          if (data?.code === '0') {
+            if (options?.onSuccess) options.onSuccess(data?.body, options?.file);
+            const newFileList = [...fileList, { ...data?.body, name: fileName }].slice(-maxCount);
+            setFileList(newFileList);
+            if (onChange) onChange(newFileList);
           } else {
-            if (options?.onError) options.onError(res?.statusText, options?.file);
-            MessageUI.error(res?.statusText);
+            if (options?.onError) options.onError(data?.msg, options?.file);
+            MessageUI.error(data?.msg);
           }
         } else {
-          if (options?.onError) options.onError(ossData?.msg, options?.file);
-          MessageUI.error(ossData?.msg);
+          if (options?.onError) options.onError(res?.statusText, options?.file);
+          MessageUI.error(res?.statusText);
         }
       } else {
-        MessageUI.error('获取ossDataAPI未配置！');
+        if (options?.onError) options.onError(ossData?.msg, options?.file);
+        MessageUI.error(ossData?.msg);
       }
-    } catch (error) {
+    } catch {
       MessageUI.error('上传失败，请稍后重试！');
     }
   };
