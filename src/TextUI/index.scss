@@ -1,7 +1,8 @@
 .textUI {
   cursor: pointer;
 }
-.textUI.default {
+
+.textUI.primary {
   color: var(--themeColor);
 }
 .textUI.danger {

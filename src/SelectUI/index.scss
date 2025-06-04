@@ -1,14 +1,13 @@
-.sic-select {
+.selectUI {
+  width: 100%;
   display: flex;
   align-items: center;
-  width: 100%;
-  &-selectui {
+  gap: 4px;
+  .ant-select {
     flex: 1;
   }
   &-copy {
-    display: inline-block;
-    width: 20px;
-    line-height: 30px;
-    margin-left: 4px;
+    color: var(--themeColor);
+    cursor: pointer;
   }
 }

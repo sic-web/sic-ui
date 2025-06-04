@@ -6,9 +6,9 @@ import './index.scss';
 let timer: any;
 const SearchUI = (props: any) => {
   const { value, placeholder, onChange } = props;
-  const [reactValue, setReactValue] = useState<string>();
+  const [searchValue, setSearchValue] = useState<string>();
   useEffect(() => {
-    setReactValue(value);
+    setSearchValue(value);
     return () => {
       clearTimeout(timer);
     };
@@ -16,7 +16,7 @@ const SearchUI = (props: any) => {
 
   const valueChange = (e: any) => {
     if (e?.type === 'change' || e?.type === 'compositionend') {
-      setReactValue(e.target.value);
+      setSearchValue(e.target.value);
       clearTimeout(timer);
       timer = setTimeout(() => {
         onChange(e.target.value.trim());
@@ -26,7 +26,7 @@ const SearchUI = (props: any) => {
 
   return (
     <Input.Search
-      value={reactValue}
+      value={searchValue}
       className="sic-searchui"
       onChange={(e: any) => valueChange(e)}
       allowClear
