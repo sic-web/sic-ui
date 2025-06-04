@@ -29,7 +29,7 @@ const App: React.FC = () => {
   return (
     <Space>
       <TextUI>文本</TextUI>
-      <TextUI type="default">文本</TextUI>
+      <TextUI type="primary">文本</TextUI>
       <TextUI type="danger">文本</TextUI>
     </Space>
   );

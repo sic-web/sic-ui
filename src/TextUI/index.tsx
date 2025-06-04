@@ -2,14 +2,14 @@ import React from 'react';
 import './index.scss';
 
 interface TextUIProps extends React.HTMLAttributes<HTMLDivElement> {
-  type?: 'default' | 'danger';
+  type?: 'primary' | 'danger';
 }
 
 const TextUI = (props: TextUIProps) => {
-  const { type = 'default', children, ...otherProps } = props;
+  const { className, type = 'primary', children, ...otherProps } = props;
 
   return (
-    <div className={`textUI ${type ?? ''}`} {...otherProps}>
+    <div className={`textUI ${className ?? ''} ${type ?? ''}`} {...otherProps}>
       {children}
     </div>
   );

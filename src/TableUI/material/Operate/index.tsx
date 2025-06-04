@@ -1,5 +1,5 @@
-import React from 'react';
 import { Popover } from 'antd';
+import React from 'react';
 import { IconUI, TextUI } from 'sic-ui';
 import './index.scss';
 
@@ -25,7 +25,7 @@ export const Operate = (props: any) => {
         {renderItem(childrenArray)}
         {childrenArray?.length > maxCount && (
           <Popover
-            overlayClassName="sicTableuiOperate-popover"
+            rootClassName="sicTableuiOperate-popover"
             trigger="click"
             placement="bottom"
             content={renderPopoverContent(childrenArray)}
