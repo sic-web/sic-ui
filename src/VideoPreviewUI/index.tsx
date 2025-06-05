@@ -5,17 +5,18 @@ import './index.scss';
 
 interface PropsType {
   videoUrl: string;
+  frameTime?: number;
   fallback?: string;
   alt?: string;
   onClick?: () => void;
 }
 
 const VideoPreviewUI = (props: PropsType) => {
-  const { videoUrl, fallback = '', alt = '视频预览图', onClick } = props;
+  const { videoUrl, frameTime = 0.1, fallback = '', alt = '视频预览图', onClick } = props;
   const [previewUrl, setPreviewUrl] = useState<string>('');
 
   const getVideoPreview = async () => {
-    const base64 = await video_preview(videoUrl);
+    const base64 = await video_preview(videoUrl, frameTime);
     setPreviewUrl(base64 || fallback);
   };
   useEffect(() => {

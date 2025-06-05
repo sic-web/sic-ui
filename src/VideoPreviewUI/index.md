@@ -38,11 +38,12 @@ export default App;
 
 <font size=1>
 
-| 属性     | 说明       | 类型                                                       | 默认值       | 是否必传 |
-| :------- | :--------- | :--------------------------------------------------------- | :----------- | :------- |
-| videoUrl | 视频地址   | string                                                     | ""           | 是       |
-| fallback | 失败占位图 | string                                                     | ""           | 否       |
-| alt      | 图片描述   | string                                                     | "视频预览图" | 否       |
-| onClick  | 点击事件   | (event: React.MouseEvent<HTMLElement, MouseEvent>) => void | -            | 否       |
+| 属性      | 说明         | 类型                                                       | 默认值       | 是否必传 |
+| :-------- | :----------- | :--------------------------------------------------------- | :----------- | :------- |
+| videoUrl  | 视频地址     | string                                                     | ""           | 是       |
+| frameTime | 视频帧时间点 | number                                                     | 0.1          | 否       |
+| fallback  | 失败占位图   | string                                                     | ""           | 否       |
+| alt       | 图片描述     | string                                                     | "视频预览图" | 否       |
+| onClick   | 点击事件     | (event: React.MouseEvent<HTMLElement, MouseEvent>) => void | -            | 否       |
 
 </font>
