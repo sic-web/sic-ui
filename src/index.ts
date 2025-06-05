@@ -22,6 +22,7 @@ export { default as PasswordStrongUI } from './PasswordStrongUI';
 export { default as RichEditorUI } from './RichEditorUI';
 export { default as SearchUI } from './SearchUI';
 export { default as SelectUI } from './SelectUI';
+export { default as StatisticUI } from './StatisticUI';
 export { default as SwitchUI } from './SwitchUI';
 export { default as TableUI } from './TableUI';
 export { default as TagUI } from './TagUI';
