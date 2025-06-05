@@ -13,6 +13,7 @@ interface ItemsType {
   suffix?: string;
   decimals?: number;
   separator?: string;
+  rawValue?: boolean;
 }
 
 interface PropsType {
@@ -51,17 +52,21 @@ export default function StatisticUI(props: PropsType) {
     <div className={`statisticUI ${className ?? ''}`}>
       {!lodash.isEmpty(items) &&
         items.map((item: any) => {
-          const { id, label, value, type, colon = true, suffix, decimals, separator = '' } = item;
+          const { id, label, value, type, colon = true, suffix, decimals, separator = '', rawValue = false } = item;
           return (
             <TagUI size="large" type={type} key={id}>
-              {`${label}${colon ? ':' : ''}`}
-              <CountUp
-                end={value}
-                decimals={decimals ?? getDecimalsIfNumber(value)}
-                suffix={suffix}
-                separator={separator}
-                duration={duration}
-              />
+              {`${label}${colon ? '：' : ''}`}
+              {rawValue ? (
+                value
+              ) : (
+                <CountUp
+                  end={value}
+                  decimals={decimals ?? getDecimalsIfNumber(value)}
+                  suffix={suffix}
+                  separator={separator}
+                  duration={duration}
+                />
+              )}
             </TagUI>
           );
         })}
