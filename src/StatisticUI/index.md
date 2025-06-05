@@ -18,7 +18,6 @@ group:
 ## 代码演示
 
 💎 基础使用
-内容样式会做继承，悬停出现小手样式
 
 ```tsx
 import { useState } from 'react';
@@ -27,9 +26,9 @@ import { StatisticUI } from 'sic-ui';
 
 const App: React.FC = () => {
   const Items = [
-    { id: 1, label: '总计', value: 12, type: 1, suffix: '笔' },
-    { id: 2, label: '实发', value: 100, type: 2 },
-    { id: 3, label: '服务费', value: 10000, type: 3, decimals: 2 },
+    { id: 1, label: '总计', value: 0.12, type: 1, suffix: '笔' },
+    { id: 2, label: '实发', value: 123, type: 2 },
+    { id: 3, label: '服务费', value: '12%', type: 3, decimals: 2 },
   ];
   return <StatisticUI items={Items}></StatisticUI>;
 };
@@ -51,15 +50,16 @@ export default App;
 
 <font size="1">
 
-| 属性      | 说明         | 类型                          | 默认值   | 是否必传 |
-| :-------- | :----------- | :---------------------------- | :------- | :------- |
-| id        | 唯一标识     | number                        | -        | 是       |
-| label     | 标签名       | string                        | -        | 否       |
-| value     | 显示数值     | number \| string              | -        | 否       |
-| type      | Tag 颜色类型 | string \| number \| 'primary' | -        | 否       |
-| colon     | 是否显示冒号 | boolean                       | `true`   | 否       |
-| suffix    | 单位后缀     | string                        | -        | 否       |
-| decimals  | 小数位数     | number                        | 自动识别 | 否       |
-| separator | 千分位符号   | string                        | ``       | 否       |
+| 属性      | 说明             | 类型                          | 默认值   | 是否必传 |
+| :-------- | :--------------- | :---------------------------- | :------- | :------- |
+| id        | 唯一标识         | number                        | -        | 是       |
+| label     | 标签名           | string                        | -        | 否       |
+| value     | 显示数值         | number \| string              | -        | 否       |
+| type      | Tag 颜色类型     | string \| number \| 'primary' | -        | 否       |
+| colon     | 是否显示冒号     | boolean                       | `true`   | 否       |
+| suffix    | 单位后缀         | string                        | -        | 否       |
+| decimals  | 小数位数         | number                        | 自动识别 | 否       |
+| separator | 千分位符号       | string                        | ``       | 否       |
+| rawValue  | 是否显示原始数据 | boolean                       | `false`  | 否       |
 
 </font>
