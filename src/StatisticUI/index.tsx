@@ -26,28 +26,42 @@ interface PropsType {
 export default function StatisticUI(props: PropsType) {
   const { className, duration = 2, items } = props;
 
-  const getDecimalsIfNumber = (value: number | string): number => {
-    let parsedValue = value;
-
-    // 如果不是合法数字，尝试处理字符串或返回 0
-    if (!lodash.isFinite(parsedValue)) {
-      if (lodash.isString(parsedValue)) {
-        const trimmed = parsedValue.trim();
-        const num = Number(trimmed);
-        if (lodash.isFinite(num)) {
-          parsedValue = num;
-        } else {
-          return 0;
-        }
-      } else {
-        return 0;
-      }
+  const getDecimalsIfNumber = (value: number | string | null | undefined): number => {
+    if (value === null || value === undefined) {
+      return 0;
     }
 
-    const str = parsedValue.toString();
+    let num: number | null = null;
+    let str = '';
+
+    if (lodash.isString(value)) {
+      str = value.trim();
+      // 支持科学计数法、正负号等
+      if (!/^[-+]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][-+]?\d+)?$/.test(str)) {
+        return 0;
+      }
+      num = Number(str);
+    } else if (lodash.isNumber(value)) {
+      str = value.toString();
+      num = value;
+    } else {
+      return 0;
+    }
+
+    if (!lodash.isFinite(num)) {
+      return 0;
+    }
+
+    // 处理原始字符串来获取小数位数，避免 toFixed 导致精度丢失
     const decimalIndex = str.indexOf('.');
-    return decimalIndex >= 0 ? str.slice(decimalIndex + 1).length : 0;
+    if (decimalIndex === -1) {
+      return 0;
+    }
+
+    const fractionalPart = str.slice(decimalIndex + 1).replace(/[^0-9]/g, '');
+    return fractionalPart.length;
   };
+
   return (
     <div className={`statisticUI ${className ?? ''}`}>
       {!lodash.isEmpty(items) &&
@@ -55,7 +69,7 @@ export default function StatisticUI(props: PropsType) {
           const { id, label, value, type, colon = true, suffix, decimals, separator = '', rawValue = false } = item;
           return (
             <TagUI size="large" type={type} key={id}>
-              {`${label}${colon ? '：' : ''}`}
+              {label + (colon ? ':' : '')}
               {rawValue ? (
                 value
               ) : (
