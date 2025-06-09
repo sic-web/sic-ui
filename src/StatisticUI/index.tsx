@@ -65,7 +65,7 @@ export default function StatisticUI(props: PropsType) {
   return (
     <div className={`statisticUI ${className ?? ''}`}>
       {!lodash.isEmpty(items) &&
-        items.map((item: any) => {
+        items.map((item: ItemsType) => {
           const { id, label, value, type, colon = true, suffix, decimals, separator = '', rawValue = false } = item;
           return (
             <TagUI size="large" type={type} key={id}>
@@ -74,7 +74,7 @@ export default function StatisticUI(props: PropsType) {
                 value
               ) : (
                 <CountUp
-                  end={value}
+                  end={Number(value)}
                   decimals={decimals ?? getDecimalsIfNumber(value)}
                   suffix={suffix}
                   separator={separator}

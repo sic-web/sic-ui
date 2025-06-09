@@ -26,22 +26,20 @@ import { AmountCellUI } from 'sic-ui';
 export default () => (
   <Space>
     <AmountCellUI>10000</AmountCellUI>
-    <AmountCellUI>1000000</AmountCellUI>
+    <AmountCellUI animation={true}>1000000</AmountCellUI>
     <AmountCellUI>10000000000</AmountCellUI>
-    <AmountCellUI isNumExpand={false}>10000000000</AmountCellUI>
+    <AmountCellUI>10000000000</AmountCellUI>
   </Space>
 );
 ```
 
 ## API 使用文档
 
-<font size=1>
-
-|    属性     | 说明   |        类型         | 默认值 | 是否必传 |
-| :---------: | ------ | :-----------------: | :----: | :------: |
-|  children   | 金额   |       Number        |   -    |    是    |
-| isNumExpand | 分转元 |       boolean       |   是   |    否    |
-|  className  | 类名   |       String        |   -    |    否    |
-|    style    | 样式   | React.CSSProperties |   -    |    否    |
-
-</font>
+| 属性        | 说明           | 类型      | 默认值  | 是否必传 |
+| ----------- | -------------- | --------- | ------- | -------- |
+| className   | 类名           | `string`  | `-`     | 否       |
+| children    | 金额           | `number`  | `-`     | 是       |
+| animation   | 是否显示动画   | `boolean` | `true`  | 否       |
+| rawValue    | 是否显示原始值 | `boolean` | `false` | 否       |
+| forceRender | 是否强制渲染   | `boolean` | `false` | 否       |
+| separator   | 千分位符号     | `boolean` | ``      | 否       |
