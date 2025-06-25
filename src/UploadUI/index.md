@@ -39,7 +39,20 @@ export default App;
 import { UploadUI } from 'sic-ui';
 
 const App: React.FC = () => {
-  return <UploadUI mode={2} backgroundImage="https://file.stlg.com.cn/web_assets/license.png" />;
+  return (
+    <UploadUI
+      value={[
+        {
+          uid: '__AUTO__1739850037667_0__',
+          name: 'image (2).png',
+          url: 'https://testfile.stlg.com.cn/business_license/87102ae2156b9394b16b4c1aa37e2de5/image(2).png',
+          md5: '87102ae2156b9394b16b4c1aa37e2de5',
+        },
+      ]}
+      mode={2}
+      backgroundImage="https://file.stlg.com.cn/web_assets/license.png"
+    />
+  );
 };
 export default App;
 ```
