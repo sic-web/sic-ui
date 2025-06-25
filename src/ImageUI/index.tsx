@@ -20,7 +20,7 @@ interface ImageUIProps extends ImageProps {
   clickOtherButton?: () => void;
   style?: React.CSSProperties;
 }
-export const ImageUI = (props: ImageUIProps) => {
+const ImageUI = (props: ImageUIProps) => {
   const { className, src, maskType = 1, clickOtherButton, style, ...otherProps } = props;
 
   const onDownload = () => {
@@ -114,3 +114,4 @@ export const ImageUI = (props: ImageUIProps) => {
     </div>
   );
 };
+export default ImageUI;
