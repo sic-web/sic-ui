@@ -1,28 +1,28 @@
-import React from 'react';
-import { Image, Space } from 'antd';
-import { IconUI } from 'sic-ui';
 import {
   DownloadOutlined,
   RotateLeftOutlined,
   RotateRightOutlined,
   SwapOutlined,
+  UndoOutlined,
   ZoomInOutlined,
   ZoomOutOutlined,
 } from '@ant-design/icons';
+import type { ImageProps } from 'antd';
+import { Image, Space } from 'antd';
+import React from 'react';
+import { IconUI } from 'sic-ui';
 import './index.scss';
-interface ImageUIProps {
-  src: string;
-  width?: number;
-  height?: number;
-  preview?: boolean;
-  maskType?: number;
-  className?: string;
-  style?: React.CSSProperties;
-  clickOtherButton?: () => void;
-}
 
-const ImageUI = (props: ImageUIProps) => {
-  const { src, width, height, preview = true, maskType = 1, className, style, clickOtherButton, ...otherProps } = props;
+interface ImageUIProps extends ImageProps {
+  className?: string;
+  src: string;
+  maskType?: number;
+  clickOtherButton?: () => void;
+  style?: React.CSSProperties;
+}
+export const ImageUI = (props: ImageUIProps) => {
+  const { className, src, maskType = 1, clickOtherButton, style, ...otherProps } = props;
+
   const onDownload = () => {
     fetch(src)
       .then((response) => response.blob())
@@ -43,6 +43,7 @@ const ImageUI = (props: ImageUIProps) => {
       clickOtherButton();
     }
   };
+
   //蒙层类型
   const renderMask = () => {
     switch (maskType) {
@@ -88,34 +89,28 @@ const ImageUI = (props: ImageUIProps) => {
         );
     }
   };
-  const toolbar = () => {
-    if (src && preview) {
-      return {
-        mask: renderMask(),
-        toolbarRender: (
-          _: any,
-          { transform: { scale }, actions: { onFlipY, onFlipX, onRotateLeft, onRotateRight, onZoomOut, onZoomIn } }: any,
-        ) => (
-          <Space size={12} className="sicImageUI-toolbar">
-            <DownloadOutlined onClick={onDownload} />
-            <SwapOutlined rotate={90} onClick={onFlipY} />
-            <SwapOutlined onClick={onFlipX} />
-            <RotateLeftOutlined onClick={onRotateLeft} />
-            <RotateRightOutlined onClick={onRotateRight} />
-            <ZoomOutOutlined disabled={scale === 1} onClick={onZoomOut} />
-            <ZoomInOutlined disabled={scale === 50} onClick={onZoomIn} />
-          </Space>
-        ),
-      };
-    } else {
-      return false;
-    }
+  const previewConfig: ImageProps['preview'] = {
+    mask: renderMask(),
+    toolbarRender: (
+      _,
+      { transform: { scale }, actions: { onFlipY, onFlipX, onRotateLeft, onRotateRight, onZoomOut, onZoomIn, onReset } },
+    ) => (
+      <Space size={12} className="toolbar-wrapper">
+        <DownloadOutlined onClick={onDownload} />
+        <SwapOutlined rotate={90} onClick={onFlipY} />
+        <SwapOutlined onClick={onFlipX} />
+        <RotateLeftOutlined onClick={onRotateLeft} />
+        <RotateRightOutlined onClick={onRotateRight} />
+        <ZoomOutOutlined disabled={scale === 1} onClick={onZoomOut} />
+        <ZoomInOutlined disabled={scale === 50} onClick={onZoomIn} />
+        <UndoOutlined onClick={onReset} />
+      </Space>
+    ),
   };
+
   return (
     <div className={`sicImageUI ${className ?? ''}`} style={style}>
-      <Image src={src} width={width} height={height} preview={toolbar()} {...otherProps} />
+      <Image src={src} preview={previewConfig} {...otherProps} />
     </div>
   );
 };
-
-export default ImageUI;
