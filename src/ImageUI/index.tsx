@@ -95,7 +95,7 @@ const ImageUI = (props: ImageUIProps) => {
       _,
       { transform: { scale }, actions: { onFlipY, onFlipX, onRotateLeft, onRotateRight, onZoomOut, onZoomIn, onReset } },
     ) => (
-      <Space size={12} className="toolbar-wrapper">
+      <Space size={12} className="sicImageUI-toolbar">
         <DownloadOutlined onClick={onDownload} />
         <SwapOutlined rotate={90} onClick={onFlipY} />
         <SwapOutlined onClick={onFlipX} />

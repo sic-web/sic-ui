@@ -1,5 +1,14 @@
+import {
+  DownloadOutlined,
+  RotateLeftOutlined,
+  RotateRightOutlined,
+  SwapOutlined,
+  UndoOutlined,
+  ZoomInOutlined,
+  ZoomOutOutlined,
+} from '@ant-design/icons';
 import type { GetProp, UploadFile, UploadProps } from 'antd';
-import { Image, Upload } from 'antd';
+import { Image, Space, Upload } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { IconUI, MessageUI } from 'sic-ui';
 import { file_calculate_md5, getUrlConfig } from 'sic-util';
@@ -154,7 +163,20 @@ const UploadUI = (props: UploadUIProps) => {
     setPreviewImage(file.url || (file.preview as string));
     setPreviewOpen(true);
   };
-
+  const onDownload = () => {
+    fetch(previewImage)
+      .then((response) => response.blob())
+      .then((blob) => {
+        const url = URL.createObjectURL(new Blob([blob]));
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'image.png';
+        document.body.appendChild(link);
+        link.click();
+        URL.revokeObjectURL(url);
+        link.remove();
+      });
+  };
   const uploadProps: UploadProps = {
     fileList: fileList,
     maxCount: maxCount,
@@ -253,6 +275,21 @@ const UploadUI = (props: UploadUIProps) => {
           wrapperStyle={{ display: 'none' }}
           preview={{
             visible: previewOpen,
+            toolbarRender: (
+              _,
+              { transform: { scale }, actions: { onFlipY, onFlipX, onRotateLeft, onRotateRight, onZoomOut, onZoomIn, onReset } },
+            ) => (
+              <Space size={12} className="uploadUI-previewImageToolbar">
+                <DownloadOutlined onClick={onDownload} />
+                <SwapOutlined rotate={90} onClick={onFlipY} />
+                <SwapOutlined onClick={onFlipX} />
+                <RotateLeftOutlined onClick={onRotateLeft} />
+                <RotateRightOutlined onClick={onRotateRight} />
+                <ZoomOutOutlined disabled={scale === 1} onClick={onZoomOut} />
+                <ZoomInOutlined disabled={scale === 50} onClick={onZoomIn} />
+                <UndoOutlined onClick={onReset} />
+              </Space>
+            ),
             onVisibleChange: (visible) => setPreviewOpen(visible),
             afterOpenChange: (visible) => !visible && setPreviewImage(''),
           }}
