@@ -1,6 +1,6 @@
 {
   "name": "sic-ui",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "A react library developed with dumi",
   "license": "MIT",
   "module": "dist/index.js",
@@ -48,13 +48,13 @@
     "@icon-park/react": "^1.4.2",
     "@wangeditor/editor": "^5.1.23",
     "@wangeditor/editor-for-react": "^1.0.6",
-    "antd": "^5.25.4",
+    "antd": "^5.26.2",
     "dayjs": "^1.11.11",
     "lodash": "^4.17.21",
     "react-countup": "^6.5.3",
     "react-draggable": "^4.4.6",
     "react-router-dom": "^6.13.0",
-    "sic-util": "^0.2.6"
+    "sic-util": "^0.2.8"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",

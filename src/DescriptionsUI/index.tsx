@@ -1,5 +1,5 @@
+import { Col, Row } from 'antd';
 import React from 'react';
-import { Row, Col } from 'antd';
 import './index.scss';
 
 interface IProps {
@@ -9,6 +9,7 @@ interface IProps {
   type?: 'table' | 'text';
   layout?: 'horizontal' | 'vertical';
   labelAlign?: 'left' | 'right';
+  colon?: boolean;
 }
 
 interface ItemType {
@@ -19,7 +20,7 @@ interface ItemType {
 }
 //新描述组件
 const DescriptionsUI = (props: IProps) => {
-  const { items, isSingleLine = false, labelWidth = 120, type = 'table', layout = 'horizontal', labelAlign = 'left' } = props;
+  const { items, isSingleLine = false, labelWidth = 120, type = 'table', layout = 'horizontal', labelAlign = 'left', colon = true } = props;
 
   return (
     <>
@@ -53,7 +54,7 @@ const DescriptionsUI = (props: IProps) => {
                   return (
                     <Col className="textItem" span={item?.span ?? 12} key={index}>
                       <div className="textItem-label" style={{ width: labelWidth, textAlign: labelAlign }}>
-                        <div className="textItem-label-content">{item?.label + '：'}</div>
+                        <div className="textItem-label-content">{colon ? item?.label + '：' : item?.label}</div>
                       </div>
                       <div className="textItem-control">
                         <div className="textItem-control-content">{item?.children}</div>
