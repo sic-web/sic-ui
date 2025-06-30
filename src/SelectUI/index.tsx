@@ -41,9 +41,9 @@ const SelectUI = (props: any) => {
     }
   };
 
-  const changeSelect = (value: any) => {
+  const changeSelect = (value: any, option: any) => {
     setSelecValue(value);
-    if (onChange) onChange(value);
+    if (onChange) onChange(value, option);
   };
   return (
     <div className="selectUI">
