@@ -16,12 +16,13 @@ import './index.scss';
 interface ImageUIProps extends ImageProps {
   className?: string;
   src: string;
+  preview?: boolean | ImageProps['preview'];
   maskType?: number;
   clickOtherButton?: () => void;
   style?: React.CSSProperties;
 }
 const ImageUI = (props: ImageUIProps) => {
-  const { className, src, maskType = 1, clickOtherButton, style, ...otherProps } = props;
+  const { className, src, preview, maskType = 1, clickOtherButton, style, ...otherProps } = props;
 
   const onDownload = () => {
     fetch(src)
@@ -107,10 +108,10 @@ const ImageUI = (props: ImageUIProps) => {
       </Space>
     ),
   };
-
+  const mergedPreview = typeof preview === 'boolean' ? preview : { ...previewConfig, ...preview };
   return (
     <div className={`sicImageUI ${className ?? ''}`} style={style}>
-      <Image src={src} preview={previewConfig} {...otherProps} />
+      <Image src={src} preview={mergedPreview} {...otherProps} />
     </div>
   );
 };
