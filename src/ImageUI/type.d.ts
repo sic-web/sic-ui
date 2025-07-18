@@ -1,5 +1,5 @@
+import type { GetProps } from 'antd';
 import { Image } from 'antd';
-import { ComponentProps } from 'react';
 
 /** 下载函数类型 */
 export interface DownloadPropsType {
@@ -14,4 +14,4 @@ export interface ImgInfoType {
 }
 
 /** 相册组件的参数类型 */
-export type PreviewGroupUIPropsType = ComponentProps<typeof Image.PreviewGroup>;
+export type PreviewGroupUIPropsType = GetProps<typeof Image.PreviewGroup>;
