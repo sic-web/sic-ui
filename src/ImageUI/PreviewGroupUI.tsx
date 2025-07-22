@@ -44,7 +44,7 @@ const PreviewGroupUI: React.FC<PreviewGroupUIPropsType> = ({ preview, children, 
       <Space size={12} className="sicImageUI-toolbar">
         <LeftOutlined disabled={current === 0} onClick={() => onActive?.(-1)} />
         <RightOutlined disabled={current === total - 1} onClick={() => onActive?.(1)} />
-        {image.url && <DownloadOutlined onClick={() => onDownload({ image: image })} />}
+        <DownloadOutlined disabled={!image.url} onClick={() => onDownload({ image: image })} />
         <SwapOutlined rotate={90} onClick={onFlipY} />
         <SwapOutlined onClick={onFlipX} />
         <RotateLeftOutlined onClick={onRotateLeft} />
