@@ -11,6 +11,7 @@ import type { ImageProps } from 'antd';
 import { Image, Space } from 'antd';
 import React from 'react';
 import { IconUI } from 'sic-ui';
+import PreviewGroupUI from './PreviewGroupUI';
 import './index.scss';
 
 interface ImageUIProps extends ImageProps {
@@ -115,4 +116,9 @@ const ImageUI = (props: ImageUIProps) => {
     </div>
   );
 };
-export default ImageUI;
+
+(ImageUI as any).PreviewGroupUI = PreviewGroupUI;
+
+export default ImageUI as React.ForwardRefExoticComponent<ImageUIProps & React.RefAttributes<HTMLImageElement>> & {
+  PreviewGroupUI: typeof PreviewGroupUI;
+};
