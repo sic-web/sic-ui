@@ -1,146 +1,149 @@
-.uploadUI,
-.ant-upload {
+.uploadUI {
   width: 100%;
   height: 100%;
-}
-.uploadUI.uploadUI-mode2 {
-  .ant-upload.ant-upload-select,
-  .ant-upload-list.ant-upload-list-picture-card .ant-upload-list-item-container {
-    width: 240px;
-    height: 160px;
-  }
-  .uploadUI-mode2-content {
+  .ant-upload {
     width: 100%;
     height: 100%;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
-    border-radius: 8px;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    transition: color 0.3s;
   }
-}
-.uploadUI.uploadUI-mode3 {
-  .uploadUI-mode3-content {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    transition: color 0.3s;
-    .i-icon {
-      font-size: 48px;
-      color: var(--themeColor);
+  .uploadUI-mode2 {
+    .ant-upload.ant-upload-select,
+    .ant-upload-list.ant-upload-list-picture-card .ant-upload-list-item-container {
+      width: 240px;
+      height: 160px;
     }
-  }
-}
-
-.uploadUI.uploadUI-mode4 {
-  .uploadUI-mode4-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-    transition: color 0.3s;
-    .i-icon {
-      font-size: 48px;
-    }
-  }
-}
-.uploadUI.uploadUI-mode5 {
-  .uploadUI-mode5-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-    transition: color 0.3s;
-  }
-  .ant-upload.ant-upload-select {
-    background: #fff;
-  }
-}
-
-.uploadUI.uploadUI-mode6 {
-  .uploadUI-mode6-content {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    .mode6BeforeUpload {
-      box-sizing: border-box;
-      padding: 6px 12px;
+    .uploadUI-mode2-content {
       width: 100%;
+      height: 100%;
+      color: #fff;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       gap: 4px;
-      border-radius: 4px;
-      border: 1px solid var(--themeColor2);
-      background: var(--themeColor1);
-      cursor: pointer;
+      border-radius: 8px;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      transition: color 0.3s;
     }
-    .mode6BeforeUpload:hover {
-      border: 1px dashed var(--themeColor);
+  }
+  .uploadUI-mode3 {
+    .uploadUI-mode3-content {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: color 0.3s;
+      .i-icon {
+        font-size: 48px;
+        color: var(--themeColor);
+      }
     }
-    .mode6UploadList {
+  }
+  .uploadUI-mode4 {
+    .uploadUI-mode4-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      transition: color 0.3s;
+      .i-icon {
+        font-size: 48px;
+      }
+    }
+  }
+  .uploadUI-mode5 {
+    .uploadUI-mode5-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      transition: color 0.3s;
+    }
+    .ant-upload.ant-upload-select {
+      background: #fff;
+    }
+  }
+
+  .uploadUI-mode6 {
+    .uploadUI-mode6-content {
       display: flex;
       flex-direction: column;
       gap: 4px;
-      &-item {
+      .mode6BeforeUpload {
         box-sizing: border-box;
         padding: 6px 12px;
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
+        gap: 4px;
         border-radius: 4px;
-        border: 1px solid #f5f5f5;
-        background: #f5f5f5;
-        position: relative;
-        &-fileName {
-          max-width: calc(100% - 20px);
-          margin-left: 4px;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-        }
-        &-mask {
-          position: absolute;
+        border: 1px solid var(--themeColor2);
+        background: var(--themeColor1);
+        cursor: pointer;
+      }
+      .mode6BeforeUpload:hover {
+        border: 1px dashed var(--themeColor);
+      }
+      .mode6UploadList {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        &-item {
+          box-sizing: border-box;
+          padding: 6px 12px;
           width: 100%;
-          height: 100%;
-          color: #fff;
-          display: none;
+          display: flex;
           align-items: center;
           justify-content: center;
           border-radius: 4px;
-          background: rgba(126, 126, 126, 0.1);
-          backdrop-filter: blur(6px);
+          border: 1px solid #f5f5f5;
+          background: #f5f5f5;
+          position: relative;
+          &-fileName {
+            max-width: calc(100% - 20px);
+            margin-left: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+          &-mask {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            color: #fff;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            background: rgba(126, 126, 126, 0.1);
+            backdrop-filter: blur(6px);
 
-          .i-icon {
-            margin-right: 4px;
-          }
-          .mask-delete:hover {
-            color: var(--red);
-            cursor: pointer;
-          }
-          .mask-check:hover {
-            color: #2e64fa;
-            cursor: pointer;
-          }
-          .mask-delete {
-            margin-right: 12px;
+            .i-icon {
+              margin-right: 4px;
+            }
+            .mask-delete:hover {
+              color: var(--red);
+              cursor: pointer;
+            }
+            .mask-check:hover {
+              color: #2e64fa;
+              cursor: pointer;
+            }
+            .mask-delete {
+              margin-right: 12px;
+            }
           }
         }
-      }
-      &-item:hover {
-        .mode6UploadList-item-mask {
-          display: flex;
+        &-item:hover {
+          .mode6UploadList-item-mask {
+            display: flex;
+          }
         }
       }
     }
   }
 }
+
 .uploadUI-previewImageToolbar {
   position: fixed;
   bottom: 32px;
