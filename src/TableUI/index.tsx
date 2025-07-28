@@ -15,6 +15,7 @@ const TableUI = (props: any) => {
     rowKey,
     dataSource = [],
     columns = [],
+    loading,
     mask = false,
     current = 0,
     pageSize = 0,
@@ -27,12 +28,12 @@ const TableUI = (props: any) => {
     emptyText = <EmptyUI />,
     ...otherProps
   } = props;
-
   return (
     <div className={`${mask ? 'sic-tableui-mask' : ''} sic-tableui`}>
       <ConfigProvider locale={zhCN}>
         <Table
           rowKey={rowKey}
+          loading={loading}
           columns={columns}
           dataSource={dataSource}
           scroll={{ x: '100%' }}
@@ -68,7 +69,7 @@ const TableUI = (props: any) => {
           })}
           {...otherProps}
         />
-        {simplePagination && (
+        {!loading?.spinning && simplePagination && (
           <div className="sic-tableui-simplePagination">
             {!!total && <div>共 {total} 条</div>}
             <ButtonUI icon={<IconUI name="Left" />} iconPosition="start" disabled={!lastPage} onClick={() => clickSimplePagination('last')}>

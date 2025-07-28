@@ -1,18 +1,34 @@
+import { Spin, SpinProps } from 'antd';
 import React from 'react';
+import { ImageUI } from 'sic-ui';
 import './index.scss';
-const LoadingUI = (props: any) => {
-  const { isShowLoading = true, children } = props;
 
+interface SpinUIProps extends SpinProps {
+  isShowLoading: boolean;
+  loadingImage?: string;
+  children?: React.ReactNode;
+}
+const LoadingUI = (props: SpinUIProps) => {
+  const { isShowLoading = true, loadingImage, children, ...otherProps } = props;
   return (
-    <>
-      {isShowLoading ? (
-        <div className="sic-loadingui">
-          <div className="sic-loadingui-animation"></div>
-        </div>
-      ) : (
-        children
-      )}
-    </>
+    <Spin
+      wrapperClassName="loadingUI"
+      delay={100}
+      spinning={isShowLoading}
+      indicator={
+        loadingImage ? (
+          <ImageUI className="loadingUI-image" src={loadingImage} preview={false} />
+        ) : (
+          <div className="loadingUI-loader">
+            <div className="loadingUI-loader-content" />
+          </div>
+        )
+      }
+      {...otherProps}
+    >
+      {children}
+    </Spin>
   );
 };
+
 export default LoadingUI;
