@@ -1,27 +1,49 @@
-.sic-loadingui {
+.loadingUI {
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  &-animation {
+  .ant-spin-container {
+    width: 100%;
+    height: 100%;
+  }
+  .ant-spin-spinning {
+    width: 100%;
+    height: 100%;
+  }
+  .ant-spin-container.ant-spin-blur {
+    opacity: 0;
+  }
+
+  .loadingUI-image {
+    width: 200px;
+    height: 200px;
+    transform: translateX(-50%);
+  }
+
+  .loadingUI-loader {
     width: 100px;
     height: 100px;
-    border-radius: 50%;
     position: relative;
-    animation: rotate 1s linear infinite;
+    transform: translateX(-50%);
   }
-  &-animation::before {
+
+  .loadingUI-loader-content {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    animation: rotate 1s linear infinite;
+    position: relative;
+  }
+
+  .loadingUI-loader-content::before {
     content: '';
     box-sizing: border-box;
     position: absolute;
-    inset: 0px;
+    inset: 0;
     border-radius: 50%;
     border: 6px solid var(--themeColor);
     animation: prixClipFix 5s linear infinite;
   }
 }
-
 @keyframes rotate {
   100% {
     transform: rotate(360deg);
