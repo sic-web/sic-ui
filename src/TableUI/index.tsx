@@ -39,7 +39,7 @@ const TableUI = (props: any) => {
           scroll={{ x: '100%' }}
           bordered
           pagination={
-            simplePagination
+            loading?.spinning || simplePagination
               ? false
               : {
                   position: ['bottomCenter'],
