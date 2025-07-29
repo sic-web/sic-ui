@@ -6,13 +6,15 @@ import './index.scss';
 interface SpinUIProps extends SpinProps {
   isShowLoading: boolean;
   loadingImage?: string;
+  maskTransparent?: boolean;
   children?: React.ReactNode;
 }
 const LoadingUI = (props: SpinUIProps) => {
-  const { isShowLoading = true, loadingImage, children, ...otherProps } = props;
+  const { isShowLoading = true, loadingImage, maskTransparent, children, ...otherProps } = props;
+
   return (
     <Spin
-      wrapperClassName="loadingUI"
+      wrapperClassName={`loadingUI ${maskTransparent ? 'loadingUI-transparent' : ''}`}
       delay={100}
       spinning={isShowLoading}
       indicator={
