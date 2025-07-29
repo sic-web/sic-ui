@@ -54,7 +54,7 @@ const TableUI = (props: any) => {
                 }
           }
           locale={{
-            emptyText: emptyText,
+            emptyText: loading?.spinning ? null : emptyText,
           }}
           onRow={() => ({
             onClick: (e) => {
