@@ -11,10 +11,20 @@ interface PropsType extends React.HTMLAttributes<HTMLDivElement> {
   rawValue?: boolean;
   forceRender?: boolean;
   separator?: string;
+  isTooltipTitle?: boolean;
 }
 
 export default function AmountCellUI(props: PropsType) {
-  const { className, children, animation = false, rawValue = false, forceRender = false, separator = '', ...otherProps } = props;
+  const {
+    className,
+    children,
+    animation = false,
+    rawValue = false,
+    forceRender = false,
+    separator = '',
+    isTooltipTitle = true,
+    ...otherProps
+  } = props;
 
   /**
    * 判断传入值是否为合法数字（包括字符串形式的数字）
@@ -116,7 +126,7 @@ export default function AmountCellUI(props: PropsType) {
 
   return (
     <div className={`amountCellUI ${className ?? ''}`} {...otherProps}>
-      <Tooltip placement="right" title={children}>
+      <Tooltip placement="right" title={isTooltipTitle ? children : null}>
         {animation ? (
           <span>
             <CountUp
@@ -127,7 +137,16 @@ export default function AmountCellUI(props: PropsType) {
             />
           </span>
         ) : (
-          <span>{rawValue ? Number(children) : Number(formattedAmount?.value) + formattedAmount?.suffix}</span>
+          <span>
+            {rawValue ? (
+              <span>{Number(children)}</span>
+            ) : (
+              <>
+                <span>{Number(formattedAmount?.value)}</span>
+                <span>{formattedAmount?.suffix}</span>
+              </>
+            )}
+          </span>
         )}
       </Tooltip>
     </div>
