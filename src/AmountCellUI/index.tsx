@@ -6,10 +6,6 @@ import { num_expand } from 'sic-util';
 
 interface PropsType extends React.HTMLAttributes<HTMLDivElement> {
   className?: string;
-  /** 金额单位类名 */
-  suffixClassName?: string;
-  /** 金额-类名 */
-  numClassName?: string;
   children?: string | number;
   animation?: boolean;
   rawValue?: boolean;
@@ -18,11 +14,9 @@ interface PropsType extends React.HTMLAttributes<HTMLDivElement> {
   isTooltipTitle?: boolean;
 }
 
-export default function AmountCellUI(props: PropsType) {
+function AmountCellUI(props: PropsType) {
   const {
     className,
-    suffixClassName = '',
-    numClassName = '',
     children,
     animation = false,
     rawValue = false,
@@ -136,21 +130,21 @@ export default function AmountCellUI(props: PropsType) {
         {animation ? (
           <span>
             <CountUp
-              className={`${numClassName}`}
+              className="amountCellUI-amount"
               end={rawValue ? Number(children) : Number(formattedAmount?.value)}
               decimals={rawValue ? getDecimalsIfNumber(children) : getDecimalsIfNumber(formattedAmount?.value)}
               separator={separator}
             />
-            {!rawValue && formattedAmount?.suffix && <span className={`${suffixClassName}`}>{formattedAmount?.suffix}</span>}
+            {!rawValue && formattedAmount?.suffix && <span className="amountCellUI-suffix"> {formattedAmount?.suffix}</span>}
           </span>
         ) : (
           <span>
             {rawValue ? (
-              <span className={`${numClassName}`}>{Number(children)}</span>
+              <span className="amountCellUI-amount">{Number(children)}</span>
             ) : (
               <>
-                <span className={`${numClassName}`}>{Number(formattedAmount?.value)}</span>
-                <span className={`${suffixClassName}`}>{formattedAmount?.suffix}</span>
+                <span className="amountCellUI-amount">{Number(formattedAmount?.value)}</span>
+                <span className="amountCellUI-suffix">{formattedAmount?.suffix}</span>
               </>
             )}
           </span>
@@ -159,3 +153,4 @@ export default function AmountCellUI(props: PropsType) {
     </div>
   );
 }
+export { AmountCellUI };
