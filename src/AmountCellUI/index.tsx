@@ -1,6 +1,6 @@
 import { Tooltip } from 'antd';
 import lodash from 'lodash';
-import React, { useEffect } from 'react';
+import React from 'react';
 import CountUp from 'react-countup';
 import { num_expand } from 'sic-util';
 
@@ -136,23 +136,12 @@ export default function AmountCellUI(props: PropsType) {
         {animation ? (
           <span>
             <CountUp
+              className={`${numClassName}`}
               end={rawValue ? Number(children) : Number(formattedAmount?.value)}
               decimals={rawValue ? getDecimalsIfNumber(children) : getDecimalsIfNumber(formattedAmount?.value)}
               separator={separator}
-            >
-              {({ countUpRef, start }) => {
-                // eslint-disable-next-line react-hooks/rules-of-hooks
-                useEffect(() => {
-                  if (countUpRef) start();
-                }, [countUpRef, start]);
-                return (
-                  <>
-                    <span ref={countUpRef} className={`amount-number ${numClassName}`} />
-                    {!rawValue && formattedAmount?.suffix && <span className={`${suffixClassName}`}> {formattedAmount?.suffix}</span>}
-                  </>
-                );
-              }}
-            </CountUp>
+            />
+            {!rawValue && formattedAmount?.suffix && <span className={`${suffixClassName}`}>{formattedAmount?.suffix}</span>}
           </span>
         ) : (
           <span>
