@@ -14,7 +14,7 @@ interface PropsType extends React.HTMLAttributes<HTMLDivElement> {
   isTooltipTitle?: boolean;
 }
 
-function AmountCellUI(props: PropsType) {
+export default function AmountCellUI(props: PropsType) {
   const {
     className,
     children,
@@ -153,4 +153,3 @@ function AmountCellUI(props: PropsType) {
     </div>
   );
 }
-export { AmountCellUI };
