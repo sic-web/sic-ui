@@ -3,6 +3,7 @@ import lodash from 'lodash';
 import React from 'react';
 import CountUp from 'react-countup';
 import { num_expand } from 'sic-util';
+import './index.scss';
 
 interface PropsType extends React.HTMLAttributes<HTMLDivElement> {
   className?: string;
@@ -11,10 +12,10 @@ interface PropsType extends React.HTMLAttributes<HTMLDivElement> {
   rawValue?: boolean;
   forceRender?: boolean;
   separator?: string;
-  isTooltipTitle?: boolean;
+  isShowTooltip?: boolean;
 }
 
-function AmountCellUI(props: PropsType) {
+export default function AmountCellUI(props: PropsType) {
   const {
     className,
     children,
@@ -22,7 +23,7 @@ function AmountCellUI(props: PropsType) {
     rawValue = false,
     forceRender = false,
     separator = '',
-    isTooltipTitle = true,
+    isShowTooltip = true,
     ...otherProps
   } = props;
 
@@ -124,33 +125,36 @@ function AmountCellUI(props: PropsType) {
   // 提前计算格式化结果，避免重复调用
   const formattedAmount = getFormatAmount(children!);
 
+  const renderAnimationContent = () => {
+    return (
+      <div className="amountCellUI-content">
+        <CountUp
+          className="amountCellUI-content-amount"
+          end={rawValue ? Number(children) : Number(formattedAmount?.value)}
+          decimals={rawValue ? getDecimalsIfNumber(children) : getDecimalsIfNumber(formattedAmount?.value)}
+          separator={separator}
+        />
+        {!rawValue && formattedAmount?.suffix && <div className="amountCellUI-content-suffix"> {formattedAmount?.suffix}</div>}
+      </div>
+    );
+  };
+
+  const renderContent = () => {
+    if (rawValue) {
+      return <span className="amountCellUI-amount">{Number(children)}</span>;
+    }
+    return (
+      <div className="amountCellUI-content">
+        <span className="amountCellUI-content-amount">{Number(formattedAmount?.value)}</span>
+        <span className="amountCellUI-content-suffix">{formattedAmount?.suffix}</span>
+      </div>
+    );
+  };
   return (
     <div className={`amountCellUI ${className ?? ''}`} {...otherProps}>
-      <Tooltip placement="right" title={isTooltipTitle ? children : null}>
-        {animation ? (
-          <span>
-            <CountUp
-              className="amountCellUI-amount"
-              end={rawValue ? Number(children) : Number(formattedAmount?.value)}
-              decimals={rawValue ? getDecimalsIfNumber(children) : getDecimalsIfNumber(formattedAmount?.value)}
-              separator={separator}
-            />
-            {!rawValue && formattedAmount?.suffix && <span className="amountCellUI-suffix"> {formattedAmount?.suffix}</span>}
-          </span>
-        ) : (
-          <span>
-            {rawValue ? (
-              <span className="amountCellUI-amount">{Number(children)}</span>
-            ) : (
-              <>
-                <span className="amountCellUI-amount">{Number(formattedAmount?.value)}</span>
-                <span className="amountCellUI-suffix">{formattedAmount?.suffix}</span>
-              </>
-            )}
-          </span>
-        )}
+      <Tooltip placement="right" title={isShowTooltip ? children : null}>
+        {animation ? renderAnimationContent() : renderContent()}
       </Tooltip>
     </div>
   );
 }
-export { AmountCellUI };
