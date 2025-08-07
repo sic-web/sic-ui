@@ -35,12 +35,12 @@ export default () => (
 
 ## API 使用文档
 
-| 属性           | 说明             | 类型      | 默认值  | 是否必传 |
-| -------------- | ---------------- | --------- | ------- | -------- |
-| className      | 类名             | `string`  | `-`     | 否       |
-| children       | 金额             | `number`  | `-`     | 是       |
-| animation      | 是否显示动画     | `boolean` | `true`  | 否       |
-| rawValue       | 是否显示原始值   | `boolean` | `false` | 否       |
-| forceRender    | 是否强制渲染     | `boolean` | `false` | 否       |
-| separator      | 千分位符号       | `boolean` | ``      | 否       |
-| isTooltipTitle | 是否展示 Tooltip | `boolean` | `true`  | 否       |
+| 属性          | 说明             | 类型      | 默认值  | 是否必传 |
+| ------------- | ---------------- | --------- | ------- | -------- |
+| className     | 类名             | `string`  | `-`     | 否       |
+| children      | 金额             | `number`  | `-`     | 是       |
+| animation     | 是否显示动画     | `boolean` | `true`  | 否       |
+| rawValue      | 是否显示原始值   | `boolean` | `false` | 否       |
+| forceRender   | 是否强制渲染     | `boolean` | `false` | 否       |
+| separator     | 千分位符号       | `boolean` | ``      | 否       |
+| isShowTooltip | 是否展示 Tooltip | `boolean` | `true`  | 否       |
