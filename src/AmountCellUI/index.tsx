@@ -14,7 +14,7 @@ interface PropsType extends React.HTMLAttributes<HTMLDivElement> {
   isTooltipTitle?: boolean;
 }
 
-export default function AmountCellUI(props: PropsType) {
+function AmountCellUI(props: PropsType) {
   const {
     className,
     children,
@@ -130,20 +130,21 @@ export default function AmountCellUI(props: PropsType) {
         {animation ? (
           <span>
             <CountUp
+              className="amountCellUI-amount"
               end={rawValue ? Number(children) : Number(formattedAmount?.value)}
               decimals={rawValue ? getDecimalsIfNumber(children) : getDecimalsIfNumber(formattedAmount?.value)}
-              suffix={rawValue ? '' : formattedAmount?.suffix}
               separator={separator}
             />
+            {!rawValue && formattedAmount?.suffix && <span className="amountCellUI-suffix"> {formattedAmount?.suffix}</span>}
           </span>
         ) : (
           <span>
             {rawValue ? (
-              <span>{Number(children)}</span>
+              <span className="amountCellUI-amount">{Number(children)}</span>
             ) : (
               <>
-                <span>{Number(formattedAmount?.value)}</span>
-                <span>{formattedAmount?.suffix}</span>
+                <span className="amountCellUI-amount">{Number(formattedAmount?.value)}</span>
+                <span className="amountCellUI-suffix">{formattedAmount?.suffix}</span>
               </>
             )}
           </span>
@@ -152,3 +153,4 @@ export default function AmountCellUI(props: PropsType) {
     </div>
   );
 }
+export { AmountCellUI };
