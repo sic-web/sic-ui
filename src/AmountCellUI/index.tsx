@@ -1,11 +1,15 @@
 import { Tooltip } from 'antd';
 import lodash from 'lodash';
-import React from 'react';
+import React, { useEffect } from 'react';
 import CountUp from 'react-countup';
 import { num_expand } from 'sic-util';
 
 interface PropsType extends React.HTMLAttributes<HTMLDivElement> {
   className?: string;
+  /** 金额单位类名 */
+  suffixClassName?: string;
+  /** 金额-类名 */
+  numClassName?: string;
   children?: string | number;
   animation?: boolean;
   rawValue?: boolean;
@@ -17,6 +21,8 @@ interface PropsType extends React.HTMLAttributes<HTMLDivElement> {
 export default function AmountCellUI(props: PropsType) {
   const {
     className,
+    suffixClassName = '',
+    numClassName = '',
     children,
     animation = false,
     rawValue = false,
@@ -132,18 +138,30 @@ export default function AmountCellUI(props: PropsType) {
             <CountUp
               end={rawValue ? Number(children) : Number(formattedAmount?.value)}
               decimals={rawValue ? getDecimalsIfNumber(children) : getDecimalsIfNumber(formattedAmount?.value)}
-              suffix={rawValue ? '' : formattedAmount?.suffix}
               separator={separator}
-            />
+            >
+              {({ countUpRef, start }) => {
+                // eslint-disable-next-line react-hooks/rules-of-hooks
+                useEffect(() => {
+                  if (countUpRef) start();
+                }, [countUpRef, start]);
+                return (
+                  <>
+                    <span ref={countUpRef} className={`amount-number ${numClassName}`} />
+                    {!rawValue && formattedAmount?.suffix && <span className={`${suffixClassName}`}> {formattedAmount?.suffix}</span>}
+                  </>
+                );
+              }}
+            </CountUp>
           </span>
         ) : (
           <span>
             {rawValue ? (
-              <span>{Number(children)}</span>
+              <span className={`${numClassName}`}>{Number(children)}</span>
             ) : (
               <>
-                <span>{Number(formattedAmount?.value)}</span>
-                <span>{formattedAmount?.suffix}</span>
+                <span className={`${numClassName}`}>{Number(formattedAmount?.value)}</span>
+                <span className={`${suffixClassName}`}>{formattedAmount?.suffix}</span>
               </>
             )}
           </span>
