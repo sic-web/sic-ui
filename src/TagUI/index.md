@@ -9,20 +9,12 @@ group:
 
 # TagUI 标签
 
-:::success{title=使用中}
-国信灵工后台管理系统-标签组件
-:::
-
-## 场景故事
-
-## 代码演示
-
 💎 基础使用
 
 ```tsx
 import React from 'react';
-import { TagUI } from 'sic-ui';
 import { Space } from 'antd';
+import { TagUI } from 'sic-ui';
 
 const App: React.FC = () => (
   <Space wrap>
@@ -50,9 +42,9 @@ export default App;
 
 ```tsx
 import React from 'react';
-import { TagUI, IconUI } from 'sic-ui';
-import { DataFour, Currency, CheckOne, CloseOne, UTurnLeft, RotateOne } from '@icon-park/react';
 import { Space } from 'antd';
+import { IconUI, TagUI } from 'sic-ui';
+import { CheckOne, CloseOne, Currency, DataFour, RotateOne, UTurnLeft } from '@icon-park/react';
 
 const App: React.FC = () => (
   <Space wrap>
@@ -88,9 +80,9 @@ export default App;
 
 ```tsx
 import React from 'react';
-import { TagUI } from 'sic-ui';
 import { Space } from 'antd';
-import { DataFour, Currency, CheckOne, CloseOne, UTurnLeft, RotateOne } from '@icon-park/react';
+import { TagUI } from 'sic-ui';
+import { CheckOne, CloseOne, Currency, DataFour, RotateOne, UTurnLeft } from '@icon-park/react';
 
 const App: React.FC = () => (
   <Space wrap>

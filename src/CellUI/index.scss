@@ -1,12 +1,12 @@
 .sic-cellui {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   box-sizing: border-box;
   padding: 8px 12px;
   width: 100%;
   height: 100%;
   min-height: 34px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   &-text {
     display: -webkit-box;
     overflow: hidden;
@@ -18,11 +18,11 @@
   }
 }
 .sic-cellui-tooltipContent {
-  overflow: auto;
   max-height: 300px;
+  overflow: auto;
   &-icon {
-    line-height: 22px;
-    margin-right: 8px;
     cursor: pointer;
+    margin-right: 8px;
+    line-height: 22px;
   }
 }

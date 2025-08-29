@@ -9,14 +9,6 @@ group:
 
 # Image-图片展示组件
 
-:::success{title=使用中}
-国信灵工后台管理系统-图片展示组件
-:::
-
-## 场景故事
-
-## 代码演示
-
 💎 基础使用
 
 ```tsx
@@ -70,7 +62,7 @@ export default App;
 
 ```tsx
 import React, { useState } from 'react';
-import { Space, Button } from 'antd';
+import { Button, Space } from 'antd';
 import { ImageUI } from 'sic-ui';
 
 const App: React.FC = () => {

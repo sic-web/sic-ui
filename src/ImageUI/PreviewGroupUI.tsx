@@ -1,3 +1,6 @@
+import React from 'react';
+import { Image, Space } from 'antd';
+import type { DownloadPropsType, PreviewGroupUIPropsType } from './type';
 import {
   DownloadOutlined,
   LeftOutlined,
@@ -9,10 +12,6 @@ import {
   ZoomInOutlined,
   ZoomOutOutlined,
 } from '@ant-design/icons';
-import React from 'react';
-
-import { Image, Space } from 'antd';
-import type { DownloadPropsType, PreviewGroupUIPropsType } from './type';
 
 const PreviewGroupUI: React.FC<PreviewGroupUIPropsType> = ({ preview, children, ...otherProps }) => {
   const onDownload = ({ image }: DownloadPropsType) => {
@@ -39,7 +38,7 @@ const PreviewGroupUI: React.FC<PreviewGroupUIPropsType> = ({ preview, children, 
         current,
         total,
         actions: { onFlipY, onFlipX, onRotateLeft, onRotateRight, onZoomOut, onZoomIn, onReset, onActive },
-      },
+      }
     ) => (
       <Space size={12} className="sicImageUI-toolbar">
         <LeftOutlined disabled={current === 0} onClick={() => onActive?.(-1)} />

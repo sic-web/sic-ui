@@ -10,19 +10,17 @@ group:
 # MessageUI 消息组件
 
 :::info{title=开发中}
-国信灵工后台管理系统-消息组件
+消息组件
 :::
 
 ## 场景故事
-
-## 代码演示
 
 💎 基础使用
 
 ```tsx
 import React, { useState } from 'react';
-import { MessageUI, ButtonUI, IconUI } from 'sic-ui';
 import { Space, message } from 'antd';
+import { ButtonUI, IconUI, MessageUI } from 'sic-ui';
 import { ExclamationCircleFilled } from '@ant-design/icons';
 
 const App: React.FC = () => {

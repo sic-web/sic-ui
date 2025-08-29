@@ -9,18 +9,10 @@ group:
 
 # EmptyUI-空状态
 
-:::success{title=使用中}
-国信灵工后台管理系统-空状态组件
-:::
-
-## 场景故事
-
-## 代码演示
-
 💎 基础使用
 
 ```tsx
-import { Space, EmptyUI, ImageUI } from 'sic-ui';
+import { EmptyUI, ImageUI, Space } from 'sic-ui';
 
 export default () => (
   <Space>

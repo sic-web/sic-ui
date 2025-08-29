@@ -1,7 +1,7 @@
-.sicTableuiOperate {
+.tableOperateUI {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   white-space: nowrap;
   &-item {
     display: flex;
@@ -13,13 +13,13 @@
     }
   }
   &-more {
+    cursor: pointer;
     box-sizing: border-box;
     padding-left: 6px;
     color: #7e7e7e;
     font-size: 18px;
-    cursor: pointer;
   }
 }
-.sicTableuiOperate-popover .ant-popover-inner {
+.tableOperateUI-popover .ant-popover-inner {
   padding: 6px 8px;
 }

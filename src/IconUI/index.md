@@ -9,14 +9,6 @@ group:
 
 # IconUI-图标
 
-:::success{title=使用中}
-国信灵工后台管理系统-图标组件
-:::
-
-地址：[IconPark](https://iconpark.oceanengine.com/official)
-
-## 代码演示
-
 💎 基础使用
 
 ```tsx

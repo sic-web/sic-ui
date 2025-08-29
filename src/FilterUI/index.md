@@ -10,17 +10,15 @@ group:
 # FilterUI 筛选栏组件
 
 :::info{title=开发中}
-国信灵工后台管理系统-加载中组件
+加载中组件
 :::
 
 ## 场景故事
 
-## 代码演示
-
 💎 基础使用
 
 ```tsx
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Form, message } from 'antd';
 import { FilterUI } from 'sic-ui';
 

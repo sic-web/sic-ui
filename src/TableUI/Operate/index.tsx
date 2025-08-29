@@ -1,5 +1,5 @@
-import { Popover } from 'antd';
 import React from 'react';
+import { Popover } from 'antd';
 import { IconUI, TextUI } from 'sic-ui';
 import './index.scss';
 
@@ -8,9 +8,9 @@ export const Operate = (props: any) => {
   // 渲染默认展示的标签
   const renderItem = (childrenArray: any) => {
     return childrenArray.slice(0, maxCount).map((item: any, index: number) => (
-      <div className="sicTableuiOperate-item" key={index}>
+      <div className="tableOperateUI-item" key={index}>
         {item}
-        {index < maxCount - 1 && index < childrenArray?.length - 1 && <div className="sicTableuiOperate-item-divider">|</div>}
+        {index < maxCount - 1 && index < childrenArray?.length - 1 && <div className="tableOperateUI-item-divider">|</div>}
       </div>
     ));
   };
@@ -24,13 +24,8 @@ export const Operate = (props: any) => {
       <>
         {renderItem(childrenArray)}
         {childrenArray?.length > maxCount && (
-          <Popover
-            rootClassName="sicTableuiOperate-popover"
-            trigger="click"
-            placement="bottom"
-            content={renderPopoverContent(childrenArray)}
-          >
-            <IconUI className="sicTableuiOperate-more" name="More" />
+          <Popover rootClassName="tableOperateUI-popover" trigger="click" placement="bottom" content={renderPopoverContent(childrenArray)}>
+            <IconUI className="tableOperateUI-more" name="More" />
           </Popover>
         )}
         {childrenArray?.length === 0 && <TextUI> - </TextUI>}
@@ -38,5 +33,5 @@ export const Operate = (props: any) => {
     );
   };
 
-  return <div className="sicTableuiOperate">{renderChildren()}</div>;
+  return <div className="tableOperateUI">{renderChildren()}</div>;
 };

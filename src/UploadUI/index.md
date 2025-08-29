@@ -9,19 +9,11 @@ group:
 
 # UploadUI-上传组件
 
-:::success{title=使用中}
-国信灵工后台管理系统-上传组件
-:::
-
-## 场景故事
-
-## 代码演示
-
 💎 基础使用
 上传组件
 
 ```tsx
-import { UploadUI, TextUI } from 'sic-ui';
+import { TextUI, UploadUI } from 'sic-ui';
 
 const App: React.FC = () => {
   return (

@@ -9,14 +9,6 @@ group:
 
 # PasswordStrongUI 密码强度组件
 
-:::success{title=使用中}
-国信灵工后台管理系统-密码强度组件
-:::
-
-## 场景故事
-
-## 代码演示
-
 💎 消息提醒组件
 
 ```tsx

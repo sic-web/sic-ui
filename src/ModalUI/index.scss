@@ -1,11 +1,11 @@
 .sicModalui {
   .ant-modal-content {
-    padding: 12px 20px;
     border-radius: 0;
+    padding: 12px 20px;
     .ant-modal-close {
+      inset-inline-end: 20px;
       width: 20px;
       height: 20px;
-      inset-inline-end: 20px;
     }
     .ant-modal-header {
       margin-bottom: 12px;
@@ -16,30 +16,30 @@
   }
   &-header {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    line-height: 20px;
-    font-weight: bold;
-    padding-bottom: 12px;
+    align-items: center;
     border-bottom: 1px solid #e3e3e3;
+    padding-bottom: 12px;
+    font-weight: bold;
+    line-height: 20px;
     &-icon {
-      height: 20px;
-      width: 20px;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       border-radius: 50%;
+      background-color: #d9d9d9;
+      width: 20px;
+      height: 20px;
       color: var(--textBlack);
       font-size: 14px;
-      background-color: #d9d9d9;
     }
     &-icon.primary {
-      color: var(--themeColor);
       background-color: var(--themeColor2);
+      color: var(--themeColor);
     }
     &-icon.danger {
-      color: var(--red);
       background-color: rgba(255, 120, 117, 0.2);
+      color: var(--red);
     }
   }
 }

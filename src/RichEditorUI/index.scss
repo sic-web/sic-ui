@@ -1,18 +1,18 @@
 .richEditorUI {
-  width: 100%;
-  height: 100%;
+  transition: all 0.3s;
   border: 1px solid #d9d9d9;
   border-radius: 4px;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
-  transition: all 0.3s;
   &:hover {
-    border-color: var(--themeColor);
     box-shadow: 0 0 0 2px var(--themeColor2);
+    border-color: var(--themeColor);
   }
   &-toolbar {
     box-sizing: border-box;
-    padding: 8px;
     border-bottom: 1px solid #d9d9d9;
+    padding: 8px;
   }
   &-editor .w-e-scroll > div {
     min-height: 300px;

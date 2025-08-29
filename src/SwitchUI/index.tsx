@@ -1,6 +1,7 @@
 import React from 'react';
 import { Switch } from 'antd';
 import './index.scss';
+
 const SwitchUI = (props: any) => {
   const { value, onChange, onClick, ...otherProps } = props;
   const checkChange = (e: boolean) => {

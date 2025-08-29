@@ -9,325 +9,149 @@ group:
 
 # TableUI-表格
 
-:::success{title=使用中}
-国信灵工后台管理系统-表格组件
-:::
-
-## 场景故事
-
-## 代码演示
-
-### 表格组件
-
-💎 表格组件-基本使用
+💎 基础使用
 
 ```tsx
-import { useState } from 'react';
+import React from 'react';
 import { TableUI } from 'sic-ui';
 
-const App: React.FC = () => {
-  const columns = [
-    { title: '姓名', dataIndex: 'name', key: 'name' },
-    { title: '年龄', dataIndex: 'age', key: 'age' },
-    { title: '电话', dataIndex: 'phone', key: 'phone' },
-  ];
-  const dataSource = [
-    { name: '刘备', age: 22, phone: 15692837652 },
-    { name: '关羽', age: 21, phone: 17697787678 },
-    { name: '张飞', age: 18, phone: 12392880611 },
-  ];
-  const current = 1;
-  const pageSize = 2;
-  const total = 3;
-  return (
-    <div>
-      正常展示
-      <TableUI dataSource={dataSource} columns={columns} current={current} pageSize={pageSize} total={total} />
-      <br />
-      蒙层展示
-      <TableUI dataSource={dataSource} columns={columns} current={current} pageSize={pageSize} total={total} mask={true} />
-      <br />
-      空状态展示
-      <TableUI dataSource={[]} columns={columns} current={0} pageSize={0} total={0} />
-    </div>
-  );
+const tableData = {
+  records: [
+    { id: 1, name: '张三', amount: 12345, percent: 0.12 },
+    { id: 2, name: '李四', amount: 67890, percent: 0.45 },
+  ],
+  current: 1,
+  size: 20,
+  total: 2,
 };
-export default App;
+
+const tableHeader = [
+  { key: 'name', name: '姓名' },
+  { key: 'amount', name: '金额', type: 'amount' },
+  { key: 'percent', name: '百分比', type: 'percent' },
+];
+
+export default () => <TableUI rowKey="id" tableData={tableData} tableHeader={tableHeader} />;
 ```
 
-### 表格组件（内嵌操作）
-
-💎 表格组件-更多操作
+💎 列类型示例（金额、百分比、Tag）
 
 ```tsx
-import { useState } from 'react';
+import React from 'react';
 import { TableUI } from 'sic-ui';
 
-const App: React.FC = () => {
-  const columns = [
-    { title: '姓名', dataIndex: 'name', key: 'name', width: 200 },
-    { title: '年龄', dataIndex: 'age', key: 'age' },
-    { title: '电话', dataIndex: 'phone', key: 'phone' },
-    {
-      title: '操作',
-      dataIndex: 'operate',
-      key: 'operate',
-      render: () => {
-        const child = () => {
-          return (
-            <div>
-              <div>查看</div>
-              <div>导出</div>
-              <div>打印</div>
-              <div>转发</div>
-            </div>
-          );
-        };
-
-        return <TableUI.Operate child={child} />;
-      },
-    },
-  ];
-  const dataSource = [
-    { name: '刘备', age: 22, phone: 15692837652 },
-    { name: '关羽', age: 21, phone: 17697787678 },
-    { name: '张飞', age: 18, phone: 12392880611 },
-  ];
-  const current = 1;
-  const pageSize = 2;
-  const total = 3;
-  return (
-    <div>
-      <TableUI rowKey="age" dataSource={dataSource} columns={columns} current={current} pageSize={pageSize} total={total} />
-    </div>
-  );
+const tableData2 = {
+  records: [
+    { id: 1, name: '张三', status: 'success', amount: 12345, percent: 0.12 },
+    { id: 2, name: '李四', status: 'error', amount: 67890, percent: 0.45 },
+  ],
 };
-export default App;
+
+const tableHeader2 = [
+  { key: 'name', name: '姓名' },
+  { key: 'amount', name: '金额', type: 'amount' },
+  { key: 'percent', name: '百分比', type: 'percent' },
+  {
+    key: 'status',
+    name: '状态',
+    type: 'tag',
+    options: [
+      { label: '成功', value: 'success', color: 'green' },
+      { label: '失败', value: 'error', color: 'red' },
+    ],
+  },
+];
+
+export default () => <TableUI rowKey="id" tableData={tableData2} tableHeader={tableHeader2} />;
 ```
 
-💎 表格组件-多行溢出
+💎 加载中
 
 ```tsx
-import { useState } from 'react';
-import { TableUI, IconUI } from 'sic-ui';
-import { Space } from 'antd';
+import React, { useState } from 'react';
+import { TableUI } from 'sic-ui';
 
-const App: React.FC = () => {
-  const columns = [
-    {
-      title: 'id',
-      width: 80,
-      dataIndex: 'id',
-      key: 'id',
-    },
-    ,
-    {
-      title: '内容',
-      dataIndex: 'value',
-      key: 'value',
-      render: (value) => {
-        return <TableUI.HideMultipleLines>{value}</TableUI.HideMultipleLines>;
-      },
-    },
-  ];
-  const dataSource = [
-    {
-      id: 1,
-      value: [
-        '风急天高猿啸哀',
-        '驻青沙白鸟飞回',
-        '无边落木萧萧下',
-        '不尽长江滚滚来',
-        '万里悲秋常作客',
-        '百年多病独登台',
-        '艰难苦恨繁霜鬓',
-        '潦倒新停浊酒杯',
-      ],
-    },
-    {
-      id: 2,
-      value: [
-        '风急天高猿啸哀',
-        '驻青沙白鸟飞回',
-        '无边落木萧萧下',
-        '不尽长江滚滚来',
-        '万里悲秋常作客',
-        '百年多病独登台',
-        '艰难苦恨繁霜鬓',
-        '潦倒新停浊酒杯',
-      ],
-    },
-  ];
-  const current = 1;
-  const pageSize = 2;
-  const total = 2;
-  return (
-    <div>
-      <TableUI dataSource={dataSource} columns={columns} current={current} pageSize={pageSize} total={total} />
-    </div>
-  );
+const tableData3 = {
+  records: [
+    { id: 1, name: '张三' },
+    { id: 2, name: '李四' },
+  ],
 };
-export default App;
+
+export default () => {
+  const [vessel, setVessel] = useState({
+    multipleChoice: [],
+    choice: true,
+  });
+
+  const tableHeader3 = [{ key: 'name', name: '姓名' }];
+
+  return <TableUI rowKey="id" tableData={tableData3} tableHeader={tableHeader3} loading />;
+};
 ```
 
-💎 表格组件-功能按钮
+💎 简易分页
 
 ```tsx
-import { useState } from 'react';
-import { TableUI, IconUI } from 'sic-ui';
-import { Space } from 'antd';
+import React, { useState } from 'react';
+import { TableUI } from 'sic-ui';
 
-const App: React.FC = () => {
-  const columns = [
-    { title: '姓名', dataIndex: 'name', key: 'name' },
-    { title: '年龄', dataIndex: 'age', key: 'age' },
-    {
-      title: '合同',
-      dataIndex: 'contract',
-      key: 'contract',
-      render: () => {
-        return (
-          <Space wrap>
-            <TableUI.Button className="12" type="default" icon={<IconUI name="Download" />}>
-              查看
-            </TableUI.Button>
-            <TableUI.Button type="danger" icon={<IconUI name="Upload" />}>
-              重新上传
-            </TableUI.Button>
-            <TableUI.Button type="disable">禁用</TableUI.Button>
-          </Space>
-        );
-      },
-    },
-    { title: '电话', dataIndex: 'phone', key: 'phone' },
-  ];
-  const dataSource = [
-    { name: '刘备', age: 22, phone: 15692837652 },
-    { name: '关羽', age: 21, phone: 17697787678 },
-    { name: '张飞', age: 18, phone: 12392880611 },
-  ];
-  const current = 1;
-  const pageSize = 2;
-  const total = 3;
+const tableData4 = {
+  records: Array.from({ length: 20 }).map((_, i) => ({ id: i + 1, name: `用户${i + 1}` })),
+  offset: 0,
+  last: false,
+  next: true,
+  total: 100,
+};
+
+export default () => {
+  const [vessel, setVessel] = useState({ filterParams: { offset: 0, size: 20 } });
+
   return (
-    <div>
-      <TableUI dataSource={dataSource} columns={columns} current={current} pageSize={pageSize} total={total} />
-    </div>
+    <TableUI
+      rowKey="id"
+      tableData={tableData4}
+      tableHeader={[{ key: 'name', name: '姓名' }]}
+      simplePagination
+      vessel={vessel}
+      setVessel={setVessel}
+    />
   );
 };
-export default App;
 ```
-
-💎 表格组件-多行拆分
-
-```tsx
-import { useState } from 'react';
-import { TableUI, IconUI } from 'sic-ui';
-import { Space } from 'antd';
-
-const App: React.FC = () => {
-  const columns = [
-    { title: '姓名', dataIndex: 'name', key: 'name' },
-    { title: '年龄', dataIndex: 'age', key: 'age' },
-    {
-      title: '任务名称',
-      dataIndex: 'taskName',
-      key: 'taskName',
-      render: (_: never, item: any) => {
-        const taskNameList = item?.feeRate?.map((i: any) => i.taskName);
-        return <TableUI.MultiLine>{taskNameList}</TableUI.MultiLine>;
-      },
-    },
-    {
-      title: '费率',
-      dataIndex: 'feeRate',
-      key: 'feeRate',
-      render: (_: never, item: any) => {
-        const feeList = item?.feeRate?.map((i: any) => `${i.fee}%`);
-        return <TableUI.MultiLine>{feeList}</TableUI.MultiLine>;
-      },
-    },
-    { title: '电话', dataIndex: 'phone', key: 'phone' },
-  ];
-  const dataSource = [
-    {
-      name: '刘备',
-      age: 22,
-      phone: 15692837652,
-      feeRate: [
-        { fee: 5, taskName: '任务1' },
-        { fee: 6, taskName: '任务2' },
-      ],
-    },
-    {
-      name: '关羽',
-      age: 21,
-      phone: 17697787678,
-      feeRate: [
-        { fee: 5, taskName: '任务1' },
-        { fee: 6, taskName: '任务2' },
-      ],
-    },
-    {
-      name: '张飞',
-      age: 18,
-      phone: 12392880611,
-      feeRate: [
-        { fee: 5, taskName: '任务1' },
-        { fee: 6, taskName: '任务2' },
-      ],
-    },
-  ];
-  const current = 1;
-  const pageSize = 2;
-  const total = 3;
-  return (
-    <div>
-      <TableUI dataSource={dataSource} columns={columns} current={current} pageSize={pageSize} total={total} />
-    </div>
-  );
-};
-export default App;
-```
-
-💎 表格组件-表头控制
-<code src="./demo/setting.tsx" ></code>
 
 ## API 使用文档
 
-### TableUI
+| 属性                    | 说明               | 类型                                                                                                                | 默认值                        | 是否必传 |
+| :---------------------- | :----------------- | :------------------------------------------------------------------------------------------------------------------ | :---------------------------- | :------- |
+| rowKey                  | 行唯一标识         | `string` \| `(record, index) => string`                                                                             | -                             | 是       |
+| tableData               | 表格数据和分页信息 | `{ records: any[], current: number, size: number, total: number, offset?: number, last?: boolean, next?: boolean }` | -                             | 是       |
+| tableHeader             | 表头配置           | `TableUI_ColumnType[]`                                                                                              | -                             | 是       |
+| customColumns           | 自定义列配置       | `TableUI_ColumnType[]`                                                                                              | -                             | 否       |
+| dataSource              | 数据源备用         | `any[]`                                                                                                             | -                             | 否       |
+| simplePagination        | 是否使用简易分页   | `boolean`                                                                                                           | false                         | 否       |
+| pageSizeOptions         | 分页大小选项       | `number[]`                                                                                                          | [20,30,50,100]                | 否       |
+| mask                    | 表格遮罩           | `boolean`                                                                                                           | false                         | 否       |
+| loading                 | 加载状态           | `boolean`                                                                                                           | false                         | 否       |
+| headerPadding           | 表头内边距         | `boolean`                                                                                                           | false                         | 否       |
+| cellPadding             | 单元格内边距       | `boolean`                                                                                                           | false                         | 否       |
+| onClickSimplePagination | 简易分页事件       | `(type: 'last' \| 'next') => void`                                                                                  | -                             | 否       |
+| CustomLoadingUI         | 自定义加载组件     | `ReactNode`                                                                                                         | `<LoadingUI isShowLoading />` | 否       |
+| CustomEmptyUI           | 自定义空组件       | `ReactNode`                                                                                                         | `<EmptyUI />`                 | 否       |
+| vessel                  | 外部状态容器       | `TableUI_VesselType`                                                                                                | -                             | 否       |
+| setVessel               | 更新 vessel        | `(v: TableUI_VesselType) => void`                                                                                   | -                             | 否       |
 
-<font size=1>
+## 列配置
 
-| 属性       | 说明       |  类型   | 默认值 | 是否必传 |
-| :--------- | :--------- | :-----: | :----: | :------: |
-| dataSource | 数据内容   |  Array  |   []   |    是    |
-| columns    | 每一列的值 |  Array  |   []   |    是    |
-| current    | 当前的页数 | Number  |   -    |    是    |
-| pageSize   | 当前的页码 | Number  |   -    |    是    |
-| total      | 当前的总数 | Number  |   -    |    是    |
-| mask       | 蒙版       | Boolean | false  |    否    |
-
-</font>
-
-### TableUI.Operate
-
-注：需要根节点
-
-<font size=1>
-
-| 属性  | 说明 |   类型    |    默认值    | 是否必传 |
-| :---- | :--- | :-------: | :----------: | :------: |
-| child | 内容 | ReactNode | <div>-</div> |    是    |
-
-</font>
-
-### TableUI.Button
-
-<font size=1>
-
-| 属性 | 说明 |              类型              | 默认值  | 是否必传 |
-| :--- | :--- | :----------------------------: | :-----: | :------: |
-| type | 类型 | String<default/danger/disable> | default |    是    |
-
-</font>
+| 属性           | 说明                         | 类型                                                                |
+| :------------- | :--------------------------- | :------------------------------------------------------------------ |
+| key            | 列唯一标识                   | `string`                                                            |
+| name           | 列显示名称                   | `string`                                                            |
+| type           | 列类型：amount、percent、tag | `` `'amount' \| 'percent' \| 'tag'` ``                              |
+| options        | type 为 tag 时的选项         | `Array<{ label: string; value: string \| number; color?: string }>` |
+| width          | 列宽                         | `number`                                                            |
+| selected       | 是否显示列                   | `boolean`                                                           |
+| renderTitle    | 自定义表头                   | `React.ReactNode`                                                   |
+| render         | 自定义单元格                 | `(value: any, record: any, index: number) => React.ReactNode`       |
+| cellClassName  | 单元格类名                   | `string`                                                            |
+| titleClassName | 表头类名                     | `string`                                                            |

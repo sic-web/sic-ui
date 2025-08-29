@@ -1,7 +1,7 @@
-import lodash from 'lodash';
 import React from 'react';
 import CountUp from 'react-countup';
 import { TagUI } from 'sic-ui';
+import lodash from 'lodash';
 import './index.scss';
 
 interface ItemsType {

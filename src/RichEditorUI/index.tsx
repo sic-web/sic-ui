@@ -1,8 +1,8 @@
+import React, { useEffect, useState } from 'react';
 import { IDomEditor, IEditorConfig } from '@wangeditor/editor';
 import { Editor, Toolbar } from '@wangeditor/editor-for-react';
-import '@wangeditor/editor/dist/css/style.css';
-import React, { useEffect, useState } from 'react';
 import './index.scss';
+import '@wangeditor/editor/dist/css/style.css';
 
 // 定义组件属性接口
 interface RichEditorProps {

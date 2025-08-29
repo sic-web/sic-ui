@@ -1,3 +1,5 @@
+import React, { memo } from 'react';
+import { Iconwx, Iconzfb, Minsheng, Pingan, Point, UploadExcel, UploadImage, UploadPdf, Zhaoshang } from './material';
 import {
   AddOne,
   AddPrint,
@@ -40,8 +42,8 @@ import {
   Down,
   Download,
   Edit,
-  Editor,
   EditTwo,
+  Editor,
   EveryUser,
   Excel,
   ExpensesOne,
@@ -100,17 +102,15 @@ import {
   SwitchButton,
   TicketOne,
   TicketsTwo,
+  UTurnLeft,
   Upload,
   User,
   UserBusiness,
   UserToUserTransmission,
-  UTurnLeft,
   ViewList,
   Workbench,
   WritingFluently,
 } from '@icon-park/react';
-import React, { memo } from 'react';
-import { Iconwx, Iconzfb, Minsheng, Pingan, Point, UploadExcel, UploadImage, UploadPdf, Zhaoshang } from './material';
 
 // 定义图标属性类型
 export interface IconProps {
@@ -270,10 +270,13 @@ export const iconRally: IconItem[] = [
 ];
 
 // 创建图标映射表，用于快速查找 (只计算一次)
-export const iconMap = iconRally.reduce((map, icon) => {
-  map[icon.name] = icon;
-  return map;
-}, {} as Record<string, IconItem>);
+export const iconMap = iconRally.reduce(
+  (map, icon) => {
+    map[icon.name] = icon;
+    return map;
+  },
+  {} as Record<string, IconItem>
+);
 
 // 根据名称获取图标
 export const getIconByName = (name: string): IconItem | undefined => {

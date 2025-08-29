@@ -16,10 +16,10 @@
       }
       .sic-message-custom-content {
         color: #fff;
+        font-weight: bold;
         font-size: 18px;
         line-height: 22px;
         font-family: var(--fontFamily);
-        font-weight: bold;
       }
       .anticon-check-circle,
       .anticon-close-circle {
@@ -27,8 +27,8 @@
       }
       .sic-message-custom-content {
         box-sizing: border-box;
-        padding: 20px 20px;
         border-radius: 8px;
+        padding: 20px 20px;
       }
       .sic-message-success {
         background-color: #38b865;

@@ -4,24 +4,24 @@
     border-top: 1px solid #d9d9d9;
     border-left: 1px solid #d9d9d9;
     .tableItem {
-      box-sizing: border-box;
       display: flex;
       align-items: center;
+      box-sizing: border-box;
       border-right: 1px solid #d9d9d9;
       border-bottom: 1px solid #d9d9d9;
       &-label,
       &-control {
+        display: flex;
+        align-items: center;
         box-sizing: border-box;
         padding: 8px;
         height: 100%;
         min-height: 36px;
-        display: flex;
-        align-items: center;
       }
       &-label {
-        background: var(--themeColor1);
-        border-right: 1px solid #d9d9d9;
         justify-content: center;
+        border-right: 1px solid #d9d9d9;
+        background: var(--themeColor1);
       }
       &-control {
         flex: 1;
@@ -64,8 +64,8 @@
 
           &-content {
             overflow: hidden;
-            white-space: nowrap;
             text-overflow: ellipsis;
+            white-space: nowrap;
           }
         }
       }
@@ -78,8 +78,8 @@
           overflow: hidden;
           &-content {
             overflow: hidden;
-            white-space: nowrap;
             text-overflow: ellipsis;
+            white-space: nowrap;
           }
         }
       }

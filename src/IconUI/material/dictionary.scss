@@ -8,49 +8,49 @@
   margin: 0 -10px; /* 负边距，解决边缘对齐问题 */
 
   &-item {
-    height: 100px;
-    width: 80px;
     display: flex;
     flex-direction: column;
+    transition: all 0.3s;
+    cursor: pointer;
+    margin: 0 10px 20px;
     border: 1px solid #e3e3e3;
     border-radius: 4px;
+    width: 80px;
+    height: 100px;
     font-size: 12px;
-    cursor: pointer;
-    transition: all 0.3s;
-    margin: 0 10px 20px;
 
     &:hover {
-      border-color: var(--themeColor);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       transform: translateY(-2px);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      border-color: var(--themeColor);
     }
 
     &-icon {
-      height: 70px;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
+      height: 70px;
     }
 
     &-name {
+      border-top: 1px solid #e3e3e3;
+      background-color: #f5f5f5;
+      padding: 0 4px;
       height: 30px;
+      overflow: hidden;
       line-height: 30px;
       text-align: center;
-      border-top: 1px solid #e3e3e3;
-      overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-      padding: 0 4px;
-      background-color: #f5f5f5;
     }
   }
 }
 
 .dictionary-empty {
-  text-align: center;
   padding: 20px;
   color: #999;
   font-size: 14px;
+  text-align: center;
 }
 
 .dictionary-search {

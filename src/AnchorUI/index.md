@@ -9,14 +9,6 @@ group:
 
 # AnchorUI-锚点
 
-:::success{title=使用中}
-国信灵工后台管理系统-锚点组件
-:::
-
-## 场景故事
-
-## 代码演示
-
 💎 基础使用
 
 <code src="./demo/use-anchor.tsx" ></code>
