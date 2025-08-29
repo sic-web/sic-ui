@@ -1,3 +1,9 @@
+import React, { useEffect, useState } from 'react';
+import type { GetProp, UploadFile, UploadProps } from 'antd';
+import { Image, Space, Upload } from 'antd';
+import { IconUI, MessageUI } from 'sic-ui';
+import { file_calculate_md5, getUrlConfig } from 'sic-util';
+import { DraggerFileItems } from './type';
 import {
   DownloadOutlined,
   RotateLeftOutlined,
@@ -7,13 +13,7 @@ import {
   ZoomInOutlined,
   ZoomOutOutlined,
 } from '@ant-design/icons';
-import type { GetProp, UploadFile, UploadProps } from 'antd';
-import { Image, Space, Upload } from 'antd';
-import React, { useEffect, useState } from 'react';
-import { IconUI, MessageUI } from 'sic-ui';
-import { file_calculate_md5, getUrlConfig } from 'sic-util';
 import './index.scss';
-import { DraggerFileItems } from './type';
 
 interface fileListType extends UploadFile {
   url?: string;
@@ -277,7 +277,7 @@ const UploadUI = (props: UploadUIProps) => {
             visible: previewOpen,
             toolbarRender: (
               _,
-              { transform: { scale }, actions: { onFlipY, onFlipX, onRotateLeft, onRotateRight, onZoomOut, onZoomIn, onReset } },
+              { transform: { scale }, actions: { onFlipY, onFlipX, onRotateLeft, onRotateRight, onZoomOut, onZoomIn, onReset } }
             ) => (
               <Space size={12} className="uploadUI-previewImageToolbar">
                 <DownloadOutlined onClick={onDownload} />

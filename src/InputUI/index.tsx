@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Input, InputNumber } from 'antd';
 import './index.scss';
+
 let timer: any;
 
 const InputUI = (props: any) => {

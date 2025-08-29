@@ -1,8 +1,8 @@
-import { Input, Space } from 'antd';
 import React, { useCallback, useState } from 'react';
+import { Input, Space } from 'antd';
 import { MessageUI } from 'sic-ui';
-import './dictionary.scss';
 import { IconItem, searchIcons } from './rally';
+import './dictionary.scss';
 
 const Dictionary: React.FC = () => {
   const [searchText, setSearchText] = useState<string>('');

@@ -1,7 +1,8 @@
-import { Flex, Input } from 'antd';
 import React, { useEffect, useState } from 'react';
+import { Flex, Input } from 'antd';
 import { IconUI } from 'sic-ui';
 import './index.scss';
+
 // 搜索框
 let timer: any;
 const SearchUI = (props: any) => {

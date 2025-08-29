@@ -1,7 +1,7 @@
-import { Tooltip } from 'antd';
-import lodash from 'lodash';
 import React from 'react';
+import { Tooltip } from 'antd';
 import CountUp from 'react-countup';
+import lodash from 'lodash';
 import { num_expand } from 'sic-util';
 import './index.scss';
 

@@ -1,5 +1,5 @@
-import { Affix, Cascader, Form, Space } from 'antd';
 import React, { useEffect, useState } from 'react';
+import { Affix, Cascader, Form, Space } from 'antd';
 import { ButtonUI, DateUI, IconUI, SearchUI, SelectUI } from 'sic-ui';
 import './index.scss';
 
@@ -192,7 +192,7 @@ const FilterUI = (props: IProps) => {
         {
           ...formData,
           [item.key]: undefined,
-        },
+        }
       );
     }
   };

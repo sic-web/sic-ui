@@ -9,14 +9,6 @@ group:
 
 # SwitchUI-开关
 
-:::success{title=使用中}
-国信灵工后台管理系统-开关组件
-:::
-
-## 场景故事
-
-## 代码演示
-
 💎 基础使用
 
 ```tsx
@@ -48,6 +40,7 @@ export default App;
 import { useState } from 'react';
 import { Form } from 'antd';
 import { SwitchUI } from 'sic-ui';
+
 const initialValues = {
   status: 1,
 };

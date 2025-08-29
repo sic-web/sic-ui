@@ -10,19 +10,17 @@ group:
 # LoadingUI 加载中组件
 
 :::info{title=开发中}
-国信灵工后台管理系统-加载中组件
+加载中组件
 :::
 
 ## 场景故事
-
-## 代码演示
 
 💎 基础使用
 
 ```tsx
 import React, { useState } from 'react';
-import { LoadingUI } from 'sic-ui';
 import { Space } from 'antd';
+import { LoadingUI } from 'sic-ui';
 
 const App: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);

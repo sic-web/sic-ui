@@ -1,5 +1,5 @@
-import { Carousel, Popover } from 'antd';
 import React, { useRef } from 'react';
+import { Carousel, Popover } from 'antd';
 import { IconUI } from 'sic-ui';
 import './index.scss';
 

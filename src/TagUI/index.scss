@@ -4,38 +4,38 @@
   line-height: 14px;
   &-title {
     box-sizing: border-box;
+    border-radius: 4px 0 0 4px;
     padding: 4px 8px;
     color: #fff;
-    border-radius: 4px 0 0 4px;
   }
 
   &-content {
-    box-sizing: border-box;
-    padding: 4px 8px;
     display: inline-flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     gap: 2px;
+    box-sizing: border-box;
     border-radius: 0 4px 4px 0;
+    padding: 4px 8px;
   }
 }
 
 .sic-tagui {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
   box-sizing: border-box;
+  border-radius: 4px;
   padding: 4px 8px;
   font-size: 12px;
   line-height: 14px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2px;
-  border-radius: 4px;
 }
 .sic-tagui-large {
+  gap: 4px;
   box-sizing: border-box;
   padding: 6px 12px;
+  font-weight: bold;
   font-size: 18px;
   line-height: 20px;
-  font-weight: bold;
-  gap: 4px;
 }

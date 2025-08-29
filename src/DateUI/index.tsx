@@ -1,10 +1,11 @@
+import React, { useEffect, useState } from 'react';
 import { ConfigProvider, DatePicker } from 'antd';
-import zhCN from 'antd/locale/zh_CN';
 import dayjs from 'dayjs';
+import zhCN from 'antd/locale/zh_CN';
 import 'dayjs/locale/zh-cn';
 import quarterOfYear from 'dayjs/plugin/quarterOfYear';
-import React, { useEffect, useState } from 'react';
 import './index.scss';
+
 dayjs.extend(quarterOfYear);
 dayjs.locale('zh-cn');
 

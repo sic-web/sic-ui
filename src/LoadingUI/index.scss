@@ -10,34 +10,34 @@
     opacity: 0;
   }
   .loadingUI-image {
+    transform: translateX(-50%);
     width: 200px;
     height: 200px;
-    transform: translateX(-50%);
   }
 
   .loadingUI-loader {
-    width: 100px;
-    height: 100px;
     position: relative;
     transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
   }
 
   .loadingUI-loader-content {
+    position: relative;
+    animation: rotate 1s linear infinite;
+    border-radius: 50%;
     width: 100%;
     height: 100%;
-    border-radius: 50%;
-    animation: rotate 1s linear infinite;
-    position: relative;
   }
 
   .loadingUI-loader-content::before {
-    content: '';
-    box-sizing: border-box;
     position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    border: 6px solid var(--themeColor);
     animation: prixClipFix 5s linear infinite;
+    box-sizing: border-box;
+    inset: 0;
+    border: 6px solid var(--themeColor);
+    border-radius: 50%;
+    content: '';
   }
 
   @keyframes rotate {

@@ -6,10 +6,10 @@ import './index.scss';
 export const MultiLine = (props: any) => {
   const { children, ...otherProps } = props;
   return (
-    <div className="sic-tableui-multiLine" {...otherProps}>
+    <div className="tableMultiLineUI" {...otherProps}>
       {children?.length > 0 &&
         children.map((item: string | number, index: number) => (
-          <div key={index} className="sic-tableui-multiLine-item">
+          <div key={index} className="tableMultiLineUI-item">
             <CellUI line={1}>{item}</CellUI>
           </div>
         ))}

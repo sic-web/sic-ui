@@ -9,14 +9,12 @@ group:
 
 # InputUI-输入框
 
-## 代码演示
-
 💎 基础使用
 
 ```tsx
 import React, { useState } from 'react';
-import { InputUI } from 'sic-ui';
 import { Space } from 'antd';
+import { InputUI } from 'sic-ui';
 
 const App: React.FC = () => {
   const [inputRangeValue, setInputRangeValue] = useState();

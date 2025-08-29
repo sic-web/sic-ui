@@ -1,5 +1,5 @@
 import '@icon-park/react/styles/index.css';
-export * from 'antd';
+
 export { default as AmountCellUI } from './AmountCellUI';
 export { default as AnchorUI } from './AnchorUI';
 export { default as BackUI } from './BackUI';
@@ -17,18 +17,15 @@ export { default as InputUI } from './InputUI';
 export { default as LoadingUI } from './LoadingUI';
 export { default as MessageUI } from './MessageUI';
 export { default as ModalUI } from './ModalUI';
-export { default as NotificationUI } from './NotificationUI';
 export { default as PasswordStrongUI } from './PasswordStrongUI';
 export { default as RichEditorUI } from './RichEditorUI';
 export { default as SearchUI } from './SearchUI';
 export { default as SelectUI } from './SelectUI';
 export { default as StatisticUI } from './StatisticUI';
 export { default as SwitchUI } from './SwitchUI';
+export type { TableUIPropsType, TableUI_ColumnType, TableUI_VesselType, TableUIStaticType } from './TableUI/type';
 export { default as TableUI } from './TableUI';
 export { default as TagUI } from './TagUI';
-export { default as TestUI } from './TestUI';
 export { default as TextUI } from './TextUI';
-export { default as Tiga } from './Tiga';
 export { default as UploadUI } from './UploadUI';
-export { default as VesselUI } from './VesselUI';
 export { default as VideoPreviewUI } from './VideoPreviewUI';

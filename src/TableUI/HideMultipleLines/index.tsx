@@ -1,6 +1,7 @@
-import { Tooltip } from 'antd';
 import React from 'react';
+import { Tooltip } from 'antd';
 import { ButtonUI, IconUI } from 'sic-ui';
+import clsx from 'classnames';
 import './index.scss';
 
 /** 表格组件-多行隐藏 */
@@ -30,8 +31,8 @@ export const HideMultipleLines = (props: any) => {
     );
   };
   return (
-    <div className={`sic-tableui-hideMultipleLines ${className}`}>
-      <div className="sic-tableui-hideMultipleLines-content">
+    <div className={clsx('tableHideMultipleLinesUI', className)}>
+      <div className="tableHideMultipleLinesUI-content">
         {children?.length > 0 &&
           children.map((item: any, index: number) => {
             return index < line && <div key={index}>{item}</div>;

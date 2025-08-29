@@ -10,19 +10,17 @@ group:
 # ModalUI 弹窗
 
 :::info{title=开发中}
-国信灵工后台管理系统-弹窗组件
+弹窗组件
 :::
 
 ## 场景故事
-
-## 代码演示
 
 💎 基础使用
 
 ```tsx
 import React, { useState } from 'react';
-import { ButtonUI, ModalUI, IconUI } from 'sic-ui';
 import { Space } from 'antd';
+import { ButtonUI, IconUI, ModalUI } from 'sic-ui';
 
 const App: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);

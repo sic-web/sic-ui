@@ -1,3 +1,8 @@
+import React from 'react';
+import type { ImageProps } from 'antd';
+import { Image, Space } from 'antd';
+import { IconUI } from 'sic-ui';
+import PreviewGroupUI from './PreviewGroupUI';
 import {
   DownloadOutlined,
   RotateLeftOutlined,
@@ -7,11 +12,6 @@ import {
   ZoomInOutlined,
   ZoomOutOutlined,
 } from '@ant-design/icons';
-import type { ImageProps } from 'antd';
-import { Image, Space } from 'antd';
-import React from 'react';
-import { IconUI } from 'sic-ui';
-import PreviewGroupUI from './PreviewGroupUI';
 import './index.scss';
 
 interface ImageUIProps extends ImageProps {
@@ -95,7 +95,7 @@ const ImageUI = (props: ImageUIProps) => {
     mask: renderMask(),
     toolbarRender: (
       _,
-      { transform: { scale }, actions: { onFlipY, onFlipX, onRotateLeft, onRotateRight, onZoomOut, onZoomIn, onReset } },
+      { transform: { scale }, actions: { onFlipY, onFlipX, onRotateLeft, onRotateRight, onZoomOut, onZoomIn, onReset } }
     ) => (
       <Space size={12} className="sicImageUI-toolbar">
         <DownloadOutlined onClick={onDownload} />

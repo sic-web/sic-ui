@@ -9,14 +9,6 @@ group:
 
 # DescriptionsUI 描述组件
 
-:::success{title=使用中}
-国信灵工后台管理系统-描述组件
-:::
-
-## 场景故事
-
-## 代码演示
-
 💎 基础使用
 
 ```tsx
