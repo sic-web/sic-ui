@@ -143,7 +143,7 @@ function TableUIInner<TRecord = any, TVessel extends TableUI_VesselType = TableU
           indicator: CustomLoadingUI,
         }}
         locale={{
-          emptyText: loading ? null : CustomEmptyUI,
+          emptyText: CustomEmptyUI,
         }}
         onChange={(e) => {
           if (vessel && setVessel) setVessel({ ...vessel, filterParams: { ...vessel?.filterParams, page: e.current, size: e.pageSize } });
