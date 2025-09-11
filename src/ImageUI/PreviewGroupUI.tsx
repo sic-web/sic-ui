@@ -40,7 +40,7 @@ const PreviewGroupUI: React.FC<PreviewGroupUIPropsType> = ({ preview, children, 
         actions: { onFlipY, onFlipX, onRotateLeft, onRotateRight, onZoomOut, onZoomIn, onReset, onActive },
       }
     ) => (
-      <Space size={12} className="sicImageUI-toolbar">
+      <Space size={12} className="imageUI-toolbar">
         <LeftOutlined disabled={current === 0} onClick={() => onActive?.(-1)} />
         <RightOutlined disabled={current === total - 1} onClick={() => onActive?.(1)} />
         <DownloadOutlined disabled={!image.url} onClick={() => onDownload({ image: image })} />

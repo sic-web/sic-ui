@@ -1,29 +1,30 @@
 import React from 'react';
 import { Form } from 'antd';
+import classnames from 'classnames';
 import './index.scss';
 
 const FormUI_Title = (props: any) => {
-  const { left } = props;
+  const { className, left } = props;
   return (
-    <div className="sicFormUI-title">
-      <div className="sicFormUI-title-header">
-        <div className="sicFormUI-title-header-text">{left}</div>
-        <div className="sicFormUI-title-header-button"></div>
+    <div className={classnames('formUI-title', className)}>
+      <div className="formUI-title-header">
+        <div className="formUI-title-header-text">{left}</div>
+        <div className="formUI-title-header-button"></div>
       </div>
-      <div className="sicFormUI-title-content">{props?.children}</div>
+      <div className="formUI-title-content">{props?.children}</div>
     </div>
   );
 };
 const FormUI_ProTitle = (props: any) => {
-  const { required = true, line = true, title, children, border = true } = props;
+  const { className, required = true, line = true, title, children, border = true } = props;
   return (
-    <div className={`sicFormUI-protitle ${border ? 'border' : ''}`}>
-      <div className="sicFormUI-protitle-header">
-        {required && <div className="sicFormUI-protitle-header-icon">*</div>}
-        <div className="sicFormUI-protitle-header-title">{title}</div>
-        {line && <div className="sicFormUI-protitle-header-line"></div>}
+    <div className={classnames('formUI-protitle', className, { border: border })}>
+      <div className="formUI-protitle-header">
+        {required && <div className="formUI-protitle-header-icon">*</div>}
+        <div className="formUI-protitle-header-title">{title}</div>
+        {line && <div className="formUI-protitle-header-line"></div>}
       </div>
-      <div className="sicFormUI-protitle-content">{children}</div>
+      <div className="formUI-protitle-content">{children}</div>
     </div>
   );
 };

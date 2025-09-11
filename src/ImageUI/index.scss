@@ -1,4 +1,4 @@
-.sicImageUI {
+.imageUI {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -25,10 +25,10 @@
       width: 50%;
       height: 100%;
     }
-    .sicImageUI-mask-name {
+    .imageUI-mask-name {
       margin-left: 2px;
     }
-    .sicImageUI-mask-delete {
+    .imageUI-mask-delete {
       margin-left: 2px;
       color: var(--red);
     }

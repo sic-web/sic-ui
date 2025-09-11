@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Affix, Cascader, Form, Space } from 'antd';
 import { ButtonUI, DateUI, IconUI, SearchUI, SelectUI } from 'sic-ui';
+import classnames from 'classnames';
 import './index.scss';
 
-interface IProps {
+interface PropsType {
+  className?: string;
   form: any;
   filterOptions: FilterOption[];
   filterParams: any;
@@ -29,8 +31,9 @@ interface FilterOption {
   isNotDelete?: boolean;
 }
 
-const FilterUI = (props: IProps) => {
+const FilterUI = (props: PropsType) => {
   const {
+    className,
     form,
     filterOptions,
     filterParams,
@@ -197,15 +200,15 @@ const FilterUI = (props: IProps) => {
     }
   };
   return (
-    <div className="sicFilterUI" onClick={(e) => e.stopPropagation()}>
-      <div className="sicFilterUI-content">
-        <Form className="sicFilterUI-content-form" form={form} onValuesChange={onValuesChange}>
+    <div className={classnames('filterUI', className)} onClick={(e) => e.stopPropagation()}>
+      <div className="filterUI-content">
+        <Form className="filterUI-content-form" form={form} onValuesChange={onValuesChange}>
           {visibleOptions.map(renderFilterComponent)}
-          <div className="sicFilterUI-content-moreForm" style={{ display: moreFilters ? 'flex' : 'none' }}>
+          <div className="filterUI-content-moreForm" style={{ display: moreFilters ? 'flex' : 'none' }}>
             {moreOptions.map(renderFilterComponent)}
           </div>
         </Form>
-        <div className="sicFilterUI-content-operate">
+        <div className="filterUI-content-operate">
           <ButtonUI type="primary" icon={<IconUI name="Clear" />} onClick={formReset}>
             重置
           </ButtonUI>
@@ -219,13 +222,13 @@ const FilterUI = (props: IProps) => {
       </div>
       {filterName.length > 0 && showFilterText && (
         <Affix offsetTop={0} target={() => container}>
-          <div className="sicFilterUI-filter">
-            <div className="sicFilterUI-filter-title">已筛条件：</div>
-            <div className="sicFilterUI-filter-content">
+          <div className="filterUI-filter">
+            <div className="filterUI-filter-title">已筛条件：</div>
+            <div className="filterUI-filter-content">
               <Space>
                 {filterName.map((item) => {
                   return (
-                    <div className="sicFilterUI-filter-content-item" key={item?.key} onClick={() => clickFilterName(item)}>
+                    <div className="filterUI-filter-content-item" key={item?.key} onClick={() => clickFilterName(item)}>
                       {!!item?.label && item?.label + '：'}
                       {item?.value}
 

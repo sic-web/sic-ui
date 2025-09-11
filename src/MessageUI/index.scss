@@ -1,20 +1,20 @@
-.sic-message {
+.messageUI {
   top: 5%;
-  .sic-message-notice-wrapper {
-    .sic-message-notice-content {
+  .messageUI-notice-wrapper {
+    .messageUI-notice-content {
       padding: 0;
 
-      .sic-message-success,
-      .sic-message-error,
-      .sic-message-info,
-      .sic-message-warning,
-      .sic-message-loading {
+      .messageUI-success,
+      .messageUI-error,
+      .messageUI-info,
+      .messageUI-warning,
+      .messageUI-loading {
         > .anticon {
           color: #fff;
           font-size: 18px;
         }
       }
-      .sic-message-custom-content {
+      .messageUI-custom-content {
         color: #fff;
         font-weight: bold;
         font-size: 18px;
@@ -25,24 +25,24 @@
       .anticon-close-circle {
         color: #fff;
       }
-      .sic-message-custom-content {
+      .messageUI-custom-content {
         box-sizing: border-box;
         border-radius: 8px;
         padding: 20px 20px;
       }
-      .sic-message-success {
+      .messageUI-success {
         background-color: #38b865;
       }
-      .sic-message-error {
+      .messageUI-error {
         background-color: var(--red);
       }
-      .sic-message-info {
+      .messageUI-info {
         background-color: #2e64fa;
       }
-      .sic-message-warning {
+      .messageUI-warning {
         background-color: #faad14;
       }
-      .sic-message-loading {
+      .messageUI-loading {
         background-color: #2e64fa;
       }
     }

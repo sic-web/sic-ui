@@ -28,7 +28,7 @@ const SearchUI = (props: any) => {
   return (
     <Input.Search
       value={searchValue}
-      className="sic-searchui"
+      className="searchUI"
       onChange={(e: any) => valueChange(e)}
       allowClear
       onSearch={(e) => onChange(e.trim())}

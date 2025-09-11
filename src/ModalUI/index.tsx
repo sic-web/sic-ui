@@ -2,15 +2,16 @@ import React, { Fragment, useRef, useState } from 'react';
 import { Modal } from 'antd';
 import type { DraggableData, DraggableEvent } from 'react-draggable';
 import Draggable from 'react-draggable';
+import classnames from 'classnames';
 import './index.scss';
 
 const RenderTitle = (title: string, icon: React.ReactNode, type?: string) => {
   return (
     <Fragment>
       {(title || icon) && (
-        <div className="sicModalui-header">
+        <div className="modalUI-header">
           {title && <div>{title}</div>}
-          {icon && <div className={`sicModalui-header-icon ${type ?? ''}`}>{icon}</div>}
+          {icon && <div className={`modalUI-header-icon ${type ?? ''}`}>{icon}</div>}
         </div>
       )}
     </Fragment>
@@ -39,7 +40,7 @@ const ModalUI = (props: any) => {
 
   return (
     <Modal
-      className={`sicModalui ${className ?? ''} ${type ?? ''}`}
+      className={classnames('modalUI', className, type)}
       open={isOpen}
       title={
         <div

@@ -1,4 +1,4 @@
-.sicBroadcastui {
+.broadcastUI {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -32,7 +32,7 @@
     color: var(--red);
     .ant-popover-inner {
       padding: 0;
-      .sicBroadcastui-popover {
+      .broadcastUI-popover {
         box-sizing: border-box;
         padding: 12px;
         color: #fff;

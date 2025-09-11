@@ -2,6 +2,7 @@ import React from 'react';
 import CountUp from 'react-countup';
 import { TagUI } from 'sic-ui';
 import lodash from 'lodash';
+import classnames from 'classnames';
 import './index.scss';
 
 interface ItemsType {
@@ -63,7 +64,7 @@ export default function StatisticUI(props: PropsType) {
   };
 
   return (
-    <div className={`statisticUI ${className ?? ''}`}>
+    <div className={classnames('statisticUI', className)}>
       {!lodash.isEmpty(items) &&
         items.map((item: ItemsType) => {
           const { id, label, value, type, colon = true, suffix, decimals, separator = '', rawValue = false } = item;

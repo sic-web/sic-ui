@@ -1,6 +1,7 @@
 import React from 'react';
 import { Spin, SpinProps } from 'antd';
 import { ImageUI } from 'sic-ui';
+import classnames from 'classnames';
 import './index.scss';
 
 interface SpinUIProps extends SpinProps {
@@ -14,7 +15,7 @@ const LoadingUI = (props: SpinUIProps) => {
 
   return (
     <Spin
-      wrapperClassName={`loadingUI ${maskTransparent ? 'loadingUI-transparent' : ''}`}
+      wrapperClassName={classnames('loadingUI', { 'loadingUI-transparent': maskTransparent })}
       spinning={isShowLoading}
       indicator={
         loadingImage ? (

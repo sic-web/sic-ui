@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ConfigProvider, DatePicker } from 'antd';
 import dayjs from 'dayjs';
+import classnames from 'classnames';
 import zhCN from 'antd/locale/zh_CN';
 import 'dayjs/locale/zh-cn';
 import quarterOfYear from 'dayjs/plugin/quarterOfYear';
@@ -62,7 +63,7 @@ const DateUI = (props: any) => {
     <ConfigProvider locale={zhCN}>
       {showRange ? (
         <DatePicker.RangePicker
-          className={`sic-dateui ${className ?? ''}`}
+          className={classnames('dateUI', className)}
           separator={'至'}
           value={realValue}
           onChange={changeDate}
@@ -70,7 +71,7 @@ const DateUI = (props: any) => {
           {...otherProps}
         />
       ) : (
-        <DatePicker className={`sic-dateui ${className ?? ''}`} value={realValue} onChange={changeDate} {...otherProps} />
+        <DatePicker className={classnames('dateUI', className)} value={realValue} onChange={changeDate} {...otherProps} />
       )}
     </ConfigProvider>
   );

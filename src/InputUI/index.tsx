@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Input, InputNumber } from 'antd';
+import classnames from 'classnames';
 import './index.scss';
 
 let timer: any;
@@ -29,7 +30,7 @@ const InputUI = (props: any) => {
 };
 
 const Range = (props: any) => {
-  const { value, onChange, min, max, placeholder = ['请输入', '请输入'], style } = props;
+  const { className, value, onChange, min, max, placeholder = ['请输入', '请输入'], style } = props;
   const [input1, setInput1] = useState<number>();
   const [input2, setInput2] = useState<number>();
 
@@ -46,18 +47,18 @@ const Range = (props: any) => {
     triggerChange({ input2: e });
   };
   return (
-    <div className="sic-inputui-range" style={style}>
+    <div className={classnames('inputUI-range', className)} style={style}>
       <InputNumber
-        className="range-input1"
+        className="inputUI-range-input1"
         placeholder={placeholder[0]}
         min={min}
         max={max}
         value={value?.input1 ?? input1}
         onChange={onInput1}
       />
-      <span className="range-to"> - </span>
+      <span className="inputUI-range-to"> - </span>
       <InputNumber
-        className="range-input2"
+        className="inputUI-range-input2"
         placeholder={placeholder[1]}
         min={min}
         max={max}

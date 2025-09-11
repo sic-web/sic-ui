@@ -1,8 +1,10 @@
 import React from 'react';
 import { Col, Row } from 'antd';
+import classnames from 'classnames';
 import './index.scss';
 
-interface IProps {
+interface PropsType {
+  className?: string;
   items: ItemType[];
   isSingleLine?: boolean;
   labelWidth?: number | string;
@@ -19,15 +21,24 @@ interface ItemType {
   noDataHide?: boolean;
 }
 //新描述组件
-const DescriptionsUI = (props: IProps) => {
-  const { items, isSingleLine = false, labelWidth = 120, type = 'table', layout = 'horizontal', labelAlign = 'left', colon = true } = props;
+const DescriptionsUI = (props: PropsType) => {
+  const {
+    className,
+    items,
+    isSingleLine = false,
+    labelWidth = 120,
+    type = 'table',
+    layout = 'horizontal',
+    labelAlign = 'left',
+    colon = true,
+  } = props;
 
   return (
     <>
       {items?.length > 0 && (
-        <div className={`sic-descriptionsUI  ${isSingleLine ? 'sic-descriptionsUI-hide' : ''}`}>
+        <div className={classnames('descriptionsUI', className, { 'descriptionsUI-hide': isSingleLine })}>
           {type === 'table' && (
-            <Row className="sic-descriptionsUI-table">
+            <Row className="descriptionsUI-table">
               {items.map((item, index) => {
                 if (item?.children || !item?.noDataHide) {
                   return (
@@ -48,7 +59,7 @@ const DescriptionsUI = (props: IProps) => {
           )}
 
           {type === 'text' && (
-            <Row className={`sic-descriptionsUI-text ${layout}`}>
+            <Row className={`descriptionsUI-text ${layout}`}>
               {items.map((item, index) => {
                 if (item?.children || !item?.noDataHide) {
                   return (
