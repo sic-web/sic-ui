@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import type { GetProp, UploadFile, UploadProps } from 'antd';
 import { Image, Space, Upload } from 'antd';
 import { IconUI, MessageUI } from 'sic-ui';
+import classnames from 'classnames';
 import { file_calculate_md5, getUrlConfig } from 'sic-util';
 import { DraggerFileItems } from './type';
 import {
@@ -189,13 +190,13 @@ const UploadUI = (props: UploadUIProps) => {
     <div className="uploadUI" id={props?.id}>
       {/* 最基础的上传组件，本身不带样式 */}
       {mode === 1 && (
-        <Upload className={`uploadUI-mode1 ${className ?? ''}`} showUploadList={false} {...uploadProps}>
+        <Upload className={classnames('uploadUI-mode1', className)} showUploadList={false} {...uploadProps}>
           {children}
         </Upload>
       )}
       {/* 图片上传 带预览功能  营业执照、身份证这种带背景图的、尺寸较大 */}
       {mode === 2 && (
-        <Upload className={`uploadUI-mode2 ${className ?? ''}`} listType="picture-card" onPreview={onPreview} {...uploadProps}>
+        <Upload className={classnames('uploadUI-mode2', className)} listType="picture-card" onPreview={onPreview} {...uploadProps}>
           {fileList?.length >= maxCount ? null : (
             <div className="uploadUI-mode2-content" style={{ backgroundImage: `url(${backgroundImage})` }}>
               <IconUI name="Upload" size="24" />
@@ -206,7 +207,7 @@ const UploadUI = (props: UploadUIProps) => {
       )}
       {/* 拖拽上传 */}
       {mode === 3 && (
-        <Upload.Dragger className={`uploadUI-mode3 ${className ?? ''}`} {...uploadProps}>
+        <Upload.Dragger className={classnames('uploadUI-mode3', className)} {...uploadProps}>
           <div className="uploadUI-mode3-content">
             <IconUI name={DraggerFileItems(fileType)?.icon3} strokeWidth={2} />
             {DraggerFileItems(fileType)?.text3}
@@ -215,7 +216,7 @@ const UploadUI = (props: UploadUIProps) => {
       )}
       {/* 图片上传 带预览功能 */}
       {mode === 4 && (
-        <Upload className={`uploadUI-mode4 ${className ?? ''}`} listType="picture-card" onPreview={onPreview} {...uploadProps}>
+        <Upload className={classnames('uploadUI-mode4', className)} listType="picture-card" onPreview={onPreview} {...uploadProps}>
           {fileList?.length >= maxCount ? null : (
             <div className="uploadUI-mode4-content">
               <IconUI name="Upload" size="20" />
@@ -226,7 +227,7 @@ const UploadUI = (props: UploadUIProps) => {
       )}
       {/* 图片上传 带预览功能  带背景图的、尺寸较小 */}
       {mode === 5 && (
-        <Upload className={`uploadUI-mode5 ${className ?? ''}`} listType="picture-card" onPreview={onPreview} {...uploadProps}>
+        <Upload className={classnames('uploadUI-mode5', className)} listType="picture-card" onPreview={onPreview} {...uploadProps}>
           {fileList?.length >= maxCount ? null : (
             <div className="uploadUI-mode5-content">
               <Image src={backgroundImage} height={50} preview={false} />
@@ -237,7 +238,7 @@ const UploadUI = (props: UploadUIProps) => {
       )}
       {/* 文件上传 多个文件上传 */}
       {mode === 6 && (
-        <Upload className={`uploadUI-mode6 ${className ?? ''}`} showUploadList={false} {...uploadProps}>
+        <Upload className={classnames('uploadUI-mode6', className)} showUploadList={false} {...uploadProps}>
           <div className="uploadUI-mode6-content">
             {fileList?.length < maxCount && (
               <div className="mode6BeforeUpload">

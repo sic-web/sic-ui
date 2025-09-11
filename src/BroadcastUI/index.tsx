@@ -1,9 +1,11 @@
 import React, { useRef } from 'react';
 import { Carousel, Popover } from 'antd';
 import { IconUI } from 'sic-ui';
+import classnames from 'classnames';
 import './index.scss';
 
-interface IProps {
+interface PropsType {
+  className?: string;
   /** 广播消息列表 */
   items?: Array<string | number>;
   /** 组件宽度 */
@@ -12,19 +14,19 @@ interface IProps {
   textAlign?: 'left' | 'center' | 'right';
 }
 
-const BroadcastUI = (props: IProps) => {
+const BroadcastUI = (props: PropsType) => {
   const ref = useRef(null);
-  const { items = [], width, textAlign = 'left' } = props;
+  const { className, items = [], width, textAlign = 'left' } = props;
 
   return (
-    <div className="sicBroadcastui" style={{ width: width }}>
+    <div className={classnames('broadcastUI', className)} style={{ width: width }}>
       <IconUI name="Help" theme="filled" fill="var(--red)" size="18" />
       {items?.length > 0 && (
-        <div className="sicBroadcastui-content">
+        <div className="broadcastUI-content">
           <Carousel autoplay={items?.length > 1} dots={false} dotPosition="left" autoplaySpeed={5000} adaptiveHeight>
             {items.map((item: string | number, index: number) => (
-              <div className="sicBroadcastui-content-item" key={index}>
-                <div className="sicBroadcastui-content-item-text" style={{ textAlign: textAlign }}>
+              <div className="broadcastUI-content-item" key={index}>
+                <div className="broadcastUI-content-item-text" style={{ textAlign: textAlign }}>
                   {item}
                 </div>
               </div>
@@ -38,16 +40,16 @@ const BroadcastUI = (props: IProps) => {
           placement="bottomRight"
           getPopupContainer={() => ref.current || document.body}
           content={
-            <div className="sicBroadcastui-popover" style={{ width: width ? width - 20 : 'auto' }}>
+            <div className="broadcastUI-popover" style={{ width: width ? width - 20 : 'auto' }}>
               {items?.map((item: string | number, index: number) => (
-                <div className="sicBroadcastui-popover-item" key={index}>
+                <div className="broadcastUI-popover-item" key={index}>
                   {item}
                 </div>
               ))}
             </div>
           }
         >
-          <div className="sicBroadcastui-more" ref={ref}>
+          <div className="broadcastUI-more" ref={ref}>
             查看
           </div>
         </Popover>

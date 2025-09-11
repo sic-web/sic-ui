@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import classnames from 'classnames';
 import { getOptionConfig } from 'sic-util';
 import './index.scss';
 
@@ -40,11 +41,11 @@ const TagUI = (props: IProps) => {
 
   if (!!title) {
     return (
-      <div className={`sic-tagTitleui ${className ?? ''}`}>
-        <div className="sic-tagTitleui-title" style={{ backgroundColor: theme?.color }}>
+      <div className={classnames('tagTitleUI', className)}>
+        <div className="tagTitleUI-title" style={{ backgroundColor: theme?.color }}>
           {title}
         </div>
-        <div className="sic-tagTitleui-content" style={{ backgroundColor: theme?.bgcolor }}>
+        <div className="tagTitleUI-content" style={{ backgroundColor: theme?.bgcolor }}>
           {!!options && options?.length > 0 ? getOptionConfig(dataIndex, options) : children}
           {icon}
         </div>
@@ -53,7 +54,7 @@ const TagUI = (props: IProps) => {
   } else {
     return (
       <div
-        className={`sic-tagui ${size === 'large' ? 'sic-tagui-large' : ''} ${className ?? ''}`}
+        className={classnames('tagUI', className, { 'tagUI-large': size === 'large' })}
         style={{ width: width ?? 'auto', color: theme?.color, backgroundColor: theme?.bgcolor, ...style }}
         {...otherProps}
       >

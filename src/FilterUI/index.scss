@@ -1,4 +1,4 @@
-.sicFilterUI {
+.filterUI {
   &-content {
     display: flex;
     justify-content: space-between;
@@ -19,10 +19,10 @@
     .ant-form-item-control {
       width: 250px;
     }
-    .sic-searchui {
+    .searchUI {
       width: 320px;
     }
-    .sic-dateui {
+    .dateUI {
       width: 100%;
     }
     &-form {

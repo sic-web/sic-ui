@@ -3,6 +3,7 @@ import type { ImageProps } from 'antd';
 import { Image, Space } from 'antd';
 import { IconUI } from 'sic-ui';
 import PreviewGroupUI from './PreviewGroupUI';
+import classnames from 'classnames';
 import {
   DownloadOutlined,
   RotateLeftOutlined,
@@ -51,42 +52,42 @@ const ImageUI = (props: ImageUIProps) => {
     switch (maskType) {
       case 1:
         return (
-          <div className="sicImageUI-mask">
+          <div className="imageUI-mask">
             <IconUI name="PreviewOpen" size="14" fill="#fff" />
-            <div className="sicImageUI-mask-name">预览</div>
+            <div className="imageUI-mask-name">预览</div>
           </div>
         );
       case 2:
         return (
-          <div className="sicImageUI-mask">
-            <div className="sicImageUI-mask-left">
+          <div className="imageUI-mask">
+            <div className="imageUI-mask-left">
               <IconUI name="PreviewOpen" size="14" fill="#fff" />
-              <div className="sicImageUI-mask-name">预览</div>
+              <div className="imageUI-mask-name">预览</div>
             </div>
-            <div className="sicImageUI-mask-right" onClick={clickRight}>
+            <div className="imageUI-mask-right" onClick={clickRight}>
               <IconUI name="Export" size="14" fill="#fff" />
-              <div className="sicImageUI-mask-name">上传</div>
+              <div className="imageUI-mask-name">上传</div>
             </div>
           </div>
         );
       case 3:
         return (
-          <div className="sicImageUI-mask">
-            <div className="sicImageUI-mask-left">
+          <div className="imageUI-mask">
+            <div className="imageUI-mask-left">
               <IconUI name="PreviewOpen" size="14" fill="#fff" />
-              <div className="sicImageUI-mask-name">预览</div>
+              <div className="imageUI-mask-name">预览</div>
             </div>
-            <div className="sicImageUI-mask-right" onClick={clickRight}>
+            <div className="imageUI-mask-right" onClick={clickRight}>
               <IconUI name="Delete" size="14" fill="var(--red)" />
-              <div className="sicImageUI-mask-delete">删除</div>
+              <div className="imageUI-mask-delete">删除</div>
             </div>
           </div>
         );
       default:
         return (
-          <div className="sicImageUI-mask">
+          <div className="imageUI-mask">
             <IconUI name="PreviewOpen" size="14" fill="#fff" />
-            <div className="sicImageUI-mask-name">预览</div>
+            <div className="imageUI-mask-name">预览</div>
           </div>
         );
     }
@@ -97,7 +98,7 @@ const ImageUI = (props: ImageUIProps) => {
       _,
       { transform: { scale }, actions: { onFlipY, onFlipX, onRotateLeft, onRotateRight, onZoomOut, onZoomIn, onReset } }
     ) => (
-      <Space size={12} className="sicImageUI-toolbar">
+      <Space size={12} className="imageUI-toolbar">
         <DownloadOutlined onClick={onDownload} />
         <SwapOutlined rotate={90} onClick={onFlipY} />
         <SwapOutlined onClick={onFlipX} />
@@ -111,7 +112,7 @@ const ImageUI = (props: ImageUIProps) => {
   };
   const mergedPreview = typeof preview === 'boolean' ? preview : { ...previewConfig, ...preview };
   return (
-    <div className={`sicImageUI ${className ?? ''}`} style={style}>
+    <div className={classnames('imageUI', className)} style={style}>
       <Image src={src} preview={mergedPreview} {...otherProps} />
     </div>
   );

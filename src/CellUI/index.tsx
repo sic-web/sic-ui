@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Tooltip } from 'antd';
 import { IconUI, MessageUI } from 'sic-ui';
+import classnames from 'classnames';
 import './index.scss';
 
 interface PropsType {
@@ -57,10 +58,10 @@ const CellUI = (props: PropsType) => {
   };
   const tooltipContent = (children: React.ReactNode) => {
     return (
-      <div className="sic-cellui-tooltipContent">
+      <div className="cellUI-tooltipContent">
         {isShowCopy && (
           <IconUI
-            className="sic-cellui-tooltipContent-icon"
+            className="cellUI-tooltipContent-icon"
             name="Copy"
             fill="var(--themeColor)"
             onClick={(e: any) => clickCopy(e, children)}
@@ -71,9 +72,9 @@ const CellUI = (props: PropsType) => {
     );
   };
   return (
-    <div className={`sic-cellui ${className ?? ''}`} style={style} onClick={onClick}>
+    <div className={classnames('cellUI', className)} style={style} onClick={onClick}>
       <Tooltip placement={placement} title={showTooltip ? tooltipContent(children) : null}>
-        <div ref={textRef} className="sic-cellui-text" style={cellStyle}>
+        <div ref={textRef} className="cellUI-text" style={cellStyle}>
           {children}
         </div>
       </Tooltip>

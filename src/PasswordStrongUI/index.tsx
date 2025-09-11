@@ -30,7 +30,7 @@ const getLevel = (str: string) => {
 const StrongCheck = (value: string) => {
   const current = PassStrong?.filter((item) => item?.level === getLevel(value))?.[0];
   return (
-    <div className="sic-passwordStrongui-check">
+    <div className="passwordStrongUI-check">
       <div className="bar">
         <div className="one" style={{ backgroundColor: current?.level >= 1 ? '#FAD39A' : '#f0f0f0' }} />
         <div className="two" style={{ backgroundColor: current?.level >= 2 ? '#A6E29D' : '#f0f0f0' }} />
@@ -44,7 +44,7 @@ const StrongCheck = (value: string) => {
 const PasswordStrongUI = (props: IProps) => {
   const { value, style } = props;
   return (
-    <div className="sic-passwordStrongui" style={style}>
+    <div className="passwordStrongUI" style={style}>
       <div className="line1">密码强度：{StrongCheck(value)}</div>
       <div>密码强度8～32位，包含数字、大/小写字母、特殊字符。</div>
     </div>

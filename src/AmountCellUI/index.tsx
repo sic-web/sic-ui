@@ -2,6 +2,7 @@ import React from 'react';
 import { Tooltip } from 'antd';
 import CountUp from 'react-countup';
 import lodash from 'lodash';
+import classnames from 'classnames';
 import { num_expand } from 'sic-util';
 import './index.scss';
 
@@ -107,7 +108,7 @@ export default function AmountCellUI(props: PropsType) {
   // 如果强制渲染，直接返回内容
   if (forceRender) {
     return (
-      <div className={`amountCellUI ${className ?? ''}`} {...otherProps}>
+      <div className={classnames('amountCellUI', className)} {...otherProps}>
         {children}
       </div>
     );
@@ -116,7 +117,7 @@ export default function AmountCellUI(props: PropsType) {
   // 如果不是合法数字，直接返回 '--'
   if (!isNumeric(children)) {
     return (
-      <div className={`amountCellUI ${className ?? ''}`} {...otherProps}>
+      <div className={classnames('amountCellUI', className)} {...otherProps}>
         {'--'}
       </div>
     );
@@ -151,7 +152,7 @@ export default function AmountCellUI(props: PropsType) {
     );
   };
   return (
-    <div className={`amountCellUI ${className ?? ''}`} {...otherProps}>
+    <div className={classnames('amountCellUI', className)} {...otherProps}>
       <Tooltip placement="right" title={isShowTooltip ? children : null}>
         {animation ? renderAnimationContent() : renderContent()}
       </Tooltip>

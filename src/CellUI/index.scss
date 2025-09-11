@@ -1,4 +1,4 @@
-.sic-cellui {
+.cellUI {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,7 +17,7 @@
     overflow: hidden;
   }
 }
-.sic-cellui-tooltipContent {
+.cellUI-tooltipContent {
   max-height: 300px;
   overflow: auto;
   &-icon {

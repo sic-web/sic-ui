@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Anchor } from 'antd';
+import classnames from 'classnames';
 import './index.scss';
 
 const AnchorUI = (props: any) => {
@@ -29,7 +30,7 @@ const AnchorUI = (props: any) => {
 
   return (
     <Anchor
-      className={`anchoraUI ${className ?? ''}`}
+      className={classnames('anchoraUI', className)}
       items={newItems}
       affix={false}
       getContainer={() => anchoruiRef?.current}
