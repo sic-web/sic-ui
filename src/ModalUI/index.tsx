@@ -59,7 +59,8 @@ const ModalUI = (props: any) => {
       onOk={confirm}
       closeIcon={!icon}
       modalRender={(modal) => (
-        <Draggable disabled={disabled} bounds={bounds} nodeRef={draggleRef} onStart={(event, uiData) => onStart(event, uiData)}>
+        // @ts-ignore react-draggable 类型定义 bug，组件接受 Partial 但 TS 要求全部属性
+        <Draggable disabled={disabled} bounds={bounds} nodeRef={draggleRef} onStart={onStart}>
           <div ref={draggleRef}>{modal}</div>
         </Draggable>
       )}
